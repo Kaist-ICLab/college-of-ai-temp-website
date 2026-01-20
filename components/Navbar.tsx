@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
     },
     {
       name: 'education',
-      path: '/academics',
+      path: '/graduation-requirements',
       subcategories: [
         { name: 'admissions', path: '/admissions' },
         { name: 'graduation_req', path: '/graduation-requirements' },
