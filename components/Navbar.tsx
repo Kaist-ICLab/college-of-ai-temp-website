@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { LanguageContext } from '../App';
-import { useTranslation } from '../i18n';
+import React, { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { LanguageContext } from "../App";
+import { useTranslation } from "../i18n";
 
 interface SubItem {
   name: string;
@@ -22,25 +22,24 @@ const Navbar: React.FC = () => {
 
   const navItems: NavItem[] = [
     {
-      name: 'introduction',
-      path: '/intro',
+      name: "introduction",
+      path: "/intro",
       subcategories: [
-        { name: 'welcome_msg', path: '/intro' },
-        { name: 'overview', path: '/intro' },
-        { name: 'departments', path: '/departments' },
+        { name: "welcome_msg", path: "/intro" },
+        { name: "departments", path: "/departments" },
       ],
     },
     {
-      name: 'education',
-      path: '#',
+      name: "education",
+      path: "#",
       subcategories: [
-        { name: 'course_information', path: '/course-information' },
-        { name: 'graduation_req', path: '/graduation-requirements' },
+        { name: "course_information", path: "/course-information" },
+        { name: "graduation_req", path: "/graduation-requirements" },
       ],
     },
     {
-      name: 'admissions',
-      path: '/admissions',
+      name: "admissions",
+      path: "/admissions",
       subcategories: [],
     },
   ];
@@ -53,7 +52,11 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
         <div className="flex h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-4 mr-auto" onClick={() => setActiveMenu(null)}>
+          <Link
+            to="/"
+            className="flex items-center space-x-4 mr-auto"
+            onClick={() => setActiveMenu(null)}
+          >
             <img
               src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
               alt="KAIST Logo"
@@ -61,8 +64,12 @@ const Navbar: React.FC = () => {
             />
             <div className="h-11 w-[1px] bg-gray-200 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-[#004191] font-bold text-l sm:text-xl md:text-2xl tracking-tight leading-none">College of AI</span>
-              <span className="text-gray-400 text-[12px] font-base uppercase tracking-widest">AI대학</span>
+              <span className="text-[#004191] font-bold text-l sm:text-xl md:text-2xl tracking-tight leading-none">
+                College of AI
+              </span>
+              <span className="text-gray-400 text-[12px] font-base uppercase tracking-widest">
+                AI대학
+              </span>
             </div>
           </Link>
 
@@ -72,14 +79,19 @@ const Navbar: React.FC = () => {
               <div
                 key={item.name}
                 className="h-full flex items-center relative group"
-                onMouseEnter={() => setActiveMenu(item.subcategories.length > 0 ? item.name : null)}
+                onMouseEnter={() =>
+                  setActiveMenu(
+                    item.subcategories.length > 0 ? item.name : null,
+                  )
+                }
               >
                 <Link
                   to={item.path}
-                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${location.pathname === item.path || activeMenu === item.name
-                    ? 'text-[#004191] border-[#004191]'
-                    : 'text-gray-700 border-transparent hover:text-[#004191]'
-                    }`}
+                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${
+                    location.pathname === item.path || activeMenu === item.name
+                      ? "text-[#004191] border-[#004191]"
+                      : "text-gray-700 border-transparent hover:text-[#004191]"
+                  }`}
                 >
                   {t(item.name)}
                 </Link>
@@ -90,26 +102,37 @@ const Navbar: React.FC = () => {
           {/* Utils */}
           <div className="flex items-center space-x-4">
             <button
-              onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
+              onClick={() => setLanguage(language === "en" ? "ko" : "en")}
               className="text-[10px] font-bold text-gray-400 hover:text-[#004191] border border-gray-200 rounded px-2 py-1 transition-all"
             >
-              {language === 'en' ? 'KOREAN' : 'ENGLISH'}
+              {language === "en" ? "KOREAN" : "ENGLISH"}
             </button>
             <button className="md:hidden p-2 text-gray-500">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
             </button>
           </div>
         </div>
-      </div >
+      </div>
 
       {/* Dropdown Panel */}
-      < div
-        className={`absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out origin-top ${activeMenu
-          ? "opacity-100 scale-y-100 translate-y-0 visible"
-          : "opacity-0 scale-y-95 -translate-y-2 invisible"
-          }`}
+      <div
+        className={`absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out origin-top ${
+          activeMenu
+            ? "opacity-100 scale-y-100 translate-y-0 visible"
+            : "opacity-0 scale-y-95 -translate-y-2 invisible"
+        }`}
         onMouseEnter={() => activeMenu && setActiveMenu(activeMenu)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -132,8 +155,8 @@ const Navbar: React.FC = () => {
                 ))}
           </div>
         </div>
-      </div >
-    </nav >
+      </div>
+    </nav>
   );
 };
 
