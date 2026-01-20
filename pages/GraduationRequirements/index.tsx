@@ -111,18 +111,21 @@ const GraduationRequirements: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="hero-section bg-gray-50 border-b border-gray-100 py-6 mb-0 print:hidden">
+      <div className="hero-section bg-white border-b border-gray-100 py-16 mb-0 print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center gap-6">
+          <div className="flex flex-col items-center text-center gap-8">
             <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-2 tracking-tight">
-                {t('graduation_reqs')}
-              </h1>
-              <p className="text-base text-gray-500 leading-relaxed mx-auto italic">
+              <div className="relative mb-8">
+                <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+                  {t('graduation_reqs')}
+                </h1>
+                <div className="mt-7 w-20 h-1 bg-[#002380] rounded-full mx-auto"></div>
+              </div>
+
+              <p className="text-lg text-gray-500 leading-relaxed mx-auto">
                 {t('grad_req_hero_desc')}
               </p>
             </div>
-
             {/* Department Selection */}
             <div
               role="tablist"
@@ -137,8 +140,8 @@ const GraduationRequirements: React.FC = () => {
                   aria-selected={activeDept === dept.id}
                   aria-controls="tabpanel-content"
                   onClick={() => setActiveDept(dept.id)}
-                  className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all border whitespace-nowrap flex-shrink-0 ${activeDept === dept.id
-                    ? 'bg-[#004191] border-[#004191] text-white shadow-md'
+                  className={`px-4 py-1.5 rounded-lg text-sm font-normal transition-all border whitespace-nowrap flex-shrink-0 ${activeDept === dept.id
+                    ? 'bg-[#002380] border-[#002380] text-white shadow-md'
                     : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
                     }`}
                 >
@@ -163,7 +166,7 @@ const GraduationRequirements: React.FC = () => {
             aria-selected={activeTab === 'ug'}
             aria-controls="tabpanel-content"
             onClick={() => setActiveTab('ug')}
-            className={`px-8 py-2.5 text-xs font-bold rounded-xl transition-all ${activeTab === 'ug' ? 'bg-[#004191] text-white shadow-lg shadow-[#004191]/20' : 'text-gray-500 hover:text-gray-900'}`}
+            className={`px-8 py-2.5 text-sm font-medium rounded-xl transition-all ${activeTab === 'ug' ? 'bg-[#002380] text-white shadow-lg shadow-[#002380]/20' : 'text-gray-500 hover:text-gray-900'}`}
           >
             {t('undergraduate')}
           </button>
@@ -173,7 +176,7 @@ const GraduationRequirements: React.FC = () => {
             aria-selected={activeTab === 'grad'}
             aria-controls="tabpanel-content"
             onClick={() => setActiveTab('grad')}
-            className={`px-8 py-2.5 text-xs font-bold rounded-xl transition-all ${activeTab === 'grad' ? 'bg-[#004191] text-white shadow-lg shadow-[#004191]/20' : 'text-gray-500 hover:text-gray-700'}`}
+            className={`px-8 py-2.5 text-sm font-medium rounded-xl transition-all ${activeTab === 'grad' ? 'bg-[#002380] text-white shadow-lg shadow-[#002380]/20' : 'text-gray-500 hover:text-gray-700'}`}
           >
             {t('graduate')}
           </button>

@@ -59,7 +59,7 @@ const AISUndergraduate: React.FC<AISUndergraduateProps> = ({ language }) => {
               <ul className="ml-3 sm:ml-4 space-y-3">
                 {[1, 2, 3, 4].map(idx => (
                   <li key={idx} className="flex gap-2 items-start text-gray-500">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
                     <span>{t(`ais_ug_mandatory_${idx}`)}</span>
                   </li>
                 ))}

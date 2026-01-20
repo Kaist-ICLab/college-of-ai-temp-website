@@ -22,7 +22,7 @@ const CourseInfo: React.FC = () => {
 
   const courseData: DepartmentSection[] = [
     {
-      title: { en: 'Department of AI Computing', ko: '인공지능컴퓨팅학과' },
+      title: { en: 'Department of AI Computing', ko: 'AI 컴퓨팅학과' },
       courses: [
         { level: '1000-level', code: 'CS.10003', name: { en: 'Elements of AI', ko: '인공지능 기초' }, required: true },
         { level: '2000-level', code: 'CS.40700', name: { en: 'Introduction to Artificial Intelligence', ko: '인공지능 개론' }, required: true },
@@ -43,7 +43,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of AI Systems', ko: '인공지능시스템학과' },
+      title: { en: 'Department of AI Systems', ko: 'AI 시스템학과' },
       courses: [
         // 2000-level Series
         { level: '2000-level', code: 'EE.20001A', name: { en: 'Circuit Theory', ko: '회로이론' }, required: true },
@@ -100,7 +100,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of AX (AI Transformation)', ko: 'AX학과 (인공지능전환)' },
+      title: { en: 'Department of AX (AI Transformation)', ko: 'AX 학과 (인공지능전환)' },
       note: { 
         en: 'Cross-track recognition enabled: Courses taken in other AX tracks are counted toward graduation credit.', 
         ko: '타 전공 트랙의 교과목이라 하더라도 AX학과 졸업이수 학점으로 인정됨.' 
@@ -159,7 +159,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of AI and Futures Studies', ko: '인공지능미래전략학과' },
+      title: { en: 'Department of AI and Futures Studies', ko: 'AI 미래학과' },
       courses: [
         { level: '1000-level', code: 'CS.10003', name: { en: 'Elements of AI', ko: '인공지능 기초' } },
         { level: '2000-level', code: 'FSM.20001', name: { en: 'Introduction to Future Strategy', ko: '미래학 개론' } },
@@ -198,13 +198,17 @@ const CourseInfo: React.FC = () => {
     <div className="bg-white min-h-screen">
       <Breadcrumbs />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <header className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-            {t('course_info')}
-          </h1>
-          <div className="bg-blue-50 border-l-4 border-[#004191] p-6 rounded-r-2xl">
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed font-medium">
-              {language === 'en' 
+        <header className="mb-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="relative mb-8">
+              <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+                {t('course_info')}
+              </h1>
+              <div className="mt-7 w-20 h-1 bg-[#002380] rounded-full mx-auto"></div>
+            </div>
+
+            <p className="text-lg text-gray-500 leading-relaxed">
+              {language === 'en'
                 ? 'Approved Major Course List for the College of AI, Spring Semester 2026. Required major courses are indicated in bold.'
                 : '2026학년도 봄학기 AI대학 전공 인정 교과목 리스트입니다. 굵은 글씨는 전공필수 과목입니다.'}
             </p>
@@ -219,13 +223,13 @@ const CourseInfo: React.FC = () => {
               <section key={deptIdx} className="scroll-mt-20">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b-2 border-gray-100">
                   <div className="flex items-center space-x-4">
-                    <div className="w-2 h-10 bg-[#004191] rounded-full"></div>
-                    <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">
+                    <div className="w-1 h-10 bg-[#002380] rounded-full"></div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
                       {language === 'en' ? dept.title.en : dept.title.ko}
                     </h2>
                   </div>
                   {dept.note && (
-                    <p className="mt-4 md:mt-0 text-xs font-bold text-[#004191] italic bg-blue-50 px-4 py-2 rounded-lg">
+                    <p className="mt-4 md:mt-0 text-xs font-bold text-[#002380] italic bg-blue-50 px-4 py-2 rounded-lg">
                       {language === 'en' ? dept.note.en : dept.note.ko}
                     </p>
                   )}
@@ -256,7 +260,7 @@ const CourseInfo: React.FC = () => {
                               </td>
                             )}
                             <td className="px-8 py-2 whitespace-nowrap">
-                              <code className={`text-sm ${course.required ? 'font-black' : 'font-bold'} text-[#004191]`}>{course.code}</code>
+                              <code className={`text-sm ${course.required ? 'font-black' : 'font-bold'} text-[#002380]`}>{course.code}</code>
                             </td>
                             <td className="px-8 py-2">
                               <span className="text-base tracking-tight text-gray-700 font-medium">
@@ -265,7 +269,7 @@ const CourseInfo: React.FC = () => {
                             </td>
                             <td className="px-8 py-2 text-right whitespace-nowrap">
                               {course.required ? (
-                                <span className="text-[10px] font-black text-[#004191] bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest">
+                                <span className="text-[10px] font-black text-[#002380] bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest">
                                   Required
                                 </span>
                               ) : (

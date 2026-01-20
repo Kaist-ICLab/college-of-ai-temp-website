@@ -45,7 +45,7 @@ const AIFGraduate: React.FC<AIFGraduateProps> = ({ language }) => {
             <ul className="ml-3 sm:ml-4 space-y-2">
               {[1, 2, 3, 4].map(idx => (
                 <li key={idx} className="flex gap-2 items-start text-gray-500">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
                   <span>{t(`${prefix}_major_${idx}`)}</span>
                 </li>
               ))}

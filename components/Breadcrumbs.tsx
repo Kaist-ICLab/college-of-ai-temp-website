@@ -36,7 +36,7 @@ const Breadcrumbs: React.FC = () => {
     <div className="bg-gray-50 py-3 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs text-gray-500">
         <div className="flex items-center space-x-2">
-          <Link to="/" className="hover:text-[#004191]">{t('home')}</Link>
+          <Link to="/" className="hover:text-[#002380]">{t('home')}</Link>
           {paths.map((p, idx) => (
             <React.Fragment key={p}>
               <span className="text-gray-300">/</span>

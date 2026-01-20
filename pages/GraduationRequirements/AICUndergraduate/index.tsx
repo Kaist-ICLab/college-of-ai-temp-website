@@ -35,7 +35,7 @@ const AICUndergraduate: React.FC<AICUndergraduateProps> = ({ language }) => {
           <div className="ml-3 sm:ml-4 space-y-3">
             <div className="flex gap-2 items-start">
               <div className="mt-1.5 w-max">
-                <div className="w-2 h-2 rounded-full border-2 border-[#004191]"></div>
+                <div className="w-2 h-2 rounded-full border-2 border-[#002380]"></div>
               </div>
               <p>{t('aic_mas109_req')}</p>
             </div>
@@ -54,7 +54,7 @@ const AICUndergraduate: React.FC<AICUndergraduateProps> = ({ language }) => {
               <ul className="ml-3 sm:ml-4 space-y-1.5">
                 {[1, 2, 3, 4].map(idx => (
                   <li key={idx} className="flex gap-2 items-start text-gray-500">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
                     <span>{t(`aic_mandatory_${idx}`)}</span>
                   </li>
                 ))}
