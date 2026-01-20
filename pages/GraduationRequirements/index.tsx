@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../../App';
 import Breadcrumbs from '../../components/Breadcrumbs';
@@ -12,10 +12,8 @@ import AXGraduate from './AXGraduate/index';
 import AIFUndergraduate from './AIFUndergraduate/index';
 import AIFGraduate from './AIFGraduate/index';
 import RequirementEmptyState from './RequirementEmptyState/index';
+import { DeptId, TabId, DEPTS } from './types';
 import './styles.css';
-
-type DeptId = 'aic' | 'ais' | 'ax' | 'aif';
-type TabId = 'ug' | 'grad';
 
 const GraduationRequirements: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -50,20 +48,14 @@ const GraduationRequirements: React.FC = () => {
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   }, [activeDept, activeTab, location.pathname, navigate]);
 
-  const depts: { id: DeptId; name: string }[] = [
-    { id: 'aic', name: 'dept_ai_computing' },
-    { id: 'ais', name: 'dept_ai_systems' },
-    { id: 'ax', name: 'dept_ax' },
-    { id: 'aif', name: 'dept_ai_future' },
-  ];
-
   // Get display name for current department (for print header)
   const getCurrentDeptName = () => {
-    const dept = depts.find(d => d.id === activeDept);
+    const dept = DEPTS.find(d => d.id === activeDept);
     return dept ? t(dept.name) : '';
   };
 
-  const renderContent = () => {
+  // #17: Memoize renderContent to prevent unnecessary re-renders
+  const content = useMemo(() => {
     if (activeDept === 'aic') {
       return activeTab === 'ug' ? (
         <AICUndergraduate language={language} />
@@ -93,10 +85,10 @@ const GraduationRequirements: React.FC = () => {
       }
     }
     return <RequirementEmptyState />;
-  };
+  }, [activeDept, activeTab, language]);
 
   return (
-    <div className="bg-white min-h-screen pb-24 text-[#333]">
+    <div className="bg-white min-h-screen pb-12 text-[#333]">
       <div className="breadcrumbs-nav print:hidden">
         <Breadcrumbs />
       </div>
@@ -162,7 +154,7 @@ const GraduationRequirements: React.FC = () => {
           aria-label={t('departments')}
           className="flex overflow-x-auto sm:overflow-visible sm:flex-wrap justify-start sm:justify-center gap-2 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
         >
-          {depts.map((dept) => (
+          {DEPTS.map((dept) => (
             <button
               key={dept.id}
               role="tab"
@@ -187,7 +179,7 @@ const GraduationRequirements: React.FC = () => {
         aria-labelledby={`tab-${activeTab} dept-tab-${activeDept}`}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 page-container"
       >
-        {renderContent()}
+        {content}
       </div>
     </div>
   );

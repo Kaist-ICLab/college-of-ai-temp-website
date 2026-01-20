@@ -8,7 +8,6 @@ import {
   BulletItem,
   NoteText,
 } from '../components/SharedComponents';
-import './styles.css';
 
 interface AIFUndergraduateProps {
   language: 'en' | 'ko';

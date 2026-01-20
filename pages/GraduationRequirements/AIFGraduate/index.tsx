@@ -7,7 +7,6 @@ import {
   BulletItem,
   NoteText,
 } from '../components/SharedComponents';
-import './styles.css';
 
 interface AIFGraduateProps {
   language: 'en' | 'ko';
