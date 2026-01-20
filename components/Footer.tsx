@@ -53,9 +53,6 @@ const Footer: React.FC = () => {
 
         <div className="text-xs text-gray-500 pt-8 flex flex-col md:flex-row justify-between border-t border-gray-700">
           <p>COPYRIGHT(C) 2026 KAIST. ALL RIGHTS RESERVED.</p>
-          <div className="mt-4 md:mt-0 flex space-x-4">
-            <span>Visit Count: 1,234,567</span>
-          </div>
         </div>
       </div>
     </footer>
