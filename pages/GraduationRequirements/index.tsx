@@ -4,6 +4,8 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { useTranslation } from '../../i18n';
 import AICUndergraduate from './AICUndergraduate/index';
 import AICGraduate from './AICGraduate/index';
+import AISUndergraduate from './AISUndergraduate/index';
+import AISGraduate from './AISGraduate/index';
 import RequirementEmptyState from './RequirementEmptyState/index';
 import './styles.css';
 
@@ -27,6 +29,13 @@ const GraduationRequirements: React.FC = () => {
       ) : (
         <AICGraduate language={language} />
       );
+    }
+    if (activeDept === 'ais') {
+      if (activeTab === 'ug') {
+        return <AISUndergraduate language={language} />;
+      } else {
+        return <AISGraduate language={language} />;
+      }
     }
     return <RequirementEmptyState />;
   };
