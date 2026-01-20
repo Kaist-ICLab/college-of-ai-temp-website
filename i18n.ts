@@ -9,11 +9,19 @@ export const translations: Translation = {
   student_council: { en: "Student Council", ko: "학생회" },
 
   admissions: { en: "Admissions", ko: "입학안내" },
+  prospective_students: { en: "Prospective Students", ko: "입학 안내" },
   admissions_hero_desc: { en: "KAIST is a community of global talents. We recruit passionate and extraordinary talents who enjoy exploring knowledge, fostering collaborative and ethical minds to benefit global society.", ko: "KAIST는 세계적인 인재들의 공동체입니다. 지식 탐구를 즐기는 열정적이고 비범한 인재를 모집하며, 글로벌 사회에 기여할 협력적이고 윤리적인 지성을 지향합니다." },
 
-  visit_kaist_admissions: { en: "※ For more detailed information about admissions, Please visit the KAIST admissions office website.", ko: "※ 입학에 대한 자세한 정보는 KAIST 입학처 홈페이지를 방문해 주세요." },
-  intl_admission_track_title: { en: "※ For the International Admission Track, Please visit the link below.", ko: "※ 외국인 전형은 아래 링크를 참고해 주세요." },
-  intl_grad_admission: { en: "International Graduate Admission", ko: "외국인 대학원 입학" },
+  admission_home: { en: "Admission Home", ko: "입학처 홈" },
+  undergraduate_korean: { en: "Undergraduate\n(Korean Students)", ko: "학부\n(한국인)" },
+  graduate_korean: { en: "Graduate\n(Korean Students)", ko: "대학원\n(한국인)" },
+  undergraduate_intl: { en: "Undergraduate\n(International Students)", ko: "학부\n(외국인)" },
+  graduate_intl: { en: "Graduate\n(International Students)", ko: "대학원\n(외국인)" },
+  admission_home_desc: { en: "Visit the main KAIST Admission Office website.", ko: "KAIST 입학처 메인 홈페이지를 방문하세요." },
+  undergraduate_korean_desc: { en: "Admission information for Korean undergraduate students.", ko: "한국인 학부 신입생 모집 안내입니다." },
+  graduate_korean_desc: { en: "Admission information for Korean graduate students.", ko: "한국인 대학원 신입생 모집 안내입니다." },
+  undergraduate_intl_desc: { en: "Admission information for international undergraduate students.", ko: "외국인 학부 신입생 모집 안내입니다." },
+  graduate_intl_desc: { en: "Admission information for international graduate students.", ko: "외국인 대학원 신입생 모집 안내입니다." },
 
   academics: { en: "Academics", ko: "학사안내" },
   departments: { en: "Departments", ko: "학사조직 안내" },

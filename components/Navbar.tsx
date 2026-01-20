@@ -41,34 +41,22 @@ const Navbar: React.FC = () => {
     {
       name: 'admissions',
       path: '/admissions',
-      subcategories: [
-        { name: 'undergraduate', path: '/admissions' },
-        { name: 'graduate', path: '/admissions' },
-      ],
+      subcategories: [],
     },
-    // {
-    //   name: 'news',
-    //   path: '#',
-    //   subcategories: [
-    //     { name: 'announcement', path: '#' },
-    //     { name: 'seminar', path: '#' },
-    //     { name: 'dept_news', path: '#' },
-    //   ],
-    // },
   ];
 
   return (
-    <nav 
+    <nav
       className="relative z-50 bg-white border-b border-gray-100 shadow-sm"
       onMouseLeave={() => setActiveMenu(null)}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-4" onClick={() => setActiveMenu(null)}>
-            <img 
-              src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png" 
-              alt="KAIST Logo" 
+          <Link to="/" className="flex items-center space-x-4 mr-auto" onClick={() => setActiveMenu(null)}>
+            <img
+              src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
+              alt="KAIST Logo"
               className="h-24 w-auto object-contain transition-all duration-300"
             />
             <div className="h-11 w-[1px] bg-gray-200 hidden sm:block"></div>
@@ -79,20 +67,19 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-12 h-full">
+          <div className="hidden md:flex items-center space-x-12 h-full mr-12">
             {navItems.map((item) => (
-              <div 
-                key={item.name} 
+              <div
+                key={item.name}
                 className="h-full flex items-center relative group"
-                onMouseEnter={() => setActiveMenu(item.name)}
+                onMouseEnter={() => setActiveMenu(item.subcategories.length > 0 ? item.name : null)}
               >
                 <Link
                   to={item.path}
-                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${
-                    location.pathname === item.path || activeMenu === item.name
-                      ? 'text-[#004191] border-[#004191]' 
-                      : 'text-gray-700 border-transparent hover:text-[#004191]'
-                  }`}
+                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${location.pathname === item.path || activeMenu === item.name
+                    ? 'text-[#004191] border-[#004191]'
+                    : 'text-gray-700 border-transparent hover:text-[#004191]'
+                    }`}
                 >
                   {t(item.name)}
                 </Link>
@@ -125,17 +112,8 @@ const Navbar: React.FC = () => {
           }`}
         onMouseEnter={() => activeMenu && setActiveMenu(activeMenu)}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex">
-          <div className="w-1/4 pr-12 border-r border-gray-100">
-            <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">
-              {activeMenu && t(activeMenu)}
-            </h3>
-            <p className="text-sm text-gray-500 leading-relaxed">
-              Discover the latest information and resources in the{" "}
-              {activeMenu && t(activeMenu)} category.
-            </p>
-          </div >
-          <div className="flex-grow pl-12 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="w-full flex justify-center gap-16">
             {activeMenu &&
               navItems
                 .find((i) => i.name === activeMenu)
@@ -143,7 +121,7 @@ const Navbar: React.FC = () => {
                   <Link
                     key={sub.name}
                     to={sub.path}
-                    className="group flex items-center space-x-2"
+                    className="group flex items-center space-x-2 py-2"
                     onClick={() => setActiveMenu(null)}
                   >
                     <span className="w-1.5 h-1.5 bg-gray-200 group-hover:bg-[#004191] rounded-full transition-colors"></span>
@@ -153,7 +131,7 @@ const Navbar: React.FC = () => {
                   </Link>
                 ))}
           </div>
-        </div >
+        </div>
       </div >
     </nav >
   );
