@@ -360,7 +360,7 @@ const Home: React.FC = () => {
                   onClick={() => window.scrollTo(0, 0)}
                   className="bg-[#004191] hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-normal transition-all text-center shadow-lg shadow-[#004191]/20"
                 >
-                  {t("admissions")}
+                  {t("admissions_btn")}
                 </Link>
               </div>
             </div>

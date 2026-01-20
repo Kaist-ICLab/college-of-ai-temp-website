@@ -8,7 +8,8 @@ export const translations: Translation = {
   admission_team: { en: "Admission Team", ko: "행정팀" },
   student_council: { en: "Student Council", ko: "학생회" },
 
-  admissions: { en: "Admissions Information", ko: "입학안내" },
+  admissions: { en: "Admissions", ko: "입학" },
+  admissions_btn: { en: "Admissions Information", ko: "입학 안내" },
   prospective_students: { en: "Prospective Students", ko: "입학 안내" },
   admissions_hero_desc: {
     en: "KAIST is a community of global talents. We recruit passionate and extraordinary talents who enjoy exploring knowledge, fostering collaborative and ethical minds to benefit global society.",
