@@ -39,12 +39,10 @@ const Navbar: React.FC = () => {
       ],
     },
     {
-      name: 'graduation_info',
+      name: 'education',
       path: '/academics',
       subcategories: [
         { name: 'admissions', path: '/admissions' },
-        { name: 'ug_courses', path: '/academics' },
-        { name: 'grad_courses', path: '/academics' },
         { name: 'graduation_req', path: '/graduation-requirements' },
       ],
     },
@@ -82,8 +80,8 @@ const Navbar: React.FC = () => {
                 <Link
                   to={item.path}
                   className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${location.pathname === item.path || activeMenu === item.name
-                      ? 'text-[#004191] border-[#004191]'
-                      : 'text-gray-700 border-transparent hover:text-[#004191]'
+                    ? 'text-[#004191] border-[#004191]'
+                    : 'text-gray-700 border-transparent hover:text-[#004191]'
                     }`}
                 >
                   {t(item.name)}
