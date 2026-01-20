@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import Introduction from './pages/Introduction';
 import Departments from './pages/Departments';
 import Education from './pages/Education';
-import Admissions from './pages/Admissions';
+import Admissions from './pages/Admissions/index';
 import GraduationRequirements from './pages/GraduationRequirements/index';
 
 interface LanguageContextType {
