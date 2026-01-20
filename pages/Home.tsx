@@ -344,9 +344,9 @@ const Home: React.FC = () => {
           </svg>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* <h2 className={sectionTitleClass}>
-            {language === "en" ? "Admissions" : "입학 안내"}
-          </h2> */}
+          <h2 className={sectionTitleClass}>
+            {language === "en" ? "Admissions" : "입학"}
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-8 text-gray-900">
               <p className="text-gray-600 mb-10 text-lg leading-relaxed">
