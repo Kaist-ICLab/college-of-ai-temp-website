@@ -10,6 +10,7 @@ import Departments from './pages/Departments';
 import Education from './pages/Education';
 import Admissions from './pages/Admissions';
 import CourseInfo from './pages/CourseInfo';
+import GraduationRequirements from './pages/GraduationRequirements/index';
 
 interface LanguageContextType {
   language: Language;
@@ -18,11 +19,11 @@ interface LanguageContextType {
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
-  setLanguage: () => {},
+  setLanguage: () => { },
 });
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<Language>('ko');
+  const [language, setLanguage] = useState<Language>('en');
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
@@ -37,6 +38,7 @@ const App: React.FC = () => {
               <Route path="/academics" element={<Education />} />
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/course-information" element={<CourseInfo />} />
+              <Route path="/graduation-requirements" element={<GraduationRequirements />} />
             </Routes>
           </main>
           <Footer />
