@@ -78,7 +78,7 @@ const AXUndergraduate: React.FC<AXUndergraduateProps> = ({ language }) => {
                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
                   <div>
                     <p>{t('ax_ug_elective_1')}</p>
-                    <p className="italic text-gray-400">{t('ax_ug_elective_1_note')}</p>
+                    <p className="italic text-gray-500">{t('ax_ug_elective_1_note')}</p>
                   </div>
                 </div>
                 <div className="flex gap-2 items-start text-gray-500">

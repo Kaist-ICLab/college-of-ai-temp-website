@@ -35,7 +35,7 @@ const AIFGraduate: React.FC<AIFGraduateProps> = ({ language }) => {
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
               <p>{t(`${prefix}_common_1`)}</p>
             </div>
-            <p className="italic ml-5 sm:ml-7 text-gray-400">{t(`${prefix}_common_1_note`)}</p>
+            <p className="italic ml-5 sm:ml-7 text-gray-500">{t(`${prefix}_common_1_note`)}</p>
             <div className="flex gap-2 items-start">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
               <p>{t(`${prefix}_common_2`)}</p>
@@ -78,7 +78,7 @@ const AIFGraduate: React.FC<AIFGraduateProps> = ({ language }) => {
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
               <p>{t(`${prefix}_elective_2`)}</p>
             </div>
-            <p className="italic text-gray-400">{t(`${prefix}_elective_note`)}</p>
+            <p className="italic text-gray-500">{t(`${prefix}_elective_note`)}</p>
           </div>
         </section>
 
@@ -93,8 +93,8 @@ const AIFGraduate: React.FC<AIFGraduateProps> = ({ language }) => {
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
               <p>{t(`${prefix}_research_1`)}</p>
             </div>
-            {t(`${prefix}_research_1_note`) && (
-              <p className="italic ml-5 sm:ml-7 text-gray-400">{t(`${prefix}_research_1_note`)}</p>
+            {t(`${prefix}_research_1_note`) && t(`${prefix}_research_1_note`) !== `${prefix}_research_1_note` && (
+              <p className="italic ml-5 sm:ml-7 text-gray-500">{t(`${prefix}_research_1_note`)}</p>
             )}
             <div className="flex gap-2 items-start">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>

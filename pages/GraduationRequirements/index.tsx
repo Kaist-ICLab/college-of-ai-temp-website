@@ -19,7 +19,9 @@ const GraduationRequirements: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'ug' | 'grad'>('ug');
   const [activeDept, setActiveDept] = useState<'aic' | 'ais' | 'ax' | 'aif'>('aic');
 
-  const depts = [
+  type DeptId = 'aic' | 'ais' | 'ax' | 'aif';
+
+  const depts: { id: DeptId; name: string }[] = [
     { id: 'aic', name: 'dept_ai_computing' },
     { id: 'ais', name: 'dept_ai_systems' },
     { id: 'ax', name: 'dept_ax' },
@@ -101,7 +103,6 @@ const GraduationRequirements: React.FC = () => {
           {depts.map((dept) => (
             <button
               key={dept.id}
-              //@ts-ignore
               onClick={() => setActiveDept(dept.id)}
               className={`px-5 py-2 rounded-lg text-sm font-bold transition-all border ${activeDept === dept.id
                 ? 'bg-[#004191] border-[#004191] text-white shadow-md'

@@ -14,7 +14,7 @@ const AIFUndergraduate: React.FC<AIFUndergraduateProps> = ({ language }) => {
       <div className="mb-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('aif_ug_title')}</h2>
         <p className="text-gray-500 italic mb-4">{t('aif_ug_subtitle')}</p>
-        <p className="text-gray-400 text-sm">{t('aif_ug_common_note')}</p>
+        <p className="text-gray-500 text-sm">{t('aif_ug_common_note')}</p>
       </div>
 
       <div className="space-y-10 text-[15px] leading-relaxed text-gray-600">
@@ -83,7 +83,7 @@ const AIFUndergraduate: React.FC<AIFUndergraduateProps> = ({ language }) => {
                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
                   <div>
                     <p>{t('aif_ug_elective_2')}</p>
-                    <p className="italic text-gray-400">{t('aif_ug_elective_2_note')}</p>
+                    <p className="italic text-gray-500">{t('aif_ug_elective_2_note')}</p>
                   </div>
                 </div>
                 <div className="flex gap-2 items-start text-gray-500">
