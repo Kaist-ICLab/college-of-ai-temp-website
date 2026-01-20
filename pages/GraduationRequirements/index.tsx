@@ -48,6 +48,13 @@ const GraduationRequirements: React.FC = () => {
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   }, [activeDept, activeTab, location.pathname, navigate]);
 
+  // Update Page Title
+  useEffect(() => {
+    const deptName = DEPTS.find(d => d.id === activeDept)?.name;
+    const title = `${t('graduation_reqs')} - ${deptName ? t(deptName) : ''}`;
+    document.title = title;
+  }, [activeDept, activeTab, t, language]);
+
   // Get display name for current department (for print header)
   const getCurrentDeptName = () => {
     const dept = DEPTS.find(d => d.id === activeDept);
