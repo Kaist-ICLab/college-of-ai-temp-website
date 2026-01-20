@@ -45,9 +45,8 @@ const Navbar: React.FC = () => {
       path: '/academics',
       subcategories: [
         { name: 'ug_courses', path: '/academics' },
-        { name: 'ug_req', path: '/academics' },
         { name: 'grad_courses', path: '/academics' },
-        { name: 'grad_req', path: '/academics' },
+        { name: 'graduation_reqs', path: '/graduation-requirements' },
       ],
     },
     {
@@ -61,7 +60,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav 
+    <nav
       className="relative z-50 bg-white border-b border-gray-100 shadow-sm"
       onMouseLeave={() => setActiveMenu(null)}
     >
@@ -69,9 +68,9 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4" onClick={() => setActiveMenu(null)}>
-            <img 
-              src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png" 
-              alt="KAIST Logo" 
+            <img
+              src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
+              alt="KAIST Logo"
               className="h-14 w-auto object-contain transition-all duration-300"
             />
             <div className="h-10 w-[1px] bg-gray-200 hidden sm:block"></div>
@@ -84,18 +83,17 @@ const Navbar: React.FC = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-10 h-full">
             {navItems.map((item) => (
-              <div 
-                key={item.name} 
+              <div
+                key={item.name}
                 className="h-full flex items-center relative group"
                 onMouseEnter={() => setActiveMenu(item.name)}
               >
                 <Link
                   to={item.path}
-                  className={`text-sm font-bold tracking-tight transition-colors py-8 border-b-2 ${
-                    location.pathname === item.path || activeMenu === item.name
-                      ? 'text-[#004191] border-[#004191]' 
-                      : 'text-gray-700 border-transparent hover:text-[#004191]'
-                  }`}
+                  className={`text-sm font-bold tracking-tight transition-colors py-8 border-b-2 ${location.pathname === item.path || activeMenu === item.name
+                    ? 'text-[#004191] border-[#004191]'
+                    : 'text-gray-700 border-transparent hover:text-[#004191]'
+                    }`}
                 >
                   {t(item.name).toUpperCase()}
                 </Link>
@@ -126,36 +124,35 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Dropdown Panel */}
-      <div 
-        className={`absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out origin-top ${
-          activeMenu ? 'opacity-100 scale-y-100 translate-y-0 visible' : 'opacity-0 scale-y-95 -translate-y-2 invisible'
-        }`}
+      <div
+        className={`absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out origin-top ${activeMenu ? 'opacity-100 scale-y-100 translate-y-0 visible' : 'opacity-0 scale-y-95 -translate-y-2 invisible'
+          }`}
         onMouseEnter={() => activeMenu && setActiveMenu(activeMenu)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex">
-           <div className="w-1/4 pr-12 border-r border-gray-100">
-              <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">
-                {activeMenu && t(activeMenu)}
-              </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Discover the latest information and resources in the {activeMenu && t(activeMenu)} category.
-              </p>
-           </div>
-           <div className="flex-grow pl-12 gap-8">
-              {activeMenu && navItems.find(i => i.name === activeMenu)?.subcategories.map((sub) => (
-                <Link 
-                  key={sub.name} 
-                  to={sub.path}
-                  className="group flex items-center space-x-2"
-                  onClick={() => setActiveMenu(null)}
-                >
-                  <span className="w-1.5 h-1.5 bg-gray-200 group-hover:bg-[#004191] rounded-full transition-colors"></span>
-                  <span className="text-gray-600 font-medium group-hover:text-[#004191] transition-colors">
-                    {t(sub.name)}
-                  </span>
-                </Link>
-              ))}
-           </div>
+          <div className="w-1/4 pr-12 border-r border-gray-100">
+            <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">
+              {activeMenu && t(activeMenu)}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Discover the latest information and resources in the {activeMenu && t(activeMenu)} category.
+            </p>
+          </div>
+          <div className="flex-grow pl-12 gap-8">
+            {activeMenu && navItems.find(i => i.name === activeMenu)?.subcategories.map((sub) => (
+              <Link
+                key={sub.name}
+                to={sub.path}
+                className="group flex items-center space-x-2"
+                onClick={() => setActiveMenu(null)}
+              >
+                <span className="w-1.5 h-1.5 bg-gray-200 group-hover:bg-[#004191] rounded-full transition-colors"></span>
+                <span className="text-gray-600 font-medium group-hover:text-[#004191] transition-colors">
+                  {t(sub.name)}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
