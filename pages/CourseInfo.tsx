@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -131,22 +130,52 @@ const CourseInfo: React.FC = () => {
         { level: 'Physical & Mfg', code: 'ME.40062', name: { en: 'Automatic Control', ko: '자동제어' } },
         
         // Bio & Materials Track
+        { level: 'Bio & Materials', code: 'IE.20060', name: { en: 'Data Structure and Analysis', ko: '데이터 구조 및 분석' }, required: true },
+        { level: 'Bio & Materials', code: 'MS.20011', name: { en: 'Introduction to Materials Science and Engineering', ko: '신소재과학개론' }, required: true },
         { level: 'Bio & Materials', code: 'BiS.20000', name: { en: 'Bioengineering Fundamentals', ko: '바이오 공학개론' }, required: true },
-        { level: 'Bio & Materials', code: 'MS.20011', name: { en: 'Materials Science and Engineering', ko: '신소재과학개론' }, required: true },
+        { level: 'Bio & Materials', code: 'CS.40700', name: { en: 'Introduction to Artificial Intelligence', ko: '인공지능 개론' } },
+        { level: 'Bio & Materials', code: 'CS.30706', name: { en: 'Machine Learning', ko: '기계학습' } },
+        { level: 'Bio & Materials', code: 'BiS.33002', name: { en: 'Bio-Information Processing', ko: '바이오정보처리' } },
+        { level: 'Bio & Materials', code: 'MS.30060', name: { en: 'Mechanical Behavior and Mechanics of Materials', ko: '소재의 기계적 물성 및 역학' } },
+        { level: 'Bio & Materials', code: 'CBE.30041', name: { en: 'Process Simulation and Control', ko: '공정모사와 제어' } },
+        { level: 'Bio & Materials', code: 'CoE.49901', name: { en: 'Special Topics in Smart Convergence<Protein & Artificial Intelligence>', ko: '스마트 융합특강<단백질과 인공지능>' } },
+        { level: 'Bio & Materials', code: 'CBE.49900', name: { en: 'Special Topics in Chemical and Biomolecular Engineering<Chemical engineering of electronic devices>', ko: '생명화학공학특강<AI를 이용한 생화공 문제 해결>' }, required: false },
+        { level: 'Bio & Materials', code: 'BCS.40010', name: { en: 'Laboratory in Experimental Data Analysis and Modeling', ko: '생체 데이터분석 및 모델링 실험' } },
         
         // Sustainability Track
-        { level: 'Sustainability', code: 'CE.20012', name: { en: 'Environment and Sustainability', ko: '환경과 지속가능성 개론' } },
-        { level: 'Sustainability', code: 'CE.20050', name: { en: 'Smart City & Digital Infra', ko: '스마트시티와 디지털 인프라스트럭쳐 개론' } },
+        { level: 'Sustainability', code: 'CE.20012', name: { en: 'Environment and Sustainability: an Introduction for Engineers', ko: '환경과 지속가능성 개론' }, required: true },
+        { level: 'Sustainability', code: 'CE.20030', name: { en: 'Introduction to Geotechnical Engineering', ko: '지반공학개론' } },
+        { level: 'Sustainability', code: 'CE.20050', name: { en: 'Introduction to Smart City and Digital Infrastructure', ko: '스마트시티와 디지털 인프라스트럭쳐 개론' }, required: true },
+        { level: 'Sustainability', code: 'CS.40700', name: { en: 'Introduction to Artificial Intelligence', ko: '인공지능 개론' } },
+        { level: 'Sustainability', code: 'CS.30706', name: { en: 'Machine Learning', ko: '기계학습' } },
+        { level: 'Sustainability', code: 'CE.30050', name: { en: 'Introduction to Mobility Systems Engineering', ko: '모빌리티시스템공학개론' } },
+        { level: 'Sustainability', code: 'CE.40075', name: { en: 'Waste Management for Circular Environments', ko: '자원순환사회를 위한 폐기물관리' } },
+        { level: 'Sustainability', code: 'CE.49903', name: { en: 'Special Topics in Civil and Environmental Engineering<Climate System Modeling>', ko: '건설 및 환경공학 특강<기후 시스템 모델링>' } },
+        { level: 'Sustainability', code: 'GGS.50004', name: { en: 'Science of Climate Change', ko: '기후변화의 과학' } },
+        { level: 'Sustainability', code: 'GGS.50021', name: { en: 'Integrated Assessment of Global Environmental Problems', ko: '글로벌 환경문제 통합평가론' } },
+        { level: 'Sustainability', code: 'GGS.50023', name: { en: 'Methods in Climate and Environmental Health', ko: '기후 및 환경보건 연구방법론' } },
+        { level: 'Sustainability', code: 'GGS.50030', name: { en: 'Bioindustry and Green Growth', ko: '바이오산업과 녹색성장' } },
+        { level: 'Sustainability', code: 'GGS.50039', name: { en: 'Data Science Methodologies for Sustainable Technology Systems', ko: '지속가능 기술시스템을 위한 데이터 과학 방법론' } },
       ],
     },
     {
       title: { en: 'Department of AI and Futures Studies', ko: '인공지능미래전략학과' },
       courses: [
-        { level: 'Core', code: 'FSM.20001', name: { en: 'Introduction to Future Strategy', ko: '미래학 개론' } },
-        { level: 'Core', code: 'IP.30001', name: { en: 'Intellectual Property Overview', ko: '지식재산권 개요' } },
-        { level: 'Core', code: 'IP.40007', name: { en: 'Entrepreneurial Law', ko: '기업가를 위한 법' } },
-        { level: 'Core', code: 'CS.50705', name: { en: 'AI Ethics', ko: '인공지능 윤리' } },
-        { level: 'Core', code: 'CC.50031', name: { en: 'Patent Analysis', ko: '특허분석과 발명출원' } },
+        { level: '1000-level', code: 'CS.10003', name: { en: 'Elements of AI', ko: '인공지능 기초' } },
+        { level: '2000-level', code: 'FSM.20001', name: { en: 'Introduction to Future Strategy', ko: '미래학 개론' } },
+        { level: '2000-level', code: 'IE.20041', name: { en: 'Engineering Statistics I', ko: '공학통계 I' } },
+        { level: '2000-level', code: 'IE.20060', name: { en: 'Data Structure and Analysis', ko: '데이터 구조 및 분석' } },
+        { level: '2000-level', code: 'CE.20012', name: { en: 'Environment and Sustainability: an Introduction for Engineers', ko: '환경과 지속가능성 개론' } },
+        { level: '3000-level', code: 'CS.30706', name: { en: 'Machine Learning', ko: '기계학습' } },
+        { level: '3000-level', code: 'IP.30001', name: { en: 'Intellectual Property Overview', ko: '지식재산권 개요' } },
+        { level: '4000-level', code: 'CS.40700', name: { en: 'Introduction to Artificial Intelligence', ko: '인공지능 개론' } },
+        { level: '4000-level', code: 'IP.40007', name: { en: 'Entrepreneurial Law', ko: '기업가를 위한 법' } },
+        { level: '4000-level', code: 'IP.40010', name: { en: 'Law, Technology and Innovation', ko: '법, 기술, 혁신' } },
+        { level: '5000-level+', code: 'GGS.50021', name: { en: 'Integrated Assessment of Global Environmental Problems', ko: '글로벌 환경문제 통합평가론' } },
+        { level: '5000-level+', code: 'GGS.50023', name: { en: 'Methods in Climate and Environmental Health', ko: '기후 및 환경보건 연구방법론' } },
+        { level: '5000-level+', code: 'GGS.50004', name: { en: 'Science of Climate Change', ko: '기후변화의 과학' } },
+        { level: '5000-level+', code: 'CC.50031', name: { en: 'Patent Analysis and Invention Disclosure', ko: '특허분석과 발명출원' } },
+        { level: '5000-level+', code: 'CS.50705', name: { en: 'AI Ethics', ko: '인공지능 윤리' } },
       ],
     },
   ];
