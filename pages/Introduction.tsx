@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { LanguageContext } from "../App";
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -8,7 +8,6 @@ const Introduction: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
   const location = useLocation();
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   // Content for the Welcome Message
   const deansMessageEn = `
@@ -27,7 +26,7 @@ const Introduction: React.FC = () => {
     감사합니다.
   `;
 
-  // Sidebar items mapped to match Navbar
+  // Sidebar items
   const sidebarItems = [
     { name: "welcome_msg", path: "/intro" },
     { name: "departments", path: "/departments" },
@@ -39,53 +38,14 @@ const Introduction: React.FC = () => {
       <Breadcrumbs />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative">
-          {/* Desktop Side Menu Toggle */}
-          <button
-            onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            className={`hidden lg:flex absolute -left-10 top-0 z-20 bg-white border border-gray-200 text-[#004191] rounded-full p-2 shadow-md hover:bg-gray-50 transition-all duration-300 ${isSidebarCollapsed ? "translate-x-10 rotate-180" : "translate-x-64 -translate-x-1/2 rotate-0"}`}
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
           {/* Main Content */}
-          <div className="flex-grow transition-all duration-500">
-            {/* Centered Title Container */}
-            <div className="relative flex items-center justify-center mb-10">
-              <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight text-center">
+          <div className="flex-grow">
+            {/* Title - Perfectly Centered */}
+            <div className="flex justify-center mb-12">
+              <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight text-center relative">
                 {t("welcome_msg")}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#004191] rounded-full"></div>
               </h1>
-              {/* Mobile Menu Indicator - Positioned absolutely to maintain centering of H1 */}
-              <button
-                onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-                className="lg:hidden absolute right-0 flex items-center space-x-2 text-[#004191] font-bold text-xs bg-blue-50 px-3 py-2 rounded-lg"
-              >
-                <svg
-                  className={`w-4 h-4 transition-transform duration-300 ${isSidebarCollapsed ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-                <span className="sr-only">Toggle Sidebar</span>
-              </button>
             </div>
 
             <div className="bg-white border border-gray-100 shadow-sm rounded-[2.5rem] overflow-hidden mb-12 flex flex-col md:flex-row gap-0 items-stretch">
