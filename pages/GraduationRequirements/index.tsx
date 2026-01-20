@@ -6,6 +6,8 @@ import AICUndergraduate from './AICUndergraduate/index';
 import AICGraduate from './AICGraduate/index';
 import AISUndergraduate from './AISUndergraduate/index';
 import AISGraduate from './AISGraduate/index';
+import AXUndergraduate from './AXUndergraduate/index';
+import AXGraduate from './AXGraduate/index';
 import RequirementEmptyState from './RequirementEmptyState/index';
 import './styles.css';
 
@@ -35,6 +37,13 @@ const GraduationRequirements: React.FC = () => {
         return <AISUndergraduate language={language} />;
       } else {
         return <AISGraduate language={language} />;
+      }
+    }
+    if (activeDept === 'ax') {
+      if (activeTab === 'ug') {
+        return <AXUndergraduate language={language} />;
+      } else {
+        return <AXGraduate language={language} />;
       }
     }
     return <RequirementEmptyState />;
