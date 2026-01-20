@@ -21,6 +21,7 @@ export const translations: Translation = {
   seminar: { en: "Seminar", ko: "세미나" },
   dept_news: { en: "Department News", ko: "학과 소식" },
   education: { en: "Education", ko: "교육" },
+  course_information: { en: "Course Information", ko: "교과과정" },
   ug_courses: { en: "Undergraduate Courses", ko: "학부 교과과정" },
   ug_req: { en: "Undergraduate Requirement", ko: "학부 졸업요건" },
   grad_courses: { en: "Graduate Courses", ko: "대학원 교과과정" },

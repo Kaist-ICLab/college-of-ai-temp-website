@@ -31,19 +31,11 @@ const Navbar: React.FC = () => {
       ],
     },
     {
-      name: 'course_info',
-      path: '/course-information',
+      name: 'education',
+      path: '#',
       subcategories: [
-        { name: 'ug_courses', path: '/course-information' },
-        { name: 'grad_courses', path: '/course-information' },
-      ],
-    },
-    {
-      name: 'graduation_info',
-      path: '/academics',
-      subcategories: [
-        { name: 'ug_req', path: '/academics' },
-        { name: 'grad_req', path: '/academics' },
+        { name: 'course_information', path: '/course-information' },
+        { name: 'graduation_req', path: '/graduation-requirements' },
       ],
     },
     {
