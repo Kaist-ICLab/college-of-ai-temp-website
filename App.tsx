@@ -9,7 +9,7 @@ import Introduction from './pages/Introduction';
 import Departments from './pages/Departments';
 import Education from './pages/Education';
 import Admissions from './pages/Admissions';
-import GraduationRequirements from './pages/GraduationRequirements';
+import GraduationRequirements from './pages/GraduationRequirements/index';
 
 interface LanguageContextType {
   language: Language;
