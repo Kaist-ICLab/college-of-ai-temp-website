@@ -1,5 +1,13 @@
 import React from 'react';
 import { useTranslation } from '../../../i18n';
+import {
+  RequirementBox,
+  RequirementTitle,
+  SectionHeader,
+  SubSectionHeader,
+  BulletItem,
+  NoteText,
+} from '../components/SharedComponents';
 import './styles.css';
 
 interface AXUndergraduateProps {
@@ -10,53 +18,35 @@ const AXUndergraduate: React.FC<AXUndergraduateProps> = ({ language }) => {
   const t = useTranslation(language);
 
   return (
-    <div className="requirement-box bg-gray-50 border border-gray-100 rounded-3xl p-5 sm:p-8 md:p-12">
-      <div className="mb-10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('ax_ug_title')}</h2>
-        <p className="text-gray-500 italic">{t('ax_ug_subtitle')}</p>
-      </div>
+    <RequirementBox>
+      <RequirementTitle title={t('ax_ug_title')} subtitle={t('ax_ug_subtitle')} />
 
       <div className="space-y-10 text-[15px] leading-relaxed text-gray-600">
         {/* Graduation Credits */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_grad_credits')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_grad_credits')} />
           <div className="ml-3 sm:ml-4">
-            <p className="italic">{t('ax_ug_track_note')}</p>
+            <NoteText>{t('ax_ug_track_note')}</NoteText>
           </div>
         </section>
 
         {/* Basic Elective */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_basic_req')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_basic_req')} />
           <div className="ml-3 sm:ml-4 space-y-2">
-            <div className="flex gap-2 items-start">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
-              <p>{t('ax_ug_basic_1')}</p>
-            </div>
-            <p className="italic">{t('ax_ug_basic_note')}</p>
+            <BulletItem>{t('ax_ug_basic_1')}</BulletItem>
+            <NoteText>{t('ax_ug_basic_note')}</NoteText>
           </div>
         </section>
 
         {/* Major */}
         <section>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_major_req')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_major_req')} />
 
           <div className="ml-3 sm:ml-4 space-y-8">
             {/* Mandatory */}
             <div>
-              <div className="flex gap-2 items-center mb-3">
-                <div className="w-2 h-2 rounded-full border-2 border-[#004191]"></div>
-                <p className="font-bold text-gray-800">{t('ax_ug_mandatory_title')}</p>
-              </div>
+              <SubSectionHeader title={t('ax_ug_mandatory_title')} />
               <ul className="ml-3 sm:ml-4 space-y-2">
                 {[1, 2, 3, 4].map(idx => (
                   <li key={idx} className="flex gap-2 items-start text-gray-500">
@@ -69,22 +59,17 @@ const AXUndergraduate: React.FC<AXUndergraduateProps> = ({ language }) => {
 
             {/* Elective */}
             <div>
-              <div className="flex gap-2 items-center mb-3">
-                <div className="w-2 h-2 rounded-full border-2 border-[#004191]"></div>
-                <p className="font-bold text-gray-800">{t('ax_ug_elective_title')}</p>
-              </div>
+              <SubSectionHeader title={t('ax_ug_elective_title')} />
               <div className="ml-3 sm:ml-4 space-y-3">
-                <div className="flex gap-2 items-start text-gray-500">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
+                <BulletItem className="text-gray-500">
                   <div>
                     <p>{t('ax_ug_elective_1')}</p>
-                    <p className="italic text-gray-500">{t('ax_ug_elective_1_note')}</p>
+                    <NoteText>{t('ax_ug_elective_1_note')}</NoteText>
                   </div>
-                </div>
-                <div className="flex gap-2 items-start text-gray-500">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
-                  <p>{t('ax_ug_elective_2')}</p>
-                </div>
+                </BulletItem>
+                <BulletItem className="text-gray-500">
+                  {t('ax_ug_elective_2')}
+                </BulletItem>
               </div>
             </div>
           </div>
@@ -92,65 +77,50 @@ const AXUndergraduate: React.FC<AXUndergraduateProps> = ({ language }) => {
 
         {/* Intensive Major */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_intensive_title')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_intensive_title')} />
           <p className="ml-3 sm:ml-4">{t('ax_ug_intensive_desc')}</p>
         </section>
 
         {/* Individually Designed */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_inter_title')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_inter_title')} />
           <p className="ml-3 sm:ml-4">{t('ax_ug_inter_desc')}</p>
         </section>
 
         {/* Minor */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_minor_title')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_minor_title')} />
           <div className="ml-3 sm:ml-4 space-y-2">
             <p>{t('ax_ug_minor_desc')}</p>
             <div className="space-y-1">
-              <p className="italic">{t('ax_ug_minor_note_1')}</p>
-              <p className="italic">{t('ax_ug_minor_note_2')}</p>
+              <NoteText>{t('ax_ug_minor_note_1')}</NoteText>
+              <NoteText>{t('ax_ug_minor_note_2')}</NoteText>
             </div>
           </div>
         </section>
 
         {/* Double Major */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_double_title')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_double_title')} />
           <div className="ml-3 sm:ml-4 space-y-2">
             <p>{t('ax_ug_double_desc')}</p>
             <div className="space-y-1">
-              <p className="italic">{t('ax_ug_double_note_1')}</p>
-              <p className="italic">{t('ax_ug_double_note_2')}</p>
+              <NoteText>{t('ax_ug_double_note_1')}</NoteText>
+              <NoteText>{t('ax_ug_double_note_2')}</NoteText>
             </div>
           </div>
         </section>
 
         {/* Research */}
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
-            <h3 className="font-bold text-gray-900 text-lg">{t('ax_ug_research_title')}</h3>
-          </div>
+          <SectionHeader title={t('ax_ug_research_title')} />
           <div className="ml-3 sm:ml-4 space-y-2">
             <p>{t('ax_ug_research_desc')}</p>
-            <p className="italic">{t('ax_ug_research_note')}</p>
+            <NoteText>{t('ax_ug_research_note')}</NoteText>
           </div>
         </section>
       </div>
-    </div>
+    </RequirementBox>
   );
 };
 

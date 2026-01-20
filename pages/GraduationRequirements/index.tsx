@@ -57,6 +57,12 @@ const GraduationRequirements: React.FC = () => {
     { id: 'aif', name: 'dept_ai_future' },
   ];
 
+  // Get display name for current department (for print header)
+  const getCurrentDeptName = () => {
+    const dept = depts.find(d => d.id === activeDept);
+    return dept ? t(dept.name) : '';
+  };
+
   const renderContent = () => {
     if (activeDept === 'aic') {
       return activeTab === 'ug' ? (
@@ -95,6 +101,16 @@ const GraduationRequirements: React.FC = () => {
         <Breadcrumbs />
       </div>
 
+      {/* Print-only Header (#4) */}
+      <div className="hidden print:block mb-8 text-center border-b pb-4">
+        <h1 className="text-2xl font-bold text-gray-900">
+          {t('graduation_reqs')} - {getCurrentDeptName()}
+        </h1>
+        <p className="text-sm text-gray-500">
+          {activeTab === 'ug' ? t('undergraduate') : t('graduate')}
+        </p>
+      </div>
+
       {/* Hero Section */}
       <div className="hero-section bg-gray-50 border-b border-gray-100 py-8 mb-4 print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,14 +124,27 @@ const GraduationRequirements: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex bg-white p-1.5 rounded-2xl shadow-sm border border-gray-200">
+            {/* Tab Selector with ARIA (#18) */}
+            <div
+              role="tablist"
+              aria-label={t('graduation_reqs')}
+              className="flex bg-white p-1.5 rounded-2xl shadow-sm border border-gray-200"
+            >
               <button
+                role="tab"
+                id="tab-ug"
+                aria-selected={activeTab === 'ug'}
+                aria-controls="tabpanel-content"
                 onClick={() => setActiveTab('ug')}
                 className={`px-10 py-3.5 text-sm font-bold rounded-xl transition-all ${activeTab === 'ug' ? 'bg-[#004191] text-white shadow-lg shadow-[#004191]/20' : 'text-gray-500 hover:text-gray-900'}`}
               >
                 {t('undergraduate')}
               </button>
               <button
+                role="tab"
+                id="tab-grad"
+                aria-selected={activeTab === 'grad'}
+                aria-controls="tabpanel-content"
                 onClick={() => setActiveTab('grad')}
                 className={`px-10 py-3.5 text-sm font-bold rounded-xl transition-all ${activeTab === 'grad' ? 'bg-[#004191] text-white shadow-lg shadow-[#004191]/20' : 'text-gray-500 hover:text-gray-700'}`}
               >
@@ -126,14 +155,22 @@ const GraduationRequirements: React.FC = () => {
         </div>
       </div>
 
-      {/* Department Selection */}
-      <div className="dept-selector max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 mb-6 flex justify-center text-center print:hidden">
-        <div className="flex flex-wrap justify-center gap-2">
+      {/* Department Selection with improved mobile layout (#9) */}
+      <div className="dept-selector max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 mb-6 print:hidden">
+        <div
+          role="tablist"
+          aria-label={t('departments')}
+          className="flex overflow-x-auto sm:overflow-visible sm:flex-wrap justify-start sm:justify-center gap-2 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
+        >
           {depts.map((dept) => (
             <button
               key={dept.id}
+              role="tab"
+              id={`dept-tab-${dept.id}`}
+              aria-selected={activeDept === dept.id}
+              aria-controls="tabpanel-content"
               onClick={() => setActiveDept(dept.id)}
-              className={`px-5 py-2 rounded-lg text-sm font-bold transition-all border ${activeDept === dept.id
+              className={`px-5 py-2 rounded-lg text-sm font-bold transition-all border whitespace-nowrap flex-shrink-0 ${activeDept === dept.id
                 ? 'bg-[#004191] border-[#004191] text-white shadow-md'
                 : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
                 }`}
@@ -144,7 +181,12 @@ const GraduationRequirements: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 page-container">
+      <div
+        id="tabpanel-content"
+        role="tabpanel"
+        aria-labelledby={`tab-${activeTab} dept-tab-${activeDept}`}
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 page-container"
+      >
         {renderContent()}
       </div>
     </div>
