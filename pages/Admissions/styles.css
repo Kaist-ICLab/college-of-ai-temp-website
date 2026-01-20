@@ -56,6 +56,7 @@
 /* Card Span Styles */
 .link-card.col-span-full {
     grid-column: 1 / -1;
+    min-height: auto;
 }
 
 /* Horizontal layout for the banner card on desktop */
@@ -63,8 +64,9 @@
     .link-card.col-span-full {
         flex-direction: row;
         text-align: left;
-        padding: 3rem;
+        padding: 1.5rem 2.5rem;
         gap: 2rem;
+        min-height: auto;
     }
 
     .link-card.col-span-full .card-icon-container {
