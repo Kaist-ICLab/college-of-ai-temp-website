@@ -186,13 +186,16 @@ const Departments: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-50 pb-20">
+    <div className="bg-white pb-20">
       <Breadcrumbs />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
-            {t("departments")}
-          </h1>
+          <div className="flex justify-center mb-16">
+            <h1 className="text-4xl font-bold text-gray-900 tracking-tight text-center relative">
+              {t("departments")}
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-1 bg-[#002380] rounded-full"></div>
+            </h1>
+          </div>
           <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
             {language === "en"
               ? "KAIST College of AI comprises four departments covering core artificial intelligence technologies, industrial applications, and policy."
@@ -204,7 +207,7 @@ const Departments: React.FC = () => {
         <div className="mb-8 overflow-x-auto pb-4">
           <div className="min-w-[800px] flex flex-col items-center">
             {/* Root: College of AI */}
-            <div className="w-full max-w-4xl bg-[#004191] text-white py-4 px-8 rounded shadow-lg text-center font-bold text-2xl mb-8 relative">
+            <div className="w-full max-w-4xl bg-[#002380] text-white py-4 px-8 rounded shadow-lg text-center font-bold text-2xl mb-8 relative">
               {language === "ko"
                 ? `${t("kaist_ai")} College of AI`
                 : t("kaist_ai")}
@@ -223,10 +226,10 @@ const Departments: React.FC = () => {
                   {t("ai_school")}
                 </div>
                 <div className="w-full flex gap-4">
-                  <div className="flex-1 bg-[#004191] text-white p-4 text-center font-bold rounded shadow-sm min-h-[120px] flex items-center justify-center">
+                  <div className="flex-1 bg-[#002380] text-white p-4 text-center font-bold rounded shadow-sm min-h-[120px] flex items-center justify-center">
                     {t("dept_ai_computing")}
                   </div>
-                  <div className="flex-1 bg-[#004191] text-white p-4 text-center font-bold rounded shadow-sm min-h-[120px] flex items-center justify-center">
+                  <div className="flex-1 bg-[#002380] text-white p-4 text-center font-bold rounded shadow-sm min-h-[120px] flex items-center justify-center">
                     {t("dept_ai_systems")}
                   </div>
                 </div>
@@ -234,7 +237,7 @@ const Departments: React.FC = () => {
 
               {/* Pillar 2: AX Dept */}
               <div className="flex-1 flex flex-col items-center">
-                <div className="w-full bg-[#004191] text-white py-3 px-4 text-center font-bold text-xl rounded shadow-md mb-4 h-[60px] flex items-center justify-center">
+                <div className="w-full bg-[#002380] text-white py-3 px-4 text-center font-bold text-xl rounded shadow-md mb-4 h-[60px] flex items-center justify-center">
                   {t("dept_ax")}
                 </div>
                 <div className="grid grid-cols-2 gap-2 w-full">
@@ -256,7 +259,7 @@ const Departments: React.FC = () => {
 
               {/* Pillar 3: Future AI Dept */}
               <div className="flex-1 flex flex-col items-center">
-                <div className="w-full bg-[#004191] text-white py-3 px-4 text-center font-bold text-xl rounded shadow-md mb-4 h-[60px] flex items-center justify-center">
+                <div className="w-full bg-[#002380] text-white py-3 px-4 text-center font-bold text-xl rounded shadow-md mb-4 h-[60px] flex items-center justify-center">
                   {t("dept_ai_future")}
                 </div>
                 <div className="w-full bg-white border border-gray-200 p-6 rounded shadow-sm flex flex-col items-center justify-center text-center h-full">
@@ -273,17 +276,20 @@ const Departments: React.FC = () => {
         </div>
 
         {/* Detailed Description Section - Centered title and content */}
-        <div className="grid grid-cols-1 gap-8 pt-6 border-t border-gray-100">
-          <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6 text-center">
-            {language === "en" ? "Department Details" : "상세 학과 안내"}
-          </h2>
+        <div className="grid grid-cols-1 gap-8 pt-28 border-t border-gray-100">
+          <div className="flex flex-col items-center mb-4">
+            <h2 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">
+              {language === "en" ? "Department Details" : "상세 학과 안내"}
+            </h2>
+            <div className="mt-6 w-20 h-1 bg-[#002380] rounded-full"></div>
+          </div>
           {deptData.map((dept) => (
             <div
               key={dept.id}
               className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 max-w-5xl mx-auto w-full"
             >
               <div className="flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-8 text-center md:text-left justify-center md:justify-start">
-                <div className="p-3 md:p-4 bg-blue-50 text-[#004191] rounded-2xl shadow-sm">
+                <div className="p-3 md:p-4 bg-blue-50 text-[#002380] rounded-2xl shadow-sm">
                   <svg
                     className="w-8 h-8 md:w-10 md:h-10"
                     fill="none"

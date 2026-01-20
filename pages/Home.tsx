@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   ];
 
   const deansMessageKo = [
-    "KAIST AI대학 홈페이지를 방문해 주신 여러분을 진심으로 환영합니다.",
+    "KAIST AI 대학 홈페이지를 방문해 주신 여러분을 진심으로 환영합니다.",
     "인공지능(AI)은 과학기술 혁신과 산업 구조, 나아가 사회의 작동 방식을 근본적으로 변화시키는 핵심 동력으로 자리 잡고 있습니다. KAIST AI대학은 이러한 변화에 대응해 단기적 기술 수요를 넘어, 미래 사회가 요구할 AI의 방향과 역할을 선도적으로 설계하기 위해 설립되었습니다. AI가 무엇을 할 수 있는가를 넘어, 무엇을 해야 하는가를 함께 고민하는 대학이 되고자 합니다.",
     "KAIST AI대학은 알고리즘과 모델, 시스템과 응용, 인간과 AI의 상호작용에 이르기까지 AI 전 주기를 아우르는 교육·연구 체계를 바탕으로, 다양한 과학기술 분야와의 융합을 통해 AI for Science를 포함한 초학제 연구를 확장해 나가고 있습니다.",
     "또한 미래 AI 시대에 요구되는 인재상을 중심에 두고, 기초 역량과 문제 해결 능력, 사회적 책임 의식을 함께 갖춘 인재 양성을 지향합니다. KAIST AI대학은 미래를 예측하는 데 그치지 않고, AI로 미래를 만들어가는 대학이 되고자 합니다. 지속적인 관심과 성원을 부탁드립니다.",
@@ -52,11 +52,11 @@ const Home: React.FC = () => {
   return (
     <div className="relative">
       {/* Hero Banner */}
-      <div className="relative h-[700px] overflow-hidden">
-        <img
+      <div className="relative h-[740px] overflow-hidden">
+        <img 
           src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/homepage3.png"
-          alt="KAIST Campus"
-          className="absolute inset-0 w-full h-full object-cover scale-110 origin-right"
+          alt="KAIST Campus" 
+          className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
         />
         <div className="absolute inset-0 bg-white/0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 w-full text-white">
@@ -75,23 +75,17 @@ const Home: React.FC = () => {
                 )}
               </div>
             </h1>
-            <p className="text-sm md:text-xl text-gray-200 max-w-3xl mb-8 leading-normal max-w-[40ch] md:max-w-[60ch]">
-              {language === "en"
-                ? "College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy."
-                : "AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다."}
+            <p className="text-sm md:text-lg text-gray-200 max-w-3xl mb-8 leading-normal max-w-[40ch] md:max-w-[61ch]">
+              {language === 'en'
+                ? 'College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy.'
+                : 'AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다.'}
             </p>
-            <div className="flex space-x-4">
-              <Link
-                to="/intro"
-                className="bg-[#0032a0]/85 hover:bg-[#0032a0]/60 px-7 py-3 rounded text-sm font-normal transition-all shadow-lg"
-              >
-                {t("introduction")}
+            <div className="flex space-x-6">
+              <Link to="/intro" className="bg-[#002380]/85 hover:bg-[#002380]/50 px-7 py-3 rounded text-sm font-normal transition-all shadow-lg">
+                {t('introduction')}
               </Link>
-              <Link
-                to="/admissions"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-md px-7 py-3 rounded text-sm font-normal border border-white/30 transition-all"
-              >
-                {t("admissions")}
+              <Link to="/admissions" className="bg-white/10 hover:bg-white/30 backdrop-blur-md px-7 py-3 rounded text-sm font-normal border border-white/30 transition-all">
+                {t('admissions')}
               </Link>
             </div>
           </div>
@@ -123,14 +117,7 @@ const Home: React.FC = () => {
             <div className="md:col-span-8 flex flex-col justify-center h-full">
               <div className="space-y-5 text-gray-700 leading-relaxed text-base text-justify">
                 {message.map((para, idx) => (
-                  <p
-                    key={idx}
-                    className={
-                      idx === 0
-                        ? "text-2xl font-bold text-[#004191] leading-snug mb-8"
-                        : ""
-                    }
-                  >
+                  <p key={idx} className={idx === 0 ? "text-2xl font-bold text-[#002380] leading-snug mb-8" : ""}>
                     {para}
                   </p>
                 ))}
@@ -203,13 +190,13 @@ const Home: React.FC = () => {
                   </div>
 
                   {/* Selection Bar */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#004191]/10 group-hover:bg-[#004191] transition-all duration-500"></div>
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#002380]/10 group-hover:bg-[#002380] transition-all duration-500"></div>
 
                   <div className="relative z-10">
-                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900 group-hover:text-[#004191] transition-colors leading-tight">
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900 group-hover:text-[#002380] transition-colors leading-tight">
                       {dept.name}
                     </h3>
-                    <div className="w-10 h-0.5 bg-gray-100 group-hover:w-20 group-hover:bg-[#004191] transition-all duration-500 mb-4"></div>
+                    <div className="w-10 h-0.5 bg-gray-100 group-hover:w-20 group-hover:bg-[#002380] transition-all duration-500 mb-4"></div>
                   </div>
 
                   <p className="text-gray-600 leading-relaxed text-sm md:text-base text-justify mb-2 relative z-10 line-clamp-4">
@@ -220,7 +207,7 @@ const Home: React.FC = () => {
                     <Link
                       to="/departments"
                       onClick={() => window.scrollTo(0, 0)}
-                      className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#004191] group-hover:translate-x-1 transition-transform duration-300"
+                      className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#002380] group-hover:translate-x-1 transition-transform duration-300"
                     >
                       <span>{t("read_more")}</span>
                       <svg
@@ -245,42 +232,21 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Summary of Education Programs
-      <section className="bg-white py-24">
+      {/* 3. Summary of Education Programs */}
+      {/* <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-6">
             <h2 className={sectionTitleClass + " mb-0"}>
               {language === "en" ? "Course Information" : "교과 과정"}
             </h2>
-            <Link
-              to="/academics"
-              onClick={() => window.scrollTo(0, 0)}
-              className="group flex items-center text-[#004191] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform mt-4 md:mt-0"
-            >
-              Full Curriculum{" "}
-              <svg
-                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 5l7 7-7 7"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <Link to="/academics" onClick={() => window.scrollTo(0, 0)} className="group flex items-center text-[#002380] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform mt-4 md:mt-0">
+              Full Curriculum <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></svg>
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="p-10 bg-[#f8faff] rounded-3xl border border-blue-50 shadow-sm">
-              <div className="text-[#004191] font-bold text-xs uppercase tracking-[0.2em] mb-4">
-                Undergraduate
-              </div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
-                {t("undergraduate")}
-              </h3>
+              <div className="text-[#002380] font-bold text-xs uppercase tracking-[0.2em] mb-4">Undergraduate</div>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">{t('undergraduate')}</h3>
               <p className="text-gray-600 mb-8 leading-relaxed text-sm">
                 {language === "en"
                   ? "Bachelor's program focusing on core algorithms, mathematics, and hands-on AI deployment (138+ credits)."
@@ -313,7 +279,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="p-10 bg-[#004191] text-white rounded-3xl shadow-xl shadow-[#004191]/20 flex flex-col justify-between">
+            <div className="p-10 bg-[#002380] text-white rounded-3xl shadow-xl shadow-[#002380]/20 flex flex-col justify-between">
               <div>
                 <div className="text-white/50 font-bold text-xs uppercase tracking-[0.2em] mb-4">
                   Special Track
@@ -333,15 +299,11 @@ const Home: React.FC = () => {
       </section> */}
 
       {/* 4. Admission Information */}
-      <section className="bg-[#f0f7ff] py-24 relative overflow-hidden">
+      {/* <section className="bg-[#f0f7ff] py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <svg
-            className="h-full w-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 100 L100 0 L100 100 Z" fill="#004191" />
-          </svg>
+           <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0 100 L100 0 L100 100 Z" fill="#002380" />
+           </svg>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className={sectionTitleClass}>
@@ -355,18 +317,17 @@ const Home: React.FC = () => {
                   : "우리는 전 세계 사회에 기여할 수 있는 협력적이고 윤리적인 혁신 인재를 찾고 있습니다. 미래 AI의 토대를 구축하는 선구자들과 함께하십시오."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/admissions"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="bg-[#004191] hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-normal transition-all text-center shadow-lg shadow-[#004191]/20"
-                >
-                  {t("admissions_btn")}
-                </Link>
+                 <Link to="/admissions" onClick={() => window.scrollTo(0, 0)} className="bg-[#002380] hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-normal transition-all text-center shadow-lg shadow-[#002380]/20">
+                   {t('undergraduate')}
+                 </Link>
+                 <Link to="/admissions" onClick={() => window.scrollTo(0, 0)} className="bg-white hover:bg-gray-50 text-gray-900 px-10 py-4 rounded-xl font-normal border border-gray-200 transition-all text-center">
+                   {t('graduate')}
+                 </Link>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

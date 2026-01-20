@@ -41,16 +41,16 @@ const Introduction: React.FC = () => {
           {/* Main Content */}
           <div className="flex-grow">
             {/* Title - Perfectly Centered */}
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-20">
               <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight text-center relative">
                 {t("welcome_msg")}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#004191] rounded-full"></div>
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-1 bg-[#002380] rounded-full"></div>
               </h1>
             </div>
 
-            <div className="bg-white border border-gray-100 shadow-sm rounded-[2.5rem] overflow-hidden mb-12 flex flex-col md:flex-row gap-0 items-stretch">
-              <div className="flex-grow p-8 md:p-14 order-2 md:order-1 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-[#004191] mb-8 italic leading-tight">
+            <div className="bg-white border border-gray-100 shadow-sm rounded-[2.5rem] overflow-hidden mb-12 flex flex-col md:flex-row gap-0 items-stretch h-[860px]">
+              <div className="flex-grow p-8 md:p-14 order-2 md:order-1 flex flex-col justify-start">
+                <h3 className="text-2xl font-bold text-[#002380] mb-8 italic leading-tight">
                   "Shape the future through Artificial Intelligence."
                 </h3>
                 <div className="text-gray-700 leading-relaxed space-y-6 text-justify text-base md:text-lg">
@@ -66,7 +66,7 @@ const Introduction: React.FC = () => {
                     <p className="font-black text-gray-900 text-xl tracking-tight">
                       {language === "en" ? "Eunho Yang" : "양 은 호"}
                     </p>
-                    <p className="text-[#004191] font-bold text-xs uppercase tracking-widest mt-1">
+                    <p className="text-[#002380] font-bold text-xs uppercase tracking-widest mt-1">
                       {language === "en"
                         ? "Dean, College of AI"
                         : "KAIST AI대학 학장"}
@@ -77,7 +77,7 @@ const Introduction: React.FC = () => {
               <div className="w-full md:w-80 flex-shrink-0 order-1 md:order-2 bg-gray-50">
                 <div className="h-full w-full grayscale hover:grayscale-0 transition-all duration-700">
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnsjemrQJ1aY8GXzDH7zyW2PeSr0NoRlUL0Q&s"
+                    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FPtMZt%2FbtsEViUqjGf%2FAAAAAAAAAAAAAAAAAAAAAJY93zsdcPRhLcgssrQ5laCo2LMu40F69djKOs3XyTR-%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1769871599%26allow_ip%3D%26allow_referer%3D%26signature%3Dr3vzoT3jA0dEtALHY0tV5gywu2s%253D"
                     alt="Dean"
                     className="w-full h-full object-cover"
                   />

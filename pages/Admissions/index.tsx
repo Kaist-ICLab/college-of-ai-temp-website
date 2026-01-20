@@ -49,13 +49,14 @@ const Admissions: React.FC = () => {
     <div className="bg-white min-h-screen">
       <Breadcrumbs />
       {/* Hero Section */}
-      <div className="admissions-hero">
+      <div className="bg-white py-16 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center gap-6">
+          <div className="flex flex-col items-center text-center gap-7">
             <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
               {t('admissions')}
             </h1>
-            <p className="text-base text-gray-500 leading-relaxed mx-auto max-w-3xl">
+            <div className="w-20 h-1 bg-[#002380] rounded-full"></div>
+            <p className="text-lg text-gray-500 leading-relaxed mx-auto max-w-2xl">
               {t('admissions_hero_desc')}
             </p>
           </div>

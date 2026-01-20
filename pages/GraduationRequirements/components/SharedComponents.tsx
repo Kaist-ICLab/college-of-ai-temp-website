@@ -9,7 +9,7 @@ interface SectionHeaderProps {
  */
 export const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => (
   <div className="flex items-center gap-2 mb-2">
-    <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
+    <span className="w-1.5 h-6 bg-[#002380] rounded-full"></span>
     <h3 className="font-bold text-gray-900 text-lg">{title}</h3>
   </div>
 );
@@ -23,7 +23,7 @@ interface SubSectionHeaderProps {
  */
 export const SubSectionHeader: React.FC<SubSectionHeaderProps> = ({ title }) => (
   <div className="flex gap-2 items-center mb-2">
-    <div className="w-2 h-2 rounded-full border-2 border-[#004191]"></div>
+    <div className="w-2 h-2 rounded-full border-2 border-[#002380]"></div>
     <p className="font-bold text-gray-800">{title}</p>
   </div>
 );
@@ -38,7 +38,7 @@ interface BulletItemProps {
  */
 export const BulletItem: React.FC<BulletItemProps> = ({ children, className = '' }) => (
   <div className={`flex gap-2 items-start ${className}`.trim()}>
-    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
+    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
     {typeof children === 'string' ? <p>{children}</p> : children}
   </div>
 );
