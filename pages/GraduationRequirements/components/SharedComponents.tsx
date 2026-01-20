@@ -37,7 +37,7 @@ interface BulletItemProps {
  * Bullet point item with blue dot
  */
 export const BulletItem: React.FC<BulletItemProps> = ({ children, className = '' }) => (
-  <div className={`flex gap-2 items-start ${className}`}>
+  <div className={`flex gap-2 items-start ${className}`.trim()}>
     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
     {typeof children === 'string' ? <p>{children}</p> : children}
   </div>
@@ -53,7 +53,7 @@ interface NoteTextProps {
  * Italic note text, optionally indented
  */
 export const NoteText: React.FC<NoteTextProps> = ({ children, className = '', indented = false }) => (
-  <p className={`italic text-gray-500 ${indented ? 'ml-5 sm:ml-7' : ''} ${className}`}>
+  <p className={`italic text-gray-500 ${indented ? 'ml-5 sm:ml-7' : ''} ${className}`.trim()}>
     {children}
   </p>
 );
@@ -67,7 +67,7 @@ interface RequirementBoxProps {
  * Requirement box container with rounded corners and gray background
  */
 export const RequirementBox: React.FC<RequirementBoxProps> = ({ children, className = '' }) => (
-  <div className={`requirement-box bg-gray-50 border border-gray-100 rounded-3xl p-5 sm:p-8 md:p-12 ${className}`}>
+  <div className={`requirement-box bg-gray-50 border border-gray-100 rounded-3xl p-5 sm:p-8 md:p-12 ${className}`.trim()}>
     {children}
   </div>
 );

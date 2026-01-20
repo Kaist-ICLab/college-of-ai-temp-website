@@ -348,7 +348,6 @@ export const translations: Translation = {
   // AI Future Undergraduate Requirements
   aif_ug_title: { en: 'Major Course Requirements for Dept. of AI Future', ko: 'AI미래학과 전공과목 이수요건' },
   aif_ug_subtitle: { en: '(For undergraduate students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 학사과정용)' },
-  aif_ug_common_note: { en: 'Please check the common graduation requirements.', ko: '공통 이수요건은 반드시 따로 확인하시기 바랍니다.' },
   aif_ug_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 138 credits', ko: '졸업이수학점: 총 138 학점 이상 이수' },
   aif_ug_double_major_note: { en: '※ Required to complete Double Major', ko: '※ 전공 이외에 복수전공을 반드시 이수할 것.' },
   aif_ug_basic_req: { en: 'Elective Basic Courses', ko: '기초선택 이수요건' },
