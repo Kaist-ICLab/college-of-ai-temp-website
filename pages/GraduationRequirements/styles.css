@@ -1,0 +1,37 @@
+@media print {
+
+    nav,
+    footer,
+    .breadcrumbs-nav,
+    .hero-section,
+    .dept-selector {
+        display: none !important;
+    }
+
+    body,
+    .page-container {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .requirement-box {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        width: 100% !important;
+        break-inside: avoid;
+    }
+
+    .text-gray-500 {
+        color: #666 !important;
+    }
+
+    .text-\[\#004191\] {
+        color: #004191 !important;
+    }
+
+    @page {
+        margin: 2cm;
+    }
+}

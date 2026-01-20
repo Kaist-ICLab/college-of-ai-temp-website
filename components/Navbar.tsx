@@ -37,6 +37,7 @@ const Navbar: React.FC = () => {
       subcategories: [
         { name: 'ug_courses', path: '/academics' },
         { name: 'grad_courses', path: '/academics' },
+        { name: 'graduation_req', path: '/graduation-requirements' },
       ],
     },
     {
@@ -108,11 +109,6 @@ const Navbar: React.FC = () => {
             >
               {language === 'en' ? 'KOREAN' : 'ENGLISH'}
             </button>
-            <button className="p-2 text-gray-400 hover:text-[#004191]">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
             <button className="md:hidden p-2 text-gray-500">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -120,42 +116,47 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Dropdown Panel */}
-      <div 
-        className={`absolute top-24 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out origin-top ${
-          activeMenu ? 'opacity-100 scale-y-100 translate-y-0 visible' : 'opacity-0 scale-y-95 -translate-y-2 invisible'
-        }`}
+      < div
+        className={`absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out origin-top ${activeMenu
+          ? "opacity-100 scale-y-100 translate-y-0 visible"
+          : "opacity-0 scale-y-95 -translate-y-2 invisible"
+          }`}
         onMouseEnter={() => activeMenu && setActiveMenu(activeMenu)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex">
-           <div className="w-1/4 pr-12 border-r border-gray-100">
-              <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">
-                {activeMenu && t(activeMenu)}
-              </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Explore comprehensive information and academic resources regarding {activeMenu && t(activeMenu)}.
-              </p>
-           </div>
-           <div className="flex-grow pl-12 grid grid-cols-2 gap-y-4">
-              {activeMenu && navItems.find(i => i.name === activeMenu)?.subcategories.map((sub) => (
-                <Link 
-                  key={sub.name} 
-                  to={sub.path}
-                  className="group flex items-center space-x-2"
-                  onClick={() => setActiveMenu(null)}
-                >
-                  <span className="w-1.5 h-1.5 bg-gray-200 group-hover:bg-[#004191] rounded-full transition-colors"></span>
-                  <span className="text-gray-600 font-medium group-hover:text-[#004191] transition-colors">
-                    {t(sub.name)}
-                  </span>
-                </Link>
-              ))}
-           </div>
-        </div>
-      </div>
-    </nav>
+          <div className="w-1/4 pr-12 border-r border-gray-100">
+            <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">
+              {activeMenu && t(activeMenu)}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Discover the latest information and resources in the{" "}
+              {activeMenu && t(activeMenu)} category.
+            </p>
+          </div >
+          <div className="flex-grow pl-12 gap-8">
+            {activeMenu &&
+              navItems
+                .find((i) => i.name === activeMenu)
+                ?.subcategories.map((sub) => (
+                  <Link
+                    key={sub.name}
+                    to={sub.path}
+                    className="group flex items-center space-x-2"
+                    onClick={() => setActiveMenu(null)}
+                  >
+                    <span className="w-1.5 h-1.5 bg-gray-200 group-hover:bg-[#004191] rounded-full transition-colors"></span>
+                    <span className="text-gray-600 font-medium group-hover:text-[#004191] transition-colors">
+                      {t(sub.name)}
+                    </span>
+                  </Link>
+                ))}
+          </div>
+        </div >
+      </div >
+    </nav >
   );
 };
 
