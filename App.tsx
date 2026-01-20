@@ -9,6 +9,7 @@ import Introduction from './pages/Introduction';
 import Departments from './pages/Departments';
 import Education from './pages/Education';
 import Admissions from './pages/Admissions';
+import CourseInfo from './pages/CourseInfo';
 
 interface LanguageContextType {
   language: Language;
@@ -35,6 +36,7 @@ const App: React.FC = () => {
               <Route path="/departments" element={<Departments />} />
               <Route path="/academics" element={<Education />} />
               <Route path="/admissions" element={<Admissions />} />
+              <Route path="/course-information" element={<CourseInfo />} />
             </Routes>
           </main>
           <Footer />

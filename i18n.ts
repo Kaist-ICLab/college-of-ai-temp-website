@@ -23,6 +23,7 @@ export const translations: Translation = {
   ug_req: { en: "Undergraduate Requirement", ko: "학부 졸업요건" },
   grad_courses: { en: "Graduate Courses", ko: "대학원 교과과정" },
   grad_req: { en: "Graduate Requirement", ko: "대학원 졸업요건" },
+  course_info: { en: 'Course Information', ko: '교과 정보' },
   campus_life: { en: "Campus Life", ko: "캠퍼스 생활" },
   giving: { en: "Giving", ko: "발전기금" },
   search: { en: "SEARCH", ko: "검색" },
