@@ -7,8 +7,14 @@ export const translations: Translation = {
   faculty: { en: "Faculty", ko: "교수진" },
   admission_team: { en: "Admission Team", ko: "행정팀" },
   student_council: { en: "Student Council", ko: "학생회" },
-  graduation_info: { en: "Graduation Requirements", ko: "졸업 요건" },
+
   admissions: { en: "Admissions", ko: "입학안내" },
+  admissions_hero_desc: { en: "KAIST is a community of global talents. We recruit passionate and extraordinary talents who enjoy exploring knowledge, fostering collaborative and ethical minds to benefit global society.", ko: "KAIST는 세계적인 인재들의 공동체입니다. 지식 탐구를 즐기는 열정적이고 비범한 인재를 모집하며, 글로벌 사회에 기여할 협력적이고 윤리적인 지성을 지향합니다." },
+
+  visit_kaist_admissions: { en: "※ For more detailed information about admissions, Please visit the KAIST admissions office website.", ko: "※ 입학에 대한 자세한 정보는 KAIST 입학처 홈페이지를 방문해 주세요." },
+  intl_admission_track_title: { en: "※ For the International Admission Track, Please visit the link below.", ko: "※ 외국인 전형은 아래 링크를 참고해 주세요." },
+  intl_grad_admission: { en: "International Graduate Admission", ko: "외국인 대학원 입학" },
+
   academics: { en: "Academics", ko: "학사안내" },
   departments: { en: "Departments", ko: "학사조직 안내" },
   department_programs: { en: "Department programs", ko: "학과프로그램" },
@@ -49,9 +55,7 @@ export const translations: Translation = {
   degrees_offered: { en: "Degrees Offered", ko: "학위 과정" },
   eligibility: { en: "Eligibility", ko: "지원 자격" },
   visit_admission_site: { en: "Visit Official Admission Website", ko: "공식 입학 홈페이지 방문" },
-  application_info: { en: "Application Information", ko: "지원 정보" },
-  application_timeline: { en: "Application Timeline", ko: "전형 일정" },
-  application_guide: { en: "Application Guide", ko: "모집 요강" },
+
   ai_school: { en: "AI Undergraduate School", ko: "AI학부" },
   track: { en: "Track", ko: "Track" },
 

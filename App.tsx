@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Introduction from './pages/Introduction';
 import Departments from './pages/Departments';
-import Education from './pages/Education';
 import Admissions from './pages/Admissions';
 import CourseInfo from './pages/CourseInfo';
 import GraduationRequirements from './pages/GraduationRequirements/index';
@@ -35,16 +34,16 @@ const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/intro" element={<Introduction />} />
               <Route path="/departments" element={<Departments />} />
-              <Route path="/academics" element={<Education />} />
+              {/* <Route path="/academics" element={<Education />} /> */}{/* Removed Education page */}
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/course-information" element={<CourseInfo />} />
               <Route path="/graduation-requirements" element={<GraduationRequirements />} />
             </Routes>
-          </main>
+          </main >
           <Footer />
-        </div>
-      </HashRouter>
-    </LanguageContext.Provider>
+        </div >
+      </HashRouter >
+    </LanguageContext.Provider >
   );
 };
 

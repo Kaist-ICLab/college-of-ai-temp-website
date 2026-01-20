@@ -39,34 +39,17 @@ const Navbar: React.FC = () => {
       ],
     },
     {
-      name: 'graduation_info',
-      path: '/academics',
+      name: 'education',
+      path: '/graduation-requirements',
       subcategories: [
-        { name: 'ug_req', path: '/academics' },
-        { name: 'grad_req', path: '/academics' },
+        { name: 'admissions', path: '/admissions' },
+        { name: 'graduation_req', path: '/graduation-requirements' },
       ],
     },
-    {
-      name: 'admissions',
-      path: '/admissions',
-      subcategories: [
-        { name: 'undergraduate', path: '/admissions' },
-        { name: 'graduate', path: '/admissions' },
-      ],
-    },
-    // {
-    //   name: 'news',
-    //   path: '#',
-    //   subcategories: [
-    //     { name: 'announcement', path: '#' },
-    //     { name: 'seminar', path: '#' },
-    //     { name: 'dept_news', path: '#' },
-    //   ],
-    // },
   ];
 
   return (
-    <nav 
+    <nav
       className="relative z-50 bg-white border-b border-gray-100 shadow-sm"
       onMouseLeave={() => setActiveMenu(null)}
     >
@@ -74,9 +57,9 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4" onClick={() => setActiveMenu(null)}>
-            <img 
-              src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png" 
-              alt="KAIST Logo" 
+            <img
+              src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
+              alt="KAIST Logo"
               className="h-24 w-auto object-contain transition-all duration-300"
             />
             <div className="h-11 w-[1px] bg-gray-200 hidden sm:block"></div>
@@ -89,18 +72,17 @@ const Navbar: React.FC = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-12 h-full">
             {navItems.map((item) => (
-              <div 
-                key={item.name} 
+              <div
+                key={item.name}
                 className="h-full flex items-center relative group"
                 onMouseEnter={() => setActiveMenu(item.name)}
               >
                 <Link
                   to={item.path}
-                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${
-                    location.pathname === item.path || activeMenu === item.name
-                      ? 'text-[#004191] border-[#004191]' 
-                      : 'text-gray-700 border-transparent hover:text-[#004191]'
-                  }`}
+                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${location.pathname === item.path || activeMenu === item.name
+                    ? 'text-[#004191] border-[#004191]'
+                    : 'text-gray-700 border-transparent hover:text-[#004191]'
+                    }`}
                 >
                   {t(item.name)}
                 </Link>
