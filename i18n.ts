@@ -93,8 +93,8 @@ export const translations: Translation = {
   research_dissertation: { en: 'Research (including Dissertation)', ko: '연구 (박사 학위 논문 연구 포함)' },
   doctoral_note: { en: 'Doctoral students must complete the AI Colloquium every semester and pass the Comprehensive Examination.', ko: '박사과정 학생은 매 학기 AI 콜로퀴움을 이수하고 종합시험을 통과학야 합니다.' },
   grad_req_hero_desc: { en: 'Guidelines and criteria for completing your degree program.', ko: '학위 프로그램 이수를 위한 가이드라인 및 기준입니다.' },
-  aic_ug_title: { en: 'Major Course Requirements for Dept. of AI Computing', ko: 'AI컴퓨팅학과 전공과목 이수요건' },
-  aic_ug_subtitle: { en: '(For undergraduate students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 학사과정용)' },
+  aic_ug_title: { en: 'AI Computing - Undergraduate', ko: 'AI컴퓨팅학과 - 학부' },
+  aic_ug_subtitle: { en: '(For students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 기준)' },
   check_common_reqs: { en: '', ko: '' },
   aic_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 138 credits', ko: '졸업이수학점: 총 138 학점 이상 이수' },
   aic_track_note: { en: '※ Required to choose and complete one among Advanced Major, Double Major, Minor, Individually Designed Major, Designated Interdisciplinary Major, and Specially Designated Major.', ko: '※ 전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수' },
@@ -130,7 +130,7 @@ export const translations: Translation = {
   aic_transit_title: { en: '', ko: '' },
   aic_transit_desc: { en: '', ko: '' },
 
-  aic_ms_title: { en: 'Major Course Requirements for Dept. of AI Computing (Master\'s)', ko: 'AI컴퓨팅학과 전공과목 이수요건(석사)' },
+  aic_ms_title: { en: 'AI Computing - Master\'s', ko: 'AI컴퓨팅학과 - 석사' },
   aic_ms_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 33 credits', ko: '졸업이수학점: 총 33 학점 이상 이수' },
   aic_ms_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   aic_ms_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수' },
@@ -146,7 +146,7 @@ export const translations: Translation = {
   aic_ms_research_1: { en: 'At least 12 credits including AIC.960 Research (Master\'s Thesis)', ko: 'AIC.960 연구(석사논문연구)를 포함하여 12학점 이상' },
 
   // Doctoral Requirements
-  aic_phd_title: { en: 'Graduate (Doctoral) Requirement for AI Computing', ko: '인공지능컴퓨팅학과 대학원(박사) 졸업 요건' },
+  aic_phd_title: { en: 'AI Computing - Doctoral', ko: 'AI컴퓨팅학과 - 박사' },
   aic_phd_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   aic_phd_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   aic_phd_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수' },
@@ -163,7 +163,7 @@ export const translations: Translation = {
   aic_phd_research_note: { en: '※ The course credits and seminar credits (up to 2 credits) earned in the Master\'s program may be accumulated towards the Doctoral degree', ko: '※ 석사과정에서 이수한 교과목 학점 및 세미나 과목 학점(2학점 이내)은 박사과정 이수학점으로 누적 가산됨' },
 
   // Integrated Program Requirements
-  aic_int_title: { en: 'Graduate (M.S.-Ph.D. Integrated) Requirement for AI Computing', ko: '인공지능컴퓨팅학과 대학원(석박사통합) 졸업 요건' },
+  aic_int_title: { en: 'AI Computing - M.S.-Ph.D. Integrated', ko: 'AI컴퓨팅학과 - 석박사통합' },
   aic_int_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   aic_int_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   aic_int_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수' },
@@ -180,8 +180,8 @@ export const translations: Translation = {
   aic_int_research_note: { en: '※ The course credits and seminar credits (up to 2 credits) earned in the Master\'s program may be accumulated towards the Doctoral degree', ko: '※ 석사과정에서 이수한 교과목 학점 및 세미나 과목 학점(2학점 이내)은 박사과정 이수학점으로 누적 가산됨' },
 
   // AI Systems Undergraduate Requirements
-  ais_ug_title: { en: 'Major Course Requirements for Dept. of AI Systems', ko: 'AI시스템학과 전공과목 이수요건' },
-  ais_ug_subtitle: { en: '(For undergraduate students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 학사과정용)' },
+  ais_ug_title: { en: 'AI Systems - Undergraduate', ko: 'AI시스템학과 - 학부' },
+  ais_ug_subtitle: { en: '(For students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 기준)' },
   ais_ug_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 138 credits', ko: '졸업이수학점: 총 138 학점 이상 이수' },
   ais_ug_track_note: { en: '※ Required to choose and complete one among Advanced Major, Double Major, Minor, Individually Designed Major, Designated Interdisciplinary Major, and Specially Designated Major.', ko: '※ 전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수' },
   ais_ug_special_note_title: { en: '(Special Note) 학과 지정 전공·연구 외 이수요건', ko: '(특이사항) 학과 지정 전공·연구 외 이수요건' },
@@ -214,7 +214,7 @@ export const translations: Translation = {
   ais_ug_research_note_2: { en: '※ Students having a double major are exempt.', ko: '※ 복수전공 이수자는 연구과목 이수를 면제함' },
 
   // AI Systems Graduate (Master) Requirements
-  ais_ms_title: { en: 'Graduate (Master) Requirement for AI Systems', ko: 'AI시스템학과 대학원(석사과정) 졸업 요건' },
+  ais_ms_title: { en: 'AI Systems - Master\'s', ko: 'AI시스템학과 - 석사' },
   ais_ms_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 33 credits', ko: '졸업이수학점: 총 33 학점 이상 이수' },
   ais_ms_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   ais_ms_common_note: { en: '※ Only university-designated mandatory general (CC) courses are counted', ko: '※ 단, 학교에서 지정한 공통필수(CC) 과목에 한하여 인정' },
@@ -228,7 +228,7 @@ export const translations: Translation = {
   ais_ms_research_1: { en: 'M.S. Thesis (at least 4 credits), AIS.93100 M.S. Seminar or EE.93100 M.S. Seminar (One credit must be taken, only applicable when the subtitle of the course is <Colloquium>)', ko: '논문연구 4학점 이상, AIS.93100 세미나(석사) 또는 EE.93100 세미나(석사) 1학점을 반드시 이수하되 부제가 콜로키움인 경우에만 인정' },
 
   // AI Systems Graduate (Doctoral) Requirements
-  ais_phd_title: { en: 'Graduate (Doctoral) Requirement for AI Systems', ko: 'AI시스템학과 대학원(박사과정) 졸업 요건' },
+  ais_phd_title: { en: 'AI Systems - Doctoral', ko: 'AI시스템학과 - 박사' },
   ais_phd_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   ais_phd_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   ais_phd_common_note: { en: '※ Only university-designated mandatory general (CC) courses are counted', ko: '※ 단, 학교에서 지정한 공통필수(CC) 과목에 한하여 인정' },
@@ -243,7 +243,7 @@ export const translations: Translation = {
   ais_phd_research_1: { en: 'AIS.93200 Ph.D. Seminar or EE.93200 Ph.D. Seminar (2 credits must be taken, only applicable when the subtitle of the course is <Colloquium>)', ko: 'AIS.93200 세미나(박사) 또는 EE.93200 세미나(박사) 2학점을 반드시 이수하되 부제가 콜로키움인 경우에만 인정' },
 
   // AI Systems Graduate (Integrated) Requirements
-  ais_int_title: { en: 'Graduate (M.S.-Ph.D. Integrated) Requirement for AI Systems', ko: 'AI시스템학과 대학원(석박사통합과정) 졸업 요건' },
+  ais_int_title: { en: 'AI Systems - M.S.-Ph.D. Integrated', ko: 'AI시스템학과 - 석박사통합' },
   ais_int_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   ais_int_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   ais_int_common_note: { en: '※ Only university-designated mandatory general (CC) courses are counted', ko: '※ 단, 학교에서 지정한 공통필수(CC) 과목에 한하여 인정' },
@@ -258,8 +258,8 @@ export const translations: Translation = {
   ais_int_research_1: { en: 'AIS.93200 Ph.D. Seminar or EE.93200 Ph.D. Seminar (2 credits must be taken, only applicable when the subtitle of the course is <Colloquium>)', ko: 'AIS.93200 세미나(박사) 또는 EE.93200 세미나(박사) 2학점을 반드시 이수하되 부제가 콜로키움인 경우에만 인정' },
 
   // AX Undergraduate Requirements
-  ax_ug_title: { en: 'Major Course Requirements for Dept. of AX', ko: 'AX학과 전공과목 이수요건' },
-  ax_ug_subtitle: { en: '(For undergraduate students admitted in 2025 and after)', ko: '(2026학년도 이후 입학생 학사과정용)' },
+  ax_ug_title: { en: 'AX - Undergraduate', ko: 'AX학과 - 학부' },
+  ax_ug_subtitle: { en: '(For students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 기준)' },
   ax_ug_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 138 credits', ko: '졸업이수학점: 총 138 학점 이상 이수' },
   ax_ug_track_note: { en: '※ Required to choose and complete one among Advanced Major, Double Major, Minor, Individually Designed Major, Designated Interdisciplinary Major, and Specially Designated Major.', ko: '※ 전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수' },
   ax_ug_basic_req: { en: '기초선택 이수요건', ko: '기초선택 이수요건' },
@@ -292,7 +292,7 @@ export const translations: Translation = {
   ax_ug_research_note: { en: '※ Students having a double major are exempt.', ko: '※ 복수전공 이수자는 연구과목 이수를 면제함' },
 
   // AX Graduate (Master) Requirements
-  ax_ms_title: { en: 'Graduate (Master) Requirement for AX', ko: 'AX학과 대학원(석사과정) 졸업 요건' },
+  ax_ms_title: { en: 'AX - Master\'s', ko: 'AX학과 - 석사' },
   ax_ms_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 36 credits', ko: '졸업이수학점: 총 36 학점 이상 이수' },
   ax_ms_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   ax_ms_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)' },
@@ -310,7 +310,7 @@ export const translations: Translation = {
   ax_ms_research_2: { en: 'M.S. Thesis (at least 12 credits)', ko: '논문연구 12학점 이상 이수' },
 
   // AX Graduate (Doctoral) Requirements
-  ax_phd_title: { en: 'Graduate (Doctoral) Requirement for AX', ko: 'AX학과 대학원(박사과정) 졸업 요건' },
+  ax_phd_title: { en: 'AX - Doctoral', ko: 'AX학과 - 박사' },
   ax_phd_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   ax_phd_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   ax_phd_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)' },
@@ -329,7 +329,7 @@ export const translations: Translation = {
   ax_phd_research_2: { en: 'Ph.D. Dissertation (at least 30 credits)', ko: '논문연구 30학점 이상 이수' },
 
   // AX Graduate (Integrated) Requirements
-  ax_int_title: { en: 'Graduate (M.S.-Ph.D. Integrated) Requirement for AX', ko: 'AX학과 대학원(석박사 통합과정) 졸업 요건' },
+  ax_int_title: { en: 'AX - M.S.-Ph.D. Integrated', ko: 'AX학과 - 석박사통합' },
   ax_int_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   ax_int_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   ax_int_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)' },
@@ -346,8 +346,8 @@ export const translations: Translation = {
   ax_int_research_2: { en: 'Thesis Research (at least 30 credits)', ko: '논문연구 30학점 이상 이수' },
 
   // AI Future Undergraduate Requirements
-  aif_ug_title: { en: 'Major Course Requirements for Dept. of AI Future', ko: 'AI미래학과 전공과목 이수요건' },
-  aif_ug_subtitle: { en: '(For undergraduate students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 학사과정용)' },
+  aif_ug_title: { en: 'AI Future - Undergraduate', ko: 'AI미래학과 - 학부' },
+  aif_ug_subtitle: { en: '(For students admitted in 2025 and after)', ko: '(2025학년도 이후 입학생 기준)' },
   aif_ug_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 138 credits', ko: '졸업이수학점: 총 138 학점 이상 이수' },
   aif_ug_double_major_note: { en: '※ Required to complete Double Major', ko: '※ 전공 이외에 복수전공을 반드시 이수할 것.' },
   aif_ug_basic_req: { en: 'Elective Basic Courses', ko: '기초선택 이수요건' },
@@ -375,7 +375,7 @@ export const translations: Translation = {
   aif_ug_double_note_2: { en: '※ The same requirements as stated in Elective Major Courses apply.', ko: '※ 전공선택에 명시된 요건 동일 적용' },
 
   // AI Future Graduate (Master)
-  aif_ms_title: { en: 'Graduate (Master) Requirement for AI Future', ko: 'AI미래학과 대학원(석사과정) 졸업 요건' },
+  aif_ms_title: { en: 'AI Future - Master\'s', ko: 'AI미래학과 - 석사' },
   aif_ms_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 33 credits', ko: '졸업이수학점: 총 33 학점 이상 이수' },
   aif_ms_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   aif_ms_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)' },
@@ -396,7 +396,7 @@ export const translations: Translation = {
   aif_ms_research_2: { en: 'Thesis Research (at least 4 credits)', ko: '논문연구 4학점 이상 이수' },
 
   // AI Future Graduate (Doctoral)
-  aif_phd_title: { en: 'Graduate (Doctoral) Requirement for AI Future', ko: 'AI미래학과 대학원(박사과정) 졸업 요건' },
+  aif_phd_title: { en: 'AI Future - Doctoral', ko: 'AI미래학과 - 박사' },
   aif_phd_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   aif_phd_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   aif_phd_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)' },
@@ -418,7 +418,7 @@ export const translations: Translation = {
   aif_phd_research_2: { en: 'Ph.D. Dissertation (at least 30 credits)', ko: '논문연구 30학점 이상 이수' },
 
   // AI Future Graduate (Integrated)
-  aif_int_title: { en: 'Graduate (M.S.-Ph.D. Integrated) Requirement for AI Future', ko: 'AI미래학과 대학원(석박사 통합과정) 졸업 요건' },
+  aif_int_title: { en: 'AI Future - M.S.-Ph.D. Integrated', ko: 'AI미래학과 - 석박사통합' },
   aif_int_grad_credits: { en: 'Credit Requirement for Graduation: Required to complete a total of more than 60 credits', ko: '졸업이수학점: 총 60 학점 이상 이수' },
   aif_int_common_req: { en: 'Mandatory General Courses: At least 3 credits', ko: '공통필수: 3 학점 이상 이수' },
   aif_int_common_1: { en: 'Select and take one among CC 500-level courses', ko: 'CC 5단위 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)' },

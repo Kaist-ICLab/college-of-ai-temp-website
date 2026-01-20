@@ -8,7 +8,7 @@ interface SectionHeaderProps {
  * Blue vertical bar header used for requirement sections
  */
 export const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => (
-  <div className="flex items-center gap-2 mb-3">
+  <div className="flex items-center gap-2 mb-2">
     <span className="w-1.5 h-6 bg-[#004191] rounded-full"></span>
     <h3 className="font-bold text-gray-900 text-lg">{title}</h3>
   </div>
@@ -22,7 +22,7 @@ interface SubSectionHeaderProps {
  * Open circle header for subsections (e.g., mandatory/elective within major)
  */
 export const SubSectionHeader: React.FC<SubSectionHeaderProps> = ({ title }) => (
-  <div className="flex gap-2 items-center mb-3">
+  <div className="flex gap-2 items-center mb-2">
     <div className="w-2 h-2 rounded-full border-2 border-[#004191]"></div>
     <p className="font-bold text-gray-800">{title}</p>
   </div>
@@ -67,7 +67,7 @@ interface RequirementBoxProps {
  * Requirement box container with rounded corners and gray background
  */
 export const RequirementBox: React.FC<RequirementBoxProps> = ({ children, className = '' }) => (
-  <div className={`requirement-box bg-gray-50 border border-gray-100 rounded-3xl p-5 sm:p-8 md:p-12 ${className}`.trim()}>
+  <div className={`requirement-box bg-gray-50 border border-gray-100 rounded-3xl p-5 sm:p-7 md:p-9 ${className}`.trim()}>
     {children}
   </div>
 );
@@ -81,8 +81,8 @@ interface RequirementTitleProps {
  * Title section for requirement boxes
  */
 export const RequirementTitle: React.FC<RequirementTitleProps> = ({ title, subtitle }) => (
-  <div className="mb-10">
-    <h2 className="text-3xl font-bold text-gray-900 mb-2">{title}</h2>
-    {subtitle && <p className="text-gray-500 italic">{subtitle}</p>}
+  <div className="mb-8">
+    <h2 className="text-2xl font-bold text-gray-900 mb-1">{title}</h2>
+    {subtitle && <p className="text-sm text-gray-500 italic">{subtitle}</p>}
   </div>
 );
