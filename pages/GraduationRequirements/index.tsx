@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../../App';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { useTranslation } from '../../i18n';
@@ -13,13 +14,41 @@ import AIFGraduate from './AIFGraduate/index';
 import RequirementEmptyState from './RequirementEmptyState/index';
 import './styles.css';
 
+type DeptId = 'aic' | 'ais' | 'ax' | 'aif';
+type TabId = 'ug' | 'grad';
+
 const GraduationRequirements: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
-  const [activeTab, setActiveTab] = useState<'ug' | 'grad'>('ug');
-  const [activeDept, setActiveDept] = useState<'aic' | 'ais' | 'ax' | 'aif'>('aic');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  type DeptId = 'aic' | 'ais' | 'ax' | 'aif';
+  // Parse URL params
+  const getInitialState = () => {
+    const params = new URLSearchParams(location.search);
+    const deptParam = params.get('dept');
+    const tabParam = params.get('tab');
+
+    const validDepts: DeptId[] = ['aic', 'ais', 'ax', 'aif'];
+    const validTabs: TabId[] = ['ug', 'grad'];
+
+    return {
+      dept: validDepts.includes(deptParam as DeptId) ? (deptParam as DeptId) : 'aic',
+      tab: validTabs.includes(tabParam as TabId) ? (tabParam as TabId) : 'ug',
+    };
+  };
+
+  const initialState = getInitialState();
+  const [activeTab, setActiveTab] = useState<TabId>(initialState.tab);
+  const [activeDept, setActiveDept] = useState<DeptId>(initialState.dept);
+
+  // Update URL when state changes
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set('dept', activeDept);
+    params.set('tab', activeTab);
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+  }, [activeDept, activeTab, location.pathname, navigate]);
 
   const depts: { id: DeptId; name: string }[] = [
     { id: 'aic', name: 'dept_ai_computing' },

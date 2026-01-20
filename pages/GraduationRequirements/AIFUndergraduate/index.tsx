@@ -14,7 +14,6 @@ const AIFUndergraduate: React.FC<AIFUndergraduateProps> = ({ language }) => {
       <div className="mb-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('aif_ug_title')}</h2>
         <p className="text-gray-500 italic mb-4">{t('aif_ug_subtitle')}</p>
-        <p className="text-gray-500 text-sm">{t('aif_ug_common_note')}</p>
       </div>
 
       <div className="space-y-10 text-[15px] leading-relaxed text-gray-600">
