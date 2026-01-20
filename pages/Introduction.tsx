@@ -27,7 +27,7 @@ const Introduction: React.FC = () => {
     감사합니다.
   `;
 
-  // Sidebar items mapped to match Navbar (Overview removed as requested)
+  // Sidebar items mapped to match Navbar
   const sidebarItems = [
     { name: "welcome_msg", path: "/intro" },
     { name: "departments", path: "/departments" },
@@ -59,85 +59,17 @@ const Introduction: React.FC = () => {
             </svg>
           </button>
 
-          {/* Side Menu */}
-          <aside
-            className={`flex-shrink-0 transition-all duration-500 ease-in-out overflow-hidden
-              ${isSidebarCollapsed ? "lg:w-0 lg:opacity-0 lg:mr-0" : "w-full lg:w-64 lg:opacity-100 lg:mr-4"}
-            `}
-          >
-            <div className="min-w-[256px]">
-              <h2 className="text-xl font-black text-gray-900 border-b-2 border-[#004191] pb-4 mb-6 uppercase tracking-tight">
-                {t("introduction")}
-              </h2>
-              <ul className="space-y-1">
-                {sidebarItems.map((item) => {
-                  const isActive = location.pathname === item.path;
-                  return (
-                    <li key={item.name}>
-                      <Link
-                        to={item.path}
-                        className={`group flex items-center p-3 rounded-xl transition-all duration-200 ${
-                          isActive
-                            ? "bg-blue-50 text-[#004191] font-bold shadow-sm"
-                            : "text-gray-500 hover:text-[#004191] hover:bg-gray-50"
-                        }`}
-                      >
-                        <span
-                          className={`w-1.5 h-1.5 rounded-full mr-3 transition-all ${
-                            isActive
-                              ? "bg-[#004191] scale-125"
-                              : "bg-transparent group-hover:bg-gray-300"
-                          }`}
-                        ></span>
-                        <span className="text-sm">{t(item.name)}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-
-              <div className="mt-10 p-6 bg-gray-50 rounded-2xl border border-gray-100 hidden lg:block">
-                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
-                  {t("admissions")}
-                </h4>
-                <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  {language === "en"
-                    ? "Join the community of global AI leaders."
-                    : "글로벌 AI 리더의 공동체에 참여하세요."}
-                </p>
-                <Link
-                  to="/admissions"
-                  className="text-xs font-bold text-[#004191] hover:underline flex items-center"
-                >
-                  {t("read_more")}
-                  <svg
-                    className="w-3 h-3 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </aside>
-
           {/* Main Content */}
           <div className="flex-grow transition-all duration-500">
-            <div className="flex items-center justify-between mb-8">
-              <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+            {/* Centered Title Container */}
+            <div className="relative flex items-center justify-center mb-10">
+              <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight text-center">
                 {t("welcome_msg")}
               </h1>
-              {/* Mobile Menu Indicator */}
+              {/* Mobile Menu Indicator - Positioned absolutely to maintain centering of H1 */}
               <button
                 onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-                className="lg:hidden flex items-center space-x-2 text-[#004191] font-bold text-xs bg-blue-50 px-4 py-2 rounded-lg"
+                className="lg:hidden absolute right-0 flex items-center space-x-2 text-[#004191] font-bold text-xs bg-blue-50 px-3 py-2 rounded-lg"
               >
                 <svg
                   className={`w-4 h-4 transition-transform duration-300 ${isSidebarCollapsed ? "rotate-180" : ""}`}
@@ -152,9 +84,7 @@ const Introduction: React.FC = () => {
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
-                <span>
-                  {isSidebarCollapsed ? "Show Sidebar" : "Hide Sidebar"}
-                </span>
+                <span className="sr-only">Toggle Sidebar</span>
               </button>
             </div>
 
