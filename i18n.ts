@@ -7,6 +7,7 @@ export const translations: Translation = {
   faculty: { en: "Faculty", ko: "교수진" },
   admission_team: { en: "Admission Team", ko: "행정팀" },
   student_council: { en: "Student Council", ko: "학생회" },
+  graduation_info: { en: "Graduation Requirements", ko: "졸업 요건" },
   admissions: { en: "Admissions", ko: "입학안내" },
   admissions_hero_desc: { en: "KAIST is a community of global talents. We recruit passionate and extraordinary talents who enjoy exploring knowledge, fostering collaborative and ethical minds to benefit global society.", ko: "KAIST는 세계적인 인재들의 공동체입니다. 지식 탐구를 즐기는 열정적이고 비범한 인재를 모집하며, 글로벌 사회에 기여할 협력적이고 윤리적인 지성을 지향합니다." },
 
@@ -30,6 +31,7 @@ export const translations: Translation = {
   ug_req: { en: "Undergraduate Requirement", ko: "학부 졸업요건" },
   grad_courses: { en: "Graduate Courses", ko: "대학원 교과과정" },
   grad_req: { en: "Graduate Requirement", ko: "대학원 졸업요건" },
+  course_info: { en: 'Course Information', ko: '교과 정보' },
   campus_life: { en: "Campus Life", ko: "캠퍼스 생활" },
   giving: { en: "Giving", ko: "발전기금" },
   search: { en: "SEARCH", ko: "검색" },

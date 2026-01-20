@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { LanguageContext } from "../App";
-import { useTranslation } from "../i18n";
+import React, { useContext, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { LanguageContext } from '../App';
+import { useTranslation } from '../i18n';
 
 interface SubItem {
   name: string;
@@ -22,26 +22,25 @@ const Navbar: React.FC = () => {
 
   const navItems: NavItem[] = [
     {
-      name: "introduction",
-      path: "/intro",
+      name: 'introduction',
+      path: '/intro',
       subcategories: [
-        { name: "welcome_msg", path: "/intro" },
-        { name: "departments", path: "/departments" },
-        { name: "degree_programs", path: "/academics" },
+        { name: 'welcome_msg', path: '/intro' },
+        { name: 'overview', path: '/intro' },
+        { name: 'departments', path: '/departments' },
       ],
     },
     {
-      name: "member",
-      path: "#",
+      name: 'course_info',
+      path: '/course-information',
       subcategories: [
-        { name: "faculty", path: "#" },
-        { name: "admission_team", path: "#" },
-        { name: "student_council", path: "#" },
+        { name: 'ug_courses', path: '/course-information' },
+        { name: 'grad_courses', path: '/course-information' },
       ],
     },
     {
-      name: "education",
-      path: "/academics",
+      name: 'graduation_info',
+      path: '/academics',
       subcategories: [
         { name: 'admissions', path: '/admissions' },
         { name: 'ug_courses', path: '/academics' },
@@ -56,32 +55,24 @@ const Navbar: React.FC = () => {
       className="relative z-50 bg-white border-b border-gray-100 shadow-sm"
       onMouseLeave={() => setActiveMenu(null)}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center space-x-4"
-            onClick={() => setActiveMenu(null)}
-          >
+          <Link to="/" className="flex items-center space-x-4" onClick={() => setActiveMenu(null)}>
             <img
               src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
               alt="KAIST Logo"
-              className="h-14 w-auto object-contain transition-all duration-300"
+              className="h-24 w-auto object-contain transition-all duration-300"
             />
-            <div className="h-10 w-[1px] bg-gray-200 hidden sm:block"></div>
+            <div className="h-11 w-[1px] bg-gray-200 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-[#004191] font-bold text-xl tracking-tight leading-none">
-                College of AI
-              </span>
-              <span className="text-gray-400 text-[11px] font-medium uppercase tracking-widest">
-                {t("kaist_ai")}
-              </span>
+              <span className="text-[#004191] font-bold text-l sm:text-xl md:text-2xl tracking-tight leading-none">College of AI</span>
+              <span className="text-gray-400 text-[12px] font-base uppercase tracking-widest">AI대학</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-10 h-full">
+          <div className="hidden md:flex items-center space-x-12 h-full">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -90,12 +81,12 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   to={item.path}
-                  className={`text-sm font-bold tracking-tight transition-colors py-8 border-b-2 ${location.pathname === item.path || activeMenu === item.name
-                    ? "text-[#004191] border-[#004191]"
-                    : "text-gray-700 border-transparent hover:text-[#004191]"
+                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${location.pathname === item.path || activeMenu === item.name
+                      ? 'text-[#004191] border-[#004191]'
+                      : 'text-gray-700 border-transparent hover:text-[#004191]'
                     }`}
                 >
-                  {t(item.name).toUpperCase()}
+                  {t(item.name)}
                 </Link>
               </div>
             ))}
@@ -104,24 +95,14 @@ const Navbar: React.FC = () => {
           {/* Utils */}
           <div className="flex items-center space-x-4">
             <button
-              onClick={() => setLanguage(language === "en" ? "ko" : "en")}
+              onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
               className="text-[10px] font-bold text-gray-400 hover:text-[#004191] border border-gray-200 rounded px-2 py-1 transition-all"
             >
-              {language === "en" ? "KOREAN" : "ENGLISH"}
+              {language === 'en' ? 'KOREAN' : 'ENGLISH'}
             </button>
             <button className="md:hidden p-2 text-gray-500">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
           </div>
