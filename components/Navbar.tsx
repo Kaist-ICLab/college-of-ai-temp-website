@@ -1,7 +1,7 @@
-import React, { useContext, useState, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { LanguageContext } from '../App';
-import { useTranslation } from '../i18n';
+import React, { useContext, useState, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { LanguageContext } from "../App";
+import { useTranslation } from "../i18n";
 
 interface SubItem {
   name: string;
@@ -84,7 +84,10 @@ const Navbar: React.FC = () => {
                 key={item.name}
                 className="h-full flex items-center relative"
                 onMouseEnter={(e) => {
-                  if (item.subcategories.length > 0 && navContainerRef.current) {
+                  if (
+                    item.subcategories.length > 0 &&
+                    navContainerRef.current
+                  ) {
                     const itemRect = e.currentTarget.getBoundingClientRect();
                     const containerRect =
                       navContainerRef.current.getBoundingClientRect();
@@ -93,8 +96,8 @@ const Navbar: React.FC = () => {
                     setDropdownLeft(
                       itemRect.left +
                         // itemRect.width / 2
-                        - containerRect.left
-                        - 47
+                        -containerRect.left -
+                        47,
                     );
                   } else {
                     setActiveMenu(null);
@@ -105,10 +108,9 @@ const Navbar: React.FC = () => {
                 <Link
                   to={item.path}
                   className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${
-                    location.pathname === item.path ||
-                    activeMenu === item.name
-                      ? 'text-[#002380] border-[#002380]'
-                      : 'text-gray-700 border-transparent hover:text-[#002380]'
+                    location.pathname === item.path || activeMenu === item.name
+                      ? "text-[#002380] border-[#002380]"
+                      : "text-gray-700 border-transparent hover:text-[#002380]"
                   }`}
                 >
                   {t(item.name)}
@@ -120,9 +122,7 @@ const Navbar: React.FC = () => {
           {/* Utils */}
           <div className="flex items-center space-x-4">
             <button
-              onClick={() =>
-                setLanguage(language === 'en' ? 'ko' : 'en')
-              }
+              onClick={() => setLanguage(language === "en" ? "ko" : "en")}
               className="text-[10px] font-bold text-gray-400 hover:text-[#002380] border border-gray-200 rounded px-2 py-1 transition-all"
             >
               {language === "en" ? "KOREAN" : "ENGLISH"}
@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
       {/* Dropdown Panel */}
       <div
         className={`absolute top-18 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out pb-4
-          ${activeMenu ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          ${activeMenu ? "opacity-100 visible" : "opacity-0 invisible"}
         `}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
