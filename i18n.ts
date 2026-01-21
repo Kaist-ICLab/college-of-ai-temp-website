@@ -844,8 +844,8 @@ export const translations: Translation = {
     ko: "공과대학에서 개설한 전공선택(CoE코드)을 6학점까지 전공선택으로 인정",
   },
   ax_ug_intensive_title: {
-    en: "Advanced Major: At least 12 credits",
-    ko: "심화전공: 총 12 학점 이상 이수",
+    en: "Advanced Major: At least 15 credits",
+    ko: "심화전공: 총 15 학점 이상 이수",
   },
   ax_ug_intensive_desc: {
     en: "Students must complete 15 credits of major courses in each track (Data & Content AI, Physics & Manufacturing AI, Bio & Materials AI, and AI for Sustainability) excluding general major courses.",
