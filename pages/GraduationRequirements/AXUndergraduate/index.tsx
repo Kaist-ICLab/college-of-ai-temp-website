@@ -118,6 +118,14 @@ const AXUndergraduate: React.FC<AXUndergraduateProps> = ({ language }) => {
             <NoteText>{t('ax_ug_research_note')}</NoteText>
           </div>
         </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ax_ug_transit')}</p>
+          </div>
+        </section>
       </div>
     </RequirementBox>
   );

@@ -57,6 +57,14 @@ const AXGraduate: React.FC<AXGraduateProps> = ({ language }) => {
             <BulletItem>{t('ax_ms_research_2')}</BulletItem>
           </div>
         </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ax_ms_transit')}</p>
+          </div>
+        </section>
       </div>
     </RequirementBox>
   );
@@ -106,6 +114,14 @@ const AXGraduate: React.FC<AXGraduateProps> = ({ language }) => {
             <BulletItem>{t('ax_phd_research_2')}</BulletItem>
           </div>
         </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ax_phd_transit')}</p>
+          </div>
+        </section>
       </div>
     </RequirementBox>
   );
@@ -149,6 +165,14 @@ const AXGraduate: React.FC<AXGraduateProps> = ({ language }) => {
           <div className="ml-3 sm:ml-4 space-y-2">
             <BulletItem>{t('ax_int_research_1')}</BulletItem>
             <BulletItem>{t('ax_int_research_2')}</BulletItem>
+          </div>
+        </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ax_int_transit')}</p>
           </div>
         </section>
       </div>

@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
       path: "#",
       subcategories: [
         { name: "course_information", path: "/course-information" },
-        { name: "graduation_req", path: "/graduation-requirements" },
+        { name: "graduation_reqs", path: "/graduation-requirements" },
       ],
     },
     {
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
             <img
               src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
               alt="KAIST Logo"
-              className="h-24 w-auto object-contain transition-all duration-300"
+              className="h-32 w-auto object-contain transition-all duration-300"
             />
             <div className="h-11 w-[1px] bg-gray-200 hidden sm:block" />
             <div className="flex flex-col">
@@ -95,9 +95,9 @@ const Navbar: React.FC = () => {
                     setActiveMenu(item.name);
                     setDropdownLeft(
                       itemRect.left +
-                        // itemRect.width / 2
-                        -containerRect.left -
-                        47,
+                      // itemRect.width / 2
+                      -containerRect.left -
+                      47,
                     );
                   } else {
                     setActiveMenu(null);
@@ -107,11 +107,10 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   to={item.path}
-                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${
-                    location.pathname === item.path || activeMenu === item.name
-                      ? "text-[#002380] border-[#002380]"
-                      : "text-gray-700 border-transparent hover:text-[#002380]"
-                  }`}
+                  className={`text-base font-bold tracking-tight transition-colors py-2 border-b-2 ${location.pathname === item.path || activeMenu === item.name
+                    ? "text-[#002380] border-[#002380]"
+                    : "text-gray-700 border-transparent hover:text-[#002380]"
+                    }`}
                 >
                   {t(item.name)}
                 </Link>

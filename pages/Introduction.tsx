@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { LanguageContext } from "../App";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useTranslation } from "../i18n";
@@ -7,7 +6,6 @@ import { useTranslation } from "../i18n";
 const Introduction: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
-  const location = useLocation();
 
   // Content for the Welcome Message
   const deansMessageEn = `
@@ -25,13 +23,6 @@ const Introduction: React.FC = () => {
     또한 미래 AI 시대에 요구되는 인재상을 중심에 두고, 기초 역량과 문제 해결 능력, 사회적 책임 의식을 함께 갖춘 인재 양성을 지향합니다. KAIST AI대학은 미래를 예측하는 데 그치지 않고, AI로 미래를 만들어가는 대학이 되고자 합니다. 지속적인 관심과 성원을 부탁드립니다.
     감사합니다.
   `;
-
-  // Sidebar items
-  const sidebarItems = [
-    { name: "welcome_msg", path: "/intro" },
-    { name: "departments", path: "/departments" },
-    { name: "degree_programs", path: "/academics" },
-  ];
 
   return (
     <div className="bg-white min-h-screen">

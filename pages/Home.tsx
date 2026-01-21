@@ -53,9 +53,9 @@ const Home: React.FC = () => {
     <div className="relative">
       {/* Hero Banner */}
       <div className="relative h-[740px] overflow-hidden">
-        <img 
+        <img
           src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/homepage3.png"
-          alt="KAIST Campus" 
+          alt="KAIST Campus"
           className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
         />
         <div className="absolute inset-0 bg-white/0 flex items-center">
@@ -231,103 +231,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* 3. Summary of Education Programs */}
-      {/* <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-6">
-            <h2 className={sectionTitleClass + " mb-0"}>
-              {language === "en" ? "Course Information" : "교과 과정"}
-            </h2>
-            <Link to="/academics" onClick={() => window.scrollTo(0, 0)} className="group flex items-center text-[#002380] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform mt-4 md:mt-0">
-              Full Curriculum <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="p-10 bg-[#f8faff] rounded-3xl border border-blue-50 shadow-sm">
-              <div className="text-[#002380] font-bold text-xs uppercase tracking-[0.2em] mb-4">Undergraduate</div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">{t('undergraduate')}</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed text-sm">
-                {language === "en"
-                  ? "Bachelor's program focusing on core algorithms, mathematics, and hands-on AI deployment (138+ credits)."
-                  : "핵심 알고리즘, 수학 및 실전 AI 배포에 중점을 둔 학부 프로그램 (138학점 이상)."}
-              </p>
-            </div>
-            <div className="p-10 bg-white border border-gray-100 rounded-3xl shadow-sm">
-              <div className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">
-                Graduate School
-              </div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
-                {t("graduate")}
-              </h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex justify-between items-center pb-2 border-b border-gray-50">
-                  <span className="text-sm font-bold text-gray-700">
-                    {t("master")}
-                  </span>
-                  <span className="text-xs text-gray-400 italic">
-                    Advanced Research
-                  </span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b border-gray-50">
-                  <span className="text-sm font-bold text-gray-700">
-                    {t("doctor")}
-                  </span>
-                  <span className="text-xs text-gray-400 italic">
-                    Original Publications
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="p-10 bg-[#002380] text-white rounded-3xl shadow-xl shadow-[#002380]/20 flex flex-col justify-between">
-              <div>
-                <div className="text-white/50 font-bold text-xs uppercase tracking-[0.2em] mb-4">
-                  Special Track
-                </div>
-                <h3 className="text-2xl font-bold mb-6 italic">
-                  {t("integrated")}
-                </h3>
-                <p className="text-white/80 mb-8 leading-relaxed text-sm">
-                  {language === "en"
-                    ? "Seamless track from Master's to Ph.D. for high-impact research innovation."
-                    : "고영향력 연구 혁신을 위한 석박사 통합 원스톱 트랙."}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* 4. Admission Information */}
-      {/* <section className="bg-[#f0f7ff] py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-           <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path d="M0 100 L100 0 L100 100 Z" fill="#002380" />
-           </svg>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className={sectionTitleClass}>
-            {language === "en" ? "Admissions" : "입학"}
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-8 text-gray-900">
-              <p className="text-gray-600 mb-10 text-lg leading-relaxed">
-                {language === "en"
-                  ? "We seek collaborative and ethical minds whose innovation will benefit the global society. Join the pioneers building the future foundations of AI."
-                  : "우리는 전 세계 사회에 기여할 수 있는 협력적이고 윤리적인 혁신 인재를 찾고 있습니다. 미래 AI의 토대를 구축하는 선구자들과 함께하십시오."}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                 <Link to="/admissions" onClick={() => window.scrollTo(0, 0)} className="bg-[#002380] hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-normal transition-all text-center shadow-lg shadow-[#002380]/20">
-                   {t('undergraduate')}
-                 </Link>
-                 <Link to="/admissions" onClick={() => window.scrollTo(0, 0)} className="bg-white hover:bg-gray-50 text-gray-900 px-10 py-4 rounded-xl font-normal border border-gray-200 transition-all text-center">
-                   {t('graduate')}
-                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 };

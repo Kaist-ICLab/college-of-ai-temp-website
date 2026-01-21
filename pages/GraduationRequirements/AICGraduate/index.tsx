@@ -70,6 +70,14 @@ const AICGraduate: React.FC<AICGraduateProps> = ({ language }) => {
               {hasResearchNote && <NoteText>{t(`${prefix}_research_note`)}</NoteText>}
             </div>
           </section>
+
+          {/* Transitional Measures */}
+          <section>
+            <SectionHeader title={t('transitional_measures')} />
+            <div className="ml-3 sm:ml-4">
+              <p>{t(`${prefix}_transit`)}</p>
+            </div>
+          </section>
         </div>
       </RequirementBox>
     );

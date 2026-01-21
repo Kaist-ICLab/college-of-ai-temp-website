@@ -1,6 +1,6 @@
 
 import React, { useState, createContext, useContext } from 'react';
-import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Language } from './types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -34,7 +34,6 @@ const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/intro" element={<Introduction />} />
               <Route path="/departments" element={<Departments />} />
-              {/* <Route path="/academics" element={<Education />} /> */}{/* Removed Education page */}
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/course-information" element={<CourseInfo />} />
               <Route path="/graduation-requirements" element={<GraduationRequirements />} />

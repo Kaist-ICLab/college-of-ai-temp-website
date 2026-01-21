@@ -127,6 +127,14 @@ const AICUndergraduate: React.FC<AICUndergraduateProps> = ({ language }) => {
               <NoteText>{t("aic_research_note")}</NoteText>
             </div>
           </div>
+
+          {/* Transitional Measures */}
+          <div>
+            <SectionHeader title={t("transitional_measures")} />
+            <div className="ml-3 sm:ml-4">
+              <p>{t("aic_ug_transit")}</p>
+            </div>
+          </div>
         </section>
       </div>
     </RequirementBox>

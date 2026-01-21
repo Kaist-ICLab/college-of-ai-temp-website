@@ -52,6 +52,14 @@ const AISGraduate: React.FC<AISGraduateProps> = ({ language }) => {
             <BulletItem>{t('ais_ms_research_1')}</BulletItem>
           </div>
         </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ais_ms_transit')}</p>
+          </div>
+        </section>
       </div>
     </RequirementBox>
   );
@@ -93,6 +101,14 @@ const AISGraduate: React.FC<AISGraduateProps> = ({ language }) => {
             <BulletItem>{t('ais_phd_research_1')}</BulletItem>
           </div>
         </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ais_phd_transit')}</p>
+          </div>
+        </section>
       </div>
     </RequirementBox>
   );
@@ -132,6 +148,14 @@ const AISGraduate: React.FC<AISGraduateProps> = ({ language }) => {
           <SectionHeader title={t('ais_int_research_req')} />
           <div className="ml-3 sm:ml-4">
             <BulletItem>{t('ais_int_research_1')}</BulletItem>
+          </div>
+        </section>
+
+        {/* Transitional Measures */}
+        <section>
+          <SectionHeader title={t('transitional_measures')} />
+          <div className="ml-3 sm:ml-4">
+            <p>{t('ais_int_transit')}</p>
           </div>
         </section>
       </div>
