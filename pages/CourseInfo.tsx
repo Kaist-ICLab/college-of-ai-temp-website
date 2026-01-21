@@ -100,7 +100,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of AX (AI Transformation)', ko: 'AX 학과 (인공지능전환)' },
+      title: { en: 'Department of AX (AI Transformation)', ko: 'AX 학과' },
       note: { 
         en: 'Cross-track recognition enabled: Courses taken in other AX tracks are counted toward graduation credit.', 
         ko: '타 전공 트랙의 교과목이라 하더라도 AX학과 졸업이수 학점으로 인정됨.' 
@@ -159,7 +159,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of AI and Futures Studies', ko: 'AI 미래학과' },
+      title: { en: 'Department of Future AI', ko: 'AI 미래학과' },
       courses: [
         { level: '1000-level', code: 'CS.10003', name: { en: 'Elements of AI', ko: '인공지능 기초' } },
         { level: '2000-level', code: 'FSM.20001', name: { en: 'Introduction to Future Strategy', ko: '미래학 개론' } },
