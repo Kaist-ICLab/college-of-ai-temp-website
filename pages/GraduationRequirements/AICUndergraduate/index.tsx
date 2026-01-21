@@ -55,18 +55,12 @@ const AICUndergraduate: React.FC<AICUndergraduateProps> = ({ language }) => {
             <div>
               <SubSectionHeader title={t("aic_mandatory_title")} />
               <ul className="ml-3 sm:ml-4 space-y-1.5">
-<<<<<<< HEAD
-                {[1, 2, 3, 4].map(idx => (
-                  <li key={idx} className="flex gap-2 items-start text-gray-500">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
-=======
                 {[1, 2, 3, 4].map((idx) => (
                   <li
                     key={idx}
                     className="flex gap-2 items-start text-gray-500"
                   >
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#004191] shrink-0"></span>
->>>>>>> 6db79a0 (updated the course graduation contents)
                     <span>{t(`aic_mandatory_${idx}`)}</span>
                   </li>
                 ))}
