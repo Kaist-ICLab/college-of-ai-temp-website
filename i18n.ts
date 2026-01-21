@@ -86,10 +86,10 @@ export const translations: Translation = {
   doctor: { en: "Doctoral", ko: "박사" },
   doctoral: { en: "Doctoral", ko: "박사" },
   integrated: { en: "Integrated", ko: "석박사통합" },
-  dept_ai_computing: { en: "Department of AI Computing", ko: "AI 컴퓨팅학과" },
-  dept_ai_systems: { en: "Department of AI Systems", ko: "AI 시스템학과" },
-  dept_ax: { en: "AX Department", ko: "AX 학과" },
-  dept_ai_future: { en: "Department of Future AI", ko: "AI 미래학과" },
+  dept_ai_computing: { en: "Department of AI Computing", ko: "AI컴퓨팅학과" },
+  dept_ai_systems: { en: "Department of AI Systems", ko: "AI시스템학과" },
+  dept_ax: { en: "Department of AX", ko: "AX학과" },
+  dept_ai_future: { en: "Department of Future AI", ko: "AI미래학과" },
   read_more: { en: "Read More", ko: "자세히 보기" },
   website: { en: "Website", ko: "홈페이지" },
   degrees_offered: { en: "Degrees Offered", ko: "학위 과정" },
@@ -212,8 +212,8 @@ export const translations: Translation = {
   },
   aic_basic_req: { en: "Elective Basic Courses", ko: "기초선택 이수요건" },
   aic_mas109_req: {
-    en: "Introduction to Linear Algebra(MAS109) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra(MAS109).",
-    ko: "기초선택 교과목으로 선형대수학개론을 반드시 포함하여야 하며, 복수전공 이수자는 선형대수학개론을 반드시 포함하여 3학점 이상 이수하여야 함.",
+    en: "Introduction to Linear Algebra(MAS.10009) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra(MAS.10009).",
+    ko: "기초선택 교과목으로 선형대수학개론(MAS.10009)을 반드시 포함하여야 하며, 복수전공 이수자는 선형대수학개론을 반드시 포함하여 3학점 이상 이수하여야 함.",
   },
   aic_basic_note: {
     en: "※ Elective general course requirements are specified in the elective general course requirements by year of admission.",
@@ -796,8 +796,8 @@ export const translations: Translation = {
   },
   ax_ug_basic_req: { en: "Elective Basic Courses", ko: "기초선택 이수요건" },
   ax_ug_basic_1: {
-    en: "Introduction to Linear Algebra(MAS109) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra(MAS109).",
-    ko: "기초선택 교과목으로 선형대수학개론을 반드시 포함하여야 하며, 복수전공 이수자는 선형대수학개론을 반드시 포함하여 3학점 이상 이수하여야 함.",
+    en: "Introduction to Linear Algebra((MAS.10009)) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra(MAS.10009).",
+    ko: "기초선택 교과목으로 선형대수학개론(MAS.10009)을 반드시 포함하여야 하며, 복수전공 이수자는 선형대수학개론을 반드시 포함하여 3학점 이상 이수하여야 함.",
   },
   ax_ug_basic_note: {
     en: "※ Elective general course requirements are specified in the elective general course requirements by year of admission.",
@@ -848,7 +848,7 @@ export const translations: Translation = {
     ko: "심화전공: 총 12 학점 이상 이수",
   },
   ax_ug_intensive_desc: {
-    en: "Students must complete 15 credits of major courses in each track (Data Content AI, Physical Manufacturing AI, Bio-Material AI, and AI for Sustainability) excluding general major courses.",
+    en: "Students must complete 15 credits of major courses in each track (Data & Content AI, Physics & Manufacturing AI, Bio & Materials AI, and AI for Sustainability) excluding general major courses.",
     ko: "일반전공 이수과목을 제외하고, 각 트랙 별 (데이터콘텐츠AI, 물리제조AI, 바이오소재AI, AI지속가능성) 전공과목 15학점 이수",
   },
   ax_ug_inter_title: {
@@ -943,7 +943,7 @@ export const translations: Translation = {
     ko: "본 학과의 각 트랙 별 과목 500단위 이상 교과목을 12학점 이상 반드시 이수.",
   },
   ax_ms_elective_1_note: {
-    en: "※ Refer to the designated course lists for the four tracks (Data Content AI, Physical Manufacturing AI, Bio-Material AI, and AI for Sustainability)",
+    en: "※ Refer to the designated course lists for the four tracks (Data & Content AI, Physics & Manufacturing AI, Bio & Materials AI, and AI for Sustainability)",
     ko: "※ 4개 트랙별 (데이터콘텐츠AI, 물리제조AI, 바이오소재AI, AI지속가능성)지정과목 참고.",
   },
   ax_ms_elective_2: {
@@ -1006,7 +1006,7 @@ export const translations: Translation = {
     ko: "본 학과의 각 트랙 별 과목 500단위 이상 교과목을 18학점 이상 반드시 이수.",
   },
   ax_phd_elective_1_note: {
-    en: "※ Refer to the designated course lists for the four tracks (Data Content AI, Physical Manufacturing AI, Bio-Material AI, and AI for Sustainability)",
+    en: "※ Refer to the designated course lists for the four tracks (Data & Content AI, Physics & Manufacturing AI, Bio & Materials AI, and AI for Sustainability)",
     ko: "※ 4개 트랙별 (데이터콘텐츠AI, 물리제조AI, 바이오소재AI, AI지속가능성)지정과목 참고.",
   },
   ax_phd_elective_note_1: {
@@ -1073,7 +1073,7 @@ export const translations: Translation = {
     ko: "본 학과의 각 트랙 별 과목 500단위 이상 교과목을 18학점 이상 반드시 이수.",
   },
   ax_int_elective_1_note: {
-    en: "※ Refer to the designated course lists for the four tracks (Data Content AI, Physical Manufacturing AI, Bio-Material AI, and AI for Sustainability)",
+    en: "※ Refer to the designated course lists for the four tracks (Data & Content AI, Physics & Manufacturing AI, Bio & Materials AI, and AI for Sustainability)",
     ko: "※ 4개 트랙 별 (데이터콘텐츠AI, 물리제조AI, 바이오소재AI, AI지속가능성) 지정과목 참고.",
   },
   ax_int_elective_note: {
@@ -1109,8 +1109,8 @@ export const translations: Translation = {
   },
   aif_ug_basic_req: { en: "Elective Basic Courses", ko: "기초선택 이수요건" },
   aif_ug_basic_1: {
-    en: "Introduction to Artificial Intelligence (CS.10003) and Introduction to Linear Algebra (MAS109) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra (MAS109).",
-    ko: "기초선택 교과목으로 인공지능기초(CS.10003)과 선형대수학개론을 반드시 포함하여야 하며, 복수전공 이수자 또한 상기 두 과목을 반드시 이수하여야 함.",
+    en: "Introduction to Artificial Intelligence (CS.10003) and Introduction to Linear Algebra (MAS.10009) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra (MAS.10009).",
+    ko: "기초선택 교과목으로 인공지능기초(CS.10003)과 선형대수학개론(MAS.10009)을 반드시 포함하여야 하며, 복수전공 이수자 또한 상기 두 과목을 반드시 이수하여야 함.",
   },
   aif_ug_basic_note: {
     en: "※ Elective general course requirements are specified in the elective general course requirements by year of admission.",
@@ -1240,8 +1240,8 @@ export const translations: Translation = {
     ko: "GFS.50003 바이오나노 기술전략",
   },
   aif_ms_major_4: {
-    en: "GFS.50004 Convergence Technology Strategy",
-    ko: "GFS.50004 융합 기술전략",
+    en: "GFS.50005 Convergence Technology Strategy",
+    ko: "GFS.50005 융합 기술전략",
   },
   aif_ms_elective_req: {
     en: "Elective Courses: At least 18 credits",
@@ -1315,8 +1315,8 @@ export const translations: Translation = {
     ko: "GFS.50003 바이오나노 기술전략",
   },
   aif_phd_major_4: {
-    en: "GFS.50004 Convergence Technology Strategy",
-    ko: "GFS.50004 융합 기술전략",
+    en: "GFS.50005 Convergence Technology Strategy",
+    ko: "GFS.50005 융합 기술전략",
   },
   aif_phd_elective_req: {
     en: "Elective Courses: At least 21 credits",
@@ -1397,8 +1397,8 @@ export const translations: Translation = {
     ko: "GFS.50003 바이오나노 기술전략",
   },
   aif_int_major_4: {
-    en: "GFS.50004 Convergence Technology Strategy",
-    ko: "GFS.50004 융합 기술전략",
+    en: "GFS.50005 Convergence Technology Strategy",
+    ko: "GFS.50005 융합 기술전략",
   },
   aif_int_elective_req: {
     en: "Elective Courses: At least 21 credits",

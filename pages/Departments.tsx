@@ -102,8 +102,8 @@ const Departments: React.FC = () => {
           application-oriented department. Based on{" "}
           <b>four specialized tracks</b> covering{" "}
           <b>
-            Data and Content AI, Physical and Manufacturing AI, Bio and
-            Materials AI, and AI Sustainability
+            Data & Content AI, Physics & Manufacturing AI, Bio & Materials AI,
+            and AI for Sustainability
           </b>
           , the department cultivates{" "}
           <b>field-ready convergence professionals</b> who directly apply AI
