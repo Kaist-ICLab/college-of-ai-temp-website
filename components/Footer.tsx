@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     <footer className="bg-[#2b333c] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section: Brand & Contact Info */}
-        <div className="flex flex-col md:flex-row justify-between items-start border-b border-gray-700 pb-4 mb-4 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-gray-700 pb-8 mb-6 gap-8">
           {/* Brand & Description */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center space-x-3 mb-6">
@@ -41,24 +41,28 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Contact Info  */}
-          <div className="md:text-right flex-shrink-0 mt-4 md:mt-0">
+          {/* Contact Info - Moved to the baseline of the top section */}
+          <div className="md:text-right flex-shrink-0 mt-8 md:mt-0">
             <div className="text-gray-400 text-sm space-y-1">
               {language === "en" ? (
                 <>
-                  <p className="font-bold text-gray-300 mb-1">KAIST</p>
+                  <p className="font-bold text-gray-300 mb-1 text-xs tracking-widest uppercase">
+                    KAIST
+                  </p>
                   <p>
                     291 Daehak-ro, Yuseong-gu, Daejeon 34141, Republic of Korea
                   </p>
-                  <p>T. +82 42-350-2114</p>
+                  <p className="font-medium text-gray-300">
+                    T. +82 42-350-2114
+                  </p>
                 </>
               ) : (
                 <>
-                  <p className="font-bold text-gray-300 mb-1">
+                  <p className="font-bold text-gray-300 mb-1 text-xs tracking-widest uppercase">
                     한국과학기술원(KAIST)
                   </p>
                   <p>대전광역시 유성구 대학로 291 (34141)</p>
-                  <p>T. 042-350-2114</p>
+                  <p className="font-medium text-gray-300">T. 042-350-2114</p>
                 </>
               )}
             </div>
@@ -66,8 +70,16 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section: Copyright */}
-        <div className="text-[11px] text-gray-500 flex flex-col md:flex-row justify-between items-center uppercase tracking-widest">
-          <p>COPYRIGHT(C) 2026 KAIST. ALL RIGHTS RESERVED.</p>
+        <div className="text-[10px] text-gray-500 flex flex-col md:flex-row justify-between items-center uppercase tracking-widest">
+          <p>COPYRIGHT(C) 2026 KAIST COLLEGE OF AI. ALL RIGHTS RESERVED.</p>
+          {/* <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Terms of Use
+            </a> */}
+          {/* </div> */}
         </div>
       </div>
     </footer>
