@@ -71,6 +71,14 @@ const AIFGraduate: React.FC<AIFGraduateProps> = ({ language }) => {
               <BulletItem>{t(`${prefix}_research_2`)}</BulletItem>
             </div>
           </section>
+
+          {/* Transitional Measures */}
+          <section>
+            <SectionHeader title={t('transitional_measures')} />
+            <div className="ml-3 sm:ml-4">
+              <p>{t(`${prefix}_transit`)}</p>
+            </div>
+          </section>
         </div>
       </RequirementBox>
     );

@@ -115,6 +115,14 @@ const AISUndergraduate: React.FC<AISUndergraduateProps> = ({ language }) => {
               </div>
             </div>
           </div>
+
+          {/* Transitional Measures */}
+          <div>
+            <SectionHeader title={t('transitional_measures')} />
+            <div className="ml-3 sm:ml-4">
+              <p>{t('ais_ug_transit')}</p>
+            </div>
+          </div>
         </section>
       </div>
     </RequirementBox>

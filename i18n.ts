@@ -9,8 +9,6 @@ export const translations: Translation = {
   student_council: { en: "Student Council", ko: "학생회" },
 
   admissions: { en: "Admissions", ko: "입학 안내" },
-  admissions_btn: { en: "Admissions Information", ko: "입학 안내" },
-  prospective_students: { en: "Prospective Students", ko: "입학 안내" },
   admissions_hero_desc: {
     en: "KAIST is a community of global talents. We recruit passionate and extraordinary talents who enjoy exploring knowledge, fostering collaborative and ethical minds to benefit global society.",
     ko: "KAIST는 세계적인 인재들의 공동체입니다. 지식 탐구를 즐기는 열정적이고 비범한 인재를 모집하며, 글로벌 사회에 기여할 협력적이고 윤리적인 지성을 지향합니다.",
@@ -67,23 +65,17 @@ export const translations: Translation = {
   dept_news: { en: "Department News", ko: "학과 소식" },
   education: { en: "Education", ko: "교육" },
   course_information: { en: "Course Information", ko: "교과과정" },
-  ug_courses: { en: "Undergraduate Courses", ko: "학부 교과과정" },
-  ug_req: { en: "Undergraduate Requirement", ko: "학부 졸업요건" },
-  grad_courses: { en: "Graduate Courses", ko: "대학원 교과과정" },
-  grad_req: { en: "Graduate Requirement", ko: "대학원 졸업요건" },
   course_info: { en: "Course Information", ko: "교과 정보" },
   campus_life: { en: "Campus Life", ko: "캠퍼스 생활" },
   giving: { en: "Giving", ko: "발전기금" },
-  search: { en: "SEARCH", ko: "검색" },
+
   home: { en: "HOME", ko: "홈" },
   welcome_msg: { en: "Welcome Message", ko: "학장 인사말" },
   overview: { en: "Overview", ko: "대학 개요" },
   degree_programs: { en: "Degree Programs", ko: "교육 프로그램 소개" },
   undergraduate: { en: "Undergraduate", ko: "학부" },
   graduate: { en: "Graduate", ko: "대학원" },
-  master: { en: "Master's", ko: "석사" },
   masters: { en: "Master's", ko: "석사" },
-  doctor: { en: "Doctoral", ko: "박사" },
   doctoral: { en: "Doctoral", ko: "박사" },
   integrated: { en: "Integrated", ko: "석박사통합" },
   dept_ai_computing: { en: "Department of AI Computing", ko: "AI컴퓨팅학과" },
@@ -104,7 +96,6 @@ export const translations: Translation = {
 
   // Graduation requirements specific keys (from HEAD)
   graduation_reqs: { en: "Graduation Requirements", ko: "졸업 요건" },
-  graduation_req: { en: "Graduation Requirements", ko: "졸업 요건" },
   programs_overview: { en: "Programs & Overview", ko: "전공 소개" },
   grad_req_desc: {
     en: "Detailed academic requirements and completion standards for the College of AI programs.",
@@ -323,8 +314,24 @@ export const translations: Translation = {
     en: "※ Students having a double major are exempt.",
     ko: "※ 복수전공 이수자는 연구과목 이수를 면제함",
   },
-  aic_transit_title: { en: "", ko: "" },
-  aic_transit_desc: { en: "", ko: "" },
+  // Transitional Measures
+  transitional_measures: { en: "Transitional Measures", ko: "경과조치" },
+  aic_ug_transit: {
+    en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aic_ms_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aic_phd_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aic_int_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
 
   aic_ms_title: { en: "AI Computing - Master's", ko: "AI컴퓨팅학과 - 석사" },
   aic_ms_grad_credits: {
@@ -779,6 +786,23 @@ export const translations: Translation = {
     en: "AIS.93200 Ph.D. Seminar or EE.93200 Ph.D. Seminar (2 credits must be taken, only applicable when the subtitle of the course is <Colloquium>)",
     ko: "AIS.93200 세미나(박사) 또는 EE.93200 세미나(박사) 2학점을 반드시 이수하되 부제가 콜로키움인 경우에만 인정",
   },
+  // AI Systems Transitional Measures
+  ais_ug_transit: {
+    en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  ais_ms_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  ais_phd_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  ais_int_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
 
   // AX Undergraduate Requirements
   ax_ug_title: { en: "AX - Undergraduate", ko: "AX학과 - 학부" },
@@ -1091,6 +1115,23 @@ export const translations: Translation = {
   ax_int_research_2: {
     en: "Thesis Research (at least 30 credits)",
     ko: "논문연구 30학점 이상 이수",
+  },
+  // AX Transitional Measures
+  ax_ug_transit: {
+    en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  ax_ms_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  ax_phd_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  ax_int_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
 
   // AI Future Undergraduate Requirements
@@ -1431,6 +1472,23 @@ export const translations: Translation = {
   aif_int_research_2: {
     en: "Ph.D. Dissertation (at least 30 credits)",
     ko: "논문연구 30학점 이상 이수",
+  },
+  // AI Future Transitional Measures
+  aif_ug_transit: {
+    en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aif_ms_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aif_phd_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aif_int_transit: {
+    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
 };
 

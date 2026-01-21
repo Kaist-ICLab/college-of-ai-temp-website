@@ -102,6 +102,14 @@ const AIFUndergraduate: React.FC<AIFUndergraduateProps> = ({ language }) => {
               <NoteText>{t('aif_ug_double_note_2')}</NoteText>
             </div>
           </div>
+
+          {/* Transitional Measures */}
+          <div>
+            <SectionHeader title={t('transitional_measures')} />
+            <div className="ml-3 sm:ml-4">
+              <p>{t('aif_ug_transit')}</p>
+            </div>
+          </div>
         </section>
       </div>
     </RequirementBox>
