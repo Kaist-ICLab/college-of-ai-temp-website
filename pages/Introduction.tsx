@@ -41,8 +41,8 @@ const Introduction: React.FC = () => {
 
             <div className="bg-white border border-gray-100 shadow-sm rounded-[2.5rem] overflow-hidden mb-12 flex flex-col md:flex-row gap-0 items-stretch h-[860px]">
               <div className="flex-grow p-8 md:p-14 order-2 md:order-1 flex flex-col justify-start">
-                <h3 className="text-2xl font-bold text-[#002380] mb-8 italic leading-tight">
-                  "Shape the future through Artificial Intelligence."
+                <h3 className="text-2xl font-bold text-[#002380] mb-16 italic leading-tight">
+                  "KAIST College of AI, Where AI-Natives Create the Future."
                 </h3>
                 <div className="text-gray-700 leading-relaxed space-y-6 text-justify text-base md:text-lg">
                   {(language === "en" ? deansMessageEn : deansMessageKo)
@@ -55,7 +55,7 @@ const Introduction: React.FC = () => {
                 <div className="mt-12 pt-8 border-t border-gray-50 flex justify-end">
                   <div className="text-right">
                     <p className="font-black text-gray-900 text-xl tracking-tight">
-                      {language === "en" ? "Eunho Yang" : "양 은 호"}
+                      {language === "en" ? "Kuk-Jin Yoon" : "윤 국 진"}
                     </p>
                     <p className="text-[#002380] font-bold text-xs uppercase tracking-widest mt-1">
                       {language === "en"
@@ -68,9 +68,9 @@ const Introduction: React.FC = () => {
               <div className="w-full md:w-80 flex-shrink-0 order-1 md:order-2 bg-gray-50">
                 <div className="h-full w-full grayscale hover:grayscale-0 transition-all duration-700">
                   <img
-                    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FPtMZt%2FbtsEViUqjGf%2FAAAAAAAAAAAAAAAAAAAAAJY93zsdcPRhLcgssrQ5laCo2LMu40F69djKOs3XyTR-%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1769871599%26allow_ip%3D%26allow_referer%3D%26signature%3Dr3vzoT3jA0dEtALHY0tV5gywu2s%253D"
+                    src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/AI대학%20홈페이지%20사진%201.png"
                     alt="Dean"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top w-full aspect-[3/4] origin-top scale-100"
                   />
                 </div>
               </div>

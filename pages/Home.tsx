@@ -102,12 +102,12 @@ const Home: React.FC = () => {
             <div className="md:col-span-4">
               <div className="relative">
                 <img
-                  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FPtMZt%2FbtsEViUqjGf%2FAAAAAAAAAAAAAAAAAAAAAJY93zsdcPRhLcgssrQ5laCo2LMu40F69djKOs3XyTR-%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1769871599%26allow_ip%3D%26allow_referer%3D%26signature%3Dr3vzoT3jA0dEtALHY0tV5gywu2s%253D"
+                  src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/AI대학%20홈페이지%20사진%201.png"
                   alt="Dean"
-                  className="rounded-lg shadow-xl object-cover w-full aspect-[3/4]"
+                  className="rounded-lg shadow-xl object-cover object-top w-full aspect-[3/4] origin-top scale-100"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-lg">
-                  <p className="text-white font-bold text-lg">Eunho Yang</p>
+                  <p className="text-white font-bold text-lg">Kuk-Jin Yoon</p>
                   <p className="text-white/80 text-sm">
                     {language === "en" ? "Dean, College of AI" : "AI 대학 학장"}
                   </p>
