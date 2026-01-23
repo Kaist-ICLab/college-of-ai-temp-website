@@ -66,13 +66,13 @@ const Home: React.FC = () => {
                   <>
                     <span className="block">AI-Natives Create Futures</span>
                     <span className="block">
-                      at KAIST College of AI
+                      @ KAIST College of AI
                     </span>
                   </>
                 ) : (
                   <>
                     <span className="block">AI-Natives Create Futures</span>
-                    <span className="block">at KAIST College of AI</span>
+                    <span className="block">@ KAIST College of AI</span>
                   </>
                 )}
               </div>
