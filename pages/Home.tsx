@@ -110,7 +110,7 @@ const Home: React.FC = () => {
             <div className="md:col-span-4">
               <div className="relative">
                 <img
-                  src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/AI대학%20홈페이지%20사진%201.png"
+                  src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/deanPicv2.png"
                   alt="Dean"
                   className="rounded-lg shadow-xl object-cover object-top w-full aspect-[3/4] origin-top scale-100"
                 />
