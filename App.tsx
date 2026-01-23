@@ -1,5 +1,5 @@
 
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Language } from './types';
 import Navbar from './components/Navbar';
