@@ -81,7 +81,7 @@ export const translations: Translation = {
   dept_ai_computing: { en: "Department of AI Computing", ko: "AI컴퓨팅학과" },
   dept_ai_systems: { en: "Department of AI Systems", ko: "AI시스템학과" },
   dept_ax: { en: "Department of AX", ko: "AX학과" },
-  dept_ai_future: { en: "Department of Future AI", ko: "AI미래학과" },
+  dept_ai_future: { en: "Department of AI Future", ko: "AI미래학과" },
   read_more: { en: "Read More", ko: "자세히 보기" },
   website: { en: "Website", ko: "홈페이지" },
   degrees_offered: { en: "Degrees Offered", ko: "학위 과정" },
@@ -183,6 +183,10 @@ export const translations: Translation = {
   grad_req_hero_desc: {
     en: "Guidelines and criteria for completing your degree program.",
     ko: "학위 프로그램 이수를 위한 가이드라인 및 기준입니다.",
+  },
+  grad_req_tentative_note: {
+    en: "* The requirements below are tentative and subject to change.",
+    ko: "* 아래 요건은 잠정안으로 변경될 수 있습니다.",
   },
   aic_ug_title: {
     en: "AI Computing - Undergraduate",

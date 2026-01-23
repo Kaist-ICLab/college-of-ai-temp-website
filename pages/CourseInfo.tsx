@@ -101,9 +101,9 @@ const CourseInfo: React.FC = () => {
     },
     {
       title: { en: 'Department of AX (AI Transformation)', ko: 'AX 학과' },
-      note: { 
-        en: 'Cross-track recognition enabled: Courses taken in other AX tracks are counted toward graduation credit.', 
-        ko: '타 전공 트랙의 교과목이라 하더라도 AX학과 졸업이수 학점으로 인정됨.' 
+      note: {
+        en: 'Cross-track recognition enabled: Courses taken in other AX tracks are counted toward graduation credit.',
+        ko: '타 전공 트랙의 교과목이라 하더라도 AX학과 졸업이수 학점으로 인정됨.'
       },
       courses: [
         // Data & Content AI Track
@@ -117,7 +117,7 @@ const CourseInfo: React.FC = () => {
         { level: 'Data & Content', code: 'ID.30011', name: { en: 'Software Prototyping', ko: '소프트웨어프로토타이핑' } },
         { level: 'Data & Content', code: 'ID.49902', name: { en: 'Special Topics in DesignⅤ<Immersive Space>', ko: '미래디자인:AI와 사회' } },
         { level: 'Data & Content', code: 'CTP.40045', name: { en: 'Augmented Reality', ko: '증강현실' } },
-        
+
         // Physical & Mfg Track
         { level: 'Physical & Mfg', code: 'IE.20051', name: { en: 'Manufacturing Process Innovation', ko: '제조프로세스 혁신' }, required: true },
         { level: 'Physical & Mfg', code: 'CS.40700', name: { en: 'Introduction to Artificial Intelligence', ko: '인공지능 개론' } },
@@ -128,7 +128,7 @@ const CourseInfo: React.FC = () => {
         { level: 'Physical & Mfg', code: 'ME.40058', name: { en: 'Programming for Signal and Image Processing', ko: '신호 및 영상처리를 위한 프로그래밍' } },
         { level: 'Physical & Mfg', code: 'ME.40059', name: { en: 'Introduction to Visual Intelligence', ko: '시각지능개론' } },
         { level: 'Physical & Mfg', code: 'ME.40062', name: { en: 'Automatic Control', ko: '자동제어' } },
-        
+
         // Bio & Materials Track
         { level: 'Bio & Materials', code: 'IE.20060', name: { en: 'Data Structure and Analysis', ko: '데이터 구조 및 분석' }, required: true },
         { level: 'Bio & Materials', code: 'MS.20011', name: { en: 'Introduction to Materials Science and Engineering', ko: '신소재과학개론' }, required: true },
@@ -141,7 +141,7 @@ const CourseInfo: React.FC = () => {
         { level: 'Bio & Materials', code: 'CoE.49901', name: { en: 'Special Topics in Smart Convergence<Protein & Artificial Intelligence>', ko: '스마트 융합특강<단백질과 인공지능>' } },
         { level: 'Bio & Materials', code: 'CBE.49900', name: { en: 'Special Topics in Chemical and Biomolecular Engineering<Chemical engineering of electronic devices>', ko: '생명화학공학특강<AI를 이용한 생화공 문제 해결>' }, required: false },
         { level: 'Bio & Materials', code: 'BCS.40010', name: { en: 'Laboratory in Experimental Data Analysis and Modeling', ko: '생체 데이터분석 및 모델링 실험' } },
-        
+
         // Sustainability Track
         { level: 'Sustainability', code: 'CE.20012', name: { en: 'Environment and Sustainability: an Introduction for Engineers', ko: '환경과 지속가능성 개론' }, required: true },
         { level: 'Sustainability', code: 'CE.20030', name: { en: 'Introduction to Geotechnical Engineering', ko: '지반공학개론' } },
@@ -159,7 +159,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of Future AI', ko: 'AI 미래학과' },
+      title: { en: 'Department of AI Future', ko: 'AI 미래학과' },
       courses: [
         { level: '1000-level', code: 'CS.10003', name: { en: 'Elements of AI', ko: '인공지능 기초' } },
         { level: '2000-level', code: 'FSM.20001', name: { en: 'Introduction to Future Strategy', ko: '미래학 개론' } },
@@ -218,7 +218,7 @@ const CourseInfo: React.FC = () => {
         <div className="space-y-24">
           {courseData.map((dept, deptIdx) => {
             const rowSpans = calculateRowSpans(dept.courses);
-            
+
             return (
               <section key={deptIdx} className="scroll-mt-20">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b-2 border-gray-100">
@@ -250,8 +250,8 @@ const CourseInfo: React.FC = () => {
                         {dept.courses.map((course, idx) => (
                           <tr key={idx} className="group hover:bg-gray-50/50 transition-colors">
                             {rowSpans[idx] !== undefined && (
-                              <td 
-                                className="px-8 py-2 whitespace-nowrap align-top border-r border-gray-100" 
+                              <td
+                                className="px-8 py-2 whitespace-nowrap align-top border-r border-gray-100"
                                 rowSpan={rowSpans[idx]}
                               >
                                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gray-100 text-gray-500 uppercase tracking-tighter sticky top-24">
