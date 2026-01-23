@@ -126,24 +126,26 @@ const GraduationRequirements: React.FC = () => {
             <div
               role="tablist"
               aria-label={t('departments')}
-              className="flex overflow-x-auto sm:overflow-visible sm:flex-wrap justify-start sm:justify-center gap-2 pb-1 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
+              className="w-full"
             >
-              {DEPTS.map((dept) => (
-                <button
-                  key={dept.id}
-                  role="tab"
-                  id={`dept-tab-${dept.id}`}
-                  aria-selected={activeDept === dept.id}
-                  aria-controls="tabpanel-content"
-                  onClick={() => setActiveDept(dept.id)}
-                  className={`px-4 py-1.5 rounded-lg text-sm font-normal transition-all border whitespace-nowrap flex-shrink-0 ${activeDept === dept.id
-                    ? 'bg-[#002380] border-[#002380] text-white shadow-md'
-                    : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
-                    }`}
-                >
-                  {t(dept.name)}
-                </button>
-              ))}
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 pb-2 sm:pb-0">
+                {DEPTS.map((dept) => (
+                  <button
+                    key={dept.id}
+                    role="tab"
+                    id={`dept-tab-${dept.id}`}
+                    aria-selected={activeDept === dept.id}
+                    aria-controls="tabpanel-content"
+                    onClick={() => setActiveDept(dept.id)}
+                    className={`px-3 py-2 sm:px-4 sm:py-1.5 rounded-lg text-xs sm:text-sm font-normal transition-all border text-center ${activeDept === dept.id
+                      ? 'bg-[#002380] border-[#002380] text-white shadow-md'
+                      : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
+                      }`}
+                  >
+                    {t(dept.name)}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>

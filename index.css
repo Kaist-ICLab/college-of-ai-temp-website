@@ -5,3 +5,16 @@ body {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
     background-color: #f8f9fa;
 }
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
