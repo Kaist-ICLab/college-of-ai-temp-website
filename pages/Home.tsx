@@ -60,19 +60,19 @@ const Home: React.FC = () => {
         />
         <div className="absolute inset-0 bg-white/0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 w-full text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl md:text-6xl font-bold mb-4">
               <div className="space-y-0.6 leading-tight">
                 {language === "en" ? (
                   <>
-                    <span className="block">KAIST College of AI,</span>
+                    <span className="block">AI-Natives Create Futures</span>
                     <span className="block">
-                      Where AI-Natives Create the Future
+                      at KAIST College of AI
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="block">국가 AI 전환을</span>
-                    <span className="block">선도하는 인재 육성</span>
+                    <span className="block">AI 네이티브가 만드는 미래,</span>
+                    <span className="block">KAIST AI 대학</span>
                   </>
                 )}
               </div>

@@ -202,7 +202,7 @@ const CourseInfo: React.FC = () => {
           <div className="max-w-3xl mx-auto text-center">
             <div className="relative mb-8">
               <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
-                {t('course_info')}
+                {t('course_information')}
               </h1>
               <div className="mt-7 w-20 h-1 bg-[#002380] rounded-full mx-auto"></div>
             </div>

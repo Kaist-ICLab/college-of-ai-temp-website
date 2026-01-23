@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Utils */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <button
               onClick={() => setLanguage(language === "en" ? "ko" : "en")}
               className="text-[10px] font-bold text-gray-400 hover:text-[#002380] border border-gray-200 rounded px-2 py-1 transition-all"
@@ -200,7 +200,7 @@ const Navbar: React.FC = () => {
           ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
-        <div className="px-4 py-4 space-y-4">
+        <div className="px-6 py-4 mb-6 space-y-4">
           {navItems.map((item) => (
             <div key={item.name} className="space-y-2">
               <Link
