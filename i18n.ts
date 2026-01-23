@@ -64,7 +64,7 @@ export const translations: Translation = {
   seminar: { en: "Seminar", ko: "세미나" },
   dept_news: { en: "Department News", ko: "학과 소식" },
   education: { en: "Education", ko: "교육" },
-  course_information: { en: "Course Information", ko: "교과과정" },
+  course_information: { en: "Course Information", ko: "교과 과정" },
   course_info: { en: "Course Information", ko: "교과 정보" },
   campus_life: { en: "Campus Life", ko: "캠퍼스 생활" },
   giving: { en: "Giving", ko: "발전기금" },
