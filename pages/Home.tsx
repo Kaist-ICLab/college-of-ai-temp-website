@@ -71,8 +71,8 @@ const Home: React.FC = () => {
                   </>
                 ) : (
                   <>
-                    <span className="block">AI 네이티브가 만드는 미래,</span>
-                    <span className="block">KAIST AI 대학</span>
+                    <span className="block">AI-Natives Create Futures</span>
+                    <span className="block">at KAIST College of AI</span>
                   </>
                 )}
               </div>
@@ -100,47 +100,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 1. Introduction - Dean's Welcome Message */}
-      <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={sectionTitleClass}>
-            {language === "en" ? "Welcome Message" : "학장 인사말"}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-            <div className="md:col-span-4">
-              <div className="relative">
-                <img
-                  src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/deanPicv2.png"
-                  alt="Dean"
-                  className="rounded-lg shadow-xl object-cover object-top w-full aspect-[3/4] origin-top scale-100"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-lg">
-                  <p className="text-white font-bold text-lg">Kuk-Jin Yoon</p>
-                  <p className="text-white/80 text-sm">
-                    {language === "en" ? "Dean, College of AI" : "AI 대학 학장"}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="md:col-span-8 flex flex-col justify-center h-full">
-              <div className="space-y-5 text-gray-700 leading-relaxed text-base text-justify">
-                {message.map((para, idx) => (
-                  <p
-                    key={idx}
-                    className={
-                      idx === 0
-                        ? "text-2xl font-bold text-[#002380] leading-snug mb-8"
-                        : ""
-                    }
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 2. Departments - Refined for compact layout */}
       <section className="bg-gray-50 py-24 border-y border-gray-100 relative overflow-hidden">
