@@ -118,6 +118,9 @@ const GraduationRequirements: React.FC = () => {
               <p className="text-lg text-gray-500 leading-relaxed mx-auto">
                 {t('grad_req_hero_desc')}
               </p>
+              <p className="text-sm text-gray-400 mt-3 mx-auto max-w-2xl">
+                {t('grad_req_tentative_note')}
+              </p>
             </div>
             {/* Department Selection */}
             <div
