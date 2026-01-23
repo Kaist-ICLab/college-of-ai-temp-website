@@ -54,7 +54,7 @@ const GraduationRequirements: React.FC = () => {
     return dept ? t(dept.name) : '';
   };
 
-  // #17: Memoize renderContent to prevent unnecessary re-renders
+  // Memoize renderContent to prevent unnecessary re-renders
   const content = useMemo(() => {
     if (activeDept === 'aic') {
       return activeTab === 'ug' ? (

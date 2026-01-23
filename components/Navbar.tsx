@@ -96,7 +96,6 @@ const Navbar: React.FC = () => {
                     setActiveMenu(item.name);
                     setDropdownLeft(
                       itemRect.left +
-                      // itemRect.width / 2
                       -containerRect.left -
                       47,
                     );
@@ -207,8 +206,8 @@ const Navbar: React.FC = () => {
               <Link
                 to={item.path}
                 className={`block text-lg font-bold ${location.pathname === item.path
-                    ? "text-[#002380]"
-                    : "text-gray-700"
+                  ? "text-[#002380]"
+                  : "text-gray-700"
                   }`}
                 onClick={() => {
                   if (item.subcategories.length === 0) {
@@ -241,4 +240,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
