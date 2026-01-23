@@ -60,12 +60,14 @@ const Home: React.FC = () => {
         />
         <div className="absolute inset-0 bg-white/0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 w-full text-white">
-            <h1 className="text-4xl md:text-7xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <div className="space-y-0.6 leading-tight">
                 {language === "en" ? (
                   <>
-                    <span className="block">Leading the National</span>
-                    <span className="block">AI Transition</span>
+                    <span className="block">KAIST College of AI,</span>
+                    <span className="block">
+                      Where AI-Natives Create the Future
+                    </span>
                   </>
                 ) : (
                   <>
@@ -76,16 +78,22 @@ const Home: React.FC = () => {
               </div>
             </h1>
             <p className="text-sm md:text-lg text-gray-200 max-w-3xl mb-8 leading-normal max-w-[40ch] md:max-w-[61ch]">
-              {language === 'en'
-                ? 'College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy.'
-                : 'AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다.'}
+              {language === "en"
+                ? "College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy."
+                : "AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다."}
             </p>
             <div className="flex space-x-6">
-              <Link to="/intro" className="bg-[#002380]/85 hover:bg-[#002380]/50 px-7 py-3 rounded text-sm font-normal transition-all shadow-lg">
-                {t('introduction')}
+              <Link
+                to="/intro"
+                className="bg-[#002380]/85 hover:bg-[#002380]/50 px-7 py-3 rounded text-sm font-normal transition-all shadow-lg"
+              >
+                {t("introduction")}
               </Link>
-              <Link to="/admissions" className="bg-white/10 hover:bg-white/30 backdrop-blur-md px-7 py-3 rounded text-sm font-normal border border-white/30 transition-all">
-                {t('admissions')}
+              <Link
+                to="/admissions"
+                className="bg-white/10 hover:bg-white/30 backdrop-blur-md px-7 py-3 rounded text-sm font-normal border border-white/30 transition-all"
+              >
+                {t("admissions")}
               </Link>
             </div>
           </div>
@@ -117,7 +125,14 @@ const Home: React.FC = () => {
             <div className="md:col-span-8 flex flex-col justify-center h-full">
               <div className="space-y-5 text-gray-700 leading-relaxed text-base text-justify">
                 {message.map((para, idx) => (
-                  <p key={idx} className={idx === 0 ? "text-2xl font-bold text-[#002380] leading-snug mb-8" : ""}>
+                  <p
+                    key={idx}
+                    className={
+                      idx === 0
+                        ? "text-2xl font-bold text-[#002380] leading-snug mb-8"
+                        : ""
+                    }
+                  >
                     {para}
                   </p>
                 ))}

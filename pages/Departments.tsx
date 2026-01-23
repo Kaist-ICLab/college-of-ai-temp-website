@@ -178,120 +178,120 @@ const Departments: React.FC = () => {
     },
   ];
 
-  const axTracks = [
-    { en: "Data / Content AI", ko: "데이터·콘텐츠AI" },
-    { en: "Physics / Mfg AI", ko: "물리·제조AI" },
-    { en: "Bio / Materials AI", ko: "바이오·소재AI" },
-    { en: "AI Sustainability", ko: "AI·지속가능성" },
-  ];
+  // Helper function to format department names in org chart specifically for English line breaks
+  const formatDeptNameForChart = (key: string) => {
+    const name = t(key);
+    if (language === "en" && name.startsWith("Department of ")) {
+      const rest = name.replace("Department of ", "");
+      return (
+        <div className="flex flex-col items-center">
+          <span className="whitespace-nowrap">Department of</span>
+          <span className="whitespace-nowrap">{rest}</span>
+        </div>
+      );
+    }
+    return name;
+  };
 
   return (
     <div className="bg-white pb-20">
       <Breadcrumbs />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 tracking-tight text-center relative">
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-12">
+            <h1 className="text-2xl md:text-3xl font-black tracking-tight text-center relative">
               {t("departments")}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-1 bg-[#002380] rounded-full"></div>
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#002380] rounded-full"></div>
             </h1>
           </div>
-          <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
             {language === "en"
               ? "KAIST College of AI comprises four departments covering core artificial intelligence technologies, industrial applications, and policy."
-              : "KAIST AI 대학은 인공지능 핵심 기술, 산업 응용, 정책 전반을 아우르는 네 개의 학과로 구성되어 있습니다."}
+              : "KAIST AI대학은 인공지능 핵심 기술, 산업 응용, 정책 전반을 아우르는 네 개의 학과로 구성되어 있습니다."}
           </p>
         </div>
 
         {/* Visual Org Chart Section */}
-        <div className="mb-8 overflow-x-auto pb-4">
-          <div className="min-w-[800px] flex flex-col items-center">
+        <div className="mb-20 overflow-x-auto pb-4">
+          <div className="min-w-[900px] flex flex-col items-center">
             {/* Root: College of AI */}
-            <div className="w-full max-w-4xl bg-[#002380] text-white py-4 px-8 rounded shadow-lg text-center font-bold text-2xl mb-8 relative">
-              {language === "ko"
-                ? `${t("kaist_ai")} College of AI`
-                : t("kaist_ai")}
+            <div className="w-full max-w-4xl bg-[#29489C] text-white py-4 px-8 rounded shadow-lg text-center font-extrabold text-2xl mb-10 relative tracking-tight">
+              {language === "ko" ? t("kaist_ai") : t("kaist_ai")}
             </div>
 
-            {/* Connecting Lines (Desktop) */}
-            <div className="w-[70%] h-12 border-t-2 border-l-2 border-r-2 border-blue-200 relative mb-4">
-              <div className="absolute left-1/2 top-0 h-12 border-l-2 border-blue-200 -translate-x-1/2"></div>
+            {/* Connecting Lines - Main Horizontal Bar */}
+            <div className="w-[68.5%] h-12 border-t-2 border-l-2 border-r-2 border-blue-100 relative mb-0">
+              {/* Center Vertical Line from Top (AI대학 to horizontal bar) */}
+              <div className="absolute left-1/2 -top-10 h-10 border-l-2 border-blue-100 -translate-x-1/2"></div>
+              {/* Middle Pillar Vertical Line for AX */}
+              <div className="absolute left-1/2 top-0 h-12 border-l-2 border-blue-100 -translate-x-1/2"></div>
             </div>
 
-            {/* Level 1: 3 Columns */}
-            <div className="flex justify-between w-full max-w-6xl gap-8">
-              {/* Pillar 1: AI School */}
+            {/* Level 1 Pillars */}
+            <div className="flex justify-between w-full max-w-7xl gap-8">
+              {/* Pillar 1: AI School (Computing & Systems) */}
               <div className="flex-1 flex flex-col items-center">
-                <div className="w-full bg-gray-100 text-gray-500 py-2 px-4 text-center font-bold text-lg mb-4 rounded">
+                <div className="w-full bg-gray-100 text-gray-400 py-2 px-4 text-center font-bold text-sm mb-0 rounded border border-gray-100 shadow-sm relative z-10">
                   {t("ai_school")}
                 </div>
-                <div className="w-full flex gap-4">
-                  <div className="flex-1 bg-[#002380] text-white p-4 text-center font-bold rounded shadow-sm min-h-[120px] flex items-center justify-center">
-                    {t("dept_ai_computing")}
+                <div className="h-6 w-0.5 bg-blue-100 mb-4"></div>
+                {/* AI School header - Moved up and styled */}
+
+                <div className="w-full flex gap-4 relative">
+                  {/* Sub-Connecting Horizontal Line (Underneath AI School box) */}
+                  <div className="absolute -top-4 left-1/4 right-1/4 h-4 border-t-2 border-l-2 border-r-2 border-blue-100"></div>
+
+                  {/* Computing Dept - Height fixed to h-16 (64px) */}
+                  <div className="flex-1 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-sm h-16 flex items-center justify-center relative">
+                    {formatDeptNameForChart("dept_ai_computing")}
                   </div>
-                  <div className="flex-1 bg-[#002380] text-white p-4 text-center font-bold rounded shadow-sm min-h-[120px] flex items-center justify-center">
-                    {t("dept_ai_systems")}
+                  {/* Systems Dept - Height fixed to h-16 (64px) */}
+                  <div className="flex-1 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-sm h-16 flex items-center justify-center relative">
+                    {formatDeptNameForChart("dept_ai_systems")}
                   </div>
                 </div>
               </div>
 
               {/* Pillar 2: AX Dept */}
               <div className="flex-1 flex flex-col items-center">
-                <div className="w-full bg-[#002380] text-white py-3 px-4 text-center font-bold text-xl rounded shadow-md mb-4 h-[60px] flex items-center justify-center">
-                  {t("dept_ax")}
-                </div>
-                <div className="grid grid-cols-2 gap-2 w-full">
-                  {axTracks.map((track, i) => (
-                    <div
-                      key={i}
-                      className="bg-white border border-gray-200 p-3 rounded shadow-sm flex flex-col items-center justify-center text-center"
-                    >
-                      <span className="bg-blue-400 text-white text-[10px] px-2 py-0.5 rounded-full mb-1 font-bold">
-                        Track
-                      </span>
-                      <span className="text-xs font-bold text-gray-800 leading-tight">
-                        {language === "en" ? track.en : track.ko}
-                      </span>
-                    </div>
-                  ))}
+                {/* Vertical line from main horizontal bar down to AX box */}
+                <div className="h-20 w-0.5 bg-blue-100 mb-0"></div>
+                {/* AX Dept Box - Height fixed to h-16 (64px) */}
+                <div className="w-48 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
+                  {formatDeptNameForChart("dept_ax")}
                 </div>
               </div>
 
-              {/* Pillar 3: Future AI Dept */}
+              {/* Pillar 3: AI Future Dept */}
               <div className="flex-1 flex flex-col items-center">
-                <div className="w-full bg-[#002380] text-white py-3 px-4 text-center font-bold text-xl rounded shadow-md mb-4 h-[60px] flex items-center justify-center">
-                  {t("dept_ai_future")}
-                </div>
-                <div className="w-full bg-white border border-gray-200 p-6 rounded shadow-sm flex flex-col items-center justify-center text-center h-full">
-                  <span className="bg-blue-400 text-white text-[10px] px-3 py-1 rounded-full mb-2 font-bold">
-                    Track
-                  </span>
-                  <span className="text-sm font-bold text-gray-800">
-                    {language === "en" ? "Future Strategy" : "미래전략"}
-                  </span>
+                {/* Vertical line from main horizontal bar down to Future AI box */}
+                <div className="h-20 w-0.5 bg-blue-100 mb-0"></div>
+                {/* Future AI Box - Height fixed to h-16 (64px) */}
+                <div className="w-48 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
+                  {formatDeptNameForChart("dept_ai_future")}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Detailed Description Section - Centered title and content */}
-        <div className="grid grid-cols-1 gap-8 pt-28 border-t border-gray-100">
+        {/* Detailed Description Section */}
+        <div className="grid grid-cols-1 gap-6 pt-24 border-t border-gray-100">
           <div className="flex flex-col items-center mb-4">
-            <h2 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-bold font-black text-gray-900 tracking-tight">
               {language === "en" ? "Department Details" : "상세 학과 안내"}
             </h2>
-            <div className="mt-6 w-20 h-1 bg-[#002380] rounded-full"></div>
+            <div className="mt-4 w-12 h-1 bg-[#002380] rounded-full"></div>
           </div>
           {deptData.map((dept) => (
             <div
               key={dept.id}
-              className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 max-w-5xl mx-auto w-full"
+              className="bg-white p-6 md:p-8 rounded-[1.5rem] shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 max-w-5xl mx-auto w-full"
             >
-              <div className="flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-8 text-center md:text-left justify-center md:justify-start">
-                <div className="p-3 md:p-4 bg-blue-50 text-[#002380] rounded-2xl shadow-sm">
+              <div className="flex items-center space-x-4 mb-5 text-left">
+                <div className="p-2.5 bg-blue-50 text-[#002380] rounded-xl shadow-sm">
                   <svg
-                    className="w-8 h-8 md:w-10 md:h-10"
+                    className="w-6 h-6 md:w-8 md:h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -304,11 +304,11 @@ const Departments: React.FC = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
                   {dept.name}
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed text-base md:text-lg text-justify md:text-left">
+              <p className="text-gray-700 leading-relaxed text-sm md:text-base text-justify md:text-left">
                 {language === "en" ? dept.summaryEn : dept.summaryKo}
               </p>
             </div>

@@ -41,9 +41,6 @@ const Introduction: React.FC = () => {
 
             <div className="bg-white border border-gray-100 shadow-sm rounded-[2.5rem] overflow-hidden mb-12 flex flex-col md:flex-row gap-0 items-stretch h-[860px]">
               <div className="flex-grow p-8 md:p-14 order-2 md:order-1 flex flex-col justify-start">
-                <h3 className="text-2xl font-bold text-[#002380] mb-16 italic leading-tight">
-                  "KAIST College of AI, Where AI-Natives Create the Future."
-                </h3>
                 <div className="text-gray-700 leading-relaxed space-y-6 text-justify text-base md:text-lg">
                   {(language === "en" ? deansMessageEn : deansMessageKo)
                     .split("\n")

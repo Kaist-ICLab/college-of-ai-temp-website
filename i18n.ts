@@ -91,7 +91,7 @@ export const translations: Translation = {
     ko: "공식 입학 홈페이지 방문",
   },
 
-  ai_school: { en: "AI Undergraduate School", ko: "AI학부" },
+  ai_school: { en: "School of AI", ko: "AI학부" },
   track: { en: "Track", ko: "Track" },
 
   // Graduation requirements specific keys (from HEAD)
