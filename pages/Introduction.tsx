@@ -10,18 +10,19 @@ const Introduction: React.FC = () => {
   // Content for the Welcome Message
   const deansMessageEn = `
     Welcome to the College of Artificial Intelligence at KAIST.
-    Artificial Intelligence has become a fundamental force reshaping scientific innovation, industrial structures, and the way society functions. The College of AI at KAIST was established to move beyond short-term technological demands and to proactively define the future direction and role of AI. We seek not only to advance what AI can do, but also to reflect on what AI should do for society.
-    The College provides an integrated educational and research framework that spans the full AI lifecycle, from algorithms and models to systems, applications, and human–AI interaction. Through interdisciplinary collaboration across science and engineering, including AI for Science, the College fosters new knowledge creation and accelerates scientific discovery.
-    With a clear vision for the future, the College of AI is committed to educating individuals who combine strong foundations with problem-solving capability and social responsibility. We aim not merely to anticipate the future, but to shape it through AI. We invite your continued interest and support.
-    Thank you.
+    Artificial Intelligence is reshaping science, industry, and society at an unprecedented pace. The College of AI at KAIST was established to advance AI technologies while thoughtfully considering their long-term impact on science, society, and humanity. Moving beyond short-term technological trends, the College is committed to a sustainable and forward-looking understanding of AI’s role in the future.
+    The College of AI provides an integrated educational and research environment spanning the full technical spectrum of AI, from algorithms and models to systems and applications. Through close collaboration across science and engineering, the College fosters interdisciplinary research, including AI for Science, that accelerates discovery and creates meaningful societal value. Considerations of sustainability, responsibility, and long-term impact are embedded within both research and education.
+    With a clear vision for the future, the College of AI is dedicated to educating individuals with strong foundations, problem-solving capabilities, and social responsibility. By linking individual growth with broader societal progress, the College seeks to responsibly shape the future enabled by AI.
+    Thank you for your interest in the College of AI at KAIST.
   `;
 
   const deansMessageKo = `
     KAIST AI대학 홈페이지를 방문해 주신 여러분을 진심으로 환영합니다.
-    인공지능(AI)은 과학기술 혁신과 산업 구조, 나아가 사회의 작동 방식을 근본적으로 변화시키는 핵심 동력으로 자리 잡고 있습니다. KAIST AI대학은 이러한 변화에 대응해 단기적 기술 수요를 넘어, 미래 사회가 요구할 AI의 방향과 역할을 선도적으로 설계하기 위해 설립되었습니다. AI가 무엇을 할 수 있는가를 넘어, 무엇을 해야 하는가를 함께 고민하는 대학이 되고자 합니다.
-    KAIST AI대학은 알고리즘과 모델, 시스템과 응용, 인간과 AI의 상호작용에 이르기까지 AI 전 주기를 아우르는 교육·연구 체계를 바탕으로, 다양한 과학기술 분야와의 융합을 통해 AI for Science를 포함한 초학제 연구를 확장해 나가고 있습니다.
-    또한 미래 AI 시대에 요구되는 인재상을 중심에 두고, 기초 역량과 문제 해결 능력, 사회적 책임 의식을 함께 갖춘 인재 양성을 지향합니다. KAIST AI대학은 미래를 예측하는 데 그치지 않고, AI로 미래를 만들어가는 대학이 되고자 합니다. 지속적인 관심과 성원을 부탁드립니다.
-    감사합니다.
+    인공지능(AI)은 과학기술 혁신과 산업 구조를 넘어 사회의 미래를 근본적으로 재편하는 핵심 동력으로 자리 잡고 있습니다. KAIST AI대학은 단기적인 기술 수요에 대응하는 교육을 넘어, AI 기술의 발전과 확산, 그리고 그 사회적·장기적 영향을 함께 고려하며 미래 사회가 요구하는 AI의 방향과 역할을 선도적으로 설계하기 위해 설립되었습니다.
+    KAIST AI대학은 알고리즘과 모델, 시스템과 응용에 이르는 AI의 기술적 전 주기와 더불어, 다양한 과학기술 분야와의 융합을 통해 새로운 지식과 가치를 창출하는 교육·연구 체계를 갖추고 있습니다. 아울러 AI가 과학과 산업, 사회 전반에 미치는 영향과 지속가능한 발전에 대한 고민을 연구와 교육에 자연스럽게 녹여내며, AI for Science를 포함한 초학제 연구를 확장해 나가고 있습니다.
+    또한 KAIST AI대학은 미래 AI 시대에 요구되는 인재상을 중심에 두고, 탄탄한 기초 역량과 문제 해결 능력, 그리고 사회적 책임 의식을 함께 갖춘 인재 양성을 지향합니다. 기술의 진보를 넘어 AI가 만들어갈 미래를 책임 있게 설계하고, 개인의 성장이 사회와 국가의 발전으로 이어질 수 있도록 교육과 연구의 방향성을 지속적으로 발전시켜 나가겠습니다.
+    KAIST AI대학의 도전에 지속적인 관심과 성원을 부탁드립니다.
+
   `;
 
   return (
@@ -56,8 +57,8 @@ const Introduction: React.FC = () => {
                     </p>
                     <p className="text-[#002380] font-bold text-xs uppercase tracking-widest mt-1">
                       {language === "en"
-                        ? "Dean, College of AI"
-                        : "KAIST AI대학 학장"}
+                        ? "Interim Dean, College of AI"
+                        : "AI대학 학장 직무대행"}
                     </p>
                   </div>
                 </div>
