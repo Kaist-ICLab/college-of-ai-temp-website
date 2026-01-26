@@ -112,7 +112,7 @@ const Home: React.FC = () => {
                 name: t("dept_ai_computing"),
                 text: depts.computing,
                 image:
-                  "https://www.federaltimes.com/resizer/v2/YFKKAHFIPZB3PMZ4U3C7EBWM2M.jpg?auth=d18073870f26ffdce06329e2833bc1b8e3ee028cd280da61bc94f52c765cd906&width=1200&height=785",
+                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/aicomputing_pic.png",
               },
               {
                 id: "systems",
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
                 name: t("dept_ai_systems"),
                 text: depts.systems,
                 image:
-                  "https://data.militaryembedded.com/uploads/resize/1256/756/external/data.militaryembedded.com/uploads/articles/primary_images/1623767132.jpeg",
+                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/aisystems_pic.png",
               },
               {
                 id: "ax",
@@ -128,7 +128,7 @@ const Home: React.FC = () => {
                 name: t("dept_ax"),
                 text: depts.ax,
                 image:
-                  "https://www.jellyfishtechnologies.com/wp-content/uploads/2023/03/convergence-of-ai-and-iot-sm.webp",
+                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/ax_pic.png",
               },
               {
                 id: "future",
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                 name: t("dept_ai_future"),
                 text: depts.future,
                 image:
-                  "https://etimg.etb2bimg.com/thumb/msid-115886533,imgsize-315374,width-1200,height=627,overlay-etgovernment,resizemode-75/news/governance/global-ai-governance-needs-a-sharp-focus-to-combat-risks.jpg",
+                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/aifuture_pic.png",
               },
             ].map((dept) => (
               <div
@@ -148,7 +148,7 @@ const Home: React.FC = () => {
                   <img
                     src={dept.image}
                     alt={dept.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover scale-130 group-hover:scale-140 transition-transform duration-700 ease-out"
                   />
                   <div className="hidden md:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent"></div>
                 </div>
