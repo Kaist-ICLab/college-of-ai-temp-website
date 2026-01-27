@@ -159,7 +159,7 @@ const CourseInfo: React.FC = () => {
       ],
     },
     {
-      title: { en: 'Department of AI Future', ko: 'AI 미래학과' },
+      title: { en: 'Department of AI and Future Studies', ko: 'AI 미래학과' },
       courses: [
         { level: '1000-level', code: 'CS.10003', name: { en: 'Elements of AI', ko: '인공지능 기초' } },
         { level: '2000-level', code: 'FSM.20001', name: { en: 'Introduction to Future Strategy', ko: '미래학 개론' } },

@@ -81,7 +81,7 @@ export const translations: Translation = {
   dept_ai_computing: { en: "Department of AI Computing", ko: "AI컴퓨팅학과" },
   dept_ai_systems: { en: "Department of AI Systems", ko: "AI시스템학과" },
   dept_ax: { en: "Department of AX", ko: "AX학과" },
-  dept_ai_future: { en: "Department of AI Future", ko: "AI미래학과" },
+  dept_ai_future: { en: "Department of AI and Future Studies", ko: "AI미래학과" },
   read_more: { en: "Read More", ko: "자세히 보기" },
   website: { en: "Website", ko: "홈페이지" },
   degrees_offered: { en: "Degrees Offered", ko: "학위 과정" },
@@ -1138,8 +1138,8 @@ export const translations: Translation = {
     ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
 
-  // AI Future Undergraduate Requirements
-  aif_ug_title: { en: "AI Future - Undergraduate", ko: "AI미래학과 - 학부" },
+  // AI and Future Studies Undergraduate Requirements
+  aif_ug_title: { en: "AI and Future Studies - Undergraduate", ko: "AI미래학과 - 학부" },
   aif_ug_subtitle: {
     en: "(For students admitted in 2025 and after)",
     ko: "(2025학년도 이후 입학생 기준)",
@@ -1242,8 +1242,8 @@ export const translations: Translation = {
     ko: "※ 전공선택에 명시된 요건 동일 적용",
   },
 
-  // AI Future Graduate (Master)
-  aif_ms_title: { en: "AI Future - Master's", ko: "AI미래학과 - 석사" },
+  // AI and Future Studies Graduate (Master)
+  aif_ms_title: { en: "AI and Future Studies - Master's", ko: "AI미래학과 - 석사" },
   aif_ms_grad_credits: {
     en: "Credit Requirement for Graduation: Required to complete a total of more than 33 credits",
     ko: "졸업이수학점: 총 33 학점 이상 이수",
@@ -1317,8 +1317,8 @@ export const translations: Translation = {
     ko: "논문연구 4학점 이상 이수",
   },
 
-  // AI Future Graduate (Doctoral)
-  aif_phd_title: { en: "AI Future - Doctoral", ko: "AI미래학과 - 박사" },
+  // AI and Future Studies Graduate (Doctoral)
+  aif_phd_title: { en: "AI and Future Studies - Doctoral", ko: "AI미래학과 - 박사" },
   aif_phd_grad_credits: {
     en: "Credit Requirement for Graduation: Required to complete a total of more than 60 credits",
     ko: "졸업이수학점: 총 60 학점 이상 이수",
@@ -1396,9 +1396,9 @@ export const translations: Translation = {
     ko: "논문연구 30학점 이상 이수",
   },
 
-  // AI Future Graduate (Integrated)
+  // AI and Future Studies Graduate (Integrated)np
   aif_int_title: {
-    en: "AI Future - M.S.-Ph.D. Integrated",
+    en: "AI and Future Studies - M.S.-Ph.D. Integrated",
     ko: "AI미래학과 - 석박사통합",
   },
   aif_int_grad_credits: {
@@ -1477,7 +1477,7 @@ export const translations: Translation = {
     en: "Ph.D. Dissertation (at least 30 credits)",
     ko: "논문연구 30학점 이상 이수",
   },
-  // AI Future Transitional Measures
+  // AI and Future Studies Transitional Measures
   aif_ug_transit: {
     en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
     ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",

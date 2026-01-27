@@ -269,8 +269,6 @@ const Departments: React.FC = () => {
 
                 {/* Pillar 3: AI Future Dept */}
                 <div className="flex-1 flex flex-col items-center">
-                  {/* Vertical line from main horizontal bar down to Future AI box */}
-                  {/* <div className="h-20 w-0.5 bg-blue-100 mb-0"></div> */}
                   {/* Future AI Box - Height fixed to h-16 (64px) */}
                   <div className="w-48 mt-20 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
                     {formatDeptNameForChart("dept_ai_future")}
@@ -343,7 +341,7 @@ const Departments: React.FC = () => {
                 {formatDeptNameForChart("dept_ax")}
               </div>
             </div>
-
+            
             {/* Level 1: AI Future */}
             <div className="relative pl-10">
               <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
