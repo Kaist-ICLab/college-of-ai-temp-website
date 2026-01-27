@@ -262,11 +262,11 @@ const Departments: React.FC = () => {
                 </div>
               </div>
 
-              {/* Pillar 3: AI Future Dept */}
+              {/* Pillar 3: AI and Future Studies Dept */}
               <div className="flex-1 flex flex-col items-center">
-                {/* Vertical line from main horizontal bar down to Future AI box */}
+                {/* Vertical line from main horizontal bar down to AI and Future Studies box */}
                 <div className="h-20 w-0.5 bg-blue-100 mb-0"></div>
-                {/* Future AI Box - Height fixed to h-16 (64px) */}
+                {/* AI and Future Studies Box - Height fixed to h-16 (64px) */}
                 <div className="w-48 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
                   {formatDeptNameForChart("dept_ai_future")}
                 </div>
