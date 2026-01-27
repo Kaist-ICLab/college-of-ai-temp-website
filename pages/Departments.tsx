@@ -212,66 +212,151 @@ const Departments: React.FC = () => {
         </div>
 
         {/* Visual Org Chart Section */}
-        <div className="mb-20 overflow-x-auto pb-4">
-          <div className="min-w-[900px] flex flex-col items-center">
-            {/* Root: College of AI */}
-            <div className="w-full max-w-4xl bg-[#29489C] text-white py-4 px-8 rounded shadow-lg text-center font-extrabold text-2xl mb-10 relative tracking-tight">
-              {language === "ko" ? t("kaist_ai") : t("kaist_ai")}
-            </div>
+        <div className="hidden md:block">
+          {/* Desktop version */}
+          <div className="mb-20 overflow-x-auto pb-4">
+            <div className="min-w-[900px] flex flex-col items-center">
+              {/* Root: College of AI */}
+              <div className="w-full max-w-4xl bg-[#29489C] text-white py-4 px-8 rounded shadow-lg text-center font-extrabold text-2xl mb-10 relative tracking-tight">
+                {language === "ko" ? t("kaist_ai") : t("kaist_ai")}
+              </div>
+              {/* Connecting Lines */}
+              <div className="relative w-[68.5%] h-12 border-t-2 border-blue-100 mb-0">
+                {/* Center Vertical Line from Top (AI대학 to horizontal bar) */}
+                <div className="absolute left-1/2 -top-10 h-10 border-l-2 border-blue-100 -translate-x-1/2"></div>
+                {/* Middle Pillar Vertical Line for AX */}
+                <div className="absolute left-1/2 top-0 h-12 border-l-2 border-blue-100 -translate-x-1/2"></div>
+                {/* Pillar 1 Vertical Line */}
+                <div className="absolute left-0 top-0 h-12 w-0.5 bg-blue-100" />
+                {/* Pillar 2 Vertical Line */}
+                <div className="absolute right-0 top-0 h-31.5 w-0.5 bg-blue-100" />
+              </div>
 
-            {/* Connecting Lines - Main Horizontal Bar */}
-            <div className="w-[68.5%] h-12 border-t-2 border-l-2 border-r-2 border-blue-100 relative mb-0">
-              {/* Center Vertical Line from Top (AI대학 to horizontal bar) */}
-              <div className="absolute left-1/2 -top-10 h-10 border-l-2 border-blue-100 -translate-x-1/2"></div>
-              {/* Middle Pillar Vertical Line for AX */}
-              <div className="absolute left-1/2 top-0 h-12 border-l-2 border-blue-100 -translate-x-1/2"></div>
-            </div>
+              {/* Level 1 Pillars */}
+              <div className="flex justify-between w-full max-w-7xl gap-8 px-0">
+                {/* Pillar 1: AI School (Computing & Systems) */}
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="w-full bg-gray-100 text-gray-400 py-2 px-4 text-center font-bold text-sm mb-0 rounded border border-gray-100 shadow-sm relative z-10">
+                    {t("ai_school")}
+                  </div>
+                  <div className="h-6 w-0.5 bg-blue-100 mb-4"></div>
+                  {/* AI School header - Moved up and styled */}
 
-            {/* Level 1 Pillars */}
-            <div className="flex justify-between w-full max-w-7xl gap-8">
-              {/* Pillar 1: AI School (Computing & Systems) */}
-              <div className="flex-1 flex flex-col items-center">
-                <div className="w-full bg-gray-100 text-gray-400 py-2 px-4 text-center font-bold text-sm mb-0 rounded border border-gray-100 shadow-sm relative z-10">
-                  {t("ai_school")}
+                  <div className="w-full flex gap-4 relative">
+                    {/* Sub-Connecting Horizontal Line (Underneath AI School box) */}
+                    <div className="absolute -top-4 left-1/4 right-1/4 h-4 border-t-2 border-l-2 border-r-2 border-blue-100"></div>
+
+                    {/* Computing Dept - Height fixed to h-16 (64px) */}
+                    <div className="flex-1 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-sm h-16 flex items-center justify-center relative">
+                      {formatDeptNameForChart("dept_ai_computing")}
+                    </div>
+                    {/* Systems Dept - Height fixed to h-16 (64px) */}
+                    <div className="flex-1 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-sm h-16 flex items-center justify-center relative">
+                      {formatDeptNameForChart("dept_ai_systems")}
+                    </div>
+                  </div>
                 </div>
-                <div className="h-6 w-0.5 bg-blue-100 mb-4"></div>
-                {/* AI School header - Moved up and styled */}
 
-                <div className="w-full flex gap-4 relative">
-                  {/* Sub-Connecting Horizontal Line (Underneath AI School box) */}
-                  <div className="absolute -top-4 left-1/4 right-1/4 h-4 border-t-2 border-l-2 border-r-2 border-blue-100"></div>
+                {/* Pillar 2: AX Dept */}
+                <div className="flex-1 flex flex-col items-center">
+                  {/* Vertical line from main horizontal bar down to AX box */}
+                  <div className="h-20 w-0.5 bg-blue-100 mb-0"></div>
+                  {/* AX Dept Box - Height fixed to h-16 (64px) */}
+                  <div className="w-48 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
+                    {formatDeptNameForChart("dept_ax")}
+                  </div>
+                </div>
 
-                  {/* Computing Dept - Height fixed to h-16 (64px) */}
-                  <div className="flex-1 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-sm h-16 flex items-center justify-center relative">
+                {/* Pillar 3: AI Future Dept */}
+                <div className="flex-1 flex flex-col items-center">
+                  {/* Vertical line from main horizontal bar down to Future AI box */}
+                  {/* <div className="h-20 w-0.5 bg-blue-100 mb-0"></div> */}
+                  {/* Future AI Box - Height fixed to h-16 (64px) */}
+                  <div className="w-48 mt-20 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
+                    {formatDeptNameForChart("dept_ai_future")}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile version */}
+        <div className="block md:hidden max-w-[600px] mb-20 px-4 mx-auto">
+          <div className="relative">
+
+            {/* Root */}
+            <div className="bg-[#29489C] text-white py-4 px-4 rounded shadow text-center font-extrabold text-lg mb-6">
+              {t("kaist_ai")}
+            </div>
+            {/* Vertical trunk */}
+            <div className="absolute left-4 top-15 bottom-6 w-0.5 bg-blue-100"></div>
+
+            {/* Level 1: AI School */}
+            <div className="relative pl-10 mb-6">
+              {/* connector */}
+              <div className="absolute left-4 top-5 w-6 h-0.5 bg-blue-100"></div>
+              <div className="max-w-[150px] bg-gray-100 text-gray-500 py-3 px-3 rounded shadow-sm text-center text-sm font-bold mb-4">
+                {t("ai_school")}
+              </div>
+              <div className="absolute left-14 top-11 bottom-6 w-0.5 bg-blue-100"></div>
+
+              {/* children */}
+              <div className="space-y-3 relative pl-10">
+                {/* Computing */}
+                <div className="relative">
+                  <div className="absolute -left-6 top-5.5 w-6 h-0.5 bg-blue-100"></div>
+                  <div
+                    className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                      font-medium flex items-center justify-center text-center
+                      ${language === "en" ? "text-xs" : "text-sm"}
+                    `}
+                  >
                     {formatDeptNameForChart("dept_ai_computing")}
                   </div>
-                  {/* Systems Dept - Height fixed to h-16 (64px) */}
-                  <div className="flex-1 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-sm h-16 flex items-center justify-center relative">
+                </div>
+
+                {/* Systems */}
+                <div className="relative">
+                  <div className="absolute -left-6 top-5.5 w-6 h-0.5 bg-blue-100"></div>
+                  <div
+                    className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                      font-medium flex items-center justify-center text-center
+                      ${language === "en" ? "text-xs" : "text-sm"}
+                    `}
+                  >
                     {formatDeptNameForChart("dept_ai_systems")}
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Pillar 2: AX Dept */}
-              <div className="flex-1 flex flex-col items-center">
-                {/* Vertical line from main horizontal bar down to AX box */}
-                <div className="h-20 w-0.5 bg-blue-100 mb-0"></div>
-                {/* AX Dept Box - Height fixed to h-16 (64px) */}
-                <div className="w-48 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
-                  {formatDeptNameForChart("dept_ax")}
-                </div>
-              </div>
-
-              {/* Pillar 3: AI Future Dept */}
-              <div className="flex-1 flex flex-col items-center">
-                {/* Vertical line from main horizontal bar down to Future AI box */}
-                <div className="h-20 w-0.5 bg-blue-100 mb-0"></div>
-                {/* Future AI Box - Height fixed to h-16 (64px) */}
-                <div className="w-48 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
-                  {formatDeptNameForChart("dept_ai_future")}
-                </div>
+            {/* Level 1: AX */}
+            <div className="relative pl-10 mb-3">
+              <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
+              <div
+                className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                  font-medium flex items-center justify-center text-center
+                  ${language === "en" ? "text-xs" : "text-sm"}
+                `}
+              >
+                {formatDeptNameForChart("dept_ax")}
               </div>
             </div>
+
+            {/* Level 1: AI Future */}
+            <div className="relative pl-10">
+              <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
+              <div
+                className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                  font-medium flex items-center justify-center text-center
+                  ${language === "en" ? "text-xs" : "text-sm"}
+                `}
+              >
+                {formatDeptNameForChart("dept_ai_future")}
+              </div>
+            </div>
+
           </div>
         </div>
 
