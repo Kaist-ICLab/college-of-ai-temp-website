@@ -9,7 +9,7 @@ const Departments: React.FC = () => {
   const t = useTranslation(language);
 
   useSEO();
-
+  
   const deptData = [
     {
       id: "computing",
@@ -202,7 +202,7 @@ const Departments: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-12">
-            <h1 className="text-2xl md:text-3xl font-black tracking-tight text-center relative">
+            <h1 className="text-3xl md:text-4xl font-black tracking-tight text-center relative">
               {t("departments")}
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#002380] rounded-full"></div>
             </h1>
@@ -272,6 +272,8 @@ const Departments: React.FC = () => {
 
                 {/* Pillar 3: AI Future Dept */}
                 <div className="flex-1 flex flex-col items-center">
+                  {/* Vertical line from main horizontal bar down to Future AI box */}
+                  {/* <div className="h-20 w-0.5 bg-blue-100 mb-0"></div> */}
                   {/* Future AI Box - Height fixed to h-16 (64px) */}
                   <div className="w-48 mt-20 md:w-56 bg-[#002380] text-white p-2 text-center font-bold text-sm md:text-base rounded shadow-md h-16 flex items-center justify-center">
                     {formatDeptNameForChart("dept_ai_future")}
@@ -281,7 +283,7 @@ const Departments: React.FC = () => {
             </div>
           </div>
         </div>
-
+        
         {/* Mobile version */}
         <div className="block md:hidden max-w-[600px] mb-20 px-4 mx-auto">
           <div className="relative">
@@ -308,10 +310,10 @@ const Departments: React.FC = () => {
                 <div className="relative">
                   <div className="absolute -left-6 top-5.5 w-6 h-0.5 bg-blue-100"></div>
                   <div
-                    className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
-font - medium flex items - center justify - center text - center
+                    className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                      font-medium flex items-center justify-center text-center
                       ${language === "en" ? "text-xs" : "text-sm"}
-`}
+                    `}
                   >
                     {formatDeptNameForChart("dept_ai_computing")}
                   </div>
@@ -321,10 +323,10 @@ font - medium flex items - center justify - center text - center
                 <div className="relative">
                   <div className="absolute -left-6 top-5.5 w-6 h-0.5 bg-blue-100"></div>
                   <div
-                    className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
-font - medium flex items - center justify - center text - center
+                    className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                      font-medium flex items-center justify-center text-center
                       ${language === "en" ? "text-xs" : "text-sm"}
-`}
+                    `}
                   >
                     {formatDeptNameForChart("dept_ai_systems")}
                   </div>
@@ -336,10 +338,10 @@ font - medium flex items - center justify - center text - center
             <div className="relative pl-10 mb-3">
               <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
               <div
-                className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
-font - medium flex items - center justify - center text - center
+                className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                  font-medium flex items-center justify-center text-center
                   ${language === "en" ? "text-xs" : "text-sm"}
-`}
+                `}
               >
                 {formatDeptNameForChart("dept_ax")}
               </div>
@@ -349,10 +351,10 @@ font - medium flex items - center justify - center text - center
             <div className="relative pl-10">
               <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
               <div
-                className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
-font - medium flex items - center justify - center text - center
+                className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
+                  font-medium flex items-center justify-center text-center
                   ${language === "en" ? "text-xs" : "text-sm"}
-`}
+                `}
               >
                 {formatDeptNameForChart("dept_ai_future")}
               </div>
@@ -394,7 +396,7 @@ font - medium flex items - center justify - center text - center
                   {dept.name}
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed text-sm md:text-base text-justify md:text-left">
+              <p className="text-left text-gray-700 leading-relaxed text-sm md:text-base text-justify md:text-left">
                 {language === "en" ? dept.summaryEn : dept.summaryKo}
               </p>
             </div>
