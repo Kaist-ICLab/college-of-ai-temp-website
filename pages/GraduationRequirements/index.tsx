@@ -118,10 +118,10 @@ const GraduationRequirements: React.FC = () => {
                 <div className="mt-7 w-20 h-1 bg-[#002380] rounded-full mx-auto"></div>
               </div>
 
-              <p className="text-lg text-gray-500 leading-relaxed mx-auto">
+              <p className="text-gray-600 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
                 {t('grad_req_hero_desc')}
               </p>
-              <p className="text-sm text-gray-400 mt-3 mx-auto max-w-2xl">
+              <p className="text-xs md:text-sm text-gray-400 mt-3 mx-auto max-w-2xl">
                 {t('grad_req_tentative_note')}
               </p>
             </div>

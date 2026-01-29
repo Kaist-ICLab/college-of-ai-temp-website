@@ -59,7 +59,7 @@ const Admissions: React.FC = () => {
               {t('admissions')}
             </h1>
             <div className="w-20 h-1 bg-[#002380] rounded-full"></div>
-            <p className="text-lg text-gray-500 leading-relaxed mx-auto max-w-2xl">
+            <p className="text-gray-600 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
               {t('admissions_hero_desc')}
             </p>
           </div>

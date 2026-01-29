@@ -207,7 +207,7 @@ const CourseInfo: React.FC = () => {
               <div className="mt-7 w-20 h-1 bg-[#002380] rounded-full mx-auto"></div>
             </div>
 
-            <p className="text-lg text-gray-500 leading-relaxed">
+            <p className="text-gray-600 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
               {language === 'en'
                 ? 'Approved Major Course List for the College of AI, Spring Semester 2026. Required major courses are indicated in bold.'
                 : '2026학년도 봄학기 AI대학 전공 인정 교과목 리스트입니다. 굵은 글씨는 전공필수 과목입니다.'}
