@@ -14,10 +14,13 @@ import AIFGraduate from './AIFGraduate/index';
 import RequirementEmptyState from './RequirementEmptyState/index';
 import { DeptId, TabId, DEPTS } from './types';
 import './styles.css';
+import { useSEO } from '../../hooks/useSEO';
 
 const GraduationRequirements: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
+
+  useSEO();
   const location = useLocation();
   const navigate = useNavigate();
 

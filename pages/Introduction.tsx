@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { LanguageContext } from "../App";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useTranslation } from "../i18n";
+import { useSEO } from "../hooks/useSEO";
 
 const Introduction: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
+
+  useSEO();
 
   // Content for the Welcome Message
   const deansMessageEn = `

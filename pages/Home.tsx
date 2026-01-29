@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { useTranslation } from "../i18n";
+import { useSEO } from "../hooks/useSEO";
 
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
+
+  useSEO();
 
   const deansMessageEn = [
     "Welcome to the College of Artificial Intelligence at KAIST.",

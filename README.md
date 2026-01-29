@@ -77,7 +77,7 @@ college-of-ai/
 
 4. **Open in browser**
    
-   Navigate to `http://localhost:5173` (or the port shown in terminal)
+   Navigate to `http://localhost:5001` (or the port shown in terminal)
 
 ## 📜 Available Scripts
 

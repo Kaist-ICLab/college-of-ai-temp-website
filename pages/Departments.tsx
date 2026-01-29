@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { LanguageContext } from "../App";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useTranslation } from "../i18n";
+import { useSEO } from "../hooks/useSEO";
 
 const Departments: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
+
+  useSEO();
 
   const deptData = [
     {
@@ -278,7 +281,7 @@ const Departments: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Mobile version */}
         <div className="block md:hidden max-w-[600px] mb-20 px-4 mx-auto">
           <div className="relative">
@@ -305,10 +308,10 @@ const Departments: React.FC = () => {
                 <div className="relative">
                   <div className="absolute -left-6 top-5.5 w-6 h-0.5 bg-blue-100"></div>
                   <div
-                    className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
-                      font-medium flex items-center justify-center text-center
+                    className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
+font - medium flex items - center justify - center text - center
                       ${language === "en" ? "text-xs" : "text-sm"}
-                    `}
+`}
                   >
                     {formatDeptNameForChart("dept_ai_computing")}
                   </div>
@@ -318,10 +321,10 @@ const Departments: React.FC = () => {
                 <div className="relative">
                   <div className="absolute -left-6 top-5.5 w-6 h-0.5 bg-blue-100"></div>
                   <div
-                    className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
-                      font-medium flex items-center justify-center text-center
+                    className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
+font - medium flex items - center justify - center text - center
                       ${language === "en" ? "text-xs" : "text-sm"}
-                    `}
+`}
                   >
                     {formatDeptNameForChart("dept_ai_systems")}
                   </div>
@@ -333,23 +336,23 @@ const Departments: React.FC = () => {
             <div className="relative pl-10 mb-3">
               <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
               <div
-                className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
-                  font-medium flex items-center justify-center text-center
+                className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
+font - medium flex items - center justify - center text - center
                   ${language === "en" ? "text-xs" : "text-sm"}
-                `}
+`}
               >
                 {formatDeptNameForChart("dept_ax")}
               </div>
             </div>
-            
+
             {/* Level 1: AI Future */}
             <div className="relative pl-10">
               <div className="absolute left-4 top-5.5 w-6 h-0.5 bg-blue-100"></div>
               <div
-                className={`max-w-[200px] h-12 bg-[#002380] text-white rounded shadow
-                  font-medium flex items-center justify-center text-center
+                className={`max - w - [200px] h - 12 bg - [#002380] text - white rounded shadow
+font - medium flex items - center justify - center text - center
                   ${language === "en" ? "text-xs" : "text-sm"}
-                `}
+`}
               >
                 {formatDeptNameForChart("dept_ai_future")}
               </div>

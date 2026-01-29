@@ -3,10 +3,13 @@ import { LanguageContext } from '../../App';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { useTranslation } from '../../i18n';
 import './styles.css';
+import { useSEO } from '../../hooks/useSEO';
 
 const Admissions: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
+
+  useSEO();
 
   const links = [
     {
