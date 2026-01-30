@@ -56,13 +56,16 @@ const Home: React.FC = () => {
     <div className="relative">
       {/* Hero Banner */}
       <div className="relative h-[740px] overflow-hidden">
-        <img
-          src="/images/homepage3.webp"
-          alt="KAIST Campus"
-          className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
-          fetchPriority="high"
-          loading="eager"
-        />
+        <picture>
+          <source srcSet="/images/homepage3.webp" type="image/webp" />
+          <img
+            src="/images/homepage3.png"
+            alt="KAIST Campus"
+            className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
+            fetchPriority="high"
+            loading="eager"
+          />
+        </picture>
         <div className="absolute inset-0 bg-white/0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 w-full text-white">
             <h1 className="text-3xl md:text-6xl font-bold mb-4">
@@ -116,28 +119,32 @@ const Home: React.FC = () => {
                 num: "01",
                 name: t("dept_ai_computing"),
                 text: depts.computing,
-                image: "/images/aicomputing_pic.webp",
+                imageWebp: "/images/aicomputing_pic.webp",
+                imagePng: "/images/aicomputing_pic.png",
               },
               {
                 id: "systems",
                 num: "02",
                 name: t("dept_ai_systems"),
                 text: depts.systems,
-                image: "/images/aisystems_pic.webp",
+                imageWebp: "/images/aisystems_pic.webp",
+                imagePng: "/images/aisystems_pic.png",
               },
               {
                 id: "ax",
                 num: "03",
                 name: t("dept_ax"),
                 text: depts.ax,
-                image: "/images/ax_pic.webp",
+                imageWebp: "/images/ax_pic.webp",
+                imagePng: "/images/ax_pic.png",
               },
               {
                 id: "future",
                 num: "04",
                 name: t("dept_ai_future"),
                 text: depts.future,
-                image: "/images/aifuture_pic.webp",
+                imageWebp: "/images/aifuture_pic.webp",
+                imagePng: "/images/aifuture_pic.png",
               },
             ].map((dept) => (
               <div
@@ -146,11 +153,14 @@ const Home: React.FC = () => {
               >
                 {/* Thumbnail Image - Aligned right on md+ */}
                 <div className="h-48 md:h-auto md:w-[35%] overflow-hidden relative">
-                  <img
-                    src={dept.image}
-                    alt={dept.name}
-                    className="w-full h-full object-cover scale-130 group-hover:scale-140 transition-transform duration-700 ease-out"
-                  />
+                  <picture>
+                    <source srcSet={dept.imageWebp} type="image/webp" />
+                    <img
+                      src={dept.imagePng}
+                      alt={dept.name}
+                      className="w-full h-full object-cover scale-130 group-hover:scale-140 transition-transform duration-700 ease-out"
+                    />
+                  </picture>
                   <div className="hidden md:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent"></div>
                 </div>
 
