@@ -60,7 +60,7 @@ const Home: React.FC = () => {
           <source srcSet="/images/homepage3.webp" type="image/webp" />
           <img
             src="/images/homepage3.png"
-            alt="KAIST Campus"
+            alt="KAIST College of AI Banner"
             className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
             fetchPriority="high"
             loading="eager"
