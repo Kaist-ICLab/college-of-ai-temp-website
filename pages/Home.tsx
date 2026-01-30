@@ -173,7 +173,7 @@ const Home: React.FC = () => {
                     <div className="w-10 h-0.5 bg-gray-100 group-hover:w-20 group-hover:bg-[#002380] transition-all duration-500 mb-4"></div>
                   </div>
 
-                  <p className="text-gray-600 leading-relaxed text-sm md:text-base text-justify mb-2 relative z-10 line-clamp-4">
+                  <p className="text-left text-gray-600 leading-relaxed text-sm md:text-base text-justify mb-2 relative z-10 line-clamp-4">
                     {dept.text}
                   </p>
 
