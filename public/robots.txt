@@ -1,0 +1,6 @@
+# robots.txt for KAIST College of AI
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aicollege.kaist.ac.kr/sitemap.xml

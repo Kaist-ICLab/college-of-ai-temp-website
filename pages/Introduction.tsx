@@ -68,11 +68,14 @@ const Introduction: React.FC = () => {
               </div>
               <div className="w-full md:w-80 flex-shrink-0 order-1 md:order-2 bg-gray-50">
                 <div className="h-full w-full grayscale hover:grayscale-0 transition-all duration-700">
-                  <img
-                    src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/deanPicv2.png"
-                    alt="Dean"
-                    className="w-full h-full object-cover object-top w-full aspect-[3/4] origin-top scale-100"
-                  />
+                  <picture>
+                    <source srcSet="/images/deanPicv2.webp" type="image/webp" />
+                    <img
+                      src="/images/deanPicv2.png"
+                      alt="Dean"
+                      className="w-full h-full object-cover object-top w-full aspect-[3/4] origin-top scale-100"
+                    />
+                  </picture>
                 </div>
               </div>
             </div>

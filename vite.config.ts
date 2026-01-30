@@ -28,6 +28,23 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       }
-    }
+    },
+    build: {
+      // Target modern browsers only - avoids legacy polyfills
+      target: 'es2020',
+      // Better minification
+      minify: 'esbuild',
+      cssMinify: true,
+      // Code splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom', 'react-router-dom'],
+          },
+        },
+      },
+      // Reduce chunk size warnings threshold
+      chunkSizeWarningLimit: 500,
+    },
   };
 });
