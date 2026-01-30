@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ai.kaist.ac.kr/sitemap.xml
+Sitemap: https://aicollege.kaist.ac.kr/sitemap.xml

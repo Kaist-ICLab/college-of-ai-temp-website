@@ -57,9 +57,11 @@ const Home: React.FC = () => {
       {/* Hero Banner */}
       <div className="relative h-[740px] overflow-hidden">
         <img
-          src="https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/homepage3.png"
+          src="/images/homepage3.webp"
           alt="KAIST Campus"
           className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
+          fetchPriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-white/0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 w-full text-white">
@@ -114,32 +116,28 @@ const Home: React.FC = () => {
                 num: "01",
                 name: t("dept_ai_computing"),
                 text: depts.computing,
-                image:
-                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/aicomputing_pic.png",
+                image: "/images/aicomputing_pic.webp",
               },
               {
                 id: "systems",
                 num: "02",
                 name: t("dept_ai_systems"),
                 text: depts.systems,
-                image:
-                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/aisystems_pic.png",
+                image: "/images/aisystems_pic.webp",
               },
               {
                 id: "ax",
                 num: "03",
                 name: t("dept_ax"),
                 text: depts.ax,
-                image:
-                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/ax_pic.png",
+                image: "/images/ax_pic.webp",
               },
               {
                 id: "future",
                 num: "04",
                 name: t("dept_ai_future"),
                 text: depts.future,
-                image:
-                  "https://raw.githubusercontent.com/Kaist-ICLab/college-of-ai-temp-website/image_test/aifuture_pic.png",
+                image: "/images/aifuture_pic.webp",
               },
             ].map((dept) => (
               <div
