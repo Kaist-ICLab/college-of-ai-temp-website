@@ -43,7 +43,10 @@ const Navbar: React.FC = () => {
     {
       name: "admissions",
       path: "/admissions",
-      subcategories: [],
+      subcategories: [
+        { name: "undergraduate", path: "/admissions?tab=ug" },
+        { name: "graduate", path: "/admissions?tab=grad" },
+      ],
     },
     {
       name: "notice",

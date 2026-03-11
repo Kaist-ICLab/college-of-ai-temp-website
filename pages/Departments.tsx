@@ -9,7 +9,7 @@ const Departments: React.FC = () => {
   const t = useTranslation(language);
 
   useSEO();
-  
+
   const deptData = [
     {
       id: "computing",
@@ -283,11 +283,10 @@ const Departments: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Mobile version */}
         <div className="block md:hidden max-w-[600px] mb-20 px-4 mx-auto">
           <div className="relative">
-
             {/* Root */}
             <div className="bg-[#29489C] text-white py-4 px-4 rounded shadow text-center font-extrabold text-lg mb-6">
               {t("kaist_ai")}
@@ -359,7 +358,6 @@ const Departments: React.FC = () => {
                 {formatDeptNameForChart("dept_ai_future")}
               </div>
             </div>
-
           </div>
         </div>
 
