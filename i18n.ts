@@ -1477,6 +1477,13 @@ export const translations: Translation = {
     en: "Ph.D. Dissertation (at least 30 credits)",
     ko: "논문연구 30학점 이상 이수",
   },
+  // Notice page
+  notice: { en: 'Notice', ko: '공지사항' },
+  notice_aic_event: { en: '[AI Computing] 2026 FALL Admission Info Session', ko: '[AI컴퓨팅] 2026 FALL 입시 설명회' },
+  notice_ais_event: { en: '[AI Systems] 2026 FALL Admission Info Session', ko: '[AI시스템] 2026 FALL 입시 설명회' },
+  notice_ax_event: { en: '[AX] 2026 FALL Admission Info Session', ko: '[AX] 2026 FALL 입시 설명회' },
+  notice_aif_event: { en: '[AI Future Studies] (TBD)', ko: '[AI미래학과] (추후 공지)' },
+
   // AI and Future Studies Transitional Measures
   aif_ug_transit: {
     en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",

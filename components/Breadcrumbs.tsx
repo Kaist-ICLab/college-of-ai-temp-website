@@ -18,7 +18,8 @@ const Breadcrumbs: React.FC = () => {
       'graduation-requirements': 'graduation_reqs',
       'departments': 'departments',
       'programs': 'department_programs',
-      'admissions': 'admissions'
+      'admissions': 'admissions',
+      'notice': 'notice'
     };
 
     const key = mapping[path] || path;

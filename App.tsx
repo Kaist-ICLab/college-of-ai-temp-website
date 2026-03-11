@@ -10,6 +10,7 @@ import Departments from './pages/Departments';
 import Admissions from './pages/Admissions';
 import CourseInfo from './pages/CourseInfo';
 import GraduationRequirements from './pages/GraduationRequirements/index';
+import Notice, { NoticeDetail } from './pages/Notice';
 
 interface LanguageContextType {
   language: Language;
@@ -37,6 +38,8 @@ const App: React.FC = () => {
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/course-information" element={<CourseInfo />} />
               <Route path="/graduation-requirements" element={<GraduationRequirements />} />
+              <Route path="/notice" element={<Notice />} />
+              <Route path="/notice/:eventId" element={<NoticeDetail />} />
             </Routes>
           </main >
           <Footer />
