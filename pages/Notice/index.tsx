@@ -272,7 +272,6 @@ const NoticeDetail: React.FC = () => {
                     {language === "ko" ? event.dateKo : event.dateEn}
                   </span>
                 </div>
-                s
                 {/* Location */}
                 {(language === "ko" ? event.locationKo : event.locationEn) && (
                   <div className="flex items-start gap-4">
