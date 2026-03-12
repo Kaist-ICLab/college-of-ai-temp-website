@@ -28,7 +28,7 @@ export const translations: Translation = {
     ko: "학부\n(외국인)",
   },
   graduate_intl: {
-    en: "Graduate\n(International Students)",
+    en: "Graduate (International Students)",
     ko: "대학원\n(외국인)",
   },
   admission_home_desc: {
