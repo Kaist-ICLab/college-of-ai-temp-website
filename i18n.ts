@@ -81,7 +81,10 @@ export const translations: Translation = {
   dept_ai_computing: { en: "Department of AI Computing", ko: "AI컴퓨팅학과" },
   dept_ai_systems: { en: "Department of AI Systems", ko: "AI시스템학과" },
   dept_ax: { en: "Department of AX", ko: "AX학과" },
-  dept_ai_future: { en: "Department of AI and Future Studies", ko: "AI미래학과" },
+  dept_ai_future: {
+    en: "Department of AI and Future Studies",
+    ko: "AI미래학과",
+  },
   read_more: { en: "Read More", ko: "자세히 보기" },
   website: { en: "Website", ko: "홈페이지" },
   degrees_offered: { en: "Degrees Offered", ko: "학위 과정" },
@@ -1139,7 +1142,10 @@ export const translations: Translation = {
   },
 
   // AI and Future Studies Undergraduate Requirements
-  aif_ug_title: { en: "AI and Future Studies - Undergraduate", ko: "AI미래학과 - 학부" },
+  aif_ug_title: {
+    en: "AI and Future Studies - Undergraduate",
+    ko: "AI미래학과 - 학부",
+  },
   aif_ug_subtitle: {
     en: "(For students admitted in 2025 and after)",
     ko: "(2025학년도 이후 입학생 기준)",
@@ -1243,7 +1249,10 @@ export const translations: Translation = {
   },
 
   // AI and Future Studies Graduate (Master)
-  aif_ms_title: { en: "AI and Future Studies - Master's", ko: "AI미래학과 - 석사" },
+  aif_ms_title: {
+    en: "AI and Future Studies - Master's",
+    ko: "AI미래학과 - 석사",
+  },
   aif_ms_grad_credits: {
     en: "Credit Requirement for Graduation: Required to complete a total of more than 33 credits",
     ko: "졸업이수학점: 총 33 학점 이상 이수",
@@ -1318,7 +1327,10 @@ export const translations: Translation = {
   },
 
   // AI and Future Studies Graduate (Doctoral)
-  aif_phd_title: { en: "AI and Future Studies - Doctoral", ko: "AI미래학과 - 박사" },
+  aif_phd_title: {
+    en: "AI and Future Studies - Doctoral",
+    ko: "AI미래학과 - 박사",
+  },
   aif_phd_grad_credits: {
     en: "Credit Requirement for Graduation: Required to complete a total of more than 60 credits",
     ko: "졸업이수학점: 총 60 학점 이상 이수",
@@ -1478,11 +1490,23 @@ export const translations: Translation = {
     ko: "논문연구 30학점 이상 이수",
   },
   // Notice page
-  notice: { en: 'Notice', ko: '공지사항' },
-  notice_aic_event: { en: '[AI Computing] 2026 FALL Admission Info Session', ko: '[AI컴퓨팅] 2026 FALL 입시 설명회' },
-  notice_ais_event: { en: '[AI Systems] 2026 FALL Admission Info Session', ko: '[AI시스템] 2026 FALL 입시 설명회' },
-  notice_ax_event: { en: '[AX] 2026 FALL Admission Info Session', ko: '[AX] 2026 FALL 입시 설명회' },
-  notice_aif_event: { en: '[AI Future Studies] (TBD)', ko: '[AI미래학과] (추후 공지)' },
+  notice: { en: "Notice", ko: "공지사항" },
+  notice_aic_event: {
+    en: "[AI Computing] 2026 FALL Admission Info Session",
+    ko: "[AI컴퓨팅] 2026 가을학기 입시 설명회",
+  },
+  notice_ais_event: {
+    en: "[AI Systems] 2026 FALL Admission Info Session",
+    ko: "[AI시스템] 2026 FALL 입시 설명회",
+  },
+  notice_ax_event: {
+    en: "[AX] 2026 FALL Admission Info Session",
+    ko: "[AX] 2026 FALL 입시 설명회",
+  },
+  notice_aif_event: {
+    en: "[AI Future Studies] (TBD)",
+    ko: "[AI미래학과] (추후 공지)",
+  },
 
   // AI and Future Studies Transitional Measures
   aif_ug_transit: {

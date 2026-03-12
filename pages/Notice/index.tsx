@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { LanguageContext } from '../../App';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import { useTranslation } from '../../i18n';
+import React, { useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { LanguageContext } from "../../App";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { useTranslation } from "../../i18n";
 
 interface OnlineInfo {
   platform: string;
@@ -29,8 +29,18 @@ const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
   if (!src || hasError) {
     return (
       <div className="w-full h-96 bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center text-gray-400 text-sm gap-2">
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+          />
         </svg>
         <span>포스터</span>
       </div>
@@ -49,56 +59,58 @@ const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
 
 const useEvents = (t: (key: string) => string): NoticeEvent[] => [
   {
-    id: 'ai-computing',
-    dept: t('dept_ai_computing'),
-    titleEn: '2026 FALL Admission Information Session',
-    titleKo: '2026 FALL 입시 설명회',
-    date: '2026.3.20.(금) | 13:00',
-    location: 'KAIST 본원 크래프톤 빌딩(E3-5), 210호',
+    id: "ai-computing",
+    dept: t("dept_ai_computing"),
+    titleEn: "2026 FALL Admission Information Session",
+    titleKo: "2026 가을학기 입시 설명회",
+    date: "2026.3.20.(금) | 13:00",
+    location: "KAIST 본원 크래프톤 빌딩(E3-5), 210호",
     online: {
-      platform: 'Zoom',
-      url: 'https://kaist.zoom.us/j/82925942795',
-      meetingId: '829 2594 2795',
-      password: '941822',
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/82925942795",
+      meetingId: "829 2594 2795",
+      password: "941822",
     },
-    posterPath: '/images/notice/aicomputing_poster.png',
+    posterPath: "/images/notice/aicomputing_poster.png",
   },
   {
-    id: 'ai-systems',
-    dept: t('dept_ai_systems'),
-    titleEn: '2026 FALL Admission Information Session',
-    titleKo: '2026 FALL 입시 설명회',
-    date: '2026.3.19.(목) | 18:00',
-    location: 'KAIST 본원 정보전자공학동(E3-2), 제2공동강의실(1220호)',
+    id: "ai-systems",
+    dept: t("dept_ai_systems"),
+    titleEn: "2026 FALL Admission Information Session",
+    titleKo: "2026 가을학기 입시 설명회",
+    date: "2026.3.19.(목) | 18:00",
+    location: "KAIST 본원 정보전자공학동(E3-2), 제2공동강의실(1220호)",
     online: {
-      platform: 'Zoom',
-      url: 'https://kaist.zoom.us/j/85967815348',
-      meetingId: '859 6781 5348',
-      password: '828764',
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/85967815348",
+      meetingId: "859 6781 5348",
+      password: "828764",
     },
-    registration: 'https://docs.google.com/forms/d/e/1FAIpQLScEOO7KPkquyrqi1vUhv5dNLX7eK2UmGchjQpsdUS2GNVLG-Q/viewform',
-    posterPath: '/images/notice/aisystems_poster.png',
+    registration:
+      "https://docs.google.com/forms/d/e/1FAIpQLScEOO7KPkquyrqi1vUhv5dNLX7eK2UmGchjQpsdUS2GNVLG-Q/viewform",
+    posterPath: "/images/notice/aisystems_poster.png",
   },
   {
-    id: 'ax',
-    dept: t('dept_ax'),
-    titleEn: '2026 FALL Admission Information Session',
-    titleKo: '2026 FALL 입시 설명회',
-    date: '2026.3.18.(수) | 13:00',
-    location: 'KAIST 창의학습관 (E11), 102호',
+    id: "ax",
+    dept: t("dept_ax"),
+    titleEn: "2026 FALL Admission Information Session",
+    titleKo: "2026 가을학기 입시 설명회",
+    date: "2026.3.18.(수) | 13:00",
+    location: "KAIST 창의학습관 (E11), 102호",
     online: {
-      platform: 'Microsoft Teams',
-      url: 'https://teams.microsoft.com/meet/26377140295765?p=bUMlacWnA0o5KYlK5u',
+      platform: "Microsoft Teams",
+      url: "https://teams.microsoft.com/meet/26377140295765?p=bUMlacWnA0o5KYlK5u",
     },
-    registration: 'https://docs.google.com/forms/d/e/1FAIpQLSdGGhW9hCJ3UbxYsNLDt843ocqVo-fZAoX5VmczGesY3mWRAw/viewform',
-    posterPath: '/images/notice/ax_poster.png',
+    registration:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdGGhW9hCJ3UbxYsNLDt843ocqVo-fZAoX5VmczGesY3mWRAw/viewform",
+    posterPath: "/images/notice/ax_poster.png",
   },
   {
-    id: 'ai-future',
-    dept: t('dept_ai_future'),
-    titleEn: '2026 FALL Admission Information Session',
-    titleKo: '2026 FALL 입시 설명회',
-    posterPath: '/images/notice/aifuture_poster.png',
+    id: "ai-future",
+    dept: t("dept_ai_future"),
+    titleEn: "2026 FALL Admission Information Session",
+    titleKo: "2026 가을학기 입시 설명회",
+    posterPath: "/images/notice/aifuture_poster.png",
   },
 ];
 
@@ -117,7 +129,7 @@ const NoticeList: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center gap-7">
             <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
-              {t('notice')}
+              {t("notice")}
             </h1>
             <div className="w-20 h-1 bg-[#002380] rounded-full" />
           </div>
@@ -137,15 +149,17 @@ const NoticeList: React.FC = () => {
                 {event.dept}
               </span>
               <span className="text-gray-800 font-semibold group-hover:text-[#002380] transition-colors">
-                {language === 'ko' ? event.titleKo : event.titleEn}
+                {language === "ko" ? event.titleKo : event.titleEn}
               </span>
             </div>
             <div className="flex items-center gap-4 shrink-0 ml-4">
               {event.date ? (
-                <span className="text-sm text-gray-400 hidden sm:block">{event.date}</span>
+                <span className="text-sm text-gray-400 hidden sm:block">
+                  {event.date}
+                </span>
               ) : (
                 <span className="text-sm text-gray-400 hidden sm:block">
-                  {language === 'ko' ? '추후 공지' : 'TBD'}
+                  {language === "ko" ? "추후 공지" : "TBD"}
                 </span>
               )}
               <svg
@@ -154,7 +168,12 @@ const NoticeList: React.FC = () => {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </div>
           </Link>
@@ -178,7 +197,7 @@ const NoticeDetail: React.FC = () => {
       <div className="bg-white min-h-screen">
         <Breadcrumbs />
         <div className="max-w-3xl mx-auto px-4 py-20 text-center text-gray-500">
-          {language === 'ko' ? '공지를 찾을 수 없습니다.' : 'Notice not found.'}
+          {language === "ko" ? "공지를 찾을 수 없습니다." : "Notice not found."}
         </div>
       </div>
     );
@@ -194,10 +213,20 @@ const NoticeDetail: React.FC = () => {
           to="/notice"
           className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#002380] transition-colors mb-8"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
-          {language === 'ko' ? '목록으로' : 'Back to list'}
+          {language === "ko" ? "목록으로" : "Back to list"}
         </Link>
 
         {/* Header */}
@@ -206,7 +235,7 @@ const NoticeDetail: React.FC = () => {
             {event.dept}
           </span>
           <h1 className="mt-4 text-2xl md:text-3xl font-black text-gray-900">
-            {language === 'ko' ? event.titleKo : event.titleEn}
+            {language === "ko" ? event.titleKo : event.titleEn}
           </h1>
         </div>
 
@@ -218,7 +247,7 @@ const NoticeDetail: React.FC = () => {
                 {/* Date */}
                 <div className="flex items-start gap-4">
                   <span className="font-bold text-gray-700 w-28 shrink-0 text-sm">
-                    {language === 'ko' ? '일시' : 'Date & Time'}
+                    {language === "ko" ? "일시" : "Date & Time"}
                   </span>
                   <span className="text-gray-600 text-sm">{event.date}</span>
                 </div>
@@ -227,9 +256,11 @@ const NoticeDetail: React.FC = () => {
                 {event.location && (
                   <div className="flex items-start gap-4">
                     <span className="font-bold text-gray-700 w-28 shrink-0 text-sm">
-                      {language === 'ko' ? '장소' : 'Venue'}
+                      {language === "ko" ? "장소" : "Venue"}
                     </span>
-                    <span className="text-gray-600 text-sm">{event.location}</span>
+                    <span className="text-gray-600 text-sm">
+                      {event.location}
+                    </span>
                   </div>
                 )}
 
@@ -237,7 +268,7 @@ const NoticeDetail: React.FC = () => {
                 {event.online && (
                   <div className="flex items-start gap-4">
                     <span className="font-bold text-gray-700 w-28 shrink-0 text-sm">
-                      {language === 'ko' ? '온라인' : 'Online'}
+                      {language === "ko" ? "온라인" : "Online"}
                     </span>
                     <div className="text-sm space-y-1">
                       <a
@@ -251,7 +282,7 @@ const NoticeDetail: React.FC = () => {
                       {event.online.meetingId && (
                         <div className="text-gray-600">
                           <span className="text-gray-500">
-                            {language === 'ko' ? '회의 ID: ' : 'Meeting ID: '}
+                            {language === "ko" ? "회의 ID: " : "Meeting ID: "}
                           </span>
                           {event.online.meetingId}
                         </div>
@@ -259,7 +290,7 @@ const NoticeDetail: React.FC = () => {
                       {event.online.password && (
                         <div className="text-gray-600">
                           <span className="text-gray-500">
-                            {language === 'ko' ? '암호: ' : 'Password: '}
+                            {language === "ko" ? "암호: " : "Password: "}
                           </span>
                           {event.online.password}
                         </div>
@@ -272,7 +303,7 @@ const NoticeDetail: React.FC = () => {
                 {event.registration && (
                   <div className="flex items-start gap-4">
                     <span className="font-bold text-gray-700 w-28 shrink-0 text-sm">
-                      {language === 'ko' ? '사전등록' : 'Register'}
+                      {language === "ko" ? "사전등록" : "Register"}
                     </span>
                     <a
                       href={event.registration}
@@ -280,7 +311,7 @@ const NoticeDetail: React.FC = () => {
                       rel="noopener noreferrer"
                       className="text-[#002380] hover:underline font-medium text-sm"
                     >
-                      {language === 'ko' ? '신청하기 →' : 'Apply here →'}
+                      {language === "ko" ? "신청하기 →" : "Apply here →"}
                     </a>
                   </div>
                 )}
@@ -288,18 +319,26 @@ const NoticeDetail: React.FC = () => {
 
               {/* Poster */}
               <div className="border-t border-gray-200 bg-gray-50 p-6 md:p-8">
-                <PosterImage src={event.posterPath} alt={`${event.dept} poster`} />
+                <PosterImage
+                  src={event.posterPath}
+                  alt={`${event.dept} poster`}
+                />
               </div>
             </div>
           ) : (
             <div className="flex flex-col">
               <div className="p-6 md:p-8">
                 <p className="text-gray-500 text-sm">
-                  {language === 'ko' ? '추후 공지 예정입니다.' : 'Details to be announced.'}
+                  {language === "ko"
+                    ? "추후 공지 예정입니다."
+                    : "Details to be announced."}
                 </p>
               </div>
               <div className="border-t border-gray-200 bg-gray-50 p-6 md:p-8">
-                <PosterImage src={event.posterPath} alt={`${event.dept} poster`} />
+                <PosterImage
+                  src={event.posterPath}
+                  alt={`${event.dept} poster`}
+                />
               </div>
             </div>
           )}
