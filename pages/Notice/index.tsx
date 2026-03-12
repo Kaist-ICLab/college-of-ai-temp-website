@@ -16,8 +16,10 @@ interface NoticeEvent {
   dept: string;
   titleEn: string;
   titleKo: string;
-  date?: string;
-  location?: string;
+  dateEn?: string;
+  dateKo?: string;
+  locationEn?: string;
+  locationKo?: string;
   online?: OnlineInfo;
   registration?: string;
   posterPath?: string;
@@ -63,8 +65,10 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     dept: t("dept_ai_computing"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
-    date: "2026.3.20.(금) | 13:00",
-    location: "KAIST 본원 크래프톤 빌딩(E3-5), 210호",
+    dateEn: "2026.3.20.(Fri) | 13:00",
+    dateKo: "2026.3.20.(금) | 13:00",
+    locationEn: "Room 210, KRAFTON Building (E3-5), Main Campus",
+    locationKo: "KAIST 본원 크래프톤 빌딩(E3-5), 210호",
     online: {
       platform: "Zoom",
       url: "https://kaist.zoom.us/j/82925942795",
@@ -78,8 +82,11 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     dept: t("dept_ai_systems"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
-    date: "2026.3.19.(목) | 18:00",
-    location: "KAIST 본원 정보전자공학동(E3-2), 제2공동강의실(1220호)",
+    dateEn: "2026.3.19.(Thu) | 18:00",
+    dateKo: "2026.3.19.(목) | 18:00",
+    locationEn:
+      "2nd Lecture Hall (Room 1220), IT Convergence Building (E3-2), Main Campus",
+    locationKo: "KAIST 본원 정보전자공학동(E3-2), 제2공동강의실(1220호)",
     online: {
       platform: "Zoom",
       url: "https://kaist.zoom.us/j/85967815348",
@@ -95,8 +102,10 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     dept: t("dept_ax"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
-    date: "2026.3.18.(수) | 13:00",
-    location: "KAIST 창의학습관 (E11), 102호",
+    dateEn: "2026.3.18.(Wed) | 13:00",
+    dateKo: "2026.3.18.(수) | 13:00",
+    locationEn: "Room 102, Creative Learning Bldg. (E11), Main Campus",
+    locationKo: "KAIST 창의학습관 (E11), 102호",
     online: {
       platform: "Microsoft Teams",
       url: "https://teams.microsoft.com/meet/26377140295765?p=bUMlacWnA0o5KYlK5u",
@@ -153,13 +162,23 @@ const NoticeList: React.FC = () => {
               </span>
             </div>
             <div className="flex items-center gap-4 shrink-0 ml-4">
-              {event.date ? (
+              {language === "ko" ? (
+                event.dateKo ? (
+                  <span className="text-sm text-gray-400 hidden sm:block">
+                    {event.dateKo}
+                  </span>
+                ) : (
+                  <span className="text-sm text-gray-400 hidden sm:block">
+                    추후 공지
+                  </span>
+                )
+              ) : event.dateEn ? (
                 <span className="text-sm text-gray-400 hidden sm:block">
-                  {event.date}
+                  {event.dateEn}
                 </span>
               ) : (
                 <span className="text-sm text-gray-400 hidden sm:block">
-                  {language === "ko" ? "추후 공지" : "TBD"}
+                  TBD
                 </span>
               )}
               <svg
@@ -240,7 +259,7 @@ const NoticeDetail: React.FC = () => {
         </div>
 
         <div className="border border-gray-200 rounded-2xl overflow-hidden">
-          {event.date ? (
+          {(language === "ko" ? event.dateKo : event.dateEn) ? (
             <div className="flex flex-col">
               {/* Details */}
               <div className="p-6 md:p-8 space-y-5">
@@ -249,17 +268,19 @@ const NoticeDetail: React.FC = () => {
                   <span className="font-bold text-gray-700 w-28 shrink-0 text-sm">
                     {language === "ko" ? "일시" : "Date & Time"}
                   </span>
-                  <span className="text-gray-600 text-sm">{event.date}</span>
+                  <span className="text-gray-600 text-sm">
+                    {language === "ko" ? event.dateKo : event.dateEn}
+                  </span>
                 </div>
-
+                s
                 {/* Location */}
-                {event.location && (
+                {(language === "ko" ? event.locationKo : event.locationEn) && (
                   <div className="flex items-start gap-4">
                     <span className="font-bold text-gray-700 w-28 shrink-0 text-sm">
                       {language === "ko" ? "장소" : "Venue"}
                     </span>
                     <span className="text-gray-600 text-sm">
-                      {event.location}
+                      {language === "ko" ? event.locationKo : event.locationEn}
                     </span>
                   </div>
                 )}
