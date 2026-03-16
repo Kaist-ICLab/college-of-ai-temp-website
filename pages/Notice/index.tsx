@@ -119,6 +119,8 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     dept: t("dept_ai_future"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
+    dateEn: "To Be Announced",
+    dateKo: "추후 공지 예정",
     posterPath: "/images/notice/aifuture_poster.png",
   },
 ];

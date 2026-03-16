@@ -275,7 +275,7 @@ const KoGradContent: React.FC<KoGradContentProps> = ({
         )}
       />
       <p className="text-sm font-semibold text-gray-700 mt-8 mb-3">
-        ■ 2026학년도 가을학기 입학 (KAIST학사재학생)학·석박통합연계과정 및
+        ■ 2026학년도 가을학기 입학 (KAIST학사재학생) 학·석박통합연계과정 및
         (KAIST 석사과정 재학생 대상) 석사·박사학위통합과정 입학전형 일정표
       </p>
       <InfoTable
@@ -331,6 +331,12 @@ const axAdvisorBullets = [
   "교수의 연구비에서 지원받는 KAIST 장학생으로 입학한 학생은 연구비 지원 교수만이 지도교수가 될 수 있습니다.",
   "KAIST프로그램 장학생은 KAIST프로그램 참여 교수만을 지도교수로 신청할 수 있습니다.",
   "일반 장학생은 AX학과 모든 교수 (겸임 교수 포함)를 지도교수로 신청할 수 있습니다.",
+];
+
+const aifAdvisorBullets = [
+  "국비로 입학한 학생은 AI미래학과 모든 교수 (겸임 교수 포함)를 지도교수로 신청할 수 있습니다. 신청한 지도교수가 국비TO가 있고 학생 지도를 희망할 경우 매칭이 됩니다.",
+  "교수의 연구비에서 지원받는 KAIST 장학생으로 입학한 학생은 연구비 지원 교수만이 지도교수가 될 수 있습니다.",
+  "일반 장학생은 AI미래학과 모든 교수 (겸임 교수 포함)를 지도교수로 신청할 수 있습니다.",
 ];
 
 // ── Main Component ───────────────────────────────────────
@@ -421,9 +427,10 @@ const Admissions: React.FC = () => {
       />
     ),
     aif: (
-      <div className="py-12 text-center text-gray-400 text-sm">
-        준비 중입니다.
-      </div>
+      <KoGradContent
+        degreePrograms="석사과정, 박사과정, (KAIST석사재학생) 석박사 통합과정, (KAIST학사재학생) 학∙석박통합연계과정"
+        advisorBullets={aifAdvisorBullets}
+      />
     ),
   };
 
