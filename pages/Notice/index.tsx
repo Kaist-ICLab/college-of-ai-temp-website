@@ -119,14 +119,16 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     dept: t("dept_ai_future"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
-    dateEn: "2026.3.24.(Tue) | 17:30",
-    dateKo: "2026.3.24.(화) | 17:30",
+    dateEn: "2026.3.24.(Tue) | 12:00",
+    dateKo: "2026.3.24.(화) | 12:00",
     locationEn: "Room 2125, N5 Building, Main Campus",
     locationKo: "KAIST 본원 N5동 1층, 2125호",
     online: {
       platform: "Zoom",
       url: "https://kaist.zoom.us/j/82184059994",
     },
+    registration:
+      "https://docs.google.com/forms/d/e/1FAIpQLSeo39cpyP9-ga_-K1d86_KB1nMPwSMcpYI-P5vPA27KySuqyw/viewform",
     posterPath: "/images/notice/aifuture_poster.webp",
   },
 ];
