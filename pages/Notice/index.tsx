@@ -75,7 +75,7 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
       meetingId: "829 2594 2795",
       password: "941822",
     },
-    posterPath: "/images/notice/aicomputing_poster.png",
+    posterPath: "/images/notice/aicomputing_poster.webp",
   },
   {
     id: "ai-systems",
@@ -95,15 +95,15 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     },
     registration:
       "https://docs.google.com/forms/d/e/1FAIpQLScEOO7KPkquyrqi1vUhv5dNLX7eK2UmGchjQpsdUS2GNVLG-Q/viewform",
-    posterPath: "/images/notice/aisystems_poster.png",
+    posterPath: "/images/notice/aisystems_poster.webp",
   },
   {
     id: "ax",
     dept: t("dept_ax"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
-    dateEn: "2026.3.18.(Wed) | 13:00",
-    dateKo: "2026.3.18.(수) | 13:00",
+    dateEn: "2026.3.18.(Wed) | 17:30",
+    dateKo: "2026.3.18.(수) | 17:30",
     locationEn: "Room 102, Creative Learning Bldg. (E11), Main Campus",
     locationKo: "KAIST 창의학습관 (E11), 102호",
     online: {
@@ -112,16 +112,22 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
     },
     registration:
       "https://docs.google.com/forms/d/e/1FAIpQLSdGGhW9hCJ3UbxYsNLDt843ocqVo-fZAoX5VmczGesY3mWRAw/viewform",
-    posterPath: "/images/notice/ax_poster.png",
+    posterPath: "/images/notice/ax_poster.webp",
   },
   {
     id: "ai-future",
     dept: t("dept_ai_future"),
     titleEn: "2026 FALL Admission Information Session",
     titleKo: "2026 가을학기 입시 설명회",
-    dateEn: "To Be Announced",
-    dateKo: "추후 공지 예정",
-    posterPath: "/images/notice/aifuture_poster.png",
+    dateEn: "2026.3.24.(Tue) | 17:30",
+    dateKo: "2026.3.24.(화) | 17:30",
+    locationEn: "Room 2125, N5 Building, Main Campus",
+    locationKo: "KAIST 본원 N5동 1층, 2125호",
+    online: {
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/82184059994",
+    },
+    posterPath: "/images/notice/aifuture_poster.webp",
   },
 ];
 
