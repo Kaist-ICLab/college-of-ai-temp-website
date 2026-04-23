@@ -119,6 +119,7 @@ const Home: React.FC = () => {
                 num: "01",
                 name: t("dept_ai_computing"),
                 text: depts.computing,
+                url: "https://aic.kaist.ac.kr/",
                 imageWebp: "/images/aicomputing_pic.webp",
                 imagePng: "/images/aicomputing_pic.png",
               },
@@ -127,6 +128,7 @@ const Home: React.FC = () => {
                 num: "02",
                 name: t("dept_ai_systems"),
                 text: depts.systems,
+                url: "https://ai-systems.kaist.ac.kr/",
                 imageWebp: "/images/aisystems_pic.webp",
                 imagePng: "/images/aisystems_pic.png",
               },
@@ -135,6 +137,7 @@ const Home: React.FC = () => {
                 num: "03",
                 name: t("dept_ax"),
                 text: depts.ax,
+                url: "https://ax.kaist.ac.kr/",
                 imageWebp: "/images/ax_pic.webp",
                 imagePng: "/images/ax_pic.png",
               },
@@ -143,6 +146,7 @@ const Home: React.FC = () => {
                 num: "04",
                 name: t("dept_ai_future"),
                 text: depts.future,
+                url: "https://fx.kaist.ac.kr/",
                 imageWebp: "/images/aifuture_pic.webp",
                 imagePng: "/images/aifuture_pic.png",
               },
@@ -181,14 +185,15 @@ const Home: React.FC = () => {
                     <div className="w-10 h-0.5 bg-gray-100 group-hover:w-20 group-hover:bg-[#002380] transition-all duration-500 mb-4"></div>
                   </div>
 
-                  <p className="text-left text-gray-600 leading-relaxed text-sm md:text-base text-justify mb-2 relative z-10 line-clamp-4">
+                  <p className="text-left text-gray-600 leading-relaxed text-sm md:text-base text-justify mb-2 relative z-10">
                     {dept.text}
                   </p>
 
-                  <div className="mt-auto relative z-10">
-                    <Link
-                      to="/departments"
-                      onClick={() => window.scrollTo(0, 0)}
+                  <div className="mt-auto pt-4 relative z-10">
+                    <a
+                      href={dept.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#002380] group-hover:translate-x-1 transition-transform duration-300"
                     >
                       <span>{t("read_more")}</span>
@@ -205,7 +210,7 @@ const Home: React.FC = () => {
                           d="M17 8l4 4m0 0l-4 4m4-4H3"
                         />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

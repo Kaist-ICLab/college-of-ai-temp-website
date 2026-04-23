@@ -13,6 +13,7 @@ const Departments: React.FC = () => {
   const deptData = [
     {
       id: "computing",
+      url: "https://aic.kaist.ac.kr/",
       name: t("dept_ai_computing"),
       summaryEn: (
         <>
@@ -54,6 +55,7 @@ const Departments: React.FC = () => {
     },
     {
       id: "systems",
+      url: "https://ai-systems.kaist.ac.kr/",
       name: t("dept_ai_systems"),
       summaryEn: (
         <>
@@ -98,6 +100,7 @@ const Departments: React.FC = () => {
     },
     {
       id: "ax",
+      url: "https://ax.kaist.ac.kr/",
       name: t("dept_ax"),
       summaryEn: (
         <>
@@ -143,6 +146,7 @@ const Departments: React.FC = () => {
     },
     {
       id: "future",
+      url: "https://fx.kaist.ac.kr/",
       name: t("dept_ai_future"),
       summaryEn: (
         <>
@@ -370,34 +374,55 @@ const Departments: React.FC = () => {
             <div className="mt-4 w-12 h-1 bg-[#002380] rounded-full"></div>
           </div>
           {deptData.map((dept) => (
-            <div
+            <a
               key={dept.id}
-              className="bg-white p-6 md:p-8 rounded-[1.5rem] shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 max-w-5xl mx-auto w-full"
+              href={dept.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white p-6 md:p-8 rounded-[1.5rem] shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300 max-w-5xl mx-auto w-full block"
             >
-              <div className="flex items-center space-x-4 mb-5 text-left">
-                <div className="p-2.5 bg-blue-50 text-[#002380] rounded-xl shadow-sm">
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center space-x-4">
+                  <div className="p-2.5 bg-blue-50 text-[#002380] rounded-xl shadow-sm group-hover:bg-blue-100 transition-colors duration-200">
+                    <svg
+                      className="w-6 h-6 md:w-8 md:h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d={dept.icon}
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-black text-gray-900 group-hover:text-[#002380] tracking-tight transition-colors duration-200">
+                    {dept.name}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2 text-[#002380] opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 flex-shrink-0 ml-4">
+                  <span className="text-sm font-semibold">Visit</span>
                   <svg
-                    className="w-6 h-6 md:w-8 md:h-8"
+                    className="w-14 h-6"
                     fill="none"
                     stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 48 24"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
-                      d={dept.icon}
+                      strokeWidth={2.5}
+                      d="M34 5l9 7m0 0l-9 7m9-7H3"
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
-                  {dept.name}
-                </h3>
               </div>
               <p className="text-left text-gray-700 leading-relaxed text-sm md:text-base text-justify md:text-left">
                 {language === "en" ? dept.summaryEn : dept.summaryKo}
               </p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
