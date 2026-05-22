@@ -23,6 +23,10 @@ interface NoticeEvent {
   online?: OnlineInfo;
   registration?: string;
   posterPath?: string;
+  bodyEn?: string[];
+  bodyKo?: string[];
+  signatureEn?: string;
+  signatureKo?: string;
 }
 
 const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
@@ -61,10 +65,35 @@ const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
 
 const useEvents = (t: (key: string) => string): NoticeEvent[] => [
   {
+    id: "global-ai-hub-statement",
+    dept: t("kaist_ai"),
+    titleEn:
+      "KAIST College of AI Faculty Statement on South Korea's Selection as a Global AI Hub",
+    titleKo: "Global AI Hub 유치에 대한 AI대학 교수진 입장문",
+    bodyKo: [
+      "KAIST AI대학 교수 일동은 대한민국의 Global AI Hub 유치를 진심으로 환영합니다.",
+      "이번 유치는 단순히 하나의 국제기구나 센터를 국내에 유치하는 의미를 넘어, 대한민국이 인공지능 시대의 국제 협력과 책임 있는 기술 활용에 본격적으로 기여할 수 있는 중요한 계기가 될 것입니다. 인공지능은 이제 국가의 미래 경쟁력을 좌우하고 산업과 사회 시스템 전반을 바꾸는 핵심 기술이 되었습니다. 앞으로는 AI 기술 경쟁력뿐 아니라 안전성, 신뢰성, 윤리, 거버넌스, 공공성과 같은 가치까지 함께 이해하고 실천할 수 있는 역량이 더욱 중요해질 것입니다.",
+      "대한민국은 우수한 연구자와 기업, 반도체와 제조 역량, 빠른 디지털 전환 경험을 바탕으로 AI 분야에서 의미 있는 경쟁력을 축적해 왔습니다. 이번 Global AI Hub 유치는 이러한 역량을 국제사회와 연결하고, AI의 혜택을 보다 넓게 확산하는 데 기여할 수 있는 소중한 기회라고 생각합니다.",
+      "무엇보다 중요한 것은 유치 그 자체보다 그 이후를 어떻게 준비하고 발전시켜 나가느냐일 것입니다. 국제사회가 함께 고민하는 다양한 문제를 AI와 연결하고, 이를 교육과 연구, 실증과 협력으로 발전시킬 수 있는 인재와 생태계를 갖추는 일이 필요합니다.",
+      "KAIST AI대학은 AI 알고리즘과 모델, AI 반도체와 시스템, 산업 및 과학기술과의 융합, AI의 안전성과 거버넌스를 함께 다루는 교육과 연구를 지향하고 있습니다. 또한 국내 여러 대학, 연구기관, 기업, 공공기관과의 협력을 통해 대한민국의 AI 역량을 국제사회와 연결하는 데 힘을 보태고자 합니다.",
+      "KAIST AI대학 교수 일동은 이번 Global AI Hub 유치가 대한민국이 AI 시대의 규칙을 단순히 따라가는 나라를 넘어, 국제사회와 함께 더 나은 방향을 만들어 가는 나라로 나아가는 출발점이 되기를 기대합니다. 앞으로도 인재 양성과 연구 협력의 측면에서 필요한 역할을 성실히 해 나가겠습니다.",
+    ],
+    signatureKo: "KAIST AI대학 교수 일동",
+    bodyEn: [
+      "The faculty of the KAIST College of AI sincerely welcomes the Republic of Korea's designation as a Global AI Hub.",
+      "This designation is more than the hosting of an international organization or center in Korea; it marks an important turning point for the nation to make substantive contributions to international cooperation and the responsible use of technology in the age of artificial intelligence. AI has become a core technology that shapes a nation's future competitiveness and reshapes industry and social systems as a whole. Going forward, what will matter even more is the capacity to understand and uphold values such as safety, reliability, ethics, governance, and public benefit, alongside technical competitiveness.",
+      "Korea has built meaningful competitiveness in AI on the strength of outstanding researchers and companies, its semiconductor and manufacturing capabilities, and its rapid digital transformation. We believe this Global AI Hub designation is a valuable opportunity to connect these strengths to the international community and to spread the benefits of AI more broadly.",
+      "What matters most is not the designation itself, but how we prepare for and build on what comes next. We need to connect the challenges the international community grapples with to AI, and to cultivate the talent and ecosystem that can advance this through education, research, real-world implementation, and collaboration.",
+      "The KAIST College of AI is committed to education and research that span AI algorithms and models, AI semiconductors and systems, the integration of AI with industry and science, and AI safety and governance. Through cooperation with universities, research institutes, companies, and public institutions in Korea, we aim to help connect the nation's AI capabilities to the international community.",
+      "The faculty of the KAIST College of AI hope that this Global AI Hub designation will mark a starting point for Korea to move beyond simply following the rules of the AI era and instead help shape a better direction together with the international community. We will continue to faithfully carry out the role required of us in cultivating talent and advancing research cooperation.",
+    ],
+    signatureEn: "The Faculty of the KAIST College of AI",
+  },
+  {
     id: "ai-computing",
     dept: t("dept_ai_computing"),
-    titleEn: "2026 FALL Admission Information Session",
-    titleKo: "2026 가을학기 입시 설명회",
+    titleEn: "2026 FALL AI Computing Admission Information Session",
+    titleKo: "2026 가을학기 AI컴퓨팅학과 입시 설명회",
     dateEn: "2026.3.20.(Fri) | 13:00",
     dateKo: "2026.3.20.(금) | 13:00",
     locationEn: "Room 210, KRAFTON Building (E3-5), Main Campus",
@@ -80,8 +109,8 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
   {
     id: "ai-systems",
     dept: t("dept_ai_systems"),
-    titleEn: "2026 FALL Admission Information Session",
-    titleKo: "2026 가을학기 입시 설명회",
+    titleEn: "2026 FALL AI Systems Admission Information Session",
+    titleKo: "2026 가을학기 AI시스템학과 입시 설명회",
     dateEn: "2026.3.19.(Thu) | 18:00",
     dateKo: "2026.3.19.(목) | 18:00",
     locationEn:
@@ -100,8 +129,8 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
   {
     id: "ax",
     dept: t("dept_ax"),
-    titleEn: "2026 FALL Admission Information Session",
-    titleKo: "2026 가을학기 입시 설명회",
+    titleEn: "2026 FALL AX Admission Information Session",
+    titleKo: "2026 가을학기 AX학과 입시 설명회",
     dateEn: "2026.3.18.(Wed) | 17:30",
     dateKo: "2026.3.18.(수) | 17:30",
     locationEn: "Room 102, Creative Learning Bldg. (E11), Main Campus",
@@ -117,8 +146,8 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
   {
     id: "ai-future",
     dept: t("dept_ai_future"),
-    titleEn: "2026 FALL Admission Information Session",
-    titleKo: "2026 가을학기 입시 설명회",
+    titleEn: "2026 FALL AI and Future Studies Admission Information Session",
+    titleKo: "2026 가을학기 AI미래학과 입시 설명회",
     dateEn: "2026.3.24.(Tue) | 12:00",
     dateKo: "2026.3.24.(화) | 12:00",
     locationEn: "Room 2125, N5 Building, Main Campus",
@@ -164,9 +193,6 @@ const NoticeList: React.FC = () => {
             className="group flex items-center justify-between border border-gray-200 rounded-xl px-6 py-5 bg-white shadow-sm hover:border-[#002380] hover:shadow-md transition-all duration-200"
           >
             <div className="flex items-center gap-4 min-w-0">
-              <span className="shrink-0 text-xs font-bold bg-[#002380] text-white rounded-full px-3 py-1">
-                {event.dept}
-              </span>
               <span className="text-gray-800 font-semibold group-hover:text-[#002380] transition-colors">
                 {language === "ko" ? event.titleKo : event.titleEn}
               </span>
@@ -178,18 +204,14 @@ const NoticeList: React.FC = () => {
                     {event.dateKo}
                   </span>
                 ) : (
-                  <span className="text-sm text-gray-400 hidden sm:block">
-                    추후 공지
-                  </span>
+                  <span className="text-sm text-gray-400 hidden sm:block"></span>
                 )
               ) : event.dateEn ? (
                 <span className="text-sm text-gray-400 hidden sm:block">
                   {event.dateEn}
                 </span>
               ) : (
-                <span className="text-sm text-gray-400 hidden sm:block">
-                  TBD
-                </span>
+                <span className="text-sm text-gray-400 hidden sm:block"></span>
               )}
               <svg
                 className="w-4 h-4 text-gray-400 group-hover:text-[#002380] transition-colors"
@@ -260,16 +282,35 @@ const NoticeDetail: React.FC = () => {
 
         {/* Header */}
         <div className="mb-8">
-          <span className="text-xs font-bold bg-[#002380] text-white rounded-full px-3 py-1">
-            {event.dept}
-          </span>
-          <h1 className="mt-4 text-2xl md:text-3xl font-black text-gray-900">
+          <h1 className="text-2xl md:text-3xl font-black text-gray-900">
             {language === "ko" ? event.titleKo : event.titleEn}
           </h1>
         </div>
 
         <div className="border border-gray-200 rounded-2xl overflow-hidden">
-          {(language === "ko" ? event.dateKo : event.dateEn) ? (
+          {(language === "ko" ? event.bodyKo : event.bodyEn) ? (
+            <div className="p-6 md:p-8 md:px-10 md:py-10">
+              {(language === "ko" ? event.dateKo : event.dateEn) && (
+                <div className="text-sm text-gray-500 mb-6">
+                  {language === "ko" ? event.dateKo : event.dateEn}
+                </div>
+              )}
+              <div className="space-y-5 text-gray-800 leading-relaxed">
+                {(language === "ko" ? event.bodyKo : event.bodyEn)?.map(
+                  (paragraph, idx) => (
+                    <p key={idx} className="text-[15px]">
+                      {paragraph}
+                    </p>
+                  ),
+                )}
+              </div>
+              {(language === "ko" ? event.signatureKo : event.signatureEn) && (
+                <div className="mt-8 pt-6 border-t border-gray-200 text-right font-semibold text-gray-900">
+                  {language === "ko" ? event.signatureKo : event.signatureEn}
+                </div>
+              )}
+            </div>
+          ) : (language === "ko" ? event.dateKo : event.dateEn) ? (
             <div className="flex flex-col">
               {/* Details */}
               <div className="p-6 md:p-8 space-y-5">
