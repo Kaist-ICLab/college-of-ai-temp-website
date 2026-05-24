@@ -11,6 +11,7 @@ import Admissions from './pages/Admissions';
 import CourseInfo from './pages/CourseInfo';
 import GraduationRequirements from './pages/GraduationRequirements/index';
 import Notice, { NoticeDetail } from './pages/Notice';
+import StatementBanner from './components/StatementBanner';
 
 interface LanguageContextType {
   language: Language;
@@ -24,11 +25,20 @@ export const LanguageContext = createContext<LanguageContextType>({
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('ko');
+  const [showBanner, setShowBanner] = useState<boolean>(() => {
+    return localStorage.getItem('kaist_ai_statement_banner_closed') !== 'true';
+  });
+
+  const handleCloseBanner = () => {
+    localStorage.setItem('kaist_ai_statement_banner_closed', 'true');
+    setShowBanner(false);
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <HashRouter>
         <div className="min-h-screen flex flex-col bg-white text-gray-900">
+          {showBanner && <StatementBanner onClose={handleCloseBanner} />}
           <Navbar />
           <main className="flex-grow">
             <Routes>
