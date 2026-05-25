@@ -150,14 +150,12 @@ const StatementBanner: React.FC<StatementBannerProps> = ({ onClose }) => {
       <div className="relative z-10 flex flex-col items-center max-w-none w-full gap-1.5 px-4">
         {/* Title */}
         <h2 className="text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] font-black tracking-wide leading-none uppercase select-none whitespace-normal md:whitespace-nowrap">
-          STATEMENT FROM KAIST AI COLLEGE FACULTY REGARDING SOUTH KOREA'S BID FOR THE UN GLOBAL AI HUB
+          KAIST College of AI Faculty Statement on South Korea's Selection as a Global AI Hub 
         </h2>
 
         {/* Subtitle */}
         <p className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13.5px] text-[#a4c1ee] font-medium select-none whitespace-normal md:whitespace-nowrap">
-          대한민국, UN 글로벌 AI 허브 유치 지지 선언문 - KAIST AI대학원 교수 일동
-          <span className="mx-2 opacity-50">/</span>
-          Full Faculty Statement Supporting South Korea's UN Global AI Hub Bid
+          Global AI Hub 유치에 대한 AI대학 교수진 입장문
         </p>
 
         {/* Gold Action Button */}
