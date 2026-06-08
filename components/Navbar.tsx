@@ -67,13 +67,13 @@ const Navbar: React.FC = () => {
         ref={navContainerRef}
         className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4"
       >
-        <div className="flex h-20 items-center">
+        <div className="flex h-18 items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4 mr-auto">
             <img
               src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
               alt="KAIST Logo"
-              className="h-20 md:h-32 w-auto object-contain transition-all duration-300"
+              className="h-20 md:h-28 w-auto object-contain transition-all duration-300"
             />
             <div className="h-11 w-[1px] bg-gray-200 hidden sm:block" />
             <div className="flex flex-col">
