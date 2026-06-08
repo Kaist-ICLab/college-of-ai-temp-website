@@ -326,7 +326,7 @@ const NoticeDetail: React.FC = () => {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl md:text-3xl font-black text-gray-900">
+          <h1 className="text-2xl md:text-3xl font-black text-center text-gray-900">
             {language === "ko" ? event.titleKo : event.titleEn}
           </h1>
         </div>
