@@ -91,7 +91,7 @@ const Home: React.FC = () => {
       setIsSlideAnimating(true);
       setActiveSlide((current) => (current + 1) % slideCount);
       setTrackSlide((current) => current + 1);
-    }, 7000);
+    }, 3000);
 
     return () => window.clearInterval(timer);
   }, [isSlideAnimating, slideCount, timerResetKey]);
@@ -172,7 +172,7 @@ const Home: React.FC = () => {
       <div className="relative h-[620px] overflow-hidden">
         <div
           className={`flex h-full ${isTrackTransitionEnabled
-            ? "transition-transform duration-300 ease-in-out"
+            ? "transition-transform duration-500 ease-in-out"
             : "transition-none"
             }`}
           style={{ transform: `translateX(-${trackSlide * 100}%)` }}
@@ -377,7 +377,7 @@ const Home: React.FC = () => {
                     <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900 group-hover:text-[#002380] transition-colors leading-tight">
                       {dept.name}
                     </h3>
-                    <div className="w-10 h-0.5 bg-gray-100 group-hover:w-20 group-hover:bg-[#002380] transition-all duration-500 mb-4"></div>
+                    <div className="w-10 h-0.5 bg-gray-100 group-hover:w-20 group-hover:bg-[#002380] transition-all duration-300 mb-4"></div>
                   </div>
 
                   <p className="text-left text-gray-600 leading-relaxed text-sm md:text-base text-justify mb-2 relative z-10">
@@ -389,7 +389,7 @@ const Home: React.FC = () => {
                       href={dept.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#002380] group-hover:translate-x-1 transition-transform duration-300"
+                      className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#002380] group-hover:translate-x-1 transition-transform duration-500"
                     >
                       <span>{t("read_more")}</span>
                       <svg
