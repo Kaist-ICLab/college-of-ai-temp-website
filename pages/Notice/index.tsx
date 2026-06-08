@@ -23,6 +23,11 @@ interface NoticeEvent {
   online?: OnlineInfo;
   registration?: string;
   posterPath?: string;
+  posterCaptionEn?: string;
+  posterCaptionKo?: string;
+  imagePath?: string;
+  imageCaptionEn?: string;
+  imageCaptionKo?: string;
   bodyEn?: string[];
   bodyKo?: string[];
   signatureEn?: string;
@@ -64,6 +69,45 @@ const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
 };
 
 const useEvents = (t: (key: string) => string): NoticeEvent[] => [
+  {
+    id: "ai-college-vision-declaration",
+    dept: t("kaist_ai"),
+    titleEn:
+      "KAIST College of AI Holds Vision Declaration Ceremony, Presenting Its Vision for Cultivating Global AI Convergence Talent",
+    titleKo: "AI대학 비전선포식 개최..글로벌 AI 융합인재 양성 비전 제시",
+    dateEn: "2026.6.1.(Mon) | 10:00",
+    dateKo: "2026.6.1.(월) | 10:00",
+    imagePath: "/images/notice/AI_faculty_photo.jpg",
+    imageCaptionEn: "KAIST College of AI Vision Declaration Ceremony",
+    imageCaptionKo: "KAIST AI대학 비전선포식",
+    posterPath: "/images/notice/KAIST AI대학 비전선포식_Eng.jpg",
+    posterCaptionEn: "KAIST College of AI Vision Declaration Ceremony Poster",
+    posterCaptionKo: "KAIST AI대학 비전선포식 포스터",
+    bodyKo: [
+      "우리 대학은 1일 오전 10시 KAIST 학술문화관(E9) 5층 정근모컨퍼런스홀에서 'KAIST AI대학 비전선포식'을 개최했다.",
+      "이번 행사는 AI 시대를 선도할 핵심 인재 양성과 교육·연구 혁신, 산업 협력, 책임 있는 AI 생태계 구축을 위한 비전과 추진 방향을 대내외에 공유하기 위해 마련됐다.",
+      "KAIST AI대학은 인공지능을 단순한 활용 도구가 아닌 과학기술, 산업, 교육, 사회 전반의 변화를 이끄는 새로운 지식 생산의 기반으로 보고 있다. 이에 따라 AI 핵심 기술을 선도할 연구 인재와 다양한 분야에서 AI를 창의적으로 활용할 융합 인재를 함께 양성하고, 모델·알고리즘·시스템·인프라·도메인 융합은 물론 미래 사회 설계와 책임 있는 AI까지 포괄하는 교육·연구 체계를 구축해 나갈 계획이다.",
+      "비전선포식은 이광형 KAIST 총장의 환영사로 시작됐다. 이어 배경훈 부총리 겸 과학기술정보통신부 장관이 기조강연을 통해 AI 시대 핵심 인재 양성과 교육 혁신 방향을 제시했다. 본 세션에서는 윤국진 KAIST AI대학장이 'KAIST AI대학의 비전과 혁신 방향'을 주제로 AI대학의 중장기 비전과 주요 추진 전략을 발표했다.",
+      "특히 이번 행사에서는 'KAIST AI대학 자문단(KAIST College of AI Advisory Board)' 위촉식도 함께 진행됐다. 자문단은 KAIST AI대학의 교육·연구·산업 협력·글로벌 협력·책임 있는 AI 구현 등을 위한 전략적 자문 역할을 맡게 된다.",
+      "해외 자문위원으로는 세계적인 AI 석학인 요슈아 벤지오(Yoshua Bengio) 몬트리올대 교수와 조경현 뉴욕대 교수가 참여했으며, 국내에서는 한국과학기술연구원(KIST)을 비롯해 (가나다 순) 네이버클라우드, 루닛, 리벨리온, 삼성전자, SK텔레콤, 업스테이지, NC AI, 인애이블퓨전, 크래프톤, 현대자동차·포티투닷 등 국내 주요 AI·ICT 기업 및 연구기관 관계자들이 참여했다.",
+      "이와 함께 'AI 시대의 새로운 교육·연구 문법'을 주제로 한 'KAIST AI 혁신 특별 세션'도 진행됐다. KAIST AI대학은 학생을 단순한 교육 수혜자가 아닌 미래 학습 방식과 연구 문화를 함께 설계하는 주체로 바라보고 있다. 이에 따라 학부생 대표들이 직접 발제자로 나서 대학 교육의 새로운 가능성을 제안했으며, 이어 AI대학장과 자문위원, 학생들이 함께 참여하는 패널 토론이 진행됐다.",
+      "윤국진 KAIST AI대학장은 \"KAIST AI대학은 단순히 AI 기술을 가르치는 조직이 아니라 AI와 함께 인간의 지적 역량을 확장하고 새로운 지식과 미래를 설계하는 기관이 되고자 한다\"며, 세계적 수준의 인재 양성과 책임 있는 생태계 구축을 이끌어 나가겠다고 밝혔다.",
+      "이광형 KAIST 총장은 \"AI는 이제 특정 분야의 기술을 넘어 과학기술과 산업, 사회 전반의 변화를 이끄는 핵심 동력이 되고 있다\"며, KAIST AI대학이 국가 인재 양성과 연구 혁신을 주도하는 국제 협력 플랫폼으로 발전하도록 지원하겠다고 밝혔다.",
+      "배경훈 부총리는 AI가 실행 단계로 전환되는 시점에서 인재 투자가 가장 시급하다고 강조하며, 학생들과의 소통을 통해 대한민국의 차별화된 AI 교육 시스템을 구축하겠다고 말했다.",
+    ],
+    bodyEn: [
+      "On June 1, KAIST held the 'KAIST College of AI Vision Declaration Ceremony' at 10 a.m. in the Jeong Keun-mo Conference Hall on the 5th floor of the Academic Cultural Complex (E9).",
+      "The event was organized to share, both internally and externally, the College's vision and direction for cultivating the core talent who will lead the AI era, driving innovation in education and research, fostering industry collaboration, and building a responsible AI ecosystem.",
+      "The KAIST College of AI views artificial intelligence not as a mere tool for utilization but as a foundation for new knowledge production that drives change across science and technology, industry, education, and society as a whole. Accordingly, the College plans to cultivate both research talent who will lead core AI technologies and convergence talent who will creatively apply AI across diverse fields, while building an education and research system that spans models, algorithms, systems, infrastructure, and domain convergence, as well as the design of future society and responsible AI.",
+      "The ceremony opened with a welcoming address by KAIST President Kwang Hyung Lee. This was followed by a keynote speech from Deputy Prime Minister and Minister of Science and ICT Kyung-hun Bae, who presented directions for cultivating core talent and innovating education in the AI era. In the main session, Dean Kuk-Jin Yoon of the KAIST College of AI presented the College's mid- to long-term vision and key strategies under the theme 'The Vision and Direction of Innovation of the KAIST College of AI.'",
+      "In particular, the event also featured an appointment ceremony for the 'KAIST College of AI Advisory Board.' The Advisory Board will serve a strategic advisory role for the College's education, research, industry collaboration, global cooperation, and the implementation of responsible AI.",
+      "The international advisory members include world-renowned AI scholars Professor Yoshua Bengio of the University of Montreal and Professor Kyunghyun Cho of New York University. Domestic members include representatives from leading Korean AI and ICT companies and research institutions, including the Korea Institute of Science and Technology (KIST), as well as (in Korean alphabetical order) Naver Cloud, Lunit, Rebellions, Samsung Electronics, SK Telecom, Upstage, NC AI, EnableFusion, KRAFTON, and Hyundai Motor Company·42dot.",
+      "Alongside this, the 'KAIST AI Innovation Special Session' was held under the theme 'A New Grammar for Education and Research in the AI Era.' The KAIST College of AI sees students not merely as beneficiaries of education but as agents who help design future modes of learning and research culture. Accordingly, undergraduate representatives served as presenters and proposed new possibilities for university education, followed by a panel discussion that brought together the Dean, advisory members, and students.",
+      "Dean Kuk-Jin Yoon of the KAIST College of AI stated that 'the KAIST College of AI seeks to be not simply an organization that teaches AI technology, but an institution that expands human intellectual capacity together with AI and designs new knowledge and the future,' adding that the College will lead the cultivation of world-class talent and the building of a responsible ecosystem.",
+      "KAIST President Kwang Hyung Lee remarked that 'AI has now become a key driving force that goes beyond the technology of a specific field to lead change across science and technology, industry, and society as a whole,' and pledged support for the KAIST College of AI to grow into an international cooperation platform that leads national talent cultivation and research innovation.",
+      "Deputy Prime Minister Kyung-hun Bae emphasized that, at a time when AI is shifting into the implementation phase, investment in talent is the most urgent priority, and said the government will build a distinctive AI education system for Korea through communication with students.",
+    ],
+  },
   {
     id: "global-ai-hub-statement",
     dept: t("kaist_ai"),
@@ -258,7 +302,7 @@ const NoticeDetail: React.FC = () => {
     <div className="bg-white min-h-screen">
       <Breadcrumbs />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
         {/* Back */}
         <Link
           to="/notice"
@@ -295,6 +339,25 @@ const NoticeDetail: React.FC = () => {
                   {language === "ko" ? event.dateKo : event.dateEn}
                 </div>
               )}
+              {event.imagePath && (
+                <figure className="mb-8">
+                  <img
+                    src={event.imagePath}
+                    alt={language === "ko" ? event.titleKo : event.titleEn}
+                    className="w-full rounded-xl shadow-md object-contain"
+                  />
+                  {(language === "ko"
+                    ? event.imageCaptionKo
+                    : event.imageCaptionEn) && (
+                    <figcaption className="text-center text-sm text-gray-500 mt-3">
+                      &lt; {language === "ko"
+                        ? event.imageCaptionKo
+                        : event.imageCaptionEn}{" "}
+                      &gt;
+                    </figcaption>
+                  )}
+                </figure>
+              )}
               <div className="space-y-5 text-gray-800 leading-relaxed">
                 {(language === "ko" ? event.bodyKo : event.bodyEn)?.map(
                   (paragraph, idx) => (
@@ -308,6 +371,30 @@ const NoticeDetail: React.FC = () => {
                 <div className="mt-8 pt-6 border-t border-gray-200 text-right font-semibold text-gray-900">
                   {language === "ko" ? event.signatureKo : event.signatureEn}
                 </div>
+              )}
+              {event.posterPath && (
+                <figure className="mt-10 pt-8 border-t border-gray-200">
+                  <img
+                    src={event.posterPath}
+                    alt={
+                      (language === "ko"
+                        ? event.posterCaptionKo
+                        : event.posterCaptionEn) ??
+                      (language === "ko" ? event.titleKo : event.titleEn)
+                    }
+                    className="w-full rounded-xl shadow-md object-contain"
+                  />
+                  {(language === "ko"
+                    ? event.posterCaptionKo
+                    : event.posterCaptionEn) && (
+                    <figcaption className="text-center text-sm text-gray-500 mt-3">
+                      &lt; {language === "ko"
+                        ? event.posterCaptionKo
+                        : event.posterCaptionEn}{" "}
+                      &gt;
+                    </figcaption>
+                  )}
+                </figure>
               )}
             </div>
           ) : (language === "ko" ? event.dateKo : event.dateEn) ? (

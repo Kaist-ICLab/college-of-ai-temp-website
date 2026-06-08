@@ -106,6 +106,62 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+      {/* Featured News */}
+      <section className="bg-white py-24 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={sectionTitleClass}>
+            {language === "en" ? "News" : "소식"}
+          </h2>
+
+          <Link
+            to="/notice/ai-college-vision-declaration"
+            className="group grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 overflow-hidden"
+          >
+            {/* Main Image */}
+            <div className="h-64 md:h-[22rem] overflow-hidden">
+              <img
+                src="/images/notice/AI_faculty_photo.jpg"
+                alt={
+                  language === "en"
+                    ? "KAIST College of AI Vision Declaration Ceremony"
+                    : "KAIST AI대학 비전선포식"
+                }
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Title & Meta */}
+            <div className="p-6 md:py-8 md:pr-10">
+              <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#002380] mb-4">
+                {language === "en" ? "Press Release" : "보도자료"}
+              </span>
+              <h3 className="text-xl md:text-3xl font-bold text-gray-900 group-hover:text-[#002380] transition-colors leading-snug mb-5">
+                {language === "en"
+                  ? "KAIST College of AI Holds Vision Declaration Ceremony, Presenting Its Vision for Cultivating Global AI Convergence Talent"
+                  : "AI대학 비전선포식 개최…글로벌 AI 융합인재 양성 비전 제시"}
+              </h3>
+              <div className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#002380] group-hover:translate-x-1 transition-transform duration-300">
+                <span>{t("read_more")}</span>
+                <svg
+                  className="ml-2 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* 2. Departments - Refined for compact layout */}
       <section className="bg-gray-50 py-24 border-y border-gray-100 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-50"></div>
