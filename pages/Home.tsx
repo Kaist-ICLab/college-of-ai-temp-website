@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { useTranslation } from "../i18n";
@@ -7,24 +7,14 @@ import { useSEO } from "../hooks/useSEO";
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [trackSlide, setTrackSlide] = useState(1);
+  const [isTrackTransitionEnabled, setIsTrackTransitionEnabled] =
+    useState(true);
+  const [isSlideAnimating, setIsSlideAnimating] = useState(false);
+  const [timerResetKey, setTimerResetKey] = useState(0);
 
   useSEO();
-
-  const deansMessageEn = [
-    "Welcome to the College of Artificial Intelligence at KAIST.",
-    "Artificial Intelligence is reshaping science, industry, and society at an unprecedented pace. The College of AI at KAIST was established to advance AI technologies while thoughtfully considering their long-term impact on science, society, and humanity. Moving beyond short-term technological trends, the College is committed to a sustainable and forward-looking understanding of AI’s role in the future.",
-    "The College of AI provides an integrated educational and research environment spanning the full technical spectrum of AI, from algorithms and models to systems and applications. Through close collaboration across science and engineering, the College fosters interdisciplinary research, including AI for Science, that accelerates discovery and creates meaningful societal value. Considerations of sustainability, responsibility, and long-term impact are embedded within both research and education.",
-    "With a clear vision for the future, the College of AI is dedicated to educating individuals with strong foundations, problem-solving capabilities, and social responsibility. By linking individual growth with broader societal progress, the College seeks to responsibly shape the future enabled by AI.",
-    "Thank you for your interest in the College of AI at KAIST.",
-  ];
-
-  const deansMessageKo = [
-    "KAIST AI 대학 홈페이지를 방문해 주신 여러분을 진심으로 환영합니다.",
-    "인공지능(AI)은 과학기술 혁신과 산업 구조를 넘어 사회의 미래를 근본적으로 재편하는 핵심 동력으로 자리 잡고 있습니다. KAIST AI대학은 단기적인 기술 수요에 대응하는 교육을 넘어, AI 기술의 발전과 확산, 그리고 그 사회적·장기적 영향을 함께 고려하며 미래 사회가 요구하는 AI의 방향과 역할을 선도적으로 설계하기 위해 설립되었습니다.",
-    "KAIST AI대학은 알고리즘과 모델, 시스템과 응용에 이르는 AI의 기술적 전 주기와 더불어, 다양한 과학기술 분야와의 융합을 통해 새로운 지식과 가치를 창출하는 교육·연구 체계를 갖추고 있습니다. 아울러 AI가 과학과 산업, 사회 전반에 미치는 영향과 지속가능한 발전에 대한 고민을 연구와 교육에 자연스럽게 녹여내며, AI for Science를 포함한 초학제 연구를 확장해 나가고 있습니다.",
-    "또한 KAIST AI대학은 미래 AI 시대에 요구되는 인재상을 중심에 두고, 탄탄한 기초 역량과 문제 해결 능력, 그리고 사회적 책임 의식을 함께 갖춘 인재 양성을 지향합니다. 기술의 진보를 넘어 AI가 만들어갈 미래를 책임 있게 설계하고, 개인의 성장이 사회와 국가의 발전으로 이어질 수 있도록 교육과 연구의 방향성을 지속적으로 발전시켜 나가겠습니다.",
-    "KAIST AI대학의 도전에 지속적인 관심과 성원을 부탁드립니다.",
-  ];
 
   const deptDescriptionsEn = {
     computing:
@@ -46,121 +36,287 @@ const Home: React.FC = () => {
       "AI 기술의 사회적 영향과 거버넌스에 초점을 맞춘 학과입니다. AI 기술이 가져올 윤리적 문제, 데이터·알고리즘 윤리, AI 관련 정책·제도, AI 경제학, AI 거버넌스(법·제도) 등을 교육하여, 국가 차원의 AI 전략 수립과 사회·경제 전반의 AI 대전환을 선도할 미래 전략가를 육성합니다. 이는 기술 못지않게 중요한 AI 윤리·정책 전문가를 양성함으로써, AI 확산 과정에서의 사회적 수용성과 지속가능성을 담보하려는 취지입니다.",
   };
 
-  const message = language === "en" ? deansMessageEn : deansMessageKo;
   const depts = language === "en" ? deptDescriptionsEn : deptDescriptionsKo;
 
   const sectionTitleClass =
     "text-3xl md:text-4xl font-bold text-gray-900 mb-10";
 
+  const carouselSlides = [
+    {
+      id: "main-banner",
+      titleLines: ["AI-Natives Create Futures", "@ KAIST College of AI"],
+      description:
+        language === "en"
+          ? "College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy."
+          : "AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다.",
+      imageWebp: "/images/homepage3.webp",
+      imagePng: "/images/homepage3.png",
+      imageAlt: "KAIST College of AI Banner",
+      imageClass: "scale-104 origin-left",
+      primaryLink: "/intro",
+      primaryLabel: t("introduction"),
+      secondaryLink: "/admissions",
+      secondaryLabel: t("admissions"),
+    },
+    {
+      id: "vision-declaration",
+      eyebrow: language === "en" ? "Press Release" : "보도자료",
+      titleLines:
+        language === "en"
+          ? ["KAIST College of AI Holds", "Vision Declaration Ceremony"]
+          : ["AI대학 비전선포식 개최", "글로벌 AI 융합인재 양성 비전 제시"],
+      imagePng: "/images/notice/AI_faculty_photo.jpg",
+      imageAlt:
+        language === "en"
+          ? "KAIST College of AI Vision Declaration Ceremony"
+          : "KAIST AI대학 비전선포식",
+      imageClass: "object-center",
+      primaryLink: "/notice/ai-college-vision-declaration",
+      primaryLabel: t("read_more"),
+    },
+    {
+      id: "global-ai-hub",
+      eyebrow: language === "en" ? "Faculty Statement" : "교수진 입장문",
+      titleLines:
+        language === "en"
+          ? ["Faculty Statement on", "South Korea's Global AI Hub"]
+          : ["Global AI Hub 유치에 대한", "AI대학 교수진 입장문"],
+      // imagePng: "(if there is a photo for this replace below)",
+      imagePng: "/images/homepage3.png",
+      imageAlt:
+        language === "en"
+          ? "KAIST College of AI Faculty Statement"
+          : "KAIST AI대학 교수진 입장문",
+      imageClass: "object-center",
+      primaryLink: "/notice/global-ai-hub-statement",
+      primaryLabel: t("read_more"),
+    },
+  ];
+  const slideCount = carouselSlides.length;
+  const renderedCarouselSlides = [
+    carouselSlides[slideCount - 1],
+    ...carouselSlides,
+    carouselSlides[0],
+  ];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      if (isSlideAnimating) {
+        return;
+      }
+
+      setIsSlideAnimating(true);
+      setActiveSlide((current) => (current + 1) % slideCount);
+      setTrackSlide((current) => current + 1);
+    }, 7000);
+
+    return () => window.clearInterval(timer);
+  }, [isSlideAnimating, slideCount, timerResetKey]);
+
+  useEffect(() => {
+    if (isTrackTransitionEnabled) {
+      return;
+    }
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      setIsTrackTransitionEnabled(true);
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [isTrackTransitionEnabled]);
+
+  const goToPreviousSlide = () => {
+    if (isSlideAnimating) {
+      return;
+    }
+
+    setTimerResetKey((current) => current + 1);
+    setIsSlideAnimating(true);
+    setIsTrackTransitionEnabled(true);
+    setActiveSlide((current) =>
+      current === 0 ? slideCount - 1 : current - 1,
+    );
+    setTrackSlide((current) => current - 1);
+  };
+  const goToNextSlide = () => {
+    if (isSlideAnimating) {
+      return;
+    }
+
+    setTimerResetKey((current) => current + 1);
+    setIsSlideAnimating(true);
+    setIsTrackTransitionEnabled(true);
+    setActiveSlide((current) =>
+      current === slideCount - 1 ? 0 : current + 1,
+    );
+    setTrackSlide((current) => current + 1);
+  };
+  const goToSlide = (index: number) => {
+    if (isSlideAnimating || index === activeSlide) {
+      return;
+    }
+
+    setTimerResetKey((current) => current + 1);
+    setIsSlideAnimating(true);
+    setIsTrackTransitionEnabled(true);
+    setActiveSlide(index);
+    setTrackSlide(index + 1);
+  };
+  const handleTrackTransitionEnd = (
+    event: React.TransitionEvent<HTMLDivElement>,
+  ) => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+
+    setIsSlideAnimating(false);
+
+    if (trackSlide === slideCount + 1) {
+      setIsTrackTransitionEnabled(false);
+      setTrackSlide(1);
+      return;
+    }
+
+    if (trackSlide === 0) {
+      setIsTrackTransitionEnabled(false);
+      setTrackSlide(slideCount);
+    }
+  };
+
   return (
     <div className="relative">
-      {/* Hero Banner */}
-      <div className="relative h-[740px] overflow-hidden">
-        <picture>
-          <source srcSet="/images/homepage3.webp" type="image/webp" />
-          <img
-            src="/images/homepage3.png"
-            alt="KAIST College of AI Banner"
-            className="absolute inset-0 w-full h-full object-cover scale-104 origin-left"
-            fetchPriority="high"
-            loading="eager"
-          />
-        </picture>
-        <div className="absolute inset-0 bg-white/0 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 w-full text-white">
-            <h1 className="text-3xl md:text-6xl font-bold mb-4">
-              <div className="space-y-0.6 leading-tight">
-                {language === "en" ? (
-                  <>
-                    <span className="block">AI-Natives Create Futures</span>
-                    <span className="block">@ KAIST College of AI</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="block">AI-Natives Create Futures</span>
-                    <span className="block">@ KAIST College of AI</span>
-                  </>
+      {/* Hero Carousel */}
+      <div className="relative h-[620px] overflow-hidden">
+        <div
+          className={`flex h-full ${isTrackTransitionEnabled
+            ? "transition-transform duration-500 ease-in-out"
+            : "transition-none"
+            }`}
+          style={{ transform: `translateX(-${trackSlide * 100}%)` }}
+          onTransitionEnd={handleTrackTransitionEnd}
+        >
+          {renderedCarouselSlides.map((slide, index) => (
+            <div
+              key={`${slide.id}-${index}`}
+              className="relative h-full w-full shrink-0"
+            >
+              <picture>
+                {slide.imageWebp && (
+                  <source srcSet={slide.imageWebp} type="image/webp" />
                 )}
+                <img
+                  src={slide.imagePng}
+                  alt={slide.imageAlt}
+                  className={`absolute inset-0 w-full h-full object-cover ${slide.imageClass}`}
+                  fetchPriority={index === 1 ? "high" : undefined}
+                  loading={index === 1 ? "eager" : "lazy"}
+                />
+              </picture>
+              {slide.id !== "main-banner" && (
+                <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/30" />
+              )}
+              <div className="absolute inset-0 flex items-center">
+                <div className="max-w-7xl mx-auto px-14 sm:px-16 lg:px-20 w-full text-white">
+                  {slide.id !== "main-banner" && slide.eyebrow && (
+                    <span className="inline-block text-xs md:text-sm font-black uppercase tracking-[0.24em] text-white/85 ml-2 mb-5 drop-shadow">
+                      {slide.eyebrow}
+                    </span>
+                  )}
+                  <h1
+                    className={
+                      slide.id === "main-banner"
+                        ? "text-3xl md:text-6xl font-bold mb-5 leading-tight drop-shadow-lg"
+                        : "text-3xl md:text-5xl font-black mb-5 leading-normal drop-shadow-lg max-w-4xl"
+                    }
+                  >
+                    {slide.titleLines.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </h1>
+                  <p className="text-sm md:text-lg text-gray-100 max-w-3xl mb-8 leading-normal max-w-[40ch] md:max-w-[61ch] drop-shadow">
+                    {slide.description}
+                  </p>
+                  <div className="flex space-x-6">
+                    <Link
+                      to={slide.primaryLink}
+                      className="bg-[#002380]/85 hover:bg-[#002380]/50 px-7 py-3 rounded text-sm font-normal transition-all shadow-lg"
+                    >
+                      {slide.primaryLabel}
+                    </Link>
+                    {slide.secondaryLink && slide.secondaryLabel && (
+                      <Link
+                        to={slide.secondaryLink}
+                        className="bg-white/10 hover:bg-white/30 backdrop-blur-md px-7 py-3 rounded text-sm font-normal border border-white/30"
+                      >
+                        {slide.secondaryLabel}
+                      </Link>
+                    )}
+                  </div>
+                </div>
               </div>
-            </h1>
-            <p className="text-sm md:text-lg text-gray-200 max-w-3xl mb-8 leading-normal max-w-[40ch] md:max-w-[61ch]">
-              {language === "en"
-                ? "College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy."
-                : "AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다."}
-            </p>
-            <div className="flex space-x-6">
-              <Link
-                to="/intro"
-                className="bg-[#002380]/85 hover:bg-[#002380]/50 px-7 py-3 rounded text-sm font-normal transition-all shadow-lg"
-              >
-                {t("introduction")}
-              </Link>
-              <Link
-                to="/admissions"
-                className="bg-white/10 hover:bg-white/30 backdrop-blur-md px-7 py-3 rounded text-sm font-normal border border-white/30 transition-all"
-              >
-                {t("admissions")}
-              </Link>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={goToPreviousSlide}
+          className="absolute left-4 md:left-8 top-1/2 z-20 flex h-11 w-11 md:h-14 md:w-14 -translate-y-1/2 items-center justify-center rounded-full text-white/90 hover:text-white hover:bg-white/10 transition-all"
+          aria-label="Previous slide"
+        >
+          <svg
+            className="h-8 w-8 md:h-10 md:w-10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          onClick={goToNextSlide}
+          className="absolute right-4 md:right-8 top-1/2 z-20 flex h-11 w-11 md:h-14 md:w-14 -translate-y-1/2 items-center justify-center rounded-full text-white/90 hover:text-white hover:bg-white/10 transition-all"
+          aria-label="Next slide"
+        >
+          <svg
+            className="h-8 w-8 md:h-10 md:w-10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+
+        <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3">
+          {carouselSlides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => goToSlide(index)}
+              className={`h-3 w-3 rounded-full border border-white/90 transition-all ${index === activeSlide
+                ? "bg-white scale-110"
+                : "bg-white/10 hover:bg-white/50"
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === activeSlide ? "true" : undefined}
+            />
+          ))}
         </div>
       </div>
-
-      {/* Featured News */}
-      <section className="bg-white py-24 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={sectionTitleClass}>
-            {language === "en" ? "News" : "소식"}
-          </h2>
-
-          <Link
-            to="/notice/ai-college-vision-declaration"
-            className="group grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 overflow-hidden"
-          >
-            {/* Main Image */}
-            <div className="h-64 md:h-[22rem] overflow-hidden">
-              <img
-                src="/images/notice/AI_faculty_photo.jpg"
-                alt={
-                  language === "en"
-                    ? "KAIST College of AI Vision Declaration Ceremony"
-                    : "KAIST AI대학 비전선포식"
-                }
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
-              />
-            </div>
-
-            {/* Title & Meta */}
-            <div className="p-6 md:py-8 md:pr-10">
-              <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#002380] mb-4">
-                {language === "en" ? "Press Release" : "보도자료"}
-              </span>
-              <h3 className="text-xl md:text-3xl font-bold text-gray-900 group-hover:text-[#002380] transition-colors leading-snug mb-5">
-                {language === "en"
-                  ? "KAIST College of AI Holds Vision Declaration Ceremony, Presenting Its Vision for Cultivating Global AI Convergence Talent"
-                  : "AI대학 비전선포식 개최…글로벌 AI 융합인재 양성 비전 제시"}
-              </h3>
-              <div className="inline-flex items-center text-xs font-black uppercase tracking-[0.2em] text-[#002380] group-hover:translate-x-1 transition-transform duration-300">
-                <span>{t("read_more")}</span>
-                <svg
-                  className="ml-2 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
 
       {/* 2. Departments - Refined for compact layout */}
       <section className="bg-gray-50 py-24 border-y border-gray-100 relative overflow-hidden">
