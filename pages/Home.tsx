@@ -74,23 +74,6 @@ const Home: React.FC = () => {
       primaryLink: "/notice/ai-college-vision-declaration",
       primaryLabel: t("read_more"),
     },
-    {
-      id: "global-ai-hub",
-      eyebrow: language === "en" ? "Faculty Statement" : "교수진 입장문",
-      titleLines:
-        language === "en"
-          ? ["Faculty Statement on", "South Korea's Global AI Hub"]
-          : ["Global AI Hub 유치에 대한", "AI대학 교수진 입장문"],
-      // imagePng: "(if there is a photo for this replace below)",
-      imagePng: "/images/homepage3.png",
-      imageAlt:
-        language === "en"
-          ? "KAIST College of AI Faculty Statement"
-          : "KAIST AI대학 교수진 입장문",
-      imageClass: "object-center",
-      primaryLink: "/notice/global-ai-hub-statement",
-      primaryLabel: t("read_more"),
-    },
   ];
   const slideCount = carouselSlides.length;
   const renderedCarouselSlides = [
