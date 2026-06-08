@@ -43,22 +43,6 @@ const Home: React.FC = () => {
 
   const carouselSlides = [
     {
-      id: "main-banner",
-      titleLines: ["AI-Natives Create Futures", "@ KAIST College of AI"],
-      description:
-        language === "en"
-          ? "College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy."
-          : "AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다.",
-      imageWebp: "/images/homepage3.webp",
-      imagePng: "/images/homepage3.png",
-      imageAlt: "KAIST College of AI Banner",
-      imageClass: "scale-104 origin-left",
-      primaryLink: "/intro",
-      primaryLabel: t("introduction"),
-      secondaryLink: "/admissions",
-      secondaryLabel: t("admissions"),
-    },
-    {
       id: "vision-declaration",
       eyebrow: language === "en" ? "Press Release" : "보도자료",
       titleLines:
@@ -73,6 +57,22 @@ const Home: React.FC = () => {
       imageClass: "object-center",
       primaryLink: "/notice/ai-college-vision-declaration",
       primaryLabel: t("read_more"),
+    },
+    {
+      id: "main-banner",
+      titleLines: ["AI-Natives Create Futures", "@ KAIST College of AI"],
+      description:
+        language === "en"
+          ? "College of AI cultivates world-class talent through integrated education and research encompassing core AI technologies, industrial applications, and policy."
+          : "AI 대학은 핵심 AI 기술, 산업 응용 및 정책을 아우르는 통합 교육과 연구를 통해 세계 수준의 인재를 양성합니다.",
+      imageWebp: "/images/homepage3.webp",
+      imagePng: "/images/homepage3.png",
+      imageAlt: "KAIST College of AI Banner",
+      imageClass: "scale-104 origin-left",
+      primaryLink: "/intro",
+      primaryLabel: t("introduction"),
+      secondaryLink: "/admissions",
+      secondaryLabel: t("admissions"),
     },
   ];
   const slideCount = carouselSlides.length;
@@ -172,7 +172,7 @@ const Home: React.FC = () => {
       <div className="relative h-[620px] overflow-hidden">
         <div
           className={`flex h-full ${isTrackTransitionEnabled
-            ? "transition-transform duration-500 ease-in-out"
+            ? "transition-transform duration-300 ease-in-out"
             : "transition-none"
             }`}
           style={{ transform: `translateX(-${trackSlide * 100}%)` }}
