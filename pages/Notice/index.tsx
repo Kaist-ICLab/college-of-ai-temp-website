@@ -69,6 +69,21 @@ const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
 };
 
 const useEvents = (t: (key: string) => string): NoticeEvent[] => [
+    {
+    id: "2027-ai-college",
+    dept: t("kaist_ai"),
+    titleEn: "2027 SPRING College of AI Graduate School Admission Information Session",
+    titleKo: "2027 봄학기 AI대학 대학원 입시설명회",
+    dateEn: "2026.6.19.(Fri) - 6.24.(Wed)",
+    dateKo: "2026.6.19.(금) - 6.24.(수)",
+    locationEn: "Varies by department",
+    locationKo: "학과별 상이",
+    online: {
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/87879227353",
+    },
+    posterPath: "/images/notice/2027Spring_AICollege_poster.jpg",
+  },
   {
     id: "ai-college-vision-declaration",
     dept: t("kaist_ai"),
