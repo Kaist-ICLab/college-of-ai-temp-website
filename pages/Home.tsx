@@ -301,6 +301,24 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+      {/* Vision Declaration Video */}
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={sectionTitleClass}>
+            {language === "ko" ? "AI대학 비전선포식" : "College of AI Vision Declaration"}
+          </h2>
+          <div className="mt-8 relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute inset-0 w-full h-full rounded-2xl shadow-lg"
+              src="https://www.youtube.com/embed/DbGM6ETBgYY"
+              title={language === "ko" ? "KAIST AI대학 비전선포식" : "KAIST College of AI Vision Declaration Ceremony"}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 2. Departments - Refined for compact layout */}
       <section className="bg-gray-50 py-24 border-y border-gray-100 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-50"></div>
