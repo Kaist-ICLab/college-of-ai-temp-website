@@ -69,15 +69,63 @@ const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
 };
 
 const useEvents = (t: (key: string) => string): NoticeEvent[] => [
-    {
-    id: "2027-ai-college",
-    dept: t("kaist_ai"),
-    titleEn: "2027 SPRING College of AI Graduate School Admission Information Session",
-    titleKo: "2027 봄학기 AI대학 대학원 입시설명회",
-    dateEn: "2026.6.19.(Fri) - 6.24.(Wed)",
-    dateKo: "2026.6.19.(금) - 6.24.(수)",
-    locationEn: "Varies by department",
-    locationKo: "학과별 상이",
+  {
+    id: "2027-spring-aicomputing-grad",
+    dept: t("dept_ai_computing"),
+    titleEn:
+      "2027 SPRING AI Computing Graduate School Admission Information Session",
+    titleKo: "2027 봄학기 AI컴퓨팅학과 대학원 입시 설명회",
+    dateEn: "2026.6.19.(Fri) | 12:00",
+    dateKo: "2026.6.19.(금) | 12:00",
+    locationEn: "N1, Room 201",
+    locationKo: "(N1) 김병호김삼열 IT융합빌딩 (201호)",
+    online: {
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/87879227353",
+    },
+    posterPath: "/images/notice/2027Spring_AICollege_poster.jpg",
+  },
+  {
+    id: "2027-spring-ax-grad",
+    dept: t("dept_ax"),
+    titleEn: "2027 SPRING AX Graduate School Admission Information Session",
+    titleKo: "2027 봄학기 AX학과 대학원 입시 설명회",
+    dateEn: "2026.6.22.(Mon) | 17:00",
+    dateKo: "2026.6.22.(월) | 17:00",
+    locationEn: "(E4) KI Building, 2F Matrix Hall",
+    locationKo: "(E4) KI빌딩 2층 메트릭스홀",
+    online: {
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/87879227353",
+    },
+    posterPath: "/images/notice/2027Spring_AICollege_poster.jpg",
+  },
+  {
+    id: "2027-spring-aisystems-grad",
+    dept: t("dept_ai_systems"),
+    titleEn:
+      "2027 SPRING AI Systems Graduate School Admission Information Session",
+    titleKo: "2027 봄학기 AI시스템학과 대학원 입시 설명회",
+    dateEn: "2026.6.22.(Mon) | 18:00",
+    dateKo: "2026.6.22.(월) | 18:00",
+    locationEn: "(E3-2) IT Convergence Building, 2nd Lecture Hall (Room 1220)",
+    locationKo: "(E3-2) 1층 제2공동강의실(1220호)",
+    online: {
+      platform: "Zoom",
+      url: "https://kaist.zoom.us/j/87879227353",
+    },
+    posterPath: "/images/notice/2027Spring_AICollege_poster.jpg",
+  },
+  {
+    id: "2027-spring-aifuture-grad",
+    dept: t("dept_ai_future"),
+    titleEn:
+      "2027 SPRING AI and Future Studies Graduate School Admission Information Session",
+    titleKo: "2027 봄학기 AI미래학과 대학원 입시 설명회",
+    dateEn: "2026.6.24.(Wed) | 18:00",
+    dateKo: "2026.6.24.(수) | 18:00",
+    locationEn: "(E11) Creative Learning Building, Room 101",
+    locationKo: "(E11) 창의학습관 101호",
     online: {
       platform: "Zoom",
       url: "https://kaist.zoom.us/j/87879227353",
@@ -106,8 +154,8 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] => [
       "특히 이번 행사에서는 'KAIST AI대학 자문단(KAIST College of AI Advisory Board)' 위촉식도 함께 진행됐다. 자문단은 KAIST AI대학의 교육·연구·산업 협력·글로벌 협력·책임 있는 AI 구현 등을 위한 전략적 자문 역할을 맡게 된다.",
       "해외 자문위원으로는 세계적인 AI 석학인 요슈아 벤지오(Yoshua Bengio) 몬트리올대 교수와 조경현 뉴욕대 교수가 참여했으며, 국내에서는 한국과학기술연구원(KIST)을 비롯해 (가나다 순) 네이버클라우드, 루닛, 리벨리온, 삼성전자, SK텔레콤, 업스테이지, NC AI, 인애이블퓨전, 크래프톤, 현대자동차·포티투닷 등 국내 주요 AI·ICT 기업 및 연구기관 관계자들이 참여했다.",
       "이와 함께 'AI 시대의 새로운 교육·연구 문법'을 주제로 한 'KAIST AI 혁신 특별 세션'도 진행됐다. KAIST AI대학은 학생을 단순한 교육 수혜자가 아닌 미래 학습 방식과 연구 문화를 함께 설계하는 주체로 바라보고 있다. 이에 따라 학부생 대표들이 직접 발제자로 나서 대학 교육의 새로운 가능성을 제안했으며, 이어 AI대학장과 자문위원, 학생들이 함께 참여하는 패널 토론이 진행됐다.",
-      "윤국진 KAIST AI대학장은 \"KAIST AI대학은 단순히 AI 기술을 가르치는 조직이 아니라 AI와 함께 인간의 지적 역량을 확장하고 새로운 지식과 미래를 설계하는 기관이 되고자 한다\"며, 세계적 수준의 인재 양성과 책임 있는 생태계 구축을 이끌어 나가겠다고 밝혔다.",
-      "이광형 KAIST 총장은 \"AI는 이제 특정 분야의 기술을 넘어 과학기술과 산업, 사회 전반의 변화를 이끄는 핵심 동력이 되고 있다\"며, KAIST AI대학이 국가 인재 양성과 연구 혁신을 주도하는 국제 협력 플랫폼으로 발전하도록 지원하겠다고 밝혔다.",
+      '윤국진 KAIST AI대학장은 "KAIST AI대학은 단순히 AI 기술을 가르치는 조직이 아니라 AI와 함께 인간의 지적 역량을 확장하고 새로운 지식과 미래를 설계하는 기관이 되고자 한다"며, 세계적 수준의 인재 양성과 책임 있는 생태계 구축을 이끌어 나가겠다고 밝혔다.',
+      '이광형 KAIST 총장은 "AI는 이제 특정 분야의 기술을 넘어 과학기술과 산업, 사회 전반의 변화를 이끄는 핵심 동력이 되고 있다"며, KAIST AI대학이 국가 인재 양성과 연구 혁신을 주도하는 국제 협력 플랫폼으로 발전하도록 지원하겠다고 밝혔다.',
       "배경훈 부총리는 AI가 실행 단계로 전환되는 시점에서 인재 투자가 가장 시급하다고 강조하며, 학생들과의 소통을 통해 대한민국의 차별화된 AI 교육 시스템을 구축하겠다고 말했다.",
     ],
     bodyEn: [
@@ -365,7 +413,8 @@ const NoticeDetail: React.FC = () => {
                     ? event.imageCaptionKo
                     : event.imageCaptionEn) && (
                     <figcaption className="text-center text-sm text-gray-500 mt-3">
-                      &lt; {language === "ko"
+                      &lt;{" "}
+                      {language === "ko"
                         ? event.imageCaptionKo
                         : event.imageCaptionEn}{" "}
                       &gt;
@@ -403,7 +452,8 @@ const NoticeDetail: React.FC = () => {
                     ? event.posterCaptionKo
                     : event.posterCaptionEn) && (
                     <figcaption className="text-center text-sm text-gray-500 mt-3">
-                      &lt; {language === "ko"
+                      &lt;{" "}
+                      {language === "ko"
                         ? event.posterCaptionKo
                         : event.posterCaptionEn}{" "}
                       &gt;
