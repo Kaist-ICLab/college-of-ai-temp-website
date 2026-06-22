@@ -14,6 +14,7 @@ const Home: React.FC = () => {
     useState(true);
   const [isSlideAnimating, setIsSlideAnimating] = useState(false);
   const [timerResetKey, setTimerResetKey] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useSEO();
 
@@ -85,17 +86,17 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      if (isSlideAnimating || document.hidden) {
+      if (isSlideAnimating || document.hidden || isPaused) {
         return;
       }
 
       setIsSlideAnimating(true);
       setActiveSlide((current) => (current + 1) % slideCount);
       setTrackSlide((current) => current + 1);
-    }, 3000);
+    }, 6000);
 
     return () => window.clearInterval(timer);
-  }, [isSlideAnimating, slideCount, timerResetKey]);
+  }, [isSlideAnimating, slideCount, timerResetKey, isPaused]);
 
   useEffect(() => {
     if (isTrackTransitionEnabled) {
@@ -170,7 +171,11 @@ const Home: React.FC = () => {
   return (
     <div className="relative">
       {/* Hero Carousel */}
-      <div className="relative h-[620px] overflow-hidden">
+      <div
+        className="relative h-[620px] overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div
           className={`flex h-full ${isTrackTransitionEnabled
             ? "transition-transform duration-500 ease-in-out"

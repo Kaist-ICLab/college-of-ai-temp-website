@@ -1,5 +1,5 @@
-import React, { useState, Suspense } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, Suspense, useEffect } from 'react';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Language } from './types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -17,6 +17,13 @@ const GraduationRequirements = React.lazy(() => import('./pages/GraduationRequir
 const Notice = React.lazy(() => import('./pages/Notice'));
 const NoticeDetail = React.lazy(() => import('./pages/Notice').then(module => ({ default: module.NoticeDetail })));
 
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>(() => {
@@ -28,7 +35,7 @@ const App: React.FC = () => {
     return localStorage.getItem('kaist_ai_statement_banner_closed') !== 'true';
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem('kaist_ai_preferred_language', language);
   }, [language]);
 
@@ -40,6 +47,7 @@ const App: React.FC = () => {
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <HashRouter>
+        <ScrollToTop />
         <div className="min-h-screen flex flex-col bg-white text-gray-900">
           {showBanner && <StatementBanner onClose={handleCloseBanner} />}
           <Navbar />
