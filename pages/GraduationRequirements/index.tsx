@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LanguageContext } from '../../App';
+import { LanguageContext } from '../../contexts/LanguageContext';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { useTranslation } from '../../i18n';
 import AICUndergraduate from './AICUndergraduate/index';

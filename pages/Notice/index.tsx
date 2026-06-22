@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { LanguageContext } from "../../App";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { useTranslation } from "../../i18n";
 

@@ -1,5 +1,5 @@
 
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Language } from './types';
 import Navbar from './components/Navbar';
@@ -12,16 +12,8 @@ import CourseInfo from './pages/CourseInfo';
 import GraduationRequirements from './pages/GraduationRequirements/index';
 import Notice, { NoticeDetail } from './pages/Notice';
 import StatementBanner from './components/StatementBanner';
+import { LanguageContext } from './contexts/LanguageContext';
 
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-}
-
-export const LanguageContext = createContext<LanguageContextType>({
-  language: 'ko',
-  setLanguage: () => { },
-});
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('ko');

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { LanguageContext } from '../App';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 export const useSEO = () => {
     const { language } = useContext(LanguageContext);

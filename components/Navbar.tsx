@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LanguageContext } from "../App";
+import { LanguageContext } from "../contexts/LanguageContext";
 import { useTranslation } from "../i18n";
 
 interface SubItem {
