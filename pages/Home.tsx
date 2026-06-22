@@ -85,7 +85,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      if (isSlideAnimating) {
+      if (isSlideAnimating || document.hidden) {
         return;
       }
 
@@ -327,7 +327,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className={sectionTitleClass}>{t("departments")}</h2>
           <div className="grid grid-cols-1 gap-8">
-            {[
+            {React.useMemo(() => [
               {
                 id: "computing",
                 num: "01",
@@ -364,7 +364,7 @@ const Home: React.FC = () => {
                 imageWebp: "/images/aifuture_pic.webp",
                 imagePng: "/images/aifuture_pic.png",
               },
-            ].map((dept) => (
+            ], [t, depts]).map((dept) => (
               <div
                 key={dept.id}
                 className="group relative bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 overflow-hidden flex flex-col md:flex-row-reverse"

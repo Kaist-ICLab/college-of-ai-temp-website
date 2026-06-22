@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
-import { useTranslation } from "../i18n";
 import SafeImage from "./SafeImage";
 
 const Footer: React.FC = () => {
   const { language } = useContext(LanguageContext);
-  const t = useTranslation(language);
 
   return (
-    <footer className="bg-[#2b333c] text-white py-4 text-xs sm:text-sm">
+    <footer className="bg-[#2b333c] text-white py-4 text-xs sm:text-sm" role="contentinfo" aria-label="Site Footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section: Brand & Contact Info */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-gray-700 pb-3 mb-2 gap-4">

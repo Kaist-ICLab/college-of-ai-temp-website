@@ -63,6 +63,7 @@ const Navbar: React.FC = () => {
         setActiveMenu(null);
         setDropdownLeft(null);
       }}
+      aria-label="Main Navigation"
     >
       <div
         ref={navContainerRef}
@@ -70,7 +71,7 @@ const Navbar: React.FC = () => {
       >
         <div className="flex h-18 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-4 mr-auto">
+          <Link to="/" className="flex items-center space-x-4 mr-auto" aria-label="KAIST College of AI Home">
             <SafeImage
               src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
               alt="KAIST Logo"
@@ -93,7 +94,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-10 h-full mr-16">
+          <div className="hidden md:flex items-center space-x-10 h-full mr-16" role="menubar">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -118,6 +119,7 @@ const Navbar: React.FC = () => {
                     setDropdownLeft(null);
                   }
                 }}
+                role="none"
               >
                 <Link
                   to={item.path}
@@ -125,6 +127,9 @@ const Navbar: React.FC = () => {
                     ? "text-[#002380] border-[#002380]"
                     : "text-gray-700 border-transparent hover:text-[#002380]"
                     }`}
+                  role="menuitem"
+                  aria-haspopup={item.subcategories.length > 0 ? "true" : undefined}
+                  aria-expanded={item.subcategories.length > 0 ? activeMenu === item.name : undefined}
                 >
                   {t(item.name)}
                 </Link>
@@ -137,6 +142,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setLanguage(language === "en" ? "ko" : "en")}
               className="text-[10px] font-bold text-gray-400 hover:text-[#002380] border border-gray-200 rounded px-2 py-1 transition-all"
+              aria-label={`Switch to ${language === "en" ? "Korean" : "English"}`}
             >
               {language === "en" ? "KOREAN" : "ENGLISH"}
             </button>
@@ -144,12 +150,15 @@ const Navbar: React.FC = () => {
               className="md:hidden p-2 text-gray-500 hover:text-[#002380] transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg
                 className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 {mobileMenuOpen ? (
                   <path
@@ -177,6 +186,7 @@ const Navbar: React.FC = () => {
         className={`absolute top-18 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out pb-4
           ${activeMenu ? "opacity-100 visible" : "opacity-0 invisible"}
         `}
+        aria-hidden={!activeMenu}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {activeMenu && (
@@ -186,7 +196,7 @@ const Navbar: React.FC = () => {
                 marginLeft: dropdownLeft ?? 0,
               }}
             >
-              <div className="flex flex-col space-y-3 w-fit">
+              <div className="flex flex-col space-y-3 w-fit" role="menu">
                 {navItems
                   .find((i) => i.name === activeMenu)
                   ?.subcategories.map((sub) => (
@@ -195,8 +205,9 @@ const Navbar: React.FC = () => {
                       to={sub.path}
                       className="group flex items-center space-x-2 py-1"
                       onClick={() => setActiveMenu(null)}
+                      role="menuitem"
                     >
-                      <span className="w-1.5 h-1.5 bg-gray-300 group-hover:bg-[#002380] rounded-full transition-colors" />
+                      <span className="w-1.5 h-1.5 bg-gray-300 group-hover:bg-[#002380] rounded-full transition-colors" aria-hidden="true" />
                       <span className="text-gray-700 font-medium group-hover:text-[#002380] transition-colors">
                         {t(sub.name)}
                       </span>
@@ -210,9 +221,11 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Panel */}
       <div
+        id="mobile-menu"
         className={`md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out overflow-hidden
           ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
         `}
+        aria-hidden={!mobileMenuOpen}
       >
         <div className="px-6 py-4 mb-6 space-y-4">
           {navItems.map((item) => (
