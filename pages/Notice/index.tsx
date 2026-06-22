@@ -4,6 +4,7 @@ import { LanguageContext } from "../../contexts/LanguageContext";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { useTranslation } from "../../i18n";
 import { rawNoticeEvents } from "../../data/notices";
+import SafeImage from "../../components/SafeImage";
 
 interface OnlineInfo {
   platform: string;
@@ -36,35 +37,31 @@ interface NoticeEvent {
 }
 
 const PosterImage: React.FC<{ src?: string; alt: string }> = ({ src, alt }) => {
-  const [hasError, setHasError] = React.useState(false);
-
-  if (!src || hasError) {
-    return (
-      <div className="w-full h-96 bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center text-gray-400 text-sm gap-2">
-        <svg
-          className="w-10 h-10"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-          />
-        </svg>
-        <span>포스터</span>
-      </div>
-    );
-  }
+  const fallback = (
+    <div className="w-full h-96 bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center text-gray-400 text-sm gap-2">
+      <svg
+        className="w-10 h-10"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+        />
+      </svg>
+      <span>포스터</span>
+    </div>
+  );
 
   return (
-    <img
+    <SafeImage
       src={src}
       alt={alt}
       className="w-full rounded-xl shadow-lg object-contain"
-      onError={() => setHasError(true)}
+      fallback={fallback}
     />
   );
 };
@@ -210,7 +207,7 @@ const NoticeDetail: React.FC = () => {
               )}
               {event.imagePath && (
                 <figure className="mb-8">
-                  <img
+                  <SafeImage
                     src={event.imagePath}
                     alt={language === "ko" ? event.titleKo : event.titleEn}
                     className="w-full rounded-xl shadow-md object-contain"
@@ -244,7 +241,7 @@ const NoticeDetail: React.FC = () => {
               )}
               {event.posterPath && (
                 <figure className="mt-10 pt-8 border-t border-gray-200">
-                  <img
+                  <SafeImage
                     src={event.posterPath}
                     alt={
                       (language === "ko"

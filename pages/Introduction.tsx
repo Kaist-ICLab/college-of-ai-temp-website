@@ -3,6 +3,7 @@ import { LanguageContext } from "../contexts/LanguageContext";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useTranslation } from "../i18n";
 import { useSEO } from "../hooks/useSEO";
+import SafeImage from "../components/SafeImage";
 
 const Introduction: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -70,7 +71,7 @@ const Introduction: React.FC = () => {
                 <div className="h-full w-full grayscale hover:grayscale-0 transition-all duration-700">
                   <picture>
                     <source srcSet="/images/deanPicv2.webp" type="image/webp" />
-                    <img
+                    <SafeImage
                       src="/images/deanPicv2.png"
                       alt="Dean"
                       className="w-full h-full object-cover object-top w-full aspect-[3/4] origin-top scale-100"

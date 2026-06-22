@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { useTranslation } from "../i18n";
 import { useSEO } from "../hooks/useSEO";
+import SafeImage from "../components/SafeImage";
 
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -187,7 +188,7 @@ const Home: React.FC = () => {
                 {slide.imageWebp && (
                   <source srcSet={slide.imageWebp} type="image/webp" />
                 )}
-                <img
+                <SafeImage
                   src={slide.imagePng}
                   alt={slide.imageAlt}
                   className={`absolute inset-0 w-full h-full object-cover ${slide.imageClass}`}
@@ -372,7 +373,7 @@ const Home: React.FC = () => {
                 <div className="h-48 md:h-auto md:w-[35%] overflow-hidden relative">
                   <picture>
                     <source srcSet={dept.imageWebp} type="image/webp" />
-                    <img
+                    <SafeImage
                       src={dept.imagePng}
                       alt={dept.name}
                       className="w-full h-full object-cover scale-130 group-hover:scale-140 transition-transform duration-700 ease-out"

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { useTranslation } from "../i18n";
+import SafeImage from "./SafeImage";
 
 const Footer: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -14,10 +15,15 @@ const Footer: React.FC = () => {
           {/* Brand & Description */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center space-x-3 mb-3">
-              <img
+              <SafeImage
                 src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
                 alt="KAIST Logo"
                 className="h-20 w-auto object-contain brightness-0 invert opacity-90"
+                fallback={
+                  <div className="h-10 px-3 bg-white/10 text-white flex items-center justify-center font-black rounded text-[11px] uppercase tracking-wider shrink-0 select-none border border-white/20">
+                    KAIST
+                  </div>
+                }
               />
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight leading-none">
