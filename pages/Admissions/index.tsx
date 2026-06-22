@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { useTranslation } from "../../i18n";
@@ -176,6 +176,7 @@ const Admissions: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useSEO();
 
@@ -191,8 +192,18 @@ const Admissions: React.FC = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const tab = params.get("tab");
-    if (tab === "grad" || tab === "ug") setActiveTab(tab);
+    if (tab === "grad" || tab === "ug") {
+      setActiveTab(tab);
+    }
   }, [location.search]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("tab") !== activeTab) {
+      params.set("tab", activeTab);
+      navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+    }
+  }, [activeTab, location.pathname, navigate, location.search]);
 
   const ugLinks = [
     {
@@ -281,6 +292,33 @@ const Admissions: React.FC = () => {
               {t("admissions_hero_desc")}
             </p>
           </div>
+        </div>
+      </div>
+      {/* Tab Selector (UG/Grad) */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-8 flex justify-center">
+        <div
+          role="tablist"
+          aria-label={t('admissions')}
+          className="flex bg-gray-50/50 p-1 rounded-2xl border border-gray-200"
+        >
+          <button
+            role="tab"
+            id="tab-ug"
+            aria-selected={activeTab === 'ug'}
+            onClick={() => setActiveTab('ug')}
+            className={`px-8 py-2.5 text-sm font-medium rounded-xl transition-all ${activeTab === 'ug' ? 'bg-[#002380] text-white shadow-lg shadow-[#002380]/20' : 'text-gray-500 hover:text-gray-900'}`}
+          >
+            {t('undergraduate')}
+          </button>
+          <button
+            role="tab"
+            id="tab-grad"
+            aria-selected={activeTab === 'grad'}
+            onClick={() => setActiveTab('grad')}
+            className={`px-8 py-2.5 text-sm font-medium rounded-xl transition-all ${activeTab === 'grad' ? 'bg-[#002380] text-white shadow-lg shadow-[#002380]/20' : 'text-gray-500 hover:text-gray-705'}`}
+          >
+            {t('graduate')}
+          </button>
         </div>
       </div>
 
