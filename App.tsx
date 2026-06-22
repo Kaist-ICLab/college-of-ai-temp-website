@@ -19,10 +19,18 @@ const NoticeDetail = React.lazy(() => import('./pages/Notice').then(module => ({
 
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<Language>('ko');
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('kaist_ai_preferred_language');
+    return (saved === 'en' || saved === 'ko') ? saved : 'ko';
+  });
+  
   const [showBanner, setShowBanner] = useState<boolean>(() => {
     return localStorage.getItem('kaist_ai_statement_banner_closed') !== 'true';
   });
+
+  React.useEffect(() => {
+    localStorage.setItem('kaist_ai_preferred_language', language);
+  }, [language]);
 
   const handleCloseBanner = () => {
     localStorage.setItem('kaist_ai_statement_banner_closed', 'true');
