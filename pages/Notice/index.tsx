@@ -16,7 +16,7 @@ interface OnlineInfo {
 interface NoticeEvent {
   id: string;
   dept: string;
-  titleEn: string;
+  titleEn?: string;
   titleKo: string;
   dateEn?: string;
   dateKo?: string;
@@ -72,11 +72,19 @@ const useEvents = (t: (key: string) => string): NoticeEvent[] =>
     dept: t(event.deptKey),
   }));
 
+const hasEnglishContent = (event: NoticeEvent) => Boolean(event.titleEn?.trim());
+
+const getVisibleEvents = (
+  events: NoticeEvent[],
+  language: string,
+): NoticeEvent[] =>
+  language === "ko" ? events : events.filter(hasEnglishContent);
+
 /* ─── List View ─────────────────────────────────────────── */
 const NoticeList: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
-  const events = useEvents(t);
+  const events = getVisibleEvents(useEvents(t), language);
 
   return (
     <div className="bg-white min-h-screen">
@@ -149,7 +157,7 @@ const NoticeDetail: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = useTranslation(language);
   const { eventId } = useParams<{ eventId: string }>();
-  const events = useEvents(t);
+  const events = getVisibleEvents(useEvents(t), language);
 
   const event = events.find((e) => e.id === eventId);
 
