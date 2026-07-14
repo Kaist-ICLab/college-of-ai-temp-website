@@ -17,6 +17,7 @@ const Breadcrumbs: React.FC = () => {
       'academics': 'academics',
       'graduation-requirements': 'graduation_reqs',
       'departments': 'departments',
+      'staff': 'staff_guide',
       'programs': 'department_programs',
       'admissions': 'admissions',
       'notice': 'notice'

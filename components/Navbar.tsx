@@ -31,6 +31,7 @@ const Navbar: React.FC = () => {
       subcategories: [
         { name: "welcome_msg", path: "/intro" },
         { name: "departments", path: "/departments" },
+        { name: "staff_guide", path: "/staff" },
       ],
     },
     {

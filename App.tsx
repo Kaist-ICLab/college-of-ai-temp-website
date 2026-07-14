@@ -10,6 +10,7 @@ import PageLoader from './components/PageLoader';
 // Lazy loaded pages
 const Home = React.lazy(() => import('./pages/Home'));
 const Introduction = React.lazy(() => import('./pages/Introduction'));
+const Staff = React.lazy(() => import('./pages/Staff'));
 const Departments = React.lazy(() => import('./pages/Departments'));
 const Admissions = React.lazy(() => import('./pages/Admissions'));
 const CourseInfo = React.lazy(() => import('./pages/CourseInfo'));
@@ -56,6 +57,7 @@ const App: React.FC = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/intro" element={<Introduction />} />
+                <Route path="/staff" element={<Staff />} />
                 <Route path="/departments" element={<Departments />} />
                 <Route path="/admissions" element={<Admissions />} />
                 <Route path="/course-information" element={<CourseInfo />} />
