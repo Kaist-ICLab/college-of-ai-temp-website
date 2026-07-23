@@ -70,7 +70,7 @@ const Introduction: React.FC = () => {
               <div className="w-full md:w-80 flex-shrink-0 order-1 md:order-2 bg-gray-50">
                 <div className="h-full w-full grayscale hover:grayscale-0 transition-all duration-700">
                   <picture>
-                    <source srcSet="/images/deanPicv2.webp" type="image/webp" />
+                    <source srcSet="/images/deanPicv2.png" type="image/png" />
                     <SafeImage
                       src="/images/deanPicv2.png"
                       alt="Dean"
