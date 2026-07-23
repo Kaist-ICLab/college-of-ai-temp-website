@@ -67,8 +67,8 @@ const Introduction: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:w-80 flex-shrink-0 order-1 md:order-2 bg-gray-50">
-                <div className="h-full w-full grayscale hover:grayscale-0 transition-all duration-700">
+              <div className="w-full md:w-80 flex-shrink-0 order-1 md:order-2">
+                <div className="h-full w-full transition-all duration-700">
                   <picture>
                     <source srcSet="/images/deanPicv2.png" type="image/png" />
                     <SafeImage
