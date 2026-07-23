@@ -56,7 +56,7 @@ export const translations: Translation = {
   departments: { en: "Departments", ko: "학사조직 안내" },
   department_programs: { en: "Department programs", ko: "학과프로그램" },
   introduction: { en: "Introduction", ko: "대학 소개" },
-  staff_guide: { en: "Staff Directory", ko: "구성원 안내" },
+  staff_guide: { en: "Staff Directory", ko: "교학팀 안내" },
   research: { en: "Research", ko: "연구" },
   research_areas: { en: "Research Areas", ko: "연구 분야" },
   publications: { en: "Publications", ko: "연구 성과" },
