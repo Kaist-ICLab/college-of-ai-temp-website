@@ -72,6 +72,70 @@ export const RequirementBox: React.FC<RequirementBoxProps> = ({ children, classN
   </div>
 );
 
+interface OutlineTopProps {
+  marker: string;
+  children: React.ReactNode;
+}
+
+/**
+ * Top-level outline item (가/나/다... or A/B/C...), mirroring an official document's numbering
+ */
+export const OutlineTop: React.FC<OutlineTopProps> = ({ marker, children }) => (
+  <div className="flex gap-2 items-baseline mt-5 first:mt-0">
+    <span className="font-bold text-gray-900 shrink-0">{marker}</span>
+    <span className="text-gray-800">{children}</span>
+  </div>
+);
+
+interface OutlineLineProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+/**
+ * Second-level outline bullet (○)
+ */
+export const OutlineCircle: React.FC<OutlineLineProps> = ({ children, className = '' }) => (
+  <div className={`flex gap-2 items-start ml-4 sm:ml-5 mt-1.5 text-gray-700 ${className}`.trim()}>
+    <span className="shrink-0">○</span>
+    <span>{children}</span>
+  </div>
+);
+
+/**
+ * Third-level outline bullet (-)
+ */
+export const OutlineDash: React.FC<OutlineLineProps> = ({ children, className = '' }) => (
+  <div className={`flex gap-2 items-start ml-8 sm:ml-10 mt-1 text-gray-600 ${className}`.trim()}>
+    <span className="shrink-0">-</span>
+    <span>{children}</span>
+  </div>
+);
+
+/**
+ * Fourth-level outline bullet (·)
+ */
+export const OutlineDot: React.FC<OutlineLineProps> = ({ children, className = '' }) => (
+  <div className={`flex gap-2 items-start ml-12 sm:ml-14 mt-1 text-gray-600 ${className}`.trim()}>
+    <span className="shrink-0">·</span>
+    <span>{children}</span>
+  </div>
+);
+
+interface OutlineNoteProps {
+  children: React.ReactNode;
+  level?: 1 | 2;
+}
+
+/**
+ * Note line (※), indented to match the level it annotates
+ */
+export const OutlineNote: React.FC<OutlineNoteProps> = ({ children, level = 1 }) => (
+  <p className={`italic text-gray-500 text-sm mt-1 ${level === 1 ? 'ml-4 sm:ml-5' : 'ml-8 sm:ml-10'}`}>
+    {children}
+  </p>
+);
+
 interface RequirementTitleProps {
   title: string;
   subtitle?: string;

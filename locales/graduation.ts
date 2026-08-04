@@ -112,58 +112,66 @@ export const translations: Translation = {
     en: "※ Required to choose and complete one among Advanced Major, Double Major, Minor, Individually Designed Major, Designated Interdisciplinary Major, and Specially Designated Major.",
     ko: "※ 전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수",
   },
-  aic_basic_req: { en: "Elective Basic Courses", ko: "기초선택 이수요건" },
+  aic_basic_req: { en: "Elective Basic Courses: At least 9 credits", ko: "기초선택: 9 학점 이상 이수" },
   aic_mas109_req: {
-    en: "Introduction to Linear Algebra(MAS.10009) must be included as a Basic Elective course, and students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra(MAS.10009).",
-    ko: "기초선택 교과목으로 선형대수학개론(MAS.10009)을 반드시 포함하여야 하며, 복수전공 이수자는 선형대수학개론을 반드시 포함하여 3학점 이상 이수하여야 함.",
+    en: "Introduction to Linear Algebra (MAS.10009) must be included, with at least 9 credits completed",
+    ko: "MAS.10009 선형대수학개론을 반드시 포함하여 9학점 이상 이수",
+  },
+  aic_mas109_req_2: {
+    en: "MAS.10009 Introduction to Linear Algebra may be substituted with MAS.10011 Linear Algebra for Data Science",
+    ko: "MAS.10009 선형대수학개론은 MAS.10011 데이터과학을 위한 선형대수학으로 대체가능",
   },
   aic_basic_note: {
-    en: "※ Elective general course requirements are specified in the elective general course requirements by year of admission.",
-    ko: "※ 기초선택 이수학점은 학번별 교과목 이수요건 참조",
+    en: "※ Students pursuing a double major must complete at least 3 credits, including Introduction to Linear Algebra (MAS.10009)",
+    ko: "※ 복수전공 이수자는 선형대수학개론(MAS.10009)을 반드시 포함하여 3학점 이상 이수",
   },
   aic_major_req: {
     en: "Major: At least 43 credits",
     ko: "전공: 44 학점 이상 이수",
   },
   aic_mandatory_title: {
-    en: "Mandatory Major Courses: 12 credits",
-    ko: "전공필수: 12 학점",
+    en: "Mandatory Major Courses: 9 credits",
+    ko: "전공필수: 9 학점",
   },
   aic_mandatory_1: {
-    en: "FX.20001 Law, Ethics, and Philosophy in the Age of AI",
-    ko: "FX.20001 AI 시대의 법, 윤리, 철학 ",
+    en: "FX.20001 AI Philosophy: Ethics and Law",
+    ko: "FX.20001 AI 철학: 윤리와 법",
   },
   aic_mandatory_2: {
-    en: "AIC.20101 Introduction to Artificial Intelligence",
-    ko: "AIC.20101 인공지능 개론",
+    en: "AIC.20000 Introduction to AI Computing",
+    ko: "AIC.20000 AI 컴퓨팅개론",
   },
   aic_mandatory_3: {
-    en: "AIC.20102 Introduction to Machine Learning",
-    ko: "AIC.20102 기계학습 개론",
+    en: "Select one of the following: AIC.20100 Machine Learning, AIC.20101 Introduction to Deep Learning, CS.30703 Introduction to Artificial Intelligence",
+    ko: "다음 과목 중 한 개를 선택하여 이수: AIC.20100 기계학습, AIC.20101 딥러닝 개론, CS.30703 인공지능 개론",
   },
-  aic_mandatory_4: {
-    en: "AIC.20103 Introduction to Deep Learning",
-    ko: "AIC.20103 딥러닝 개론",
+  aic_mandatory_note_1: {
+    en: "※ For AIC.20100 Machine Learning and AIC.20101 Introduction to Deep Learning, the course must be taken under the AIC code to satisfy this major requirement (CS-coded sections are not recognized).",
+    ko: "※ AIC.20100 기계학습과 AIC.20101 딥러닝 개론의 경우, 본 학과의 전공필수요건을 충족하기 위해서는 AIC 코드의 과목을 수강해야 함 (CS 코드로 수강 시 인정하지 않음)",
+  },
+  aic_mandatory_note_2: {
+    en: "※ Credits exceeding 9 in required major courses are recognized as elective major credits.",
+    ko: "※ 전공필수 과목 중 9학점 초과 이수 시, 초과된 학점은 전공선택 학점으로 인정",
   },
   aic_elective_title: {
-    en: "Elective Major Courses: 32 credits (10 or 11 courses)",
-    ko: "전공선택: 32 학점 (10 or 11과목)",
+    en: "Elective Major Courses: At least 35 credits",
+    ko: "전공선택: 35 학점 이상",
   },
   aic_elective_1: {
     en: "Up to 12 credits from Computer Science major courses (CS code) are recognized as elective major credits",
     ko: "전산학부 전공과목(CS 코드)을 12학점까지 전공선택으로 인정",
   },
   aic_elective_2: {
-    en: "Four credits from individual study courses are counted at maximum.",
-    ko: "개별연구는 전공선택으로 4학점 까지만 인정",
+    en: "Individual study courses are recognized as elective major credits up to a maximum of 4 credits.",
+    ko: "개별연구는 4학점까지만 전공선택으로 인정",
   },
   aic_elective_2_note: {
     en: "※ Individual study from other departments and URP.91100 are recognized for the scope of individual study",
     ko: "※ 타 학과 개별연구와 URP.91100를 모두 인정",
   },
-  aic_elective_3: {
-    en: "Elective Major courses(CoE Code) opened by College of Engineering may be used as Electives Major courses up to 6 credits",
-    ko: "공과대학에서 개설한 전공선택(CoE코드)을 6학점까지 전공선택으로 인정",
+  aic_other_major_title: {
+    en: "Other Majors",
+    ko: "그 외 전공",
   },
   aic_advanced_req: {
     en: "Advanced Major: At least 12 credits",
@@ -186,32 +194,36 @@ export const translations: Translation = {
     ko: "부전공: 총 21 학점 이상 이수",
   },
   aic_minor_desc: {
-    en: "At least 21 credits from major courses, including 12 credits in required major course",
-    ko: "전공필수 교과목 12학점을 포함하여 전공과목 21학점 이상 이수",
+    en: "At least 21 credits of major courses (AIC code), including 9 credits of required major courses",
+    ko: "전공필수 교과목 9학점을 포함하여 본 학과 전공과목 21학점(AIC 코드) 이상 이수",
+  },
+  aic_minor_desc_2: {
+    en: "For students pursuing a major and a minor in two departments within the College of AI, the minor department substitutes the required course 'FX.20001 AI Philosophy: Ethics and Law' with 3 credits of elective major coursework.",
+    ko: "AI 대학 내 두 학과에서 주전공 및 부전공을 하는 경우, 부전공 학과에서는 전공필수 이수요건 중 'FX.20001 AI철학: 윤리와 법'을 전공선택 교과목 3학점 이수로 대신함",
   },
   aic_minor_note_1: {
     en: "※ No credits from the same course will be doubly counted to satisfy major and minor department requirements.",
     ko: "※ 타 학사조직 전공과목과의 중복 인정 불가",
-  },
-  aic_minor_note_2: {
-    en: "※ The same requirements as stated in Elective Major Courses apply.",
-    ko: "※ 전공선택에 명시된 요건 동일 적용",
   },
   aic_double_req: {
     en: "Double Major: At least 40 credits",
     ko: "복수전공: 총 40 학점 이상 이수",
   },
   aic_double_desc: {
-    en: "At least 40 credits including 12 credits in mandatory major courses",
-    ko: "전공필수 12학점을 포함하여 전공과목 40학점 이상 이수",
+    en: "At least 40 credits of major courses, including 9 credits of required major courses",
+    ko: "전공필수 9학점을 포함하여 본 학과 전공과목 40학점 이상 이수",
+  },
+  aic_double_desc_2: {
+    en: "For students pursuing a major and a double major in two departments within the College of AI, the double-major department substitutes the required course 'FX.20001 AI Philosophy: Ethics and Law' with 3 credits of elective major coursework.",
+    ko: "AI 대학 내 두 학과에서 주전공 및 복수전공을 하는 경우, 복수전공 학과에서는 전공필수 이수 요건 중 'FX.20001 AI철학: 윤리와 법'을 전공선택 교과목 3학점 이수로 대신함",
+  },
+  aic_double_desc_3: {
+    en: "Up to 10 credits of School of Computing major courses (CS code) are recognized as elective major credits (including cross-recognized courses).",
+    ko: "전산학부 전공과목(CS 코드)을 10학점까지 전공선택으로 인정(중복 인정 과목 포함)",
   },
   aic_double_note_1: {
-    en: "※ Up-to 6 credits can be doubly counted to satisfy both major department requirements.",
-    ko: "※ 타 학사조직 전공과목과의 최대한 6학점까지 중복 인정 가능",
-  },
-  aic_double_note_2: {
-    en: "※ The same requirements as stated in Elective Major Courses apply.",
-    ko: "※ 전공선택에 명시된 요건 동일 적용",
+    en: "※ Up to 6 credits may be cross-recognized, limited to the following School of Computing courses: CS.20004 Discrete Structures, CS.20006 Data Structures, CS.30000 Introduction to Algorithms, CS.30300 Operating Systems and Lab, CS.30101 Computer Organization.",
+    ko: "※ 전산학부의 다음 교과목에 한해 최대 6학점까지 중복 인정 가능: CS.20004 이산구조, CS.20006 데이타구조, CS.30000 알고리즘 개론, CS.30300 운영체제 및 실험, CS.30101 전산기조직",
   },
   aic_research_req: {
     en: "Research Courses: At least 3 credits",
@@ -229,19 +241,23 @@ export const translations: Translation = {
   transitional_measures: { en: "Transitional Measures", ko: "경과조치" },
   aic_ug_transit: {
     en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
-    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+  },
+  aic_ug_transit_2: {
+    en: "However, for the courses below completed in or before Spring 2026, credits are recognized as follows: up to 3 credits of the required courses listed are recognized as required major credits, with any credits exceeding that recognized as elective major credits. Elective major credits (combined with the excess required credits) are recognized up to a maximum of 12 credits.",
+    ko: "단, 2026학년도 봄학기 혹은 이전에 아래 과목을 이수한 경우에 한하여 다음과 같이 인정한다. 아래 전공필수 교과목은 최대 3학점까지 전공필수로 인정하며, 이를 초과하는 학점은 전공선택으로 인정한다. 전공선택은 전공선택 교과목과 전공필수 초과 인정학점을 합산하여 최대 12학점까지 인정한다.",
   },
   aic_ms_transit: {
-    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    en: "These requirements apply to Master's students admitted in Fall 2026 and thereafter. However, Master's students admitted before Spring 2026 may follow these requirements if subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 가을학기 입학생부터 적용한다. 단, 2026학년도 봄학기 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
   },
   aic_phd_transit: {
-    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    en: "These requirements apply to Doctoral students admitted in Fall 2026 and thereafter. However, Doctoral students admitted before Spring 2026 may follow these requirements if subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 가을학기 입학생부터 적용한다. 단, 2026학년도 봄학기 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
   },
   aic_int_transit: {
-    en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    en: "These requirements apply to M.S.-Ph.D. Integrated students admitted in Fall 2026 and thereafter. However, M.S.-Ph.D. Integrated students admitted before Spring 2026 may follow these requirements if subject to them due to a change of major or similar circumstances.",
+    ko: "본 이수요건은 2026학년도 가을학기 입학생부터 적용한다. 단, 2026학년도 봄학기 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
   },
 
   aic_ms_title: { en: "AI Computing - Master's", ko: "AI컴퓨팅학과 - 석사" },
@@ -255,19 +271,19 @@ export const translations: Translation = {
   },
   aic_ms_common_1: {
     en: "Select and take one among CC 500-level courses",
-    ko: "CC 5단위 과목 중 택1 하여 이수",
+    ko: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수",
   },
   aic_ms_common_1_note: {
     en: "※ CC.50010 Introduction to Computer Application is not accepted as a Mandatory General Course.",
     ko: "※ 단, CC.50010 전산응용개론은 제외함",
   },
   aic_ms_common_2: {
-    en: "Completion of CC.50001 Special Lecture on Leadership (non-credit, this applies to students entering KAIST in 2002 and thereafter; general scholarship students, foreign students are excluded)",
-    ko: "CC.50001 리더십강좌(무학점임, 2002년도 입학생부터 반드시 이수, 일반 장학생 및 외국인 학생 제외)",
+    en: "Completion of CC.50001 Special Lecture on Leadership (non-credit)",
+    ko: "CC.50001 리더십강좌 이수 (무학점)",
   },
   aic_ms_common_3: {
-    en: "Completion of CC.00020 Ethics and Safety I",
-    ko: "CC.00020 윤리 및 안전 I",
+    en: "Completion of CC.50002 Ethics and Safety I (non-credit)",
+    ko: "CC.50002 윤리 및 안전 I 이수 (무학점)",
   },
   aic_ms_major_req: {
     en: "Mandatory Major Courses: None",
@@ -278,12 +294,12 @@ export const translations: Translation = {
     ko: "선택: 총 18 학점 이상 이수",
   },
   aic_ms_elective_1: {
-    en: "At least 12 credits in AIC/CS/IS courses offered by the Dept.of AI Computing, the School of Computing, or Dept. of Graduate School of Information Security",
-    ko: "본 학과, 전산학부, 정보보호대학원에서 개설하는 과목 AIC/CS/IS 5단위 이상 교과목을 12학점 이상 반드시 이수",
+    en: "At least 12 credits must be completed from 500-level or higher major courses offered by the Department (AIC code), the School of Computing (CS code), or the Graduate School of Information Security (IS code).",
+    ko: "본 학과(AIC 코드), 전산학부(CS 코드), 정보보호대학원(IS 코드)에서 개설하는 5단위 이상 전공과목을 12학점 이상 반드시 이수",
   },
   aic_ms_elective_2: {
-    en: "Courses from other departments with 500 level or higher, as well as undergraduate–graduate cross-listed courses (400 level courses) offered by any department, may be counted up to a maximum of 9 credits.",
-    ko: "타 학과 5단위 이상 및 모든 학과 4단위 학사·대학원 상호인정 교과목은 6학점 이내로 인정",
+    en: "Up to 6 credits are recognized from 400-level undergraduate–graduate cross-listed courses (own or other departments) and 500-level or higher courses from other departments.",
+    ko: "본 학과 및 타 학과 4단위 학사·대학원 상호인정 교과목과 타 학과 5단위 이상 교과목은 6학점 이내로 인정",
   },
   aic_ms_elective_note: {
     en: "※ Mandatory General Courses and free elective courses are not counted as elective courses.",
@@ -294,8 +310,12 @@ export const translations: Translation = {
     ko: "연구: 총 6 학점 이상 이수",
   },
   aic_ms_research_1: {
-    en: "At least 12 credits including AIC.960 Research (Master's Thesis)",
-    ko: "AIC.960 연구(석사논문연구)를 포함하여 12학점 이상",
+    en: "At least 4 credits of Thesis Research",
+    ko: "논문연구 4학점 이상 이수",
+  },
+  aic_ms_research_2: {
+    en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
+    ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
 
   // Doctoral Requirements
@@ -310,19 +330,15 @@ export const translations: Translation = {
   },
   aic_phd_common_1: {
     en: "Select and take one among CC 500-level courses",
-    ko: "CC 5단위 과목 중 택1 하여 이수",
+    ko: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수",
   },
   aic_phd_common_1_note: {
     en: "※ CC.50010 Introduction to Computer Application is not accepted as a Mandatory General Course.",
     ko: "※ CC.50010 전산응용개론은 제외함",
   },
   aic_phd_common_2: {
-    en: "Completion of CC.50001 Special Lecture on Leadership (non-credit, this applies to students entering KAIST in 2002 and thereafter; general scholarship students, foreign students are excluded)",
-    ko: "CC.50001 리더십강좌(무학점임, 2002년도 입학생부터 반드시 이수, 일반 장학생 및 외국인 학생 제외)",
-  },
-  aic_phd_common_3: {
-    en: "Completion of CC.00020 Ethics and Safety I",
-    ko: "CC.00020 윤리 및 안전 I",
+    en: "Completion of CC.50002 Ethics and Safety I (non-credit)",
+    ko: "CC.50002 윤리 및 안전 I 이수 (무학점)",
   },
   aic_phd_major_req: {
     en: "Mandatory Major Courses: None",
@@ -333,28 +349,28 @@ export const translations: Translation = {
     ko: "선택: 총 27 학점 이상 이수",
   },
   aic_phd_elective_1: {
-    en: "At least 18 credits in AIC/CS/IS courses offered by the Dept.of AI Computing, the School of Computing, or Dept. of Graduate School of Information Security",
-    ko: "본 학과, 전산학부, 정보보호대학원에서 개설하는 과목 AIC/CS/IS 5단위 이상 교과목을 18학점 이상 반드시 이수",
+    en: "At least 12 credits must be completed from 500-level or higher major courses offered by the Department (AIC code), the School of Computing (CS code), or the Graduate School of Information Security (IS code).",
+    ko: "본 학과(AIC 코드), 전산학부(CS 코드), 정보보호대학원(IS 코드)에서 개설하는 5단위 이상 전공과목을 12학점 이상 반드시 이수",
   },
   aic_phd_elective_2: {
-    en: "Courses from other departments with 500 level or higher, as well as undergraduate–graduate cross-listed courses (400 level courses) offered by any department, may be counted up to a maximum of 9 credits.",
-    ko: "타 학과 5단위 이상 및 모든 학과 4단위 학사·대학원 상호인정 교과목은 9학점 이내로 인정",
+    en: "Up to 6 credits are recognized from 400-level undergraduate–graduate cross-listed courses (own or other departments) and 500-level or higher courses from other departments.",
+    ko: "본 학과 및 타 학과 4단위 학사·대학원 상호인정 교과목과 타 학과 5단위 이상 교과목은 6학점 이내로 인정",
   },
   aic_phd_elective_note: {
     en: "※ Mandatory General Courses and free elective courses are not counted as elective courses.",
     ko: "※ 공통필수, 자유선택 과목은 선택과목으로 인정하지 않음",
+  },
+  aic_phd_elective_note_2: {
+    en: "※ Course credits completed during the Master's program are cumulatively recognized toward the Doctoral program's credit requirements.",
+    ko: "※ 석사과정에서 이수한 교과학점은 박사과정 이수학점으로 누적 가산됨",
   },
   aic_phd_research_req: {
     en: "Research Courses: At least 30 credits",
     ko: "연구: 총 30 학점 이상 이수",
   },
   aic_phd_research_1: {
-    en: "4 credits from seminar courses(AIC.93100, AIC.93200) are required",
-    ko: "세미나(AIC.93100, AIC.93200)는 4학점을 반드시 이수",
-  },
-  aic_phd_research_note: {
-    en: "※ The course credits and seminar credits (up to 2 credits) earned in the Master's program may be accumulated towards the Doctoral degree",
-    ko: "※ 석사과정에서 이수한 교과목 학점 및 세미나 과목 학점(2학점 이내)은 박사과정 이수학점으로 누적 가산됨",
+    en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
+    ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
 
   // Integrated Program Requirements
@@ -372,19 +388,19 @@ export const translations: Translation = {
   },
   aic_int_common_1: {
     en: "Select and take one among CC 500-level courses",
-    ko: "CC 5단위 과목 중 택1 하여 이수",
+    ko: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수",
   },
   aic_int_common_1_note: {
     en: "※ CC.50010 Introduction to Computer Application is not accepted as a Mandatory General Course.",
     ko: "※ CC.50010 전산응용개론은 제외함",
   },
   aic_int_common_2: {
-    en: "Completion of CC.50001 Special Lecture on Leadership (non-credit, this applies to students entering KAIST in 2002 and thereafter; general scholarship students, foreign students are excluded)",
-    ko: "CC.50001 리더십강좌(무학점임, 2002년도 입학생부터 반드시 이수, 일반 장학생 및 외국인 학생 제외)",
+    en: "Completion of CC.50001 Special Lecture on Leadership (non-credit)",
+    ko: "CC.50001 리더십강좌 이수 (무학점)",
   },
   aic_int_common_3: {
-    en: "Completion of CC.00020 Ethics and Safety I",
-    ko: "CC.00020 윤리 및 안전 I",
+    en: "Completion of CC.50002 Ethics and Safety I (non-credit)",
+    ko: "CC.50002 윤리 및 안전 I 이수 (무학점)",
   },
   aic_int_major_req: {
     en: "Mandatory Major Courses: None",
@@ -395,12 +411,12 @@ export const translations: Translation = {
     ko: "선택: 총 27 학점 이상 이수",
   },
   aic_int_elective_1: {
-    en: "At least 18 credits in AIC/CS/IS courses offered by the Dept.of AI Computing, the School of Computing, or Dept. of Graduate School of Information Security",
-    ko: "본 학과, 전산학부, 정보보호대학원에서 개설하는 과목 AIC/CS/IS 5단위 이상 교과목을 18학점 이상 반드시 이수",
+    en: "At least 12 credits must be completed from 500-level or higher major courses offered by the Department (AIC code), the School of Computing (CS code), or the Graduate School of Information Security (IS code).",
+    ko: "본 학과(AIC 코드), 전산학부(CS 코드), 정보보호대학원(IS 코드)에서 개설하는 5단위 이상 전공과목을 12학점 이상 반드시 이수",
   },
   aic_int_elective_2: {
-    en: "Courses from other departments with 500 level or higher, as well as undergraduate–graduate cross-listed courses (400 level courses) offered by any department, may be counted up to a maximum of 9 credits.",
-    ko: "타 학과 5단위 이상 및 모든 학과 4단위 학사·대학원 상호인정 교과목은 9학점 이내로 인정",
+    en: "Up to 6 credits are recognized from 400-level undergraduate–graduate cross-listed courses (own or other departments) and 500-level or higher courses from other departments.",
+    ko: "본 학과 및 타 학과 4단위 학사·대학원 상호인정 교과목과 타 학과 5단위 이상 교과목은 6학점 이내로 인정",
   },
   aic_int_elective_note: {
     en: "※ Mandatory General Courses and free elective courses are not counted as elective courses.",
@@ -411,12 +427,12 @@ export const translations: Translation = {
     ko: "연구: 총 30 학점 이상 이수",
   },
   aic_int_research_1: {
-    en: "4 credits from seminar courses(AIC.93100, AIC.93200) are required",
-    ko: "세미나(AIC.93100, AIC.93200)는 4학점을 반드시 이수",
+    en: "4 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
+    ko: "세미나는 4학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
   aic_int_research_note: {
-    en: "※ The course credits and seminar credits (up to 2 credits) earned in the Master's program may be accumulated towards the Doctoral degree",
-    ko: "※ 석사과정에서 이수한 교과목 학점 및 세미나 과목 학점(2학점 이내)은 박사과정 이수학점으로 누적 가산됨",
+    en: "※ Course credits and research credits (up to 2 credits of seminar) completed during the Master's program are cumulatively recognized.",
+    ko: "※ 석사과정에서 이수한 교과학점 및 연구학점(세미나 과목은 2학점 이내)은 누적 가산됨",
   },
 
   // AI Systems Undergraduate Requirements
@@ -700,19 +716,19 @@ export const translations: Translation = {
   // AI Systems Transitional Measures
   ais_ug_transit: {
     en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
-    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   ais_ms_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   ais_phd_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   ais_int_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
 
   // AX Undergraduate Requirements
@@ -1030,19 +1046,19 @@ export const translations: Translation = {
   // AX Transitional Measures
   ax_ug_transit: {
     en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
-    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   ax_ms_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   ax_phd_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   ax_int_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
 
   // AI and Future Studies Undergraduate Requirements
@@ -1396,18 +1412,18 @@ export const translations: Translation = {
   // AI and Future Studies Transitional Measures
   aif_ug_transit: {
     en: "These requirements apply to all students admitted in 2025 and thereafter. Students admitted in 2024 or earlier may choose to be governed by the completion requirements listed above if they change their major, pursue an advanced major, minor, double major, interdisciplinary major, or individually designated major.",
-    ko: "본 이수요건은 2025학년도 입학생 부터 적용함. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2025학년도 입학생 부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공, 자유융합전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   aif_ms_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, Master's students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   aif_phd_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, PhD students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
   aif_int_transit: {
     en: "These completion requirements apply to students admitted in 2026 and thereafter. However, MS-PhD integrated students admitted in 2025 or earlier may choose to follow these requirements if they are subject to them due to a change of major or similar circumstances.",
-    ko: "본 이수요건은 2026학년도 입학생 부터 적용함. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+    ko: "본 이수요건은 2026학년도 입학생 부터 적용한다. 단, 2025학년도 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
   },
 };
