@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="KAIST AI College Colloquium — Fall 2026 schedule">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KAIST AI College Colloquium (2026 Fall)">
+<meta property="og:description" content="Weekly colloquium — Tuesdays 16:00–18:00, Room 1501, E3-1, KAIST. Schedule, speakers, and abstracts.">
+<meta property="og:image" content="https://aicollege.kaist.ac.kr/colloquium/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>KAIST AI College Colloquium (2026 Fall)</title>
+<style>
+/* 공통 디자인 시스템 — 두 페이지(template.html, template_talks.html)에 빌드 시 주입됨.
+ * direction: Korean portal card UI (naver.com 형태 언어 참고)
+ * gray page + white rounded cards, compact density, system sans only, accent: link blue */
+  /* 항상 라이트 모드 고정 — 시스템 다크 설정을 따르지 않는다 */
+  :root {
+    --font-body: "Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --page: #F5F6F8;
+    --card: #FFFFFF;
+    --card-line: #EBEDF0;
+    --ink: #191B1E;
+    --muted: #606672;
+    --faint: #9BA1AC;
+    --accent: #2160C4;
+    --row-line: #F1F2F4;
+    --hover: #F7F8FA;
+    --badge-bg: #EAF1FC;
+    /* 연사 사진 크기. px로 박지 않고 rem으로 두어 날짜 칼럼(3.6rem)과 같은 규칙으로 움직인다.
+       모바일 축소도 이 변수만 바꾸면 되므로 페이지별 그리드 정의를 건드릴 필요가 없다. */
+    --avatar-sm: 4rem;     /* 목록 행 썸네일 — 본문 블록(약 81px)에 근접시켜 작은 칩처럼 보이지 않게 */
+    --avatar-lg: 5rem;     /* 카드 연사 줄 */
+    color-scheme: light only;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 80px; }
+
+  header.top {
+    padding: 40px 6px 0;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap;
+  }
+  h1 { margin: 0 0 4px; font-size: 27px; font-weight: 800; letter-spacing: -0.02em; }
+  .subtitle { margin: 0; font-size: 14px; color: var(--muted); }
+
+  /* 헤더 우측 액션 (캘린더 구독 / .ics 내려받기) */
+  .head-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+  .head-action {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 8px;
+    background: var(--card); border: 1px solid var(--card-line);
+    font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none;
+    white-space: nowrap;
+  }
+  .head-action:hover { border-color: var(--accent); color: var(--accent); }
+  .head-action:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .head-action svg { width: 14px; height: 14px; flex: none; }
+  .head-action.subtle { color: var(--muted); font-weight: 500; }
+  nav.tabs {
+    display: flex; gap: 4px; margin-top: 20px; padding: 0 6px;
+    border-bottom: 1px solid var(--card-line);
+  }
+  .tab {
+    padding: 9px 14px; font-size: 14.5px; font-weight: 600;
+    color: var(--muted); text-decoration: none;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .tab:hover { color: var(--accent); }
+  .tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-top: 14px;
+    scroll-margin-top: 16px;
+  }
+  .card-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+    margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .card-head h2 { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+  .card-head .sub { font-size: 12.5px; color: var(--faint); }
+  /* 제목에 바로 이어 붙는 보조 문구 (오른쪽 끝으로 밀지 않음) */
+  .card-head.inline { justify-content: flex-start; gap: 8px; }
+  .card-head.inline .sub { color: var(--muted); }
+
+  .meta { display: grid; grid-template-columns: 88px 1fr; gap: 7px 14px; margin: 6px 0 0; font-size: 13.5px; }
+  .meta dt { color: var(--faint); }
+  .meta dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .meta a { color: var(--accent); text-decoration: none; }
+  .meta a:hover { text-decoration: underline; }
+
+  .more {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 7px;
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    text-decoration: none;
+  }
+  .more:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  .chev {
+    width: 6px; height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(-45deg);
+  }
+
+  /* 메타 태그 (GitHub 라벨 톤 — 저채도 배경 + 진한 동일 계열 글자) */
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .tag {
+    display: inline-block; padding: 1px 7px; border-radius: 6px;
+    font-size: 11.5px; font-weight: 600; line-height: 1.7; letter-spacing: 0.01em;
+  }
+  .tag-lang { background: #F1F2F4; color: #4A4F57; }
+  .tag-online { background: transparent; color: var(--accent); border: 1px solid var(--accent); padding: 0 6px; }
+  .tag-next { background: var(--accent); color: #FFFFFF; }
+
+  /* 강연 상세 표기 (talks.html 전체 열람 + talk-*.html 개별 페이지 공용) */
+  .d-meta { margin: 0 0 8px; }
+  .d-date-text { font-size: 12.5px; color: var(--faint); margin-right: 4px; }
+  .d-title { margin: 0 0 6px; font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; text-wrap: balance; }
+  .d-speaker { margin: 0; font-size: 14.5px; color: var(--muted); }
+  .d-speaker b { color: var(--ink); font-weight: 700; }
+  .d-block { margin-top: 14px; }
+  .d-block h4 { margin: 0 0 4px; font-size: 13px; font-weight: 700; color: var(--ink); }
+  .d-block p {
+    margin: 0; max-width: 72ch;
+    font-size: 14px; line-height: 1.75; color: #3E444C;
+    white-space: pre-line;
+  }
+
+  /* ---- 연사 사진 ---- */
+  /* 크기는 항상 바깥 그리드 트랙이 정하고, 이미지는 그 트랙을 100%로 채운다.
+     이미지 자체에 px를 박지 않으므로 글꼴 크기나 확대 배율이 바뀌어도 날짜 칼럼과 같이 움직인다. */
+  .avatar {
+    display: block;
+    width: 100%;
+    /* height:auto가 반드시 있어야 한다 — <img width/height> 속성은 presentational hint로
+       height:320px를 먹이고, 그러면 aspect-ratio가 무시돼 사진이 세로로 늘어난다. */
+    height: auto;
+    aspect-ratio: 1 / 1;        /* 파일이 도착하기 전에도 높이가 확정 — 목록이 밀리지 않는다 */
+    object-fit: cover;
+    border-radius: 8px;         /* 원형이 아니라 라운드 사각 — 카드(14)·행(10)·태그(6)와 같은 기하 언어 */
+    border: 1px solid var(--card-line);  /* 배경 흰 인물사진이 흰 카드에 녹지 않게 하는 헤어라인 */
+    background: #EFF1F4;        /* 로딩 중 빈 칸 색 */
+  }
+
+  /* 연사 줄 — [사진][이름/소속]. 사진이 없으면 이 래퍼를 아예 만들지 않고
+     기존 한 줄 표기(<p class="d-speaker">)를 그대로 쓴다. */
+  .byline {
+    display: grid;
+    grid-template-columns: var(--avatar-lg) 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: 8px 0 0;
+  }
+  .byline p { margin: 0; }
+  .byline .affil { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
+
+  footer.foot {
+    margin-top: 24px; padding: 0 6px;
+    font-size: 12.5px; color: var(--faint);
+    display: flex; flex-direction: column; gap: 2px;
+  }
+
+  @media (max-width: 560px) {
+    header.top { padding-top: 28px; }
+    .card { padding: 16px; border-radius: 12px; }
+    /* 좁은 화면에서는 사진만 줄인다. 그리드 정의는 페이지 쪽 <style>에 있고 그쪽이 나중에
+       주입되어 우선하므로, 여기서는 변수만 바꿔 페이지별 media 블록 없이 축소한다. */
+    :root { --avatar-sm: 2.75rem; --avatar-lg: 4rem; }
+  }
+
+
+  /* ---- Schedule 페이지 전용 ---- */
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 6px;
+    background: var(--badge-bg); color: var(--accent);
+    font-size: 12px; font-weight: 700; line-height: 1.6;
+  }
+  .upcoming .when { margin: 10px 0 4px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .upcoming h2.title { margin: 0 0 4px; font-size: 18px; font-weight: 700; line-height: 1.45; letter-spacing: -0.01em; text-wrap: balance; }
+  .upcoming .speaker { font-size: 14px; }
+
+  ol.talks { list-style: none; margin: 0 -12px; padding: 0; }
+  .talk, .break-row {
+    padding: 16px 12px;
+    border-radius: 10px;
+    /* 날짜 | 사진 | 본문. 사진 칼럼은 사진이 없는 행에서도 접지 않고 그대로 둔다 —
+       본문 시작 x좌표가 모든 행에서 같아야 하기 때문. 흰 카드 위의 빈 칸은 보이지 않는다. */
+    display: grid; grid-template-columns: 3.6rem var(--avatar-sm) 1fr; gap: 16px;
+    align-items: start;   /* 모든 행에서 날짜가 행 맨 위 같은 지점에서 시작 */
+  }
+  /* 세 항목의 칼럼을 못 박는다. 사진 없는 행에서 본문이 사진 칼럼으로 흘러드는 것을 막는
+     유일한 장치이며, 빈 placeholder 엘리먼트나 margin에 기대지 않는다. */
+  .dblock   { grid-column: 1; }
+  /* 사진만 행 가운데에 맞춘다. 맨 위(start)에 두면 line-height 여백이 없는 사진이
+     날짜 글자·태그 칩보다 위로 튀어나오고, 제목이 두 줄인 행에서는 남는 공간이
+     전부 사진 아래로 몰려 사진이 붕 뜬다. 가운데로 두면 사진 중심이 연사 이름 줄
+     근처에 놓여 — 사진이 설명하는 대상이 그 이름이다 — 제목 줄 수와 무관하게 안정적이다. */
+  .talk > .avatar { grid-column: 2; align-self: center; }
+  .row-body { grid-column: 3; }
+  /* 날짜 칼럼이 폭을 정하고, 월/일은 그 칼럼을 그대로 채우며 가운데 정렬된다.
+     (요소에 폭을 직접 박지 않으므로 글꼴·확대 배율이 바뀌어도 행끼리 계속 일치) */
+  /* 월과 일을 칼럼의 왼쪽 끝에 붙인다. 글자 폭이 서로 달라도 왼쪽 기준선이
+     항상 정확히 일치하므로, 가운데 정렬처럼 폭 차이로 어긋나는 일이 없다. */
+  .dblock { justify-self: stretch; font-variant-numeric: tabular-nums; }
+  .dblock span { display: block; text-align: left; }
+  .dblock .mon { font-size: 11.5px; font-weight: 700; color: var(--accent); line-height: 1.5; }
+  .dblock .dow { font-size: 11px; font-weight: 600; color: var(--faint); line-height: 1.4; }
+  .dblock .day { font-size: 26px; font-weight: 800; line-height: 1.2; }
+  .talk + .talk, .talk + .break-row, .break-row + .talk { position: relative; }
+  .talk + .talk::before, .talk + .break-row::before, .break-row + .talk::before {
+    content: ""; position: absolute; left: 12px; right: 12px; top: 0;
+    border-top: 1px solid var(--row-line);
+  }
+  .talk { position: relative; }
+  /* 상세 페이지가 있는 행만 전체 클릭: 제목 링크를 행 전체로 확장(stretched link) */
+  .talk.linked { transition: background 0.12s ease; }
+  .talk.linked:hover { background: var(--hover); }
+  .talk.linked .row-link { color: inherit; text-decoration: none; }
+  .talk.linked .row-link::after { content: ""; position: absolute; inset: 0; border-radius: 10px; }
+  .talk.linked .row-link:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .row-chev {
+    position: absolute; right: 14px; top: 50%;
+    width: 7px; height: 7px; margin-top: -4px;
+    border-right: 1.5px solid var(--faint);
+    border-bottom: 1.5px solid var(--faint);
+    transform: rotate(-45deg);
+  }
+  .talk.linked:hover .row-chev { border-color: var(--accent); }
+  /* 꺾쇠 자리는 모든 행에서 동일하게 비워 둔다 (링크 유무로 본문 폭이 달라지지 않게).
+     .dblock도 div라서 예전 선택자(.talk > div)는 날짜 칼럼의 내용 폭까지 26px 깎고 있었다. */
+  .row-body { padding-right: 26px; }
+
+  .talk .tags, .upcoming .tags { margin-bottom: 7px; }
+
+  .speaker { margin: 0 0 3px; font-size: 15px; color: var(--muted); }
+  .speaker b { color: var(--ink); font-weight: 700; }
+  .talk h3 { margin: 0 0 2px; font-size: 15.5px; font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; }
+  .talk h3.tba { color: var(--faint); font-weight: 500; font-size: 14px; }
+
+  .break-row .tag { font-size: 13px; color: var(--faint); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .talk { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>AI College Colloquium</h1>
+      <p class="subtitle">KAIST AI대학 콜로퀴움 · Fall 2026</p>
+    </div>
+    <div class="head-actions">
+      <a class="head-action" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Faicollege.kaist.ac.kr%2Fcolloquium%2Fcolloquium.ics">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+          <path d="M3 10h18M8 3v4M16 3v4"></path>
+        </svg>
+        Add to Google Calendar
+      </a>
+    </div>
+  </header>
+  <nav class="tabs">
+    <a class="tab active" href="index.html">Schedule</a>
+    <a class="tab" href="talks.html">Talk Descriptions</a>
+  </nav>
+
+  <section class="card upcoming" id="upcoming" hidden>
+    <span class="badge">Upcoming talk</span>
+    <p class="when" id="up-when"></p>
+    <div class="tags" id="up-tags"></div>
+    <h2 class="title" id="up-title"></h2>
+    <div id="up-byline"></div>
+    <a class="more" id="up-more" hidden></a>
+  </section>
+
+  <div id="schedule"></div>
+
+  <section class="card" id="attendance">
+    <div class="card-head"><h2>Attendance</h2></div>
+    <dl class="meta">
+      <dt>When</dt><dd>Tuesdays, 16:00–18:00</dd>
+      <dt>Offline</dt><dd>Room 1501 (Joint Lecture Room 1), E3-1, KAIST, Daejeon</dd>
+      <dt>Online</dt><dd>Zoom — TBD</dd>
+      <dt>Check-in</dt><dd>TBD</dd>
+      <dt>Absence</dt><dd>TBD</dd>
+    </dl>
+  </section>
+
+  <section class="card" id="contacts">
+    <div class="card-head inline">
+      <h2>Contacts</h2>
+      <span class="sub">If you do not have a specific concern for the instructor, please use the TA's email below.</span>
+    </div>
+    <dl class="meta">
+      <dt>Instructor</dt><dd>TBD</dd>
+      <dt>TA</dt>
+      <dd>Hyeonseo Cho (조현서) · <a href="mailto:hyeonseo.cho@kaist.ac.kr">hyeonseo.cho@kaist.ac.kr</a></dd>
+    </dl>
+  </section>
+
+  <footer class="foot">
+    <span>Schedule and speakers are subject to change.</span>
+    <span>KAIST AI College · Last updated <span id="built">2026-08-04 14:06 KST</span></span>
+  </footer>
+</div>
+
+<script>
+const TALKS = [{"no": 1, "date": "2026-09-01", "lang": "Korean", "mode": "Offline", "speaker": "Myounghoon Jeon (전명훈)", "affil": "Virginia Tech · Professor", "title": "", "abstract": "", "bio": "", "photo": "speakers/jeon-myounghoon.jpg"}, {"no": 2, "date": "2026-09-08", "lang": "", "mode": "", "speaker": "", "affil": "", "title": "", "abstract": "", "bio": ""}, {"no": 3, "date": "2026-09-15", "lang": "English/Korean", "mode": "Offline", "speaker": "Namwoo Kang (강남우)", "affil": "KAIST · Associate Professor / Narnia Labs CEO", "title": "제조업 설계 AX의 도전과 미래", "abstract": "최근 비약적으로 발전한 AI 기술은 전통적인 제품 개발 프로세스의 근본적인 전환을 촉진하고 있다. 특히 AI가 높은 자율성을 바탕으로 설계 업무를 수행하는 Agentic AI 기반의 자율 설계 시대가 본격화되면서, 제품 개발의 방식과 속도뿐만 아니라 조직의 의사결정 구조 및 문화 전반에도 큰 변화를 요구하고 있다. 본 세미나에서는 실제 제조 산업의 제품 설계 분야에 적용된 다양한 AX 성공 사례를 소개한다. 또한 이러한 기술을 기반으로 창업에 도전하는 과정에서 마주한 현실적인 어려움과 치열한 글로벌 경쟁의 현장을 함께 공유하고자 한다.", "bio": "", "photo": "speakers/kang-namwoo.jpg"}, {"no": 4, "date": "2026-09-22", "lang": "Korean", "mode": "Offline", "speaker": "이상우", "affil": "Inha University · Visiting Professor", "title": "AI 에이전트는 어디까지 대신할 수 있을까? — Agentic AI의 기술, 위험, 그리고 새로운 규칙", "abstract": "AI Agent는 기존 생성형 AI와 다른 차원의 문제를 제기한다. 생성형 AI의 주요 위험이 허위정보, 편향, 저작권 침해 등 출력물의 문제에 있었다면, AI Agent의 위험은 파일 삭제, 계정 변경, 데이터 전송, 결제, 계약, 시스템 조작 등 실행행위의 문제로 확장된다. 이는 AI가 “무엇을 말했는가”뿐 아니라 “무엇을 실행했는가”가 중요한 쟁점이 되고 있다. 이번 특강에서는 AI Agent가 왜 새로운 법적·윤리적·정책적 규율을 요구하는지 살펴본다. 아울러 최근 미국·중국의 입법 동향과 한국의 관련 논의를 함께 검토한다.", "bio": "", "photo": "speakers/lee-sangwoo.jpg"}, {"no": 5, "date": "2026-09-29", "lang": "", "mode": "", "speaker": "", "affil": "", "title": "", "abstract": "", "bio": ""}, {"no": 6, "date": "2026-10-06", "lang": "English", "mode": "Offline", "speaker": "Sungsoo Ahn (안성수)", "affil": "KAIST · Assistant Professor", "title": "AI for Molecular and Materials Discovery", "abstract": "Can artificial intelligence help us discover new drugs and materials? In this talk, I will introduce the emerging field of AI for molecular and materials discovery. I will explain how machine learning can predict the structures and properties of molecules, proteins, and materials, and how generative models can propose new candidates with desired functions. I will also discuss a central challenge of the field: predictions that look promising in computation do not always succeed in real experiments. Finally, I will briefly introduce emerging directions such as virtual cells and AI scientists, which aim to connect computational models with experimental discovery.", "bio": "Sungsoo Ahn is an Assistant Professor at the Graduate School of AI at KAIST, where he leads the Structured and Probabilistic Machine Learning Lab. His research focuses on developing machine learning methods for molecular and materials science, including drug discovery, protein modeling, crystal and materials generation, atomistic simulation, and quantum-mechanical prediction. More broadly, he is interested in building AI systems that can support scientific discovery by combining structured learning, physical modeling, and generative methods.", "photo": "speakers/ahn-sungsoo.jpg"}, {"no": 7, "date": "2026-10-13", "lang": "Korean", "mode": "Offline", "speaker": "Young Yik Rhim (임영익)", "affil": "Intellicon · CEO", "title": "생성형ai와 도망자들", "abstract": "", "bio": "", "photo": "speakers/rhim-youngyik.jpg"}, {"special": "Midterm week — no colloquium", "date": "2026-10-20"}, {"no": 8, "date": "2026-10-27", "lang": "English", "mode": "Offline", "speaker": "Kangwook Lee (이강욱)", "affil": "KRAFTON · Chief AI Officer", "title": "AI Agents Across Digital and Physical Worlds: From Games to Robots", "abstract": "", "bio": "", "photo": "speakers/lee-kangwook.jpg"}, {"no": 9, "date": "2026-11-03", "lang": "English", "mode": "Offline", "speaker": "Jinheon Baek (백진헌)", "affil": "KAIST · Research Fellow", "title": "From Knowledge to Discovery: Agentic AI for the Full Research Workflow", "abstract": "Foundation models are stateless functions whose behavior is governed by the context they receive. When models could not hold the knowledge of the world in their parameters, the central challenge was recall: grounding them in external sources through retrieval and verification was necessary for reliable answers. As models have become far more capable, the challenge is no longer only to recall what the world already knows, but to discover what it does not yet know. This talk traces that shift from knowledge to discovery: from retrieving and verifying what is already known across heterogeneous sources (including literature, databases, and knowledge graphs) to agentic systems that generate ideas, implement experiments, and evaluate outcomes across the full research workflow to produce what is not.", "bio": "Jinheon Baek is a Research Fellow at KAIST, and he recently received his Ph.D. in AI from KAIST in 2026. His research focuses on machine learning for language and knowledge, particularly on contextualizing foundation models over heterogeneous knowledge sources through unified retrieval and verification, and on extending such grounded models toward agentic AI that accelerates scientific discovery across the end-to-end research workflow. He has previously interned at Google DeepMind, IBM Research, Microsoft Research, and Amazon. His research is supported by the Sejong Science Fellowship and was supported by the Presidential Science Scholarship.", "photo": "speakers/baek-jinheon.jpg"}, {"no": 10, "date": "2026-11-10", "lang": "Korean", "mode": "Offline", "speaker": "Youngok Kim (김영옥)", "affil": "HD Hyundai · Chief AI Officer", "title": "", "abstract": "", "bio": "", "photo": "speakers/kim-youngok.jpg"}, {"no": 11, "date": "2026-11-17", "lang": "Korean", "mode": "Offline", "speaker": "Hyeonah Kim (김현아)", "affil": "UNIST · Assistant Professor", "title": "Searching Complex Design Spaces with AI", "abstract": "Many scientific and engineering problems require searching over large spaces of structured objects. In many real-world applications, the number of possible candidates is enormous, and evaluating each candidate can be expensive or time-consuming. This talk explores structured discovery as a unifying view of generative modeling, reinforcement learning, local and evolutionary search, and combinatorial optimization. Through examples from molecular design and combinatorial optimization, I will discuss how these methods can be combined to explore complex spaces efficiently, while addressing limited feedback, solution diversity, and the gap between computational objectives and real-world success.", "bio": "Hyeonah Kim is an Assistant Professor in the Department of Industrial Engineering at UNIST, with a joint appointment in the Graduate School of Artificial Intelligence. Her research focuses on machine learning for structured decision-making and discovery, with applications in combinatorial optimization, molecular design, and other scientific and engineering domains. More broadly, she is interested in building AI systems that combine learning, generation, and search to efficiently explore complex structured spaces. Before joining UNIST, she was a postdoctoral researcher at Mila – Québec AI Institute and the Université de Montréal.", "photo": "speakers/kim-hyeonah.jpg"}, {"no": null, "date": "2026-11-24", "lang": "", "mode": "", "speaker": "", "affil": "", "title": "", "abstract": "", "bio": ""}, {"no": 12, "date": "2026-12-01", "lang": "English", "mode": "Offline", "speaker": "Rosa Arriaga", "affil": "Georgia Tech · Associate Professor", "title": "Ecological AI for Health and Wellness", "abstract": "", "bio": "", "photo": "speakers/arriaga-rosa.jpg"}];
+
+const MONTH_FULL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const D = iso => new Date(iso + "T00:00:00");
+
+const today = new Date(); today.setHours(0,0,0,0);
+const nextTalk = TALKS.find(t => !t.special && D(t.date) >= today);
+const tid = t => t.date.slice(5).replace("-", "");
+// 상세 페이지(talks.html)는 연사 확정 강연만 싣는다 — 링크 조건도 동일하게 맞춘다
+const hasDetail = t => t.speaker && (t.abstract || t.bio);
+
+// 언어=중립 태그, 진행방식은 예외(Online)일 때만 표시.
+// 주관학과(AIF/AIC/AIS/AX)는 청중에게 의미가 없어 표시하지 않는다.
+function tagsHtml(t, isNext) {
+  const tags = [];
+  if (isNext) tags.push('<span class="tag tag-next">Upcoming</span>');
+  if (t.lang) tags.push('<span class="tag tag-lang">' + esc(t.lang) + '</span>');
+  if (t.mode === "Online") tags.push('<span class="tag tag-online">Online</span>');
+  return tags.join("");
+}
+
+// 사진은 build.py가 파일 존재를 확인한 강연에만 photo를 넣어 준다. 없으면 <img>를 아예 만들지 않는다
+// (없는 경로를 넣어 깨진 이미지 아이콘이 나가는 일을 원천 차단).
+// width/height는 표시 크기가 아니라 종횡비 힌트 — 파이프라인이 항상 320×320 정사각을 보장한다.
+// alt는 빈 문자열: 바로 옆에 같은 이름이 텍스트로 있어 스크린리더가 두 번 읽는 쪽이 더 나쁘다.
+function avatarHtml(t, cls) {
+  if (!t.photo) return "";
+  return '<img class="avatar' + (cls ? " " + cls : "") + '" src="' + t.photo +
+         '" alt="" width="320" height="320" loading="lazy" decoding="async">';
+}
+
+// 월 약어 + 날짜. 요일은 상시 화요일이라 생략하고, 예외 날짜일 때만 덧붙인다.
+function dateBlock(iso) {
+  const d = D(iso);
+  return '<div class="dblock">' +
+    (d.getDay() === 2 ? '' : '<span class="dow">' + DOW[d.getDay()].toUpperCase() + '</span>') +
+    '<span class="mon">' + MONTH_FULL[d.getMonth()].slice(0,3).toUpperCase() + '</span>' +
+    '<span class="day">' + String(d.getDate()).padStart(2,"0") + '</span></div>';
+}
+
+if (nextTalk) {
+  const d = D(nextTalk.date);
+  document.getElementById("upcoming").hidden = false;
+  document.getElementById("up-when").textContent =
+    MONTH_FULL[d.getMonth()] + " " + d.getDate() +
+    (d.getDay() === 2 ? "" : " (" + DOW[d.getDay()] + ")") + ", 16:00";
+  document.getElementById("up-tags").innerHTML = tagsHtml(nextTalk, false);
+  document.getElementById("up-title").textContent = nextTalk.title || "Title TBA";
+  // 사진이 있으면 [사진][이름/소속] 2열, 없으면 지금까지와 똑같은 한 줄 표기
+  const upB = document.getElementById("up-byline");
+  upB.className = nextTalk.photo ? "byline" : "";
+  upB.innerHTML = avatarHtml(nextTalk, "avatar-lg") +
+    (nextTalk.speaker
+      ? '<p class="speaker"><b>' + esc(nextTalk.speaker) + '</b>' +
+        (nextTalk.affil
+          ? (nextTalk.photo ? '<span class="affil">' + esc(nextTalk.affil) + '</span>'
+                            : ' · ' + esc(nextTalk.affil))
+          : '') + '</p>'
+      : '<p class="speaker"><b>Speaker TBA</b></p>');
+  if (hasDetail(nextTalk)) {
+    const m = document.getElementById("up-more");
+    m.hidden = false;
+    m.href = "talk-" + tid(nextTalk) + ".html";
+    m.innerHTML = 'View details<span class="chev" aria-hidden="true"></span>';
+  }
+}
+
+function renderItem(t) {
+  if (t.special) {
+    // 구조를 강연 행과 동일하게 유지한다 (그리드 항목 종류가 달라 생기는 차이 방지)
+    return '<li class="break-row">' + dateBlock(t.date) +
+           '<div class="row-body"><span class="tag">' + esc(t.special) + '</span></div></li>';
+  }
+  const tags = '<div class="tags">' + tagsHtml(t, t === nextTalk) + '</div>';
+
+  const speaker = t.speaker
+    ? '<p class="speaker"><b>' + esc(t.speaker) + '</b>' + (t.affil ? ' · ' + esc(t.affil) : '') + '</p>'
+    : '<p class="speaker"><b>Speaker TBA</b></p>';
+
+  // 상세 페이지가 있으면 제목이 링크가 되고, CSS로 행 전체가 클릭 영역이 된다
+  const linked = hasDetail(t);
+  let title = "";
+  if (t.title) {
+    title = linked
+      ? '<h3><a class="row-link" href="talk-' + tid(t) + '.html">' + esc(t.title) + '</a></h3>'
+      : '<h3>' + esc(t.title) + '</h3>';
+  } else if (t.speaker) {
+    title = linked
+      ? '<h3 class="tba"><a class="row-link" href="talk-' + tid(t) + '.html">Title TBA</a></h3>'
+      : '<h3 class="tba">Title TBA</h3>';
+  }
+
+  return '<li class="talk' + (linked ? ' linked' : '') + '">' + dateBlock(t.date) + avatarHtml(t) +
+    '<div class="row-body">' + tags + speaker + title + '</div>' +
+    (linked ? '<span class="row-chev" aria-hidden="true"></span>' : '') + '</li>';
+}
+
+// 각 행이 월 약어를 달고 있으므로 월별로 카드를 쪼개지 않고 하나로 잇는다
+document.getElementById("schedule").innerHTML =
+  '<section class="card"><ol class="talks">' +
+  TALKS.map(renderItem).join("") +
+  '</ol></section>';
+</script>
+</body>
+</html>
