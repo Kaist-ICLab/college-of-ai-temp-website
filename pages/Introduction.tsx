@@ -62,7 +62,7 @@ const Introduction: React.FC = () => {
                     <p className="text-[#002380] font-bold text-xs uppercase tracking-widest mt-1">
                       {language === "en"
                         ? "Interim Dean, College of AI"
-                        : "AI대학 학장 직무대행"}
+                        : "AI대학 학장"}
                     </p>
                   </div>
                 </div>
