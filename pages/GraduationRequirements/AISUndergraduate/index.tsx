@@ -3,127 +3,77 @@ import { useTranslation } from '../../../i18n';
 import {
   RequirementBox,
   RequirementTitle,
-  SectionHeader,
-  SubSectionHeader,
-  BulletItem,
-  NoteText,
+  OutlineTop,
+  OutlineCircle,
+  OutlineDash,
+  OutlineNote,
 } from '../components/SharedComponents';
 
 interface AISUndergraduateProps {
   language: 'en' | 'ko';
 }
 
+const TOP_MARKERS_KO = ['가', '나', '다', '라', '마'];
+const TOP_MARKERS_EN = ['A', 'B', 'C', 'D', 'E'];
+
 const AISUndergraduate: React.FC<AISUndergraduateProps> = ({ language }) => {
   const t = useTranslation(language);
+  const TOP = language === 'ko' ? TOP_MARKERS_KO : TOP_MARKERS_EN;
 
   return (
     <RequirementBox>
       <RequirementTitle title={t('ais_ug_title')} subtitle={t('ais_ug_subtitle')} />
 
-      <div className="space-y-10 text-[15px] leading-relaxed text-gray-600">
-        {/* Graduation Credits */}
-        <section>
-          <SectionHeader title={t('ais_ug_grad_credits')} />
-          <div className="ml-3 sm:ml-4 space-y-1">
-            <NoteText>{t('ais_ug_track_note')}</NoteText>
-          </div>
-        </section>
+      <div className="text-[15px] leading-relaxed text-gray-700">
+        <OutlineTop marker={`${TOP[0]}.`}>{t('ais_ug_grad_credits')}</OutlineTop>
+        <OutlineNote level={1}>{t('ais_ug_track_note')}</OutlineNote>
 
-        {/* Special Note / Basic Choice */}
-        <section>
-          <SectionHeader title={t('ais_ug_special_note_title')} />
-          <div className="ml-3 sm:ml-4 space-y-6">
-            <div>
-              <p className="font-bold text-gray-800 mb-2">{t('ais_ug_basic_req')}</p>
-              <div className="ml-2">
-                <BulletItem>{t('ais_ug_basic_1')}</BulletItem>
-              </div>
-              <div className="mt-2 space-y-1 ml-2">
-                <NoteText>{t('ais_ug_basic_double_note')}</NoteText>
-                <div className="ml-3">
-                  <BulletItem>{t('ais_ug_basic_double_1')}</BulletItem>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <OutlineTop marker={`${TOP[1]}.`}>{t('ais_ug_basic_req')}</OutlineTop>
+        <OutlineCircle>{t('ais_ug_basic_1')}</OutlineCircle>
+        <OutlineCircle>{t('ais_ug_basic_2')}</OutlineCircle>
+        <OutlineNote level={1}>{t('ais_ug_basic_double_note')}</OutlineNote>
 
-        {/* Major */}
-        <section>
-          <SectionHeader title={t('ais_ug_major_req')} />
+        <OutlineTop marker={`${TOP[2]}.`}>{t('ais_ug_major_req')}</OutlineTop>
+        <OutlineCircle>{t('ais_ug_mandatory_title')}</OutlineCircle>
+        {[1, 2, 3].map((idx) => (
+          <OutlineDash key={idx}>{t(`ais_ug_mandatory_${idx}`)}</OutlineDash>
+        ))}
+        <OutlineNote level={2}>{t('ais_ug_mandatory_note_1')}</OutlineNote>
+        <OutlineNote level={2}>{t('ais_ug_mandatory_note_2')}</OutlineNote>
+        <OutlineCircle>{t('ais_ug_elective_title')}</OutlineCircle>
+        {[1, 2].map((idx) => (
+          <OutlineDash key={idx}>{t(`ais_ug_elective_${idx}`)}</OutlineDash>
+        ))}
+        <OutlineNote level={2}>{t('ais_ug_elective_note')}</OutlineNote>
 
-          <div className="ml-3 sm:ml-4 space-y-8">
-            {/* Mandatory */}
-            <div>
-              <SubSectionHeader title={t('ais_ug_mandatory_title')} />
-              <ul className="ml-3 sm:ml-4 space-y-3">
-                {[1, 2, 3, 4].map(idx => (
-                  <li key={idx} className="flex gap-2 items-start text-gray-500">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
-                    <span>{t(`ais_ug_mandatory_${idx}`)}</span>
-                  </li>
-                ))}
-              </ul>
-              <NoteText className="mt-3 ml-3 sm:ml-4">{t('ais_ug_mandatory_note')}</NoteText>
-            </div>
+        <OutlineTop marker={`${TOP[3]}.`}>{t("ais_other_major_title")}</OutlineTop>
+        <OutlineCircle>{t("ais_advanced_req")}</OutlineCircle>
+        <OutlineDash>{t("ais_advanced_desc")}</OutlineDash>
+        <OutlineCircle>{t("ais_minor_req")}</OutlineCircle>
+        <OutlineDash>{t("ais_minor_desc_1")}</OutlineDash>
+        <OutlineDash>{t("ais_minor_desc_2")}</OutlineDash>
+        <OutlineDash>{t("ais_minor_desc_3")}</OutlineDash>
+        <OutlineNote level={2}>{t("ais_minor_note_1")}</OutlineNote>
+        <OutlineCircle>{t("ais_double_req")}</OutlineCircle>
+        <OutlineDash>{t("ais_double_desc_1")}</OutlineDash>
+        <OutlineDash>{t("ais_double_desc_2")}</OutlineDash>
+        <OutlineDash>{t("ais_double_desc_3")}</OutlineDash>
+        <OutlineNote level={2}>{t("ais_double_note_1")}</OutlineNote>
+        <OutlineCircle>{t("ais_indiv_req")}</OutlineCircle>
+        <OutlineDash>{t("ais_indiv_desc")}</OutlineDash>
 
-            {/* Elective */}
-            <div>
-              <SubSectionHeader title={t('ais_ug_elective_title')} />
-              <div className="ml-3 sm:ml-4 space-y-2">
-                {[1, 2, 3].map(idx => (
-                  <BulletItem key={idx} className="text-gray-500">
-                    {t(`ais_ug_elective_${idx}`)}
-                  </BulletItem>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <OutlineTop marker={`${TOP[4]}.`}>{t("ais_research_req")}</OutlineTop>
+        <OutlineCircle>{t("ais_research_desc")}</OutlineCircle>
+        <OutlineNote level={1}>{t("ais_research_note")}</OutlineNote>
 
-        {/* Other Major Types */}
-        <section className="space-y-10">
-          <div>
-            <SectionHeader title={t('ais_ug_intensive_title')} />
-          </div>
-
-          <div>
-            <SectionHeader title={t('ais_ug_inter_title')} />
-            <p className="ml-3 sm:ml-4">{t('ais_ug_inter_desc')}</p>
-          </div>
-
-          <div>
-            <SectionHeader title={t('ais_ug_minor_title')} />
-            <div className="ml-3 sm:ml-4 space-y-2">
-              <p>{t('ais_ug_minor_desc')}</p>
-              <NoteText>{t('ais_ug_minor_note')}</NoteText>
-            </div>
-          </div>
-
-          <div>
-            <SectionHeader title={t('ais_ug_double_title')} />
-            <p className="ml-3 sm:ml-4">{t('ais_ug_double_desc')}</p>
-          </div>
-
-          <div>
-            <SectionHeader title={t('ais_ug_research_title')} />
-            <div className="ml-3 sm:ml-4 space-y-3">
-              <p>{t('ais_ug_research_desc')}</p>
-              <div className="space-y-2">
-                <NoteText>{t('ais_ug_research_note_1')}</NoteText>
-                <NoteText>{t('ais_ug_research_note_2')}</NoteText>
-              </div>
-            </div>
-          </div>
-
-          {/* Transitional Measures */}
-          <div>
-            <SectionHeader title={t('transitional_measures')} />
-            <div className="ml-3 sm:ml-4">
-              <p>{t('ais_ug_transit')}</p>
-            </div>
-          </div>
-        </section>
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <p className="font-bold text-gray-900 mb-2">
+            ❏ {t('transitional_measures')}
+          </p>
+          <OutlineTop marker={`${TOP[0]}.`}>{t('ais_ug_transit')}</OutlineTop>
+          <OutlineTop marker={`${TOP[1]}.`}>{t('ais_ug_transit_2')}</OutlineTop>
+          <OutlineDash>{t("ais_ug_transit_list")}</OutlineDash>
+        </div>
       </div>
     </RequirementBox>
   );

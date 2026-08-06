@@ -3,82 +3,64 @@ import { useTranslation } from '../../../i18n';
 import {
   RequirementBox,
   RequirementTitle,
-  SectionHeader,
-  BulletItem,
-  NoteText,
+  OutlineTop,
+  OutlineCircle,
+  OutlineNote,
 } from '../components/SharedComponents';
 
 interface AIFGraduateProps {
   language: 'en' | 'ko';
 }
 
+const TOP_MARKERS_KO = ['가', '나', '다', '라', '마'];
+const TOP_MARKERS_EN = ['A', 'B', 'C', 'D', 'E'];
+
 const AIFGraduate: React.FC<AIFGraduateProps> = ({ language }) => {
   const t = useTranslation(language);
+  const TOP = language === 'ko' ? TOP_MARKERS_KO : TOP_MARKERS_EN;
 
   const renderProgramSection = (prefix: string) => {
-    const hasResearchNote = t(`${prefix}_research_1_note`) && t(`${prefix}_research_1_note`) !== `${prefix}_research_1_note`;
+    const isDefined = (key: string) => t(key) && t(key) !== key;
+    const hasCommon3 = isDefined(`${prefix}_common_3`);
+    const electiveNote1Key = isDefined(`${prefix}_elective_note_1`)
+      ? `${prefix}_elective_note_1`
+      : `${prefix}_elective_note`;
+    const hasElectiveNote2 = isDefined(`${prefix}_elective_note_2`);
+    const hasResearch2 = isDefined(`${prefix}_research_2`);
+    const hasResearchNote = isDefined(`${prefix}_research_note`);
 
     return (
       <RequirementBox className="mb-8 md:mb-12">
         <RequirementTitle title={t(`${prefix}_title`)} />
 
-        <div className="space-y-10 text-[15px] leading-relaxed text-gray-600">
-          {/* Graduation Credits */}
-          <section>
-            <SectionHeader title={t(`${prefix}_grad_credits`)} />
-          </section>
+        <div className="text-[15px] leading-relaxed text-gray-700">
+          <OutlineTop marker={`${TOP[0]}.`}>{t(`${prefix}_grad_credits`)}</OutlineTop>
 
-          {/* Common Mandatory */}
-          <section>
-            <SectionHeader title={t(`${prefix}_common_req`)} />
-            <div className="ml-3 sm:ml-4 space-y-2">
-              <BulletItem>{t(`${prefix}_common_1`)}</BulletItem>
-              <NoteText indented>{t(`${prefix}_common_1_note`)}</NoteText>
-              <BulletItem>{t(`${prefix}_common_2`)}</BulletItem>
-              <BulletItem>{t(`${prefix}_common_3`)}</BulletItem>
-            </div>
-          </section>
+          <OutlineTop marker={`${TOP[1]}.`}>{t(`${prefix}_common_req`)}</OutlineTop>
+          <OutlineCircle>{t(`${prefix}_common_1`)}</OutlineCircle>
+          <OutlineCircle>{t(`${prefix}_common_2`)}</OutlineCircle>
+          {hasCommon3 && <OutlineCircle>{t(`${prefix}_common_3`)}</OutlineCircle>}
 
-          {/* Major Mandatory */}
-          <section>
-            <SectionHeader title={t(`${prefix}_major_req`)} />
-            <ul className="ml-3 sm:ml-4 space-y-2">
-              {[1, 2, 3, 4].map(idx => (
-                <li key={idx} className="flex gap-2 items-start text-gray-500">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#002380] shrink-0"></span>
-                  <span>{t(`${prefix}_major_${idx}`)}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <OutlineTop marker={`${TOP[2]}.`}>{t(`${prefix}_major_req`)}</OutlineTop>
 
-          {/* Elective Courses */}
-          <section>
-            <SectionHeader title={t(`${prefix}_elective_req`)} />
-            <div className="ml-3 sm:ml-4 space-y-3">
-              <BulletItem className="text-gray-500">{t(`${prefix}_elective_1`)}</BulletItem>
-              <BulletItem className="text-gray-500">{t(`${prefix}_elective_2`)}</BulletItem>
-              <NoteText>{t(`${prefix}_elective_note`)}</NoteText>
-            </div>
-          </section>
+          <OutlineTop marker={`${TOP[3]}.`}>{t(`${prefix}_elective_req`)}</OutlineTop>
+          <OutlineCircle>{t(`${prefix}_elective_1`)}</OutlineCircle>
+          <OutlineCircle>{t(`${prefix}_elective_2`)}</OutlineCircle>
+          <OutlineCircle>{t(`${prefix}_elective_3`)}</OutlineCircle>
+          <OutlineNote level={1}>{t(`${prefix}_elective_note`)}</OutlineNote>
+          {hasElectiveNote2 && <OutlineNote level={1}>{t(`${prefix}_elective_note_2`)}</OutlineNote>}
 
-          {/* Research Courses */}
-          <section>
-            <SectionHeader title={t(`${prefix}_research_req`)} />
-            <div className="ml-3 sm:ml-4 space-y-3">
-              <BulletItem>{t(`${prefix}_research_1`)}</BulletItem>
-              {hasResearchNote && <NoteText indented>{t(`${prefix}_research_1_note`)}</NoteText>}
-              <BulletItem>{t(`${prefix}_research_2`)}</BulletItem>
-            </div>
-          </section>
+          <OutlineTop marker={`${TOP[4]}.`}>{t(`${prefix}_research_req`)}</OutlineTop>
+          <OutlineCircle>{t(`${prefix}_research_1`)}</OutlineCircle>
+          {hasResearch2 && <OutlineCircle>{t(`${prefix}_research_2`)}</OutlineCircle>}
+          {hasResearchNote && <OutlineNote level={1}>{t(`${prefix}_research_note`)}</OutlineNote>}
 
-          {/* Transitional Measures */}
-          <section>
-            <SectionHeader title={t('transitional_measures')} />
-            <div className="ml-3 sm:ml-4">
-              <p>{t(`${prefix}_transit`)}</p>
-            </div>
-          </section>
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <p className="font-bold text-gray-900 mb-2">
+              ❏ {t('transitional_measures')}
+            </p>
+            <OutlineTop marker={`${TOP[0]}.`}>{t(`${prefix}_transit`)}</OutlineTop>
+          </div>
         </div>
       </RequirementBox>
     );
