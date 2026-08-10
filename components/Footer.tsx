@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
                     한국과학기술원(KAIST)
                   </p>
                   <p>대전광역시 유성구 대학로 291 (34141)</p>
-                  <p className="font-medium text-gray-300">T. 042-350-2114</p>
+                  <p className="font-medium text-gray-300">T. 042-350-1202~9</p>
                 </>
               )}
             </div>
