@@ -317,6 +317,10 @@ export const translations: Translation = {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
+  aic_ms_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
+  },
 
   // Doctoral Requirements
   aic_phd_title: { en: "AI Computing - Doctoral", ko: "AI컴퓨팅학과 - 박사" },
@@ -371,6 +375,10 @@ export const translations: Translation = {
   aic_phd_research_1: {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+  },
+  aic_phd_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
   },
 
   // Integrated Program Requirements
@@ -636,6 +644,10 @@ export const translations: Translation = {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
+  ais_ms_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
+  },
 
   // AI Systems Graduate (Doctoral) Requirements
   ais_phd_title: { en: "AI Systems - Doctoral", ko: "AI시스템학과 - 박사" },
@@ -686,6 +698,10 @@ export const translations: Translation = {
   ais_phd_research_1: {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+  },
+  ais_phd_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
   },
 
   // AI Systems Graduate (Integrated) Requirements
@@ -945,6 +961,10 @@ export const translations: Translation = {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
+  ax_ms_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
+  },
 
   // AX Graduate (Doctoral) Requirements
   ax_phd_title: { en: "AX - Doctoral", ko: "AX학과 - 박사" },
@@ -995,6 +1015,10 @@ export const translations: Translation = {
   ax_phd_research_1: {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+  },
+  ax_phd_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
   },
 
   // AX Graduate (Integrated) Requirements
@@ -1288,6 +1312,10 @@ export const translations: Translation = {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
   },
+  aif_ms_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
+  },
 
   // AI and Future Studies Graduate (Doctoral)
   aif_phd_title: {
@@ -1345,6 +1373,10 @@ export const translations: Translation = {
   aif_phd_research_1: {
     en: "2 credits of Seminar are required, which may be substituted with a seminar course offered by the College of AI.",
     ko: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+  },
+  aif_phd_research_note: {
+    en: "※ Only seminar courses offered under a CoA course code are recognized; seminar courses from other departments are not recognized.",
+    ko: "※ 세미나는 CoA코드로 생성된 세미나 과목만 인정되며, 타 학과 세미나 과목은 인정하지 않음",
   },
 
   // AI and Future Studies Graduate (Integrated)np
