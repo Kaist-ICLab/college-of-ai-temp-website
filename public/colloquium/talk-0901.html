@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="KAIST AI College Colloquium — Fall 2026 talk descriptions">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Talk Descriptions — KAIST AI College Colloquium (2026 Fall)">
-<meta property="og:description" content="Abstracts and speaker bios for the Fall 2026 KAIST AI College Colloquium.">
+<meta name="description" content="KAIST AI College Colloquium — talk detail">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing Intelligent Machines for Embodied, Empathic Interaction">
+<meta property="og:description" content="Myounghoon Jeon (전명훈) (Virginia Tech · Professor) — KAIST AI College Colloquium, 2026-09-01">
 <meta property="og:image" content="https://aicollege.kaist.ac.kr/colloquium/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>Talk Descriptions — KAIST AI College Colloquium (2026 Fall)</title>
+<title>Designing Intelligent Machines for Embodied, Empathic Interaction — KAIST AI College Colloquium</title>
 <style>
 /* 공통 디자인 시스템 — 두 페이지(template.html, template_talks.html)에 빌드 시 주입됨.
  * direction: Korean portal card UI (naver.com 형태 언어 참고)
@@ -188,12 +188,31 @@
   }
 
 
-  /* ---- Talk Descriptions 페이지 전용 ---- */
-  .d-title a { color: inherit; text-decoration: none; }
-  .d-title a:hover { color: var(--accent); }
-  .d-title.tba { color: var(--faint); font-weight: 600; }
-  .card:target { border-color: var(--accent); }
-  .empty { color: var(--faint); font-size: 14px; padding: 8px 6px; }
+  /* ---- 개별 강연 페이지 전용 ---- */
+  .back {
+    display: inline-block; margin: 16px 6px 0;
+    font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none;
+  }
+  .back:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* 이전/다음: 구분선 위의 조용한 텍스트 링크 두 개 */
+  .pn {
+    display: flex; justify-content: space-between;
+    margin-top: 22px; padding: 14px 6px 0;
+    border-top: 1px solid var(--card-line);
+  }
+  .pn a {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none;
+  }
+  .pn a:hover { color: var(--accent); }
+  .pn .next-slot { margin-left: auto; }
+  .pn .chev-l, .pn .chev-r {
+    width: 6px; height: 6px;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  }
+  .pn .chev-l { transform: rotate(135deg); }
+  .pn .chev-r { transform: rotate(-45deg); }
 </style>
 </head>
 <body>
@@ -219,7 +238,8 @@
     <a class="tab active" href="talks.html">Talk Descriptions</a>
   </nav>
 
-  <div id="descriptions"></div>
+  <a class="back" href="talks.html">← All talk descriptions</a>
+  <div id="talk"></div>
 
   <footer class="foot">
     <span>Schedule and speakers are subject to change.</span>
@@ -229,16 +249,17 @@
 
 <script>
 const TALKS = [{"no": 1, "date": "2026-09-01", "lang": "Korean", "mode": "Offline", "speaker": "Myounghoon Jeon (전명훈)", "affil": "Virginia Tech · Professor", "title": "Designing Intelligent Machines for Embodied, Empathic Interaction", "abstract": "Machine intelligence has enabled more embodied and empathic forms of interaction, creating opportunities for systems that are more accessible and personalized. After introducing my conceptualization of intelligent machines and several key questions for reflection, this talk presents recent research from the Virginia Tech Mind Music Machine Lab across three pillars: automotive user interfaces, assistive robotics, and immersive arts. It explores how machine intelligence can enhance the user experience in each of these areas. \nIn the automotive domain, real-time sonification and large language model-based agents have been used to improve driver performance and emotional experience. In assistive robotics, interactive musical robots and intelligent collaborative robots have been designed to support autistic individuals’ social engagement. In the arts, AI and machine learning have been integrated into a novel informal learning program to promote children’s STEAM education, enrich audiences’ affective experiences, and expand artists’ expressive possibilities. Together, these projects suggest new directions for creative computing and more “beautiful” interactions with intelligent machines.", "bio": "Dr. Myounghoon Jeon is a Professor in the Department of Industrial and Systems Engineering and, by courtesy, the Department of Computer Science at Virginia Tech, where he directs the Mind Music Machine Lab. His research focuses on emotion and sound in Human-Computer/Robot Interaction. He is a Senior Fellow of Virginia Tech’s Institute for Creativity, Arts, and Technology and Associate Director of the Center for Human-Computer Interaction. Supported by the NSF, NIH, and DOT and industry partners, his research has resulted in more than 300 publications in leading journals and conference proceedings. His honors include the American Psychological Association Division 21 Earl Alluisi Early Career Award, Virginia Tech’s Dean’s Award for Excellence in Research, Dean’s Award for Excellence in Outreach, Presidential Principles of Community, the IF Communication Design Award, and the Data Sonification Award. He has served as General Chair of the ACM AutomotiveUI Conference and the International Conference on Auditory Display, as well as Associate and Senior Editor for several journals. Dr. Jeon earned his MS and PhD in Engineering Psychology and Human-Computer Interaction from Georgia Tech and an MS in Cognitive Science from Yonsei University, where he also studied Film Scoring.", "photo": "speakers/jeon-myounghoon.jpg"}, {"no": 2, "date": "2026-09-15", "lang": "English/Korean", "mode": "Offline", "speaker": "Namwoo Kang (강남우)", "affil": "KAIST · Associate Professor / Narnia Labs CEO", "title": "제조업 설계 AX의 도전과 미래", "abstract": "최근 비약적으로 발전한 AI 기술은 전통적인 제품 개발 프로세스의 근본적인 전환을 촉진하고 있다. 특히 AI가 높은 자율성을 바탕으로 설계 업무를 수행하는 Agentic AI 기반의 자율 설계 시대가 본격화되면서, 제품 개발의 방식과 속도뿐만 아니라 조직의 의사결정 구조 및 문화 전반에도 큰 변화를 요구하고 있다. 본 세미나에서는 실제 제조 산업의 제품 설계 분야에 적용된 다양한 AX 성공 사례를 소개한다. 또한 이러한 기술을 기반으로 창업에 도전하는 과정에서 마주한 현실적인 어려움과 치열한 글로벌 경쟁의 현장을 함께 공유하고자 한다.", "bio": "", "photo": "speakers/kang-namwoo.jpg"}, {"no": 3, "date": "2026-09-22", "lang": "Korean", "mode": "Offline", "speaker": "이상우", "affil": "Inha University · Visiting Professor", "title": "AI 에이전트는 어디까지 대신할 수 있을까? — Agentic AI의 기술, 위험, 그리고 새로운 규칙", "abstract": "AI Agent는 기존 생성형 AI와 다른 차원의 문제를 제기한다. 생성형 AI의 주요 위험이 허위정보, 편향, 저작권 침해 등 출력물의 문제에 있었다면, AI Agent의 위험은 파일 삭제, 계정 변경, 데이터 전송, 결제, 계약, 시스템 조작 등 실행행위의 문제로 확장된다. 이는 AI가 “무엇을 말했는가”뿐 아니라 “무엇을 실행했는가”가 중요한 쟁점이 되고 있다. 이번 특강에서는 AI Agent가 왜 새로운 법적·윤리적·정책적 규율을 요구하는지 살펴본다. 아울러 최근 미국·중국의 입법 동향과 한국의 관련 논의를 함께 검토한다.", "bio": "", "photo": "speakers/lee-sangwoo.jpg"}, {"no": 4, "date": "2026-09-29", "lang": "Korean", "mode": "Offline", "speaker": "Myoungsoo Jung (정명수)", "affil": "KAIST · Professor / Panmnesia CEO", "title": "Evolving AI Models Demand New Datacenters: The Path CXL Opens", "abstract": "", "bio": "", "photo": "speakers/jung-myoungsoo.jpg"}, {"no": 5, "date": "2026-10-06", "lang": "English", "mode": "Offline", "speaker": "Sungsoo Ahn (안성수)", "affil": "KAIST · Assistant Professor", "title": "AI for Molecular and Materials Discovery", "abstract": "Can artificial intelligence help us discover new drugs and materials? In this talk, I will introduce the emerging field of AI for molecular and materials discovery. I will explain how machine learning can predict the structures and properties of molecules, proteins, and materials, and how generative models can propose new candidates with desired functions. I will also discuss a central challenge of the field: predictions that look promising in computation do not always succeed in real experiments. Finally, I will briefly introduce emerging directions such as virtual cells and AI scientists, which aim to connect computational models with experimental discovery.", "bio": "Sungsoo Ahn is an Assistant Professor at the Graduate School of AI at KAIST, where he leads the Structured and Probabilistic Machine Learning Lab. His research focuses on developing machine learning methods for molecular and materials science, including drug discovery, protein modeling, crystal and materials generation, atomistic simulation, and quantum-mechanical prediction. More broadly, he is interested in building AI systems that can support scientific discovery by combining structured learning, physical modeling, and generative methods.", "photo": "speakers/ahn-sungsoo.jpg"}, {"no": 6, "date": "2026-10-13", "lang": "Korean", "mode": "Offline", "speaker": "Young Yik Rhim (임영익)", "affil": "Intellicon · CEO", "title": "생성형AI와 도망자들", "abstract": "", "bio": "", "photo": "speakers/rhim-youngyik.jpg"}, {"special": "Midterm week — no colloquium", "date": "2026-10-20"}, {"no": 7, "date": "2026-10-27", "lang": "English", "mode": "Offline", "speaker": "Kangwook Lee (이강욱)", "affil": "KRAFTON · Chief AI Officer", "title": "AI Agents Across Digital and Physical Worlds: From Games to Robots", "abstract": "", "bio": "", "photo": "speakers/lee-kangwook.jpg"}, {"no": 8, "date": "2026-11-03", "lang": "English", "mode": "Offline", "speaker": "Jinheon Baek (백진헌)", "affil": "KAIST · Research Fellow", "title": "From Knowledge to Discovery: Agentic AI for the Full Research Workflow", "abstract": "Foundation models are stateless functions whose behavior is governed by the context they receive. When models could not hold the knowledge of the world in their parameters, the central challenge was recall: grounding them in external sources through retrieval and verification was necessary for reliable answers. As models have become far more capable, the challenge is no longer only to recall what the world already knows, but to discover what it does not yet know. This talk traces that shift from knowledge to discovery: from retrieving and verifying what is already known across heterogeneous sources (including literature, databases, and knowledge graphs) to agentic systems that generate ideas, implement experiments, and evaluate outcomes across the full research workflow to produce what is not.", "bio": "Jinheon Baek is a Research Fellow at KAIST, and he recently received his Ph.D. in AI from KAIST in 2026. His research focuses on machine learning for language and knowledge, particularly on contextualizing foundation models over heterogeneous knowledge sources through unified retrieval and verification, and on extending such grounded models toward agentic AI that accelerates scientific discovery across the end-to-end research workflow. He has previously interned at Google DeepMind, IBM Research, Microsoft Research, and Amazon. His research is supported by the Sejong Science Fellowship and was supported by the Presidential Science Scholarship.", "photo": "speakers/baek-jinheon.jpg"}, {"no": 9, "date": "2026-11-10", "lang": "Korean", "mode": "Offline", "speaker": "Youngok Kim (김영옥)", "affil": "HD Hyundai · Chief AI Officer", "title": "Physical AI를 통한 제조 AI 방향성 및 HD현대의 도전", "abstract": "", "bio": "", "photo": "speakers/kim-youngok.jpg"}, {"no": 10, "date": "2026-11-17", "lang": "Korean", "mode": "Offline", "speaker": "Hyeonah Kim (김현아)", "affil": "UNIST · Assistant Professor", "title": "Searching Complex Design Spaces with AI", "abstract": "Many scientific and engineering problems require searching over large spaces of structured objects. In many real-world applications, the number of possible candidates is enormous, and evaluating each candidate can be expensive or time-consuming. This talk explores structured discovery as a unifying view of generative modeling, reinforcement learning, local and evolutionary search, and combinatorial optimization. Through examples from molecular design and combinatorial optimization, I will discuss how these methods can be combined to explore complex spaces efficiently, while addressing limited feedback, solution diversity, and the gap between computational objectives and real-world success.", "bio": "Hyeonah Kim is an Assistant Professor in the Department of Industrial Engineering at UNIST, with a joint appointment in the Graduate School of Artificial Intelligence. Her research focuses on machine learning for structured decision-making and discovery, with applications in combinatorial optimization, molecular design, and other scientific and engineering domains. More broadly, she is interested in building AI systems that combine learning, generation, and search to efficiently explore complex structured spaces. Before joining UNIST, she was a postdoctoral researcher at Mila – Québec AI Institute and the Université de Montréal.", "photo": "speakers/kim-hyeonah.jpg"}, {"no": 11, "date": "2026-11-24", "lang": "Korean", "mode": "Offline", "speaker": "Hyungsoo Kim (김형수)", "affil": "SK hynix · Vice President", "title": "Redefining DRAM at the AI Inflection Point: Evolving Chips, Transforming Design", "abstract": "", "bio": "", "photo": "speakers/kim-hyungsoo.jpg"}, {"no": 12, "date": "2026-12-01", "lang": "English", "mode": "Offline", "speaker": "Rosa Arriaga", "affil": "Georgia Tech · Associate Professor", "title": "Ecological AI for Health and Wellness", "abstract": "", "bio": "", "photo": "speakers/arriaga-rosa.jpg"}];
+const TID = "0901";
 
 const MONTH_FULL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const D = iso => new Date(iso + "T00:00:00");
 const tid = t => t.date.slice(5).replace("-", "");
+const hasDetail = t => !t.special && t.speaker && (t.abstract || t.bio);
 
-// 미정 회차도 TBA placeholder로 전부 싣는다 (일정과 1:1 대응)
-const listed = TALKS.filter(t => !t.special);
-
-const hasDetail = t => t.speaker && (t.abstract || t.bio);
+const detailed = TALKS.filter(hasDetail);
+const i = detailed.findIndex(t => tid(t) === TID);
+const t = detailed[i];
 
 // 주관학과(AIF/AIC/AIS/AX)는 표시하지 않는다 — 청중 입장에서 의미 없는 내부 구분
 function tagsHtml(t) {
@@ -252,11 +273,10 @@ function tagsHtml(t) {
 function avatarHtml(t, cls) {
   if (!t.photo) return "";
   return '<img class="avatar' + (cls ? " " + cls : "") + '" src="' + t.photo +
-         '" alt="" width="320" height="320" loading="lazy" decoding="async">';
+         '" alt="" width="320" height="320" decoding="async">';
 }
 
-// 연사 줄. 사진이 없으면 기존 한 줄 표기를 글자 하나 안 바꾸고 그대로 쓴다.
-// 제목이 미정인 회차는 제목 자리에 이미 연사명이 올라가 있으므로 이름을 반복하지 않는다.
+// 연사 줄. 사진이 없으면 기존 한 줄 표기를 그대로 쓴다.
 function bylineHtml(t) {
   if (!t.photo) {
     return t.title
@@ -270,41 +290,32 @@ function bylineHtml(t) {
          '<p class="d-speaker">' + lines + '</p></div>';
 }
 
-const cards = listed.map(t => {
+function card(t) {
   const d = D(t.date);
   const meta = '<span class="d-date-text">' + MONTH_FULL[d.getMonth()] + " " + d.getDate() +
     ", " + d.getFullYear() + '</span>' + tagsHtml(t);
-
-  // 카드 제목은 강연 제목 (개별 페이지가 있으면 링크). 제목 미정이면 연사명이,
-  // 연사도 미정이면 TBA placeholder가 제목 자리.
-  let heading;
-  if (!t.speaker) {
-    heading = '<h2 class="d-title tba">To be announced</h2>' +
-      '<p class="d-speaker">Speaker and title will be posted once confirmed.</p>';
-  } else {
-    const titleText = t.title ? esc(t.title) : esc(t.speaker);
-    const titleHtml = hasDetail(t)
-      ? '<a href="talk-' + tid(t) + '.html">' + titleText + '</a>'
-      : titleText;
-    heading = '<h2 class="d-title">' + titleHtml + '</h2>' + bylineHtml(t);
-  }
-
+  const heading = (t.title
+      ? '<h2 class="d-title">' + esc(t.title) + '</h2>'
+      : '<h2 class="d-title">' + esc(t.speaker) + '</h2>') + bylineHtml(t);
   const blocks =
     (t.abstract ? '<div class="d-block"><h4>Abstract</h4><p>' + esc(t.abstract) + '</p></div>' : '') +
     (t.bio ? '<div class="d-block"><h4>Bio</h4><p>' + esc(t.bio) + '</p></div>' : '');
+  return '<section class="card"><div class="tags d-meta">' + meta + '</div>' +
+    heading + blocks + '</section>';
+}
 
-  return '<section class="card" id="' + tid(t) + '">' +
-    '<div class="tags d-meta">' + meta + '</div>' + heading + blocks + '</section>';
-}).join("");
-
-document.getElementById("descriptions").innerHTML = listed.length
-  ? cards
-  : '<p class="empty">Talk descriptions will be posted as speakers are confirmed.</p>';
-
-// JS 렌더링 이후에 앵커 위치로 보정 (렌더 전에 브라우저가 스크롤해버리는 경우 대비)
-if (location.hash) {
-  const el = document.getElementById(location.hash.slice(1));
-  if (el) el.scrollIntoView();
+if (t) {
+  let pn = "";
+  const prev = i > 0
+    ? '<a class="prev-slot" href="talk-' + tid(detailed[i-1]) + '.html"><span class="chev-l" aria-hidden="true"></span>Previous talk</a>' : "";
+  const next = i < detailed.length - 1
+    ? '<a class="next-slot" href="talk-' + tid(detailed[i+1]) + '.html">Next talk<span class="chev-r" aria-hidden="true"></span></a>' : "";
+  if (prev || next) pn = '<nav class="pn">' + prev + next + '</nav>';
+  document.getElementById("talk").innerHTML = card(t) + pn;
+  document.title = (t.title || t.speaker) + " — KAIST AI College Colloquium";
+} else {
+  document.getElementById("talk").innerHTML =
+    '<section class="card"><p class="d-speaker">Talk not found. <a href="talks.html">See all talk descriptions</a>.</p></section>';
 }
 </script>
 </body>

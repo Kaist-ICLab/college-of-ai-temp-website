@@ -6,16 +6,16 @@ X-WR-CALNAME:KAIST AI College Colloquium (2026 Fall)
 X-WR-TIMEZONE:Asia/Seoul
 BEGIN:VEVENT
 UID:aic-colloquium-20260901@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20260901T070000Z
 DTEND:20260901T090000Z
 SUMMARY:[AI Colloquium] Designing Intelligent Machines for Embodied\, Empathic Interaction
 LOCATION:Room 1501 (Joint Lecture Room 1)\, E3-1\, KAIST\, Daejeon
-DESCRIPTION:Myounghoon Jeon (전명훈) · Virginia Tech · Professor
+DESCRIPTION:Myounghoon Jeon (전명훈) · Virginia Tech · Professor\nhttps://aicollege.kaist.ac.kr/colloquium/talk-0901.html
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20260915@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20260915T070000Z
 DTEND:20260915T090000Z
 SUMMARY:[AI Colloquium] 제조업 설계 AX의 도전과 미래
@@ -24,7 +24,7 @@ DESCRIPTION:Namwoo Kang (강남우) · KAIST · Associate Professor / Narnia Lab
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20260922@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20260922T070000Z
 DTEND:20260922T090000Z
 SUMMARY:[AI Colloquium] AI 에이전트는 어디까지 대신할 수 있을까? — Agentic AI의 기술\, 위험\, 그리고 새로운 규칙
@@ -33,16 +33,16 @@ DESCRIPTION:이상우 · Inha University · Visiting Professor\nhttps://aicolleg
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20260929@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20260929T070000Z
 DTEND:20260929T090000Z
-SUMMARY:[AI Colloquium] The Computational Journey of AI: How Semiconductors and Infrastructure Architecture Enable the Flow of Intelligence
+SUMMARY:[AI Colloquium] Evolving AI Models Demand New Datacenters: The Path CXL Opens
 LOCATION:Room 1501 (Joint Lecture Room 1)\, E3-1\, KAIST\, Daejeon
 DESCRIPTION:Myoungsoo Jung (정명수) · KAIST · Professor / Panmnesia CEO
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261006@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261006T070000Z
 DTEND:20261006T090000Z
 SUMMARY:[AI Colloquium] AI for Molecular and Materials Discovery
@@ -51,16 +51,16 @@ DESCRIPTION:Sungsoo Ahn (안성수) · KAIST · Assistant Professor\nhttps://aic
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261013@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261013T070000Z
 DTEND:20261013T090000Z
-SUMMARY:[AI Colloquium] 생성형ai와 도망자들
+SUMMARY:[AI Colloquium] 생성형AI와 도망자들
 LOCATION:Room 1501 (Joint Lecture Room 1)\, E3-1\, KAIST\, Daejeon
 DESCRIPTION:Young Yik Rhim (임영익) · Intellicon · CEO
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261027@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261027T070000Z
 DTEND:20261027T090000Z
 SUMMARY:[AI Colloquium] AI Agents Across Digital and Physical Worlds: From Games to Robots
@@ -69,7 +69,7 @@ DESCRIPTION:Kangwook Lee (이강욱) · KRAFTON · Chief AI Officer
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261103@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261103T070000Z
 DTEND:20261103T090000Z
 SUMMARY:[AI Colloquium] From Knowledge to Discovery: Agentic AI for the Full Research Workflow
@@ -78,7 +78,7 @@ DESCRIPTION:Jinheon Baek (백진헌) · KAIST · Research Fellow\nhttps://aicoll
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261110@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261110T070000Z
 DTEND:20261110T090000Z
 SUMMARY:[AI Colloquium] Physical AI를 통한 제조 AI 방향성 및 HD현대의 도전
@@ -87,7 +87,7 @@ DESCRIPTION:Youngok Kim (김영옥) · HD Hyundai · Chief AI Officer
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261117@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261117T070000Z
 DTEND:20261117T090000Z
 SUMMARY:[AI Colloquium] Searching Complex Design Spaces with AI
@@ -96,16 +96,16 @@ DESCRIPTION:Hyeonah Kim (김현아) · UNIST · Assistant Professor\nhttps://aic
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261124@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261124T070000Z
 DTEND:20261124T090000Z
-SUMMARY:[AI Colloquium] Becoming an AI Memory Creator: HBM and the Next Frontier of Memory Technology
+SUMMARY:[AI Colloquium] Redefining DRAM at the AI Inflection Point: Evolving Chips\, Transforming Design
 LOCATION:Room 1501 (Joint Lecture Room 1)\, E3-1\, KAIST\, Daejeon
 DESCRIPTION:Hyungsoo Kim (김형수) · SK hynix · Vice President
 END:VEVENT
 BEGIN:VEVENT
 UID:aic-colloquium-20261201@hyeonscho.github.io
-DTSTAMP:20260811T030448Z
+DTSTAMP:20260824T035923Z
 DTSTART:20261201T070000Z
 DTEND:20261201T090000Z
 SUMMARY:[AI Colloquium] Ecological AI for Health and Wellness
